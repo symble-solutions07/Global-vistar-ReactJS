@@ -1,0 +1,32 @@
+.btn-search {
+    font-size:40px !important;
+    margin-left:5px;
+}
+
+.btn-profile{
+    font-size:40px !important;
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  .btn-profile{
+    margin-left: 0px;
+    
+  }
+  .logo-website{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.logo-website{
+  display:flex;
+  
+}
+.logo-part-one{
+  color:#BC1823;
+
+}
+.logo-part-two{
+  color:#0B2C3C;
+}
