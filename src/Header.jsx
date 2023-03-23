@@ -95,7 +95,7 @@ function Header() {
               <ul className="navbar-list">
                 <li>
                   <a href="#home" className="navbar-link" data-nav-link>
-                    Home
+                    Demo
                   </a>
                 </li>
                 <li>
