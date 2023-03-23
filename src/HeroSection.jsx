@@ -14,7 +14,7 @@ function HeroSection() {
       <div className="container">
         <div className="hero-content">
           <h2 className="h1 hero-title">
-            Connecting Manufacturers and Distributors <br />
+            Connecting Manufacturers and Distributorsssadas <br />
             Faster and Better!
           </h2>
           <p className="hero-text">
