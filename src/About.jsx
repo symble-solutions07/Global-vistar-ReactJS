@@ -1,16 +1,22 @@
 import React from "react";
 import "./style.css";
 import pic from "./images/about-banner-1.png";
+import GroupIcon from "@mui/icons-material/Group";
+import SearchIcon from "@mui/icons-material/Search";
+// import { IonIcons } from "@ionic/react";
+import BoltIcon from "@mui/icons-material/Bolt";
+import VerifiedIcon from "@mui/icons-material/Verified";
+import DoneIcon from "@mui/icons-material/Done";
+import RegisterPic from "./images/Untitled design 2.png";
+// import Bolt from "@mui/icons-material/Bolt";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function About() {
   return (
     <section className="about" id="about">
       <div className="container">
         <figure className="about-banner">
-          <img
-            src={pic}
-            alt="House interior"
-          />
+          <img src={RegisterPic} alt="House interior" />
 
           {/* <img src="./assets/images/about-banner-2.jpg" alt="House interior" class="abs-img"> */}
         </figure>
@@ -25,7 +31,8 @@ function About() {
           <ul className="about-list">
             <li className="about-item">
               <div className="about-item-icon">
-                <ion-icon name="people"></ion-icon>
+                {/* <ion-icon name="people"></ion-icon> */}
+                <GroupIcon style={{ color: "#EC6649" }} />
               </div>
 
               <p className="about-item-text">
@@ -37,7 +44,7 @@ function About() {
 
             <li className="about-item">
               <div className="about-item-icon">
-                <ion-icon name="search"></ion-icon>
+                <SearchIcon style={{ color: "#EC6649" }} />
               </div>
 
               <p className="about-item-text">
@@ -47,7 +54,10 @@ function About() {
 
             <li className="about-item">
               <div className="about-item-icon">
-                <ion-icon name="magnet"></ion-icon>
+                {/* <FontAwesomeIcon icon="fa-solid fa-magnet" /> */}
+                {/* <VerifiedIcon style={{ color: "#EC6649" }} />
+                 */}
+                <DoneIcon style={{ color: "#EC6649" }} />
               </div>
 
               <p className="about-item-text">
@@ -58,7 +68,7 @@ function About() {
 
             <li className="about-item">
               <div className="about-item-icon">
-                <ion-icon name="flash"></ion-icon>
+                <BoltIcon style={{ color: "#EC6649" }}></BoltIcon>
               </div>
 
               <p className="about-item-text">

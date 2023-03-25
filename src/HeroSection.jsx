@@ -7,6 +7,9 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import "./HeroSection.css";
+import homePic from "./images/Untitled design 1.png";
+
+
 
 function HeroSection() {
   return (
@@ -26,7 +29,7 @@ function HeroSection() {
           <button className="btn">For Distributors</button>
         </div>
         <figure className="hero-banner">
-          <img src={pic} alt="Modern house model" className="w-100" />
+          <img src={homePic} alt="Modern house model" className="w-100" />
         </figure>
       </div>
       <div

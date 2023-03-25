@@ -3,6 +3,7 @@ import "./style.css"
 import pic1 from "./images/blog-1.png";
 import pic2 from "./images/blog-2.jpg";
 import pic3 from "./images/blog-3.jpg";
+import { margin } from '@mui/system';
 
 function Blogs() {
   return (
@@ -13,7 +14,7 @@ function Blogs() {
 
           <h2 className="h2 section-title">Leatest News Feeds</h2>
 
-          <ul className="blog-list has-scrollbar">
+        <ul className="blog-list has-scrollbar" style={{ width: "90rem",display:"flex", justifyContent: "space-around", marginLeft:"-8rem"}}>
 
             <li>
               <div className="blog-card">

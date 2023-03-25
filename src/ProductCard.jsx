@@ -8,7 +8,7 @@ import "./style.css";
 function ProductCard(props) {
   return (
     <div>
-      <div className="property-card " style={{ marginLeft: "auto" }}>
+      <div className="property-card " style={{ marginLeft: "auto",  maxHeight:"50rem", width:"22rem" }}>
         <figure className="card-banner">
           <a href="#">
             <img
@@ -46,11 +46,14 @@ function ProductCard(props) {
             <strong>₹340</strong>/piece
           </div>
 
-          <h3 className="h3 card-title">
+          <h3 className="h3 card-title" style={{ maxHeight:"1rem"
+           }}>
             <a href="#">{props.Bname}</a>
           </h3>
+          <br />
+          <br />
 
-          <p className="card-text">Write some info about them</p>
+          {/* <p className="card-text">Write some info about them</p> */}
 
           <ul className="card-list">
             <li className="card-item">

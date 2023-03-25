@@ -1,5 +1,8 @@
 import React from "react";
 import "./style.css";
+import serviceIcon1 from "./images/Step 1 Icon 1.svg";
+import serviceIcon2 from "./images/
+import serviceIcon3 from "./images/Step 1 Icon 1.svg";
 
 function ServiceSection() {
   return (
@@ -16,7 +19,7 @@ function ServiceSection() {
             <div className="service-card">
               <div className="card-icon">
                 <img
-                  src="C:\Users\Pranav\Downloads\Step 1 Icon.svg"
+                  src={serviceIcon1}
                   alt="Service icon"
                 />
               </div>

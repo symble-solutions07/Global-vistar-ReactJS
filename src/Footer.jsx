@@ -1,5 +1,6 @@
 import React from 'react'
 import "./style.css";
+import footerLogo from "./images/Global vistar Normal.svg";
 
 function Footer() {
   return (
@@ -11,7 +12,7 @@ function Footer() {
         <div className="footer-brand">
 
           <a href="#" className="logo">
-            <img src="C:\Users\Pranav\Downloads\Global vistar (230 × 40px) (1).png" alt="Homeverse logo"/>
+            <img src={footerLogo} alt="Homeverse logo"/>
           </a>
 
           <p className="section-text">

@@ -14,92 +14,97 @@ function ProductSection() {
         <p className="section-subtitle">Products</p>
 
         <h2 className="h2 section-title">Featured Products</h2>
+        <div style={{ width: "100rem" }}>
+          <ul
+            className="property-list container row"
+            style={{
+              
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <li className="feature-card col-sm">
+              <ProductCard
+                pic={pic}
+                Blocation="Aznec"
+                Bname="Aznac Biscuits"
+                ownerName="Pravin Kumar"
+                ownerLoc="Kolhapur"
+              />
+            </li>
 
-        <ul
-          className="property-list container row"
-          style={{ width: "80%", display: "flex", justifyContent: "center" }}
-        >
-          <li className="feature-card col-sm">
-            <ProductCard
-              pic={pic}
-              Blocation="Aznec"
-              Bname="Aznac Biscuits"
-              ownerName="Pravin Kumar"
-              ownerLoc="Kolhapur"
-            />
-          </li>
+            <li className="feature-card col-sm">
+              <ProductCard
+                pic={pic2}
+                Blocation="Punjab"
+                Bname="Fresh Drinks"
+                ownerName="Dilip Singh"
+                ownerLoc="Punjab"
+              />
+            </li>
+            <li className="feature-card col-sm">
+              <ProductCard
+                pic={pic3}
+                Blocation="SULA WINES, Nashik"
+                Bname="SULA WINES"
+                ownerName="SR NALAWADE"
+                ownerLoc="Amravati"
+              />
+            </li>
+            <li className="feature-card col-sm">
+              <ProductCard
+                pic={pic3}
+                Blocation="Belmont Garden, Chicago"
+                Bname="Luxury Villa in Rego Park"
+                ownerName="William Seklo"
+                ownerLoc="Estate Agents"
+              />
+            </li>
+          </ul>
 
-          <li className="feature-card col-sm">
-            <ProductCard
-              pic={pic2}
-              Blocation="Punjab"
-              Bname="Fresh Drinks"
-              ownerName="Dilip Singh"
-              ownerLoc="Punjab"
-            />
-          </li>
-          <li className="feature-card col-sm">
-            <ProductCard
-              pic={pic3}
-              Blocation="SULA WINES, Nashik"
-              Bname="SULA WINES"
-              ownerName="SR NALAWADE"
-              ownerLoc="Amravati"
-            />
-          </li>
-          <li className="feature-card col-sm">
-            <ProductCard
-              pic={pic3}
-              Blocation="Belmont Garden, Chicago"
-              Bname="Luxury Villa in Rego Park"
-              ownerName="William Seklo"
-              ownerLoc="Estate Agents"
-            />
-          </li>
-        </ul>
+          <ul
+            className="property-list container row"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <li className="feature-card col-sm">
+              <ProductCard
+                pic={pic}
+                Blocation="Aznec"
+                Bname="Aznac Biscuits"
+                ownerName="Pravin Kumar"
+                ownerLoc="Kolhapur"
+              />
+            </li>
 
-        <ul
-          className="property-list container row"
-          style={{ width: "80%", display: "flex", justifyContent: "center" }}
-        >
-          <li className="feature-card col-sm">
-            <ProductCard
-              pic={pic}
-              Blocation="Aznec"
-              Bname="Aznac Biscuits"
-              ownerName="Pravin Kumar"
-              ownerLoc="Kolhapur"
-            />
-          </li>
-
-          <li className="feature-card col-sm">
-            <ProductCard
-              pic={pic2}
-              Blocation="Punjab"
-              Bname="Fresh Drinks"
-              ownerName="Dilip Singh"
-              ownerLoc="Punjab"
-            />
-          </li>
-          <li className="feature-card col-sm">
-            <ProductCard
-              pic={pic3}
-              Blocation="SULA WINES, Nashik"
-              Bname="SULA WINES"
-              ownerName="SR NALAWADE"
-              ownerLoc="Amravati"
-            />
-          </li>
-          <li className="feature-card col-sm">
-            <ProductCard
-              pic={pic3}
-              Blocation="Belmont Garden, Chicago"
-              Bname="Luxury Villa in Rego Park"
-              ownerName="William Seklo"
-              ownerLoc="Estate Agents"
-            />
-          </li>
-        </ul>
+            <li className="feature-card col-sm">
+              <ProductCard
+                pic={pic2}
+                Blocation="Punjab"
+                Bname="Fresh Drinks"
+                ownerName="Dilip Singh"
+                ownerLoc="Punjab"
+              />
+            </li>
+            <li className="feature-card col-sm">
+              <ProductCard
+                pic={pic3}
+                Blocation="SULA WINES, Nashik"
+                Bname="SULA WINES"
+                ownerName="SR NALAWADE"
+                ownerLoc="Amravati"
+              />
+            </li>
+            <li className="feature-card col-sm">
+              <ProductCard
+                pic={pic3}
+                Blocation="Belmont Garden, Chicago"
+                Bname="Luxury Villa in Rego Park"
+                ownerName="William Seklo"
+                ownerLoc="Estate Agents"
+              />
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   );
