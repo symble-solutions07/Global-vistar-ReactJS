@@ -7,3 +7,12 @@
   }
   
 }
+
+.search-item-section{
+  margin-top:-5rem !important;
+  
+}
+
+.search-icon:hover{
+  color:#BC1823;
+}

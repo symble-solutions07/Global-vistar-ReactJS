@@ -4,11 +4,17 @@ import pic2 from "./images/property-2.jpg";
 import pic3 from "./images/property-3.jpg";
 import author from "./images/author.jpg";
 import "./style.css";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 
 function ProductCard(props) {
   return (
     <div>
-      <div className="property-card " style={{ marginLeft: "auto",  maxHeight:"50rem", width:"22rem" }}>
+      <div
+        className="property-card "
+        style={{ marginLeft: "auto", maxHeight: "50rem", width: "22rem" }}
+      >
         <figure className="card-banner">
           <a href="#">
             <img
@@ -46,8 +52,7 @@ function ProductCard(props) {
             <strong>₹340</strong>/piece
           </div>
 
-          <h3 className="h3 card-title" style={{ maxHeight:"1rem"
-           }}>
+          <h3 className="h3 card-title" style={{ maxHeight: "1rem" }}>
             <a href="#">{props.Bname}</a>
           </h3>
           <br />
@@ -76,7 +81,10 @@ function ProductCard(props) {
           </ul>
         </div>
 
-        <div className="card-footer">
+        <div
+          className="card-footer"
+          style={{ display: "flex", flexDirection: "column" }}
+        >
           <div className="card-author">
             <figure className="author-avatar">
               <img src={author} alt="William Seklo" className="w-100" />
@@ -91,18 +99,30 @@ function ProductCard(props) {
             </div>
           </div>
 
-          <div className="card-footer-actions">
-            <button className="card-footer-actions-btn">
-              <ion-icon name="resize-outline"></ion-icon>
-            </button>
+          <div
+            className="card-footer-actions"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <div style={{ display: "flex" }}>
+              <button className="card-footer-actions-btn" style={{ marginRight:"10px" }}>
+                <FavoriteIcon />
+              </button>
 
-            <button className="card-footer-actions-btn">
-              <ion-icon name="heart-outline"></ion-icon>
-            </button>
-
-            <button className="card-footer-actions-btn">
-              <ion-icon name="add-circle-outline"></ion-icon>
-            </button>
+              <button className="card-footer-actions-btn">
+                <OpenInFullIcon />
+              </button>
+            </div>
+            <div>
+              <button
+                className="card-footer-actions-btn"
+                style={{ width: "7.5rem", padding:"2px"}}
+              >
+                Send Enquiry
+              </button>
+            </div>
           </div>
         </div>
       </div>

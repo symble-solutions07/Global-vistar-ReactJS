@@ -8,6 +8,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import "./HeroSection.css";
 import homePic from "./images/Untitled design 1.png";
+import SearchIcon from "@mui/icons-material/Search";
 
 
 
@@ -42,7 +43,7 @@ function HeroSection() {
           marginBottom: "3rem",
         }}
       >
-        <FormControl sx={{ m: 1, minWidth: 400 }} className="search-category">
+        <FormControl sx={{ mt: 3, minWidth: 400, m:1 }} className="search-category">
           <InputLabel id="demo-simple-select-helper-label">Category</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
@@ -60,7 +61,7 @@ function HeroSection() {
           </Select>
           {/* <FormHelperText>With label + helper text</FormHelperText> */}
         </FormControl>
-        <FormControl sx={{ m: 1, minWidth: 400 }} className="search-2">
+        <FormControl sx={{ mt: 3, minWidth: 400, m:1 }} className="search-2">
           <InputLabel id="demo-simple-select-helper-label">
             Sub-Category
           </InputLabel>
@@ -80,6 +81,7 @@ function HeroSection() {
           </Select>
           {/* <FormHelperText>With label + helper text</FormHelperText> */}
         </FormControl>
+        <SearchIcon  className="search-icon" style={{fontSize:"35px", margin:"15px"} } />
       </div>
     </section>
   );

@@ -4,7 +4,6 @@ import pic from "./images/Global vistar TB.svg";
 import "./style.css";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-import SearchIcon from "@mui/icons-material/Search";
 import ProfileIcon from "@mui/icons-material/PermIdentity";
 import "./header.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -140,12 +139,7 @@ function Header() {
             </nav>
 
             <div class="header-bottom-actions">
-              <button class="header-bottom-actions-btn" aria-label="Search">
-                {/* <FontAwesomeIcon icon="fa-light fa-magnifying-glass" /> */}
-                <SearchIcon className="btn-search" />
-
-                <span>Search</span>
-              </button>
+              
               
 
               <button class="header-bottom-actions-btn" aria-label="Profile">
