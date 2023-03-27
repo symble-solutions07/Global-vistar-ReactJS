@@ -12,6 +12,8 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import WarehouseIcon from "@mui/icons-material/Warehouse";
+import StorefrontIcon from "@mui/icons-material/Storefront";
 
 
 
@@ -130,7 +132,7 @@ function Header() {
                   </li>
 
                   <li>
-                    <a href="#contact" class="navbar-link" data-nav-link>
+                    <a href="#footer" class="navbar-link" data-nav-link>
                       Contact
                     </a>
                   </li>

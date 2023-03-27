@@ -4,7 +4,7 @@ import footerLogo from "./images/Global vistar Normal.svg";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
 
     <div className="footer-top">
       <div className="container">
@@ -194,4 +194,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default Footer;

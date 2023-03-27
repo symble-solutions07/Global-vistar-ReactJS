@@ -24,7 +24,7 @@
   width:200px;
   background-color: white;
   text-align: left;
-  padding:10px 0px 10px 0px;
+  
   border-radius: 10px;
   /* display:none; */
   
@@ -33,12 +33,17 @@
 .list-menu li{
   position: relative;
   padding-bottom:10px;
-  text-align: center;
+  text-align: left;
+  /* padding-left:10px; */
+  padding:10px 0px 10px 10px;
 
 }
 
 .list-menu li:hover{
-  background-color: #F2F6F7;
+  background-color: #210d41;
+  color:white;
+  border-radius: 10px;
+  
 }
 
 .btn-profile-main-div{
