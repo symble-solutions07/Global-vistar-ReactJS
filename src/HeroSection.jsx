@@ -56,8 +56,8 @@ function HeroSection() {
             <MenuItem value={10}>Food</MenuItem>
             <MenuItem value={20}>Toys</MenuItem>
             <MenuItem value={30}>Stationary</MenuItem>
-            <MenuItem value={30}>Hardware</MenuItem>
-            <MenuItem value={30}>Dairy</MenuItem>
+            <MenuItem value={40}>Hardware</MenuItem>
+            <MenuItem value={50}>Dairy</MenuItem>
           </Select>
           {/* <FormHelperText>With label + helper text</FormHelperText> */}
         </FormControl>
@@ -76,8 +76,8 @@ function HeroSection() {
             <MenuItem value={10}>Food</MenuItem>
             <MenuItem value={20}>Toys</MenuItem>
             <MenuItem value={30}>Stationary</MenuItem>
-            <MenuItem value={30}>Hardware</MenuItem>
-            <MenuItem value={30}>Dairy</MenuItem>
+            <MenuItem value={40}>Hardware</MenuItem>
+            <MenuItem value={50}>Dairy</MenuItem>
           </Select>
           {/* <FormHelperText>With label + helper text</FormHelperText> */}
         </FormControl>

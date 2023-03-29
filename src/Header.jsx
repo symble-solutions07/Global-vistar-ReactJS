@@ -14,6 +14,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import WarehouseIcon from "@mui/icons-material/Warehouse";
 import StorefrontIcon from "@mui/icons-material/Storefront";
+import { Link } from "react-router-dom";
 
 
 
@@ -126,9 +127,10 @@ function Header() {
                     </a>
                   </li>
                   <li>
-                    <a href="#blog" class="navbar-link" data-nav-link>
+                    {/* <a href="#blog" class="navbar-link" data-nav-link>
                       Blogs
-                    </a>
+                    </a> */}
+                    <Link to="/BlogPage" className="navbar-link">Blogs</Link>
                   </li>
 
                   <li>

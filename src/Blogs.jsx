@@ -5,6 +5,7 @@ import pic2 from "./images/blog-2.jpg";
 import pic3 from "./images/blog-3.jpg";
 import { margin } from '@mui/system';
 
+
 function Blogs() {
   return (
     <section className="blog" id="blog">

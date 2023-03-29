@@ -14,9 +14,9 @@ import RegisterPic from "./images/Untitled design 2.png";
 function About() {
   return (
     <section className="about" id="about">
-      <div className="container">
-        <figure className="about-banner">
-          <img src={RegisterPic} alt="House interior" />
+      <div className="container" >
+        <figure className="about-banner" >
+          <img src={RegisterPic} alt="House interior"  />
 
           {/* <img src="./assets/images/about-banner-2.jpg" alt="House interior" class="abs-img"> */}
         </figure>
