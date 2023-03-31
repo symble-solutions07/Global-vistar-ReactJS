@@ -9,6 +9,9 @@
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@ionic/react": "^6.7.0",
+    "@mantine/core": "^6.0.5",
+    "@mantine/form": "^6.0.5",
+    "@mantine/hooks": "^6.0.5",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.13",
     "@testing-library/jest-dom": "^5.16.5",
@@ -21,6 +24,7 @@
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
     "react-fontawesome": "^1.7.1",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.9.0",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"

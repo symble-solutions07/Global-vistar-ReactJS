@@ -85,7 +85,7 @@ function About() {
           {/* <p class="callout"> <strong>
             Register with us today and take your market reach to the next level! (red)</strong>
           </p> */}
-          <a href="#service" className="btn">
+          <a href="#" className="btn">
             Our Services
           </a>
         </div>

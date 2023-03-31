@@ -15,13 +15,12 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import WarehouseIcon from "@mui/icons-material/Warehouse";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import { Link } from "react-router-dom";
-
-
-
+import AuthenticationForm from "./AuthenticationForm";
 
 function Header() {
 
   const [showMenu, setShowMenu] = useState(false);
+  const [showLoginForm, setShowLoginForm] = useState(false);
 
     return (
       <header className="header" data-header>
@@ -122,15 +121,20 @@ function Header() {
                     </a>
                   </li>
                   <li>
-                    <a href="#service" className="navbar-link" data-nav-link>
+                    {/* <a href="#service" className="navbar-link" data-nav-link>
                       Product Categories
-                    </a>
+                    </a> */}
+                    <Link to="/ProductCategories" className="navbar-link"> 
+                      Product Categories
+                    </Link>
                   </li>
                   <li>
                     {/* <a href="#blog" class="navbar-link" data-nav-link>
                       Blogs
                     </a> */}
-                    <Link to="/BlogPage" className="navbar-link">Blogs</Link>
+                    <Link to="/BlogPage" className="navbar-link">
+                      Blogs
+                    </Link>
                   </li>
 
                   <li>
@@ -143,13 +147,13 @@ function Header() {
             </nav>
 
             <div class="header-bottom-actions">
-              
-              
-
               <button class="header-bottom-actions-btn" aria-label="Profile">
-                <ProfileIcon className="btn-profile" onClick={()=>setShowMenu((prev)=>!prev)} />
+                <ProfileIcon
+                  className="btn-profile"
+                  onClick={() => setShowMenu((prev) => !prev)}
+                />
 
-                  <span>Profile</span>
+                <span>Profile</span>
               </button>
 
               {/* <Button
@@ -177,15 +181,27 @@ function Header() {
                 <span>Menu</span>
               </button>
             </div>
-            { showMenu ? <ul className="list-menu">
-              <li>Sign In as Manufacturer</li>
-              <li>Sign In as Distributor</li>
-              
-            </ul> : ""}
+            {showMenu ? (
+              <ul className="list-menu">
+                <li onClick={() => setShowLoginForm((prev) => !prev)}>
+                  Sign In as Manufacturer
+                </li>
+                <li onClick={() => setShowLoginForm((prev) => !prev)} >Sign In as Distributor</li>
+              </ul>
+            ) : (
+              ""
+            )}
           </div>
         </div>
+        <div className="authentication-section">
+          {
+            showLoginForm ? <AuthenticationForm/> : ""
+            }
+        </div>
+        
       </header>
     );
-  }
+}
+
 
 export default Header;

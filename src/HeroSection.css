@@ -15,4 +15,15 @@
 
 .search-icon:hover{
   color:#BC1823;
+  box-shadow:  5px 5px 5px #ccc;
+
+
+}
+
+
+
+.search-icon{
+  box-shadow:  1px 5px 5px #ccc;
+  width:50px !important;
+  height: 55px !important;
 }

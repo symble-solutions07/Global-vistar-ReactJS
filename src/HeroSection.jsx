@@ -25,9 +25,13 @@ function HeroSection() {
             A Platform to Expand Your Product Market Reach with the Right
             Distributors.
           </p>
-          <button className="btn">For Manufacturers</button>
-          <br />
-          <button className="btn">For Distributors</button>
+          <div style={{ display: "flex" }}>
+            <button className="btn" style={{ marginRight: "5px" }}>
+              For Manufacturers
+            </button>
+            <br />
+            <button className="btn">For Distributors</button>
+          </div>
         </div>
         <figure className="hero-banner">
           <img src={homePic} alt="Modern house model" className="w-100" />
@@ -40,10 +44,10 @@ function HeroSection() {
           justifyContent: "center",
           maxWidth: "100%",
           marginTop: "3rem",
-          marginBottom: "3rem",
+          paddingBottom: "2rem",
         }}
       >
-        <FormControl sx={{ mt: 3, minWidth: 400, m:1 }} className="search-category">
+        <FormControl sx={{ mt: -3, minWidth: 400 }} className="search-category">
           <InputLabel id="demo-simple-select-helper-label">Category</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
@@ -61,7 +65,11 @@ function HeroSection() {
           </Select>
           {/* <FormHelperText>With label + helper text</FormHelperText> */}
         </FormControl>
-        <FormControl sx={{ mt: 3, minWidth: 400, m:1 }} className="search-2">
+        <FormControl
+          sx={{ mt: -3, minWidth: 400 }}
+          style={{ marginLeft: "5px" }}
+          className="search-2"
+        >
           <InputLabel id="demo-simple-select-helper-label">
             Sub-Category
           </InputLabel>
@@ -81,7 +89,16 @@ function HeroSection() {
           </Select>
           {/* <FormHelperText>With label + helper text</FormHelperText> */}
         </FormControl>
-        <SearchIcon  className="search-icon" style={{fontSize:"35px", margin:"15px"} } />
+        <SearchIcon
+          className="search-icon"
+          style={{
+            fontSize: "45px",
+            marginLeft: "1rem",
+            marginTop: "-1.5rem",
+            // border: "1px solid black",
+            
+          }}
+        />
       </div>
     </section>
   );
