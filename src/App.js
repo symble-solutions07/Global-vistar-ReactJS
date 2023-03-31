@@ -10,6 +10,7 @@ import Blogs from './Blogs';
 import CTA from './CTA';
 import Footer from "./Footer";
 import AuthenticationForm from "./AuthenticationForm";
+import OurServices from "./OurServices";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       <ServiceSection />
       <ProductSection />
       <Features />
-      <ServiceSection />
+      <OurServices />
       <Blogs />
       <CTA />
       <Footer />
