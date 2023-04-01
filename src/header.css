@@ -15,12 +15,13 @@
 }
 
 .list-menu{
-  position: absolute;
+  position: relative;
   border:1px solid black;
   z-index:2;
-  right:0;
-  margin-top:8.5rem;
-  margin-right:6.5rem;
+  left:1rem;
+  bottom:5rem;
+  /* margin-top:8.5rem;
+  margin-right:6.5rem; */
   width:200px;
   background-color: white;
   text-align: left;
@@ -61,6 +62,11 @@
     display: flex;
     justify-content: center;
   }
+}
+
+.profile-container{
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 
 .logo-website{
@@ -116,6 +122,14 @@
   }
   body, html{
     overflow-x:hidden !important;
+
+  }
+  .list-menu{
+    position: absolute;
+    position: fixed;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
   }
 

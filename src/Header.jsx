@@ -19,6 +19,9 @@ import AuthenticationForm from "./AuthenticationForm";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Button, Group } from "@mantine/core";
+
+// import { useDisclosure } from "@mantine/hooks";
+import { Modal } from "@mantine/core";
 // import { useDisclosure } from "@mantine/hooks";
 // import { Modal} from "@mantine/core";
 
@@ -28,13 +31,13 @@ function Header() {
   const [showLoginForm, setShowLoginForm] = useState(false);
 
   const [opened, { open, close }] = useDisclosure(false);
+  
   // const [openedModal, { openModal, closeModal }] = useDisclosure(false);
 
     return (
       <header className="header" data-header>
         <div className="overlay" data-overlay></div>
-        
-          
+
         <Drawer opened={opened} onClose={close}>
           <ul className="navbar-list">
             <li>
@@ -199,16 +202,29 @@ function Header() {
             </nav>
 
             <div class="header-bottom-actions">
-              <button class="header-bottom-actions-btn" aria-label="Profile">
-                <ProfileIcon
-                  className="btn-profile"
-                  onClick={() => setShowMenu((prev) => !prev)}
-                  // onClick={() => setShowLoginForm((prev) => !prev)}
-                  
-                />
+              
+                <button class="header-bottom-actions-btn" aria-label="Profile">
+                  <ProfileIcon
+                    className="btn-profile"
+                    onClick={() => setShowMenu((prev) => !prev)}
+                    // onClick={() => setShowLoginForm((prev) => !prev)}
+                  />
 
-                <span>Profile</span>
-              </button>
+                  <span>Profile</span>
+                </button>
+                {showMenu ? (
+                  <ul className="list-menu">
+                    <li onClick={() => setShowLoginForm((prev) => !prev)}>
+                      Sign In as Manufacturer
+                    </li>
+                    <li onClick={() => setShowLoginForm((prev) => !prev)}>
+                      Sign In as Distributor
+                    </li>
+                  </ul>
+                ) : (
+                  ""
+                )}
+              
 
               {/* <Button
                 id="basic-button"
@@ -237,18 +253,6 @@ function Header() {
                 <span>Menu</span>
               </button>
             </div>
-            {showMenu ? (
-              <ul className="list-menu">
-                <li onClick={() => setShowLoginForm((prev) => !prev)}>
-                  Sign In as Manufacturer
-                </li>
-                <li onClick={() => setShowLoginForm((prev) => !prev)}>
-                  Sign In as Distributor
-                </li>
-              </ul>
-            ) : (
-              ""
-            )}
           </div>
         </div>
         <div className="authentication-section">

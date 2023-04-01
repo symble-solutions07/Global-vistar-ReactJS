@@ -69,8 +69,8 @@ function HeroSection() {
         style={{
           display: "flex",
           justifyContent: "center",
-          alignItems:"center",
-          width:"100%",
+          alignItems: "center",
+          width: "100%",
           // marginTop: "3rem",
           paddingBottom: "2rem",
         }}
@@ -78,7 +78,7 @@ function HeroSection() {
         <Select
           mt="md"
           withinPortal
-          data={["React", "Angular", "Svelte", "Vue"]}
+          data={["Food", "Groceries", "Toys", "Agro"]}
           // placeholder="Pick one"
           label="Categories"
           classNames={classes}
@@ -86,7 +86,7 @@ function HeroSection() {
         <Select
           mt="md"
           withinPortal
-          data={["React", "Angular", "Svelte", "Vue"]}
+          data={["Food", "Groceries", "Toys", "Agro"]}
           // placeholder="Pick one"
           label="Sub-Categories"
           classNames={classes}

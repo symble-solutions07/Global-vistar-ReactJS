@@ -1,4 +1,4 @@
-.xyz{
+.auth-container{
     
     position: fixed;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -20,4 +20,13 @@
     align-items:center;
     padding: 50%; */
     /* margin-left: 10%; */
+}
+
+@media only screen and (width<=767){
+    
+    .authentication-section{
+        /* width:10rem !important; */
+        margin-bottom: 10rem !important;
+    }
+
 }
