@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import pic from "./images/Global vistar TB.svg";
 import "./style.css";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ProfileIcon from "@mui/icons-material/PermIdentity";
 import "./header.css";
@@ -16,15 +16,64 @@ import WarehouseIcon from "@mui/icons-material/Warehouse";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import { Link } from "react-router-dom";
 import AuthenticationForm from "./AuthenticationForm";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useDisclosure } from "@mantine/hooks";
+import { Drawer, Button, Group } from "@mantine/core";
+// import { useDisclosure } from "@mantine/hooks";
+// import { Modal} from "@mantine/core";
 
 function Header() {
 
   const [showMenu, setShowMenu] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
 
+  const [opened, { open, close }] = useDisclosure(false);
+  // const [openedModal, { openModal, closeModal }] = useDisclosure(false);
+
     return (
       <header className="header" data-header>
         <div className="overlay" data-overlay></div>
+        
+          
+        <Drawer opened={opened} onClose={close}>
+          <ul className="navbar-list">
+            <li>
+              <a href="#home" className="navbar-link" data-nav-link>
+                Home
+              </a>
+            </li>
+            <li>
+              {/* <a href="#about" className="navbar-link" data-nav-link>
+                      About
+                    </a> */}
+              <Link to="/AboutUsPage" className="navbar-link">
+                About
+              </Link>
+            </li>
+            <li>
+              {/* <a href="#service" className="navbar-link" data-nav-link>
+                      Product Categories
+                    </a> */}
+              <Link to="/ProductCategories" className="navbar-link">
+                Product Categories
+              </Link>
+            </li>
+            <li>
+              {/* <a href="#blog" class="navbar-link" data-nav-link>
+                      Blogs
+                    </a> */}
+              <Link to="/BlogPage" className="navbar-link">
+                Blogs
+              </Link>
+            </li>
+
+            <li>
+              <a href="#footer" class="navbar-link" data-nav-link>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </Drawer>
 
         <div className="header-top">
           <div className="container">
@@ -116,15 +165,18 @@ function Header() {
                     </a>
                   </li>
                   <li>
-                    <a href="#about" className="navbar-link" data-nav-link>
+                    {/* <a href="#about" className="navbar-link" data-nav-link>
                       About
-                    </a>
+                    </a> */}
+                    <Link to="/AboutUsPage" className="navbar-link">
+                      About
+                    </Link>
                   </li>
                   <li>
                     {/* <a href="#service" className="navbar-link" data-nav-link>
                       Product Categories
                     </a> */}
-                    <Link to="/ProductCategories" className="navbar-link"> 
+                    <Link to="/ProductCategories" className="navbar-link">
                       Product Categories
                     </Link>
                   </li>
@@ -151,6 +203,8 @@ function Header() {
                 <ProfileIcon
                   className="btn-profile"
                   onClick={() => setShowMenu((prev) => !prev)}
+                  // onClick={() => setShowLoginForm((prev) => !prev)}
+                  
                 />
 
                 <span>Profile</span>
@@ -175,8 +229,10 @@ function Header() {
                 class="header-bottom-actions-btn"
                 data-nav-open-btn
                 aria-label="Open Menu"
+                onClick={open}
               >
-                <ion-icon name="menu-outline"></ion-icon>
+                {/* <ion-icon name="menu-outline"></ion-icon> */}
+                <MenuIcon></MenuIcon>
 
                 <span>Menu</span>
               </button>
@@ -186,7 +242,9 @@ function Header() {
                 <li onClick={() => setShowLoginForm((prev) => !prev)}>
                   Sign In as Manufacturer
                 </li>
-                <li onClick={() => setShowLoginForm((prev) => !prev)} >Sign In as Distributor</li>
+                <li onClick={() => setShowLoginForm((prev) => !prev)}>
+                  Sign In as Distributor
+                </li>
               </ul>
             ) : (
               ""
@@ -194,11 +252,8 @@ function Header() {
           </div>
         </div>
         <div className="authentication-section">
-          {
-            showLoginForm ? <AuthenticationForm/> : ""
-            }
+          {showLoginForm ? <AuthenticationForm /> : ""}
         </div>
-        
       </header>
     );
 }

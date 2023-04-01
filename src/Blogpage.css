@@ -178,3 +178,14 @@ img {
 /* .blog-list{
     margin-left:10rem ima !important;
 } */
+
+@media only screen and (width <767px){
+
+  .navbar-list-blogs{
+    gap:1rem;
+    font-size: 13px;
+    width:fit-content;
+  }
+
+
+}
