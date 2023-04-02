@@ -7,6 +7,7 @@ import { margin } from '@mui/system';
 import "./Blog.css";
 
 
+
 function Blogs() {
   return (
     <section className="blog" id="blog">

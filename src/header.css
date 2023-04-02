@@ -9,25 +9,33 @@
   color:#BC1823;
 }
 
+
+
 .btn-profile{
     font-size:40px !important;
     margin-left: 5px;
 }
 
+.register-button{
+  background-color: #210d41;
+}
+
+
+
 .list-menu{
+  
   position: relative;
+  top:10rem;
   border:1px solid black;
-  z-index:2;
-  left:1rem;
-  bottom:5rem;
-  /* margin-top:8.5rem;
-  margin-right:6.5rem; */
+  z-index:1 !important;
+  
+  
   width:200px;
   background-color: white;
   text-align: left;
   
   border-radius: 10px;
-  /* display:none; */
+  
   
   
 }
@@ -125,11 +133,14 @@
 
   }
   .list-menu{
-    position: absolute;
+    position: relative;
     position: fixed;
     display:flex;
     flex-direction: column;
     justify-content: flex-end;
+    left:1rem;
+    bottom:5rem;
+
 
   }
 
