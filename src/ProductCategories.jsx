@@ -18,17 +18,17 @@ function ProductCategories() {
         <div className="blog-navbar product-navbar" >
           <ul className="navbar-list-blogs">
             <li className="list-item-navbar">Trending</li>
-            <li className="list-item-navbar">Recently Added</li>
-            <li className="list-item-navbar">Most Read</li>
+            <li className="list-item-navbar">Recently-added</li>
+            <li className="list-item-navbar">Most-read</li>
           </ul>
         </div>
-        <div style={{ width: "100rem" }}>
+        <div className="property-list-container" >
           <ul
             className="property-list container row"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-            }}
+            // style={{
+            //   display: "flex",
+            //   justifyContent: "center",
+            // }}
           >
             <li className="feature-card col-sm">
               <ProductCard

@@ -14,14 +14,14 @@ function ProductSection() {
         <p className="section-subtitle">Products</p>
 
         <h2 className="h2 section-title">Featured Products</h2>
-        <div style={{ width: "100rem" }}>
+        <div className="property-list-container">
           <ul
             className="property-list container row"
-            style={{
+            // style={{
               
-              display: "flex",
-              justifyContent: "center",
-            }}
+            //   display: "flex",
+            //   justifyContent: "center",
+            // }}
           >
             <li className="feature-card col-sm">
               <ProductCard
@@ -64,7 +64,7 @@ function ProductSection() {
 
           <ul
             className="property-list container row"
-            style={{ display: "flex", justifyContent: "center" }}
+            
           >
             <li className="feature-card col-sm">
               <ProductCard

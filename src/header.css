@@ -15,12 +15,13 @@
 }
 
 .list-menu{
-  position: absolute;
+  position: relative;
   border:1px solid black;
   z-index:2;
-  right:0;
-  margin-top:8.5rem;
-  margin-right:6.5rem;
+  left:1rem;
+  bottom:5rem;
+  /* margin-top:8.5rem;
+  margin-right:6.5rem; */
   width:200px;
   background-color: white;
   text-align: left;
@@ -63,6 +64,11 @@
   }
 }
 
+.profile-container{
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
 .logo-website{
   display:flex;
   
@@ -95,4 +101,40 @@
 }
 .dropdown-item:hover{
   background-color: gray;
+}
+
+@media only screen and (width<=767px) {
+  
+  .header-bottom-actions{
+    /* background-color: red; */
+    display: grid !important;
+    grid-template-columns: 50% 50% !important;
+    align-items: center;
+    /* width:50vh; */
+    overflow-x: hidden;
+    place-items: center;
+    
+  }
+  .header-bottom-actions-btn{
+    margin:0;
+    padding:0;
+    
+  }
+  body, html{
+    overflow-x:hidden !important;
+
+  }
+  .list-menu{
+    position: absolute;
+    position: fixed;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+  }
+
+
+  
+
+
 }

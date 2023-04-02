@@ -19,19 +19,19 @@ function BlogPage() {
         <div className="blog-navbar">
           <ul className="navbar-list-blogs">
             <li className="list-item-navbar">Trending</li>
-            <li className="list-item-navbar">Recently Added</li>
-            <li className="list-item-navbar">Most Read</li>
+            <li className="list-item-navbar">Recently-added</li>
+            <li className="list-item-navbar">Most-read</li>
           </ul>
         </div>
 
         <ul
           className="blog-list has-scrollbar"
-          style={{
-            width: "90rem",
-            display: "flex",
-            justifyContent: "space-around",
-            marginLeft: "-8rem",
-          }}
+          // style={{
+          //   width: "90rem",
+          //   display: "flex",
+          //   justifyContent: "space-around",
+          //   marginLeft: "-8rem",
+          // }}
         >
           <li className="col-sm">
             <div class="card">

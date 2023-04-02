@@ -44,10 +44,10 @@ function AuthenticationForm(props) {
         withBorder
         {...props}
         style={{
-          width: "30%",
+          
           margin: "auto",
         }}
-        className="xyz"
+        className="auth-container"
       >
         <Group grow mb="md" mt="md">
           <FacebookIcon radius="xl">Facebook</FacebookIcon>
@@ -159,36 +159,40 @@ function AuthenticationForm(props) {
 
 export default AuthenticationForm;
 
-// import React from 'react'
-// import { Modal, Button } from "react-bootstrap";
+
+// import { useDisclosure } from "@mantine/hooks";
+// import { Modal} from "@mantine/core";
+// import {
+//   TextInput,
+//   PasswordInput,
+//   Text,
+//   Paper,
+//   Group,
+//   PaperProps,
+//   Button,
+//   Divider,
+//   Checkbox,
+//   Anchor,
+//   Stack,
+// } from '@mantine/core';
+
+// import FacebookIcon from "@mui/icons-material/Facebook";
+// import InstagramIcon from "@mui/icons-material/Instagram";
+// import { useToggle, upperFirst } from '@mantine/hooks';
+// import { useForm } from '@mantine/form';
 
 // function AuthenticationForm() {
-//   function ModalDialog() {
-    
-//     return (
-//       <>
-//         {/* <Button variant="success" onClick={initModal}>
-//           Open Modal
-//         </Button> */}
-//         <Modal >
-//           <Modal.Header closeButton >
-//             <Modal.Title>React Modal Popover Example</Modal.Title>
-//           </Modal.Header>
-//           <Modal.Body>
-//             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-//           </Modal.Body>
-//           <Modal.Footer>
-//             <Button variant="danger" >
-//               Close
-//             </Button>
-//             <Button variant="dark" >
-//               Store
-//             </Button>
-//           </Modal.Footer>
-//         </Modal>
-//       </>
-//     );
-//   }
+//   const [opened, { open, close }] = useDisclosure(false);
+
+//   return (
+//     <>
+//       <Modal opened={opened} onClose={close} title="Authentication" centered>
+//         hello
+//       </Modal>
+
+      
+//     </>
+//   );
 // }
 
 // export default AuthenticationForm;
