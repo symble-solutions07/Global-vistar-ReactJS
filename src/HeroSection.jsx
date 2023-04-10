@@ -7,8 +7,10 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 // import Select from "@mui/material/Select";
 import "./HeroSection.css";
-import homePic from "./images/Untitled design 1.png";
+// import homePic from "./images/Untitled design 1.png";
+import HeroBackGround from "./images/Website Image.png";
 import SearchIcon from "@mui/icons-material/Search";
+
 import { createStyles, rem, Select, TextInput } from "@mantine/core";
 
 
@@ -21,7 +23,9 @@ import { createStyles, rem, Select, TextInput } from "@mantine/core";
     input: {
       height: rem(54),
       paddingTop: rem(18),
-      border:"1px solid black"
+      border: "1px solid black",
+      width: "250px",
+      
     },
 
     label: {
@@ -41,66 +45,61 @@ function HeroSection() {
   const { classes } = useStyles();
 
   return (
-    <section className="hero" id="home">
+    <section
+      className="hero"
+      id="home"
+    >
       <div className="container">
         <div className="hero-content">
-          <h2 className="h1 hero-title">
+          
+          <h2 className="h1 hero-title" style={{ color:"red"}}>
             Connecting Manufacturers and Distributors <br />
-            Faster and Better!
+            <span className="header-text">Faster and Better!</span>
           </h2>
-          <p className="hero-text">
+          <p className="hero-text" style={{ }}>
             A Platform to Expand Your Product Market Reach with the Right
             Distributors.
           </p>
-          <div style={{ display: "flex" }}>
-            <button className="btn" style={{ marginRight: "5px" }}>
-              For Manufacturers
-            </button>
-            <br />
-            <button className="btn">For Distributors</button>
-          </div>
         </div>
-        <figure className="hero-banner">
+        {/* <figure className="hero-banner">
           <img src={homePic} alt="Modern house model" className="w-100" />
-        </figure>
+          
+        </figure> */}
+        <div className="search-item-section">
+          <Select
+            mt="md"
+            withinPortal
+            data={["Food", "Groceries", "Toys", "Agro"]}
+            // placeholder="Pick one"
+            label="Categories"
+            classNames={classes}
+          />
+          <Select
+            mt="md"
+            withinPortal
+            data={["Food", "Groceries", "Toys", "Agro"]}
+            // placeholder="Pick one"
+            label="Sub-Categories"
+            classNames={classes}
+          />
+          <SearchIcon
+            className="search-icon"
+            style={{
+              fontSize: "45px",
+              // marginLeft: "1rem",
+              // marginTop: "-1.5rem",
+              // marginTop:"2rem",
+              // border: "1px solid black",
+            }}
+          />
+        </div>
       </div>
-      <div
-        className="search-item-section"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          // marginTop: "3rem",
-          paddingBottom: "2rem",
-        }}
-      >
-        <Select
-          mt="md"
-          withinPortal
-          data={["Food", "Groceries", "Toys", "Agro"]}
-          // placeholder="Pick one"
-          label="Categories"
-          classNames={classes}
-        />
-        <Select
-          mt="md"
-          withinPortal
-          data={["Food", "Groceries", "Toys", "Agro"]}
-          // placeholder="Pick one"
-          label="Sub-Categories"
-          classNames={classes}
-        />
-        <SearchIcon
-          className="search-icon"
-          style={{
-            fontSize: "45px",
-            // marginLeft: "1rem",
-            // marginTop: "-1.5rem",
-            // marginTop:"2rem",
-            // border: "1px solid black",
-          }}
-        />
+      <div className="buttons-hero-section">
+        <button className="btn" style={{ marginRight: "5px" }}>
+          For Manufacturers
+        </button>
+        <br />
+        <button className="btn">For Distributors</button>
       </div>
     </section>
   );

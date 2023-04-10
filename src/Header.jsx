@@ -201,15 +201,20 @@ function Header() {
             {/* <Avatar radius="xl" color="black" />
              */}
 
-            <Button className="register-button" style={{
-              fontSize: "medium",
-              
-            }}>
+            <Button
+              className="register-button"
+              onClick={() => setShowLoginForm((prev) => !prev)}
+              style={{
+                fontSize: "medium",
+
+                // onClick={() => setShowMenu((prev) => !prev)}
+              }}
+            >
               <AccountCircleIcon
-                style={{ fontSize: "30px", paddingRight:"4px" }}
+                style={{ fontSize: "30px", paddingRight: "4px" }}
                 className="profile-icon-register"
               ></AccountCircleIcon>
-              Register{" "}
+              Register / Login{" "}
             </Button>
 
             {/* <button class="header-bottom-actions-btn" aria-label="Profile">
