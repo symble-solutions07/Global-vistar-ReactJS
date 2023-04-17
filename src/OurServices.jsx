@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
-import serviceIcon1 from "./images/Step 1 Icon(1).svg";
-import serviceIcon2 from "./images/Step 1 Icon 1.svg";
-import serviceIcon3 from "./images/Step 1 Icon 2.svg";
+import serviceIcon1 from "./images/Product Market Fit .svg";
+import serviceIcon2 from "./images/Brand Building.svg";
+import serviceIcon3 from "./images/Omni Logo.svg";
 
 function ServiceSection() {
   return (
@@ -10,9 +10,7 @@ function ServiceSection() {
       <div className="container">
         {/* <p className="section-subtitle">Our Services</p> */}
 
-        <h2 className="h2 section-title">
-          Expand Your Product Distribution in 3 Simple Steps!
-        </h2>
+        <h2 className="h2 section-title">Our Services!</h2>
 
         <ul className="service-list">
           <li>
@@ -22,13 +20,13 @@ function ServiceSection() {
               </div>
 
               <h3 className="h3 card-title">
-                <a href="#">Step 1</a>
+                <a href="#">Product Market Fit</a>
               </h3>
 
               <p className="card-text">
-                Create an Account <br />
-                Register using your mobile number. Enter business details and
-                requirements
+                {/* Create an Account <br /> */}
+                Find the target customer, region and market for your product and
+                achieve better sales.
               </p>
 
               {/* <a href="#" className="card-link">
@@ -46,12 +44,13 @@ function ServiceSection() {
               </div>
 
               <h3 className="h3 card-title">
-                <a href="#">Step 2</a>
+                <a href="#">Brand Building </a>
               </h3>
 
               <p className="card-text">
-                Verification <br />
-                Complete Compliance and Quality Checks by uploading Documents
+                {/* Verification <br /> */}
+                Bring market pull with a great brand presence and leverages your
+                product distribution.
               </p>
 
               {/* <a href="#" className="card-link">
@@ -69,12 +68,13 @@ function ServiceSection() {
               </div>
 
               <h3 className="h3 card-title">
-                <a href="#">Step 3</a>
+                <a href="#">Omni-Channel Selling </a>
               </h3>
 
               <p className="card-text">
-                Start Your Product Distribution <br />
-                Connect with the Best Distributors from all over India!.
+                {/* Start Your Product Distribution <br /> */}
+                Bring market pull with a great brand presence and leverages your
+                product distribution.
               </p>
 
               {/* <a href="#" className="card-link">

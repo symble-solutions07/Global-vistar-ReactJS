@@ -30,6 +30,7 @@ import { createStyles, rem, Select, TextInput } from "@mantine/core";
 
     label: {
       // position: "absolute",
+      color:"white",
       pointerEvents: "none",
       fontSize: theme.fontSizes.xm,
       paddingLeft: theme.spacing.sm,
@@ -45,18 +46,14 @@ function HeroSection() {
   const { classes } = useStyles();
 
   return (
-    <section
-      className="hero"
-      id="home"
-    >
-      <div className="container">
+    <section className="hero" id="home">
+      <div className="container landing-page">
         <div className="hero-content">
-          
-          <h2 className="h1 hero-title" style={{ color:"red"}}>
+          <h2 className="h1 hero-title" style={{ color: "red" }}>
             Connecting Manufacturers and Distributors <br />
             <span className="header-text">Faster and Better!</span>
           </h2>
-          <p className="hero-text" style={{ }}>
+          <p className="hero-text" style={{}}>
             A Platform to Expand Your Product Market Reach with the Right
             Distributors.
           </p>
@@ -66,40 +63,48 @@ function HeroSection() {
           
         </figure> */}
         <div className="search-item-section">
-          <Select
-            mt="md"
-            withinPortal
-            data={["Food", "Groceries", "Toys", "Agro"]}
-            // placeholder="Pick one"
-            label="Categories"
-            classNames={classes}
-          />
-          <Select
-            mt="md"
-            withinPortal
-            data={["Food", "Groceries", "Toys", "Agro"]}
-            // placeholder="Pick one"
-            label="Sub-Categories"
-            classNames={classes}
-          />
-          <SearchIcon
-            className="search-icon"
-            style={{
-              fontSize: "45px",
-              // marginLeft: "1rem",
-              // marginTop: "-1.5rem",
-              // marginTop:"2rem",
-              // border: "1px solid black",
-            }}
-          />
+          <div className="search-categories">
+            <Select
+              mt="md"
+              withinPortal
+              data={["Food", "Groceries", "Toys", "Agro"]}
+              // placeholder="Pick one"
+              label="Categories"
+              classNames={classes}
+            />
+            <Select
+              mt="md"
+              withinPortal
+              data={["Food", "Groceries", "Toys", "Agro"]}
+              // placeholder="Pick one"
+              label="Sub-Categories"
+              classNames={classes}
+            />
+            <SearchIcon
+              className="search-icon"
+              style={{
+                fontSize: "45px",
+                // marginLeft: "1rem",
+                // marginTop: "-1.5rem",
+                // marginTop:"2rem",
+                // border: "1px solid black",
+              }}
+            />
+          </div>
+
+          <div className="buttons-hero-section">
+            <button
+              className="btn"
+              style={{ marginRight: "5px", backgroundColor: "#bc1823" }}
+            >
+              For Manufacturers
+            </button>
+            <br />
+            <button className="btn" style={{ backgroundColor: "#bc1823" }}>
+              For Distributors
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="buttons-hero-section">
-        <button className="btn" style={{ marginRight: "5px" }}>
-          For Manufacturers
-        </button>
-        <br />
-        <button className="btn">For Distributors</button>
       </div>
     </section>
   );

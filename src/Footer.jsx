@@ -5,193 +5,217 @@ import footerLogo from "./images/Global vistar Normal.svg";
 function Footer() {
   return (
     <footer className="footer" id="footer">
+      <div className="footer-top">
+        <div className="container">
+          <div className="footer-brand">
+            <a href="#" className="logo">
+              <img src={footerLogo} alt="Homeverse logo" />
+            </a>
 
-    <div className="footer-top">
-      <div className="container">
+            <p className="section-text" style={{ display:"flex", flexDirection:"column", gap:"1rem" }}>
+              Whether you're a manufacturer looking to expand your distribution
+              network, or a distributor seeking new products and suppliers,
+              Global Vistar is the platform for you.
+              <span>Join us today and start winning together!</span>
+            </p>
 
-        <div className="footer-brand">
+            <ul className="contact-list">
+              <li>
+                <a href="#" className="contact-link">
+                  <ion-icon name="location-outline"></ion-icon>
 
-          <a href="#" className="logo">
-            <img src={footerLogo} alt="Homeverse logo"/>
-          </a>
+                  <address>Autocluster, Pune, 411019</address>
+                </a>
+              </li>
 
-          <p className="section-text">
-            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+              <li>
+                <a href="tel:+91 7350940448" className="contact-link">
+                  <ion-icon name="call-outline"></ion-icon>
+
+                  <span>+0123-456789</span>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="mailto:contact@globalvistar.com"
+                  className="contact-link"
+                >
+                  <ion-icon name="mail-outline"></ion-icon>
+
+                  <span>contact@homeverse.com</span>
+                </a>
+              </li>
+            </ul>
+
+            <ul className="social-list">
+              <li>
+                <a href="#" className="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="social-link">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer-link-box">
+            <ul className="footer-list">
+              <li>
+                <p className="footer-list-title">Company</p>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  About
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  Blog
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  All Products
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  Locations Map
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  FAQ
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  Contact us
+                </a>
+              </li>
+            </ul>
+
+            <ul className="footer-list">
+              <li>
+                <p className="footer-list-title">Services</p>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  Order tracking
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  Wish List
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  Login
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  My account
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  Terms & Conditions
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  Promotional Offers
+                </a>
+              </li>
+            </ul>
+
+            <ul className="footer-list">
+              <li>
+                <p className="footer-list-title">Customer Care</p>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  Login
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  My account
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  Wish List
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  Order tracking
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  FAQ
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="footer-link">
+                  Contact us
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <div className="container">
+          <p className="copyright">
+            &copy; 2023{" "}
+            <a href="#">Global Vistar - A Symble Solutions Pvt Ltd Company</a>.
+            All Rights Reserved
           </p>
-
-          <ul className="contact-list">
-
-            <li>
-              <a href="#" className="contact-link">
-                <ion-icon name="location-outline"></ion-icon>
-
-                <address>Autocluster, Pune, 411019</address>
-              </a>
-            </li>
-
-            <li>
-              <a href="tel:+91 7350940448" className="contact-link">
-                <ion-icon name="call-outline"></ion-icon>
-
-                <span>+0123-456789</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="mailto:contact@globalvistar.com" className="contact-link">
-                <ion-icon name="mail-outline"></ion-icon>
-
-                <span>contact@homeverse.com</span>
-              </a>
-            </li>
-
-          </ul>
-
-          <ul className="social-list">
-
-            <li>
-              <a href="#" className="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" className="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" className="social-link">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" className="social-link">
-                <ion-icon name="logo-youtube"></ion-icon>
-              </a>
-            </li>
-
-          </ul>
-
         </div>
-
-        <div className="footer-link-box">
-
-          <ul className="footer-list">
-
-            <li>
-              <p className="footer-list-title">Company</p>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">About</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">Blog</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">All Products</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">Locations Map</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">FAQ</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">Contact us</a>
-            </li>
-
-          </ul>
-
-          <ul className="footer-list">
-
-            <li>
-              <p className="footer-list-title">Services</p>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">Order tracking</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">Wish List</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">Login</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">My account</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">Terms & Conditions</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">Promotional Offers</a>
-            </li>
-
-          </ul>
-
-          <ul className="footer-list">
-
-            <li>
-              <p className="footer-list-title">Customer Care</p>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">Login</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">My account</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">Wish List</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">Order tracking</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">FAQ</a>
-            </li>
-
-            <li>
-              <a href="#" className="footer-link">Contact us</a>
-            </li>
-
-          </ul>
-
-        </div>
-
       </div>
-    </div>
-
-    <div className="footer-bottom">
-      <div className="container">
-
-        <p className="copyright">
-          &copy; 2023 <a href="#">Global Vistar -  A Symble Solutions Pvt Ltd Company</a>. All Rights Reserved
-        </p>
-
-      </div>
-    </div>
-
-  </footer>
-  )
+    </footer>
+  );
 }
 
 export default Footer;

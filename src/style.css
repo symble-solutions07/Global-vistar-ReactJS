@@ -279,7 +279,7 @@ button, a { transition: var(--transition); }
 }
 
 .header-top {
-  background: var(--prussian-blue);
+  background-color: #210d41;
   padding-block: 15px;
 }
 
@@ -890,7 +890,7 @@ button, a { transition: var(--transition); }
   justify-content: center;
   align-items: center;
   gap: 10px;
-  box-shadow: var(--shadow-1);
+  /* box-shadow: var(--shadow-1); */
 }
 
 .features-card:is(:hover, :focus) { background: var(--orange-soda); }
@@ -932,7 +932,7 @@ button, a { transition: var(--transition); }
   place-items: center;
   font-size: 20px;
   border-radius: 50%;
-  box-shadow: 0 0 10px hsla(219, 56%, 21%, 0.1);
+  /* box-shadow: 0 0 10px hsla(219, 56%, 21%, 0.1); */
   transition: var(--transition);
 }
 

@@ -21,7 +21,7 @@ function App() {
       <About />
       <ServiceSection />
       <ProductSection />
-      <Features />
+      {/* <Features /> */}
       <OurServices />
       <Blogs />
       <CTA />

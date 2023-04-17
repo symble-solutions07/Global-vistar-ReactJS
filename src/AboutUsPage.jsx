@@ -10,10 +10,24 @@ import {
   ThemeIcon,
   rem,
 } from "@mantine/core";
-import { IconCheck } from "@tabler/icons-react";
-import image from "./images/hero-banner.png";
+import "./style.css";
+import AddBusinessIcon from "@mui/icons-material/AddBusiness";
+import NetworkCheckIcon from "@mui/icons-material/NetworkCheck";
+import ScienceIcon from "@mui/icons-material/Science";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
+import "./features.css";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Card, Badge } from "@mantine/core";
+// import { IconCheck } from "@tabler/icons-react";
+// import image from "./images/hero-banner.png";
 import homePic from "./images/Untitled design 1.png";
-
+import Header from "./Header";
+import Footer from "./Footer";
+import PranavImg from "./images/pranav_b&w.jpg";
+import "./AboutUspPage.css";
 const useStyles = createStyles((theme) => ({
   //   inner: {
   //     display: "flex",
@@ -33,11 +47,11 @@ const useStyles = createStyles((theme) => ({
   //   },
 
   title: {
-    color: theme.colorScheme === "dark" ? theme.white : theme.black,
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontSize: rem(44),
-    lineHeight: 1.2,
-    fontWeight: 900,
+    // color: theme.colorScheme === "dark" ? theme.white : theme.black,
+    // fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+
+    // lineHeight: 1.2,
+    // fontWeight: 900,
 
     [theme.fn.smallerThan("xs")]: {
       fontSize: rem(28),
@@ -73,127 +87,249 @@ function AboutUsPage() {
   const { classes } = useStyles();
   return (
     <>
-      <div
-        className="about-us-page"
-        style={{ width: "100%", display: "flex", justifyContent: "center" }}
-      >
+      <Header />
+      <div className="about-us-page">
         <div>
-          <div
-            className="left-about-us"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <div className="section-one">
             <div
-              className="left-about-us"
-              style={{ width: "900px", marginLeft: "7rem" }}
+              className="left-section-one"
+              // style={{ width: "900px", marginLeft: "7rem" }}
             >
-              <Title className={classes.title}>Lorem Ipsum</Title>
-              <Text color="dimmed" mt="md">
-                Build fully functional accessible web applications faster than
-                ever – Mantine includes more than 120 customizable components
-                and hooks to cover you in any situation
+              <Title classNames="slogan" style={{ lineHeight: "50px" }}>
+                Badhaye <span style={{ color: "#BC1823" }}>Apke Business</span>{" "}
+                <span style={{ display: "flex" }}>
+                  ki{" "}
+                  <span style={{ color: "#BC1823", paddingLeft: "10px" }}>
+                    {" "}
+                    Raftaar
+                  </span>{" "}
+                </span>
+              </Title>
+              <Text color="dimmed" mt="md" className="left-section-text">
+                Welcome to Global Vistar, the platform that connects
+                manufacturers and distributors to expand their business and win
+                together. At Global Vistar, we believe that every manufacturer
+                and distributor deserves to achieve the their full potential.
+                That's why we've created a platform that makes it easy for them
+                to find each other, collaborate, and grow their business.
+                "Vistar," means expansion, and that's exactly what we're all
+                about. We want to help our users expand their reach, expand
+                their profits, and expand their impact on the world. (Highlight
+                this)
               </Text>
-
-              <List
-                mt={30}
-                spacing="sm"
-                size="sm"
-                //   icon={
-                //     <ThemeIcon size={20} radius="xl">
-                //       <IconCheck size={rem(12)} stroke={1.5} />
-                //     </ThemeIcon>
-                //   }
-              >
-                <List.Item>
-                  <b>Point 1</b> – Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Quis, itaque.
-                </List.Item>
-                <List.Item>
-                  <b>Point 2</b> – Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Quis, itaque.
-                </List.Item>
-                <List.Item>
-                  <b>Point 3</b> – Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Quis, itaque.
-                </List.Item>
-              </List>
             </div>
             {/* <Image src={image.src} className={classes.image} /> */}
             <img
+              className="about-us-img-1"
               src={homePic}
               alt="Modern house model"
-              style={{
-                width: "800px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+              // style={{
+              //   width: "800px",
+              //   display: "flex",
+              //   justifyContent: "center",
+              //   alignItems: "center",
+              // }}
             />
           </div>
         </div>
       </div>
-      <div>
-        <div>
-          <div
-            className="left-about-us"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <div
-              className="left-about-us"
-              style={{ width: "900px", marginLeft: "7rem" }}
-            >
-              <Title className={classes.title}>Lorem Ipsum</Title>
-              <Text color="dimmed" mt="md">
-                Build fully functional accessible web applications faster than
-                ever – Mantine includes more than 120 customizable components
-                and hooks to cover you in any situation
-              </Text>
 
-              <List
-                mt={30}
-                spacing="sm"
-                size="sm"
-                //   icon={
-                //     <ThemeIcon size={20} radius="xl">
-                //       <IconCheck size={rem(12)} stroke={1.5} />
-                //     </ThemeIcon>
-                //   }
-              >
-                <List.Item>
-                  <b>Point 1</b> – Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Quis, itaque.
-                </List.Item>
-                <List.Item>
-                  <b>Point 2</b> – Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Quis, itaque.
-                </List.Item>
-                <List.Item>
-                  <b>Point 3</b> – Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Quis, itaque.
-                </List.Item>
-              </List>
+      <div className="why-choose-us">
+        <h1 className="title-why-choose-us">
+          Choosing <span>Global Vistar</span> means Choosing
+          <span>Expansion</span>
+        </h1>
+        <ul className="why-choose-us-list">
+          <li>
+            <div href="#" className="reason-card">
+              <div className="card-icon-why-choose-us">
+                <DoneOutlineIcon className="icon-reason-card" />
+              </div>
+
+              <p className="">All-in-One Solution</p>
             </div>
-            {/* <Image src={image.src} className={classes.image} /> */}
+          </li>
+          <li>
+            <div href="#" className="reason-card">
+              <div className="card-icon">
+                <AddBusinessIcon className="icon-reason-card" />
+              </div>
+
+              <p className="">Product Market Fit</p>
+            </div>
+          </li>
+          <li>
+            <div href="#" className="reason-card">
+              <div className="card-icon">
+                <NetworkCheckIcon className="icon-reason-card" />
+              </div>
+
+              <p className="">Trusted Network</p>
+            </div>
+          </li>
+          <li>
+            <div href="#" className="reason-card">
+              <div className="card-icon">
+                <ScienceIcon className="icon-reason-card" />
+              </div>
+
+              <p className="">Innovation</p>
+            </div>
+          </li>
+          <li>
+            <div href="#" className="reason-card">
+              <div className="card-icon">
+                <SupportAgentIcon className="icon-reason-card" />
+              </div>
+
+              <p className="">Customer-Centric</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div className="vision-mission-section">
+        <div
+          className="mission"
+          // style={{ width: "900px", marginLeft: "7rem" }}
+        >
+          <Title className="vision-mission-header">
+            Our <span>Mission</span>{" "}
+          </Title>
+          <hr />
+          <Text color="dimmed" mt="md" className="mission-text">
+            Deliver innovative solutions and best-in-class technology and sales
+            support that enables manufacturers and distributors to succeed in
+            today's rapidly evolving retail landscape
+          </Text>
+        </div>
+
+        <div
+          className="vision"
+          // style={{ width: "900px", marginLeft: "7rem" }}
+        >
+          <Title className="vision-mission-header">
+            Our <span>Vision</span>{" "}
+          </Title>
+          <hr />
+          <Text color="dimmed" mt="md" className="mission-text">
+            We envision to be the most trusted ecosystem where manufacturers and
+            distributors have the tools, technology, and support they need to
+            reach their customers, sell their products, and achieve their
+            business goals.
+          </Text>
+        </div>
+
+        {/* <Image src={image.src} className={classes.image} /> */}
+      </div>
+
+      <div className="our-team-section">
+        <h1 className="our-team-head">Our team</h1>
+        <hr className="dividor" />
+        <div className="team-members">
+          <Card
+            shadow="sm"
+            padding="lg"
+            radius="md"
+            withBorder
+            className="member-card"
+          >
+            {/* <Image
+              src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
+              height={160}
+              alt="Norway"
+              className="member-pic"
+            /> */}
+
+            <div className="img-holder">
+              <img src={PranavImg} alt="" className="member-pic" />
+            </div>
+
+            <Group position="apart" mt="md" mb="xs">
+              <Text
+                style={{ color: "#210d41", fontSize: "18px" }}
+                className="member-name"
+              >
+                Pranav Bankar
+              </Text>
+            </Group>
+
+            <Text size="sm" color="dimmed" className="member-bio">
+              Pranav Bankar is the Co-founder at Global Vistar. He is behind the
+              technology that's connecting distributors and manufactures
+              effectively.
+            </Text>
+            <div className="social-handles">
+              <LinkedInIcon></LinkedInIcon>
+            </div>
+          </Card>
+
+          <Card
+            shadow="sm"
+            padding="lg"
+            radius="md"
+            withBorder
+            className="member-card"
+          >
+            {/* <Image
+              src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
+              height={160}
+              alt="Norway"
+              className="member-pic"
+            /> */}
+
+            <img src="./" alt="" className="member-pic" />
+
+            <Group position="apart" mt="md" mb="xs">
+              <Text className="member-name">Kiran Patil</Text>
+            </Group>
+
+            <Text size="sm" color="dimmed" className="member-bio">
+              Kiran Patil is the Co-founder of Global Vistar. She is a branding
+              expert and a good technologist. She has been a crucial part of the
+              Pure Pluck enterprise, a platform for good food.
+            </Text>
+            <div className="social-handles">
+              <LinkedInIcon></LinkedInIcon>
+            </div>
+          </Card>
+
+          <Card
+            shadow="sm"
+            padding="lg"
+            radius="md"
+            withBorder
+            className="member-card"
+          >
+            {/* <Image
+              src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
+              height={160}
+              alt="Norway"
+              className="member-pic"
+            /> */}
+
             <img
-              src={homePic}
-              alt="Modern house model"
-              style={{
-                width: "800px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+              src="https://www.w3schools.com/howto/img_avatar.png"
+              alt=""
+              className="member-pic"
             />
-          </div>
+
+            <Group position="apart" mt="md" mb="xs">
+              <Text className="member-name">Atharva Kurumbhatte</Text>
+            </Group>
+
+            <Text size="sm" color="dimmed" className="member-bio">
+              Atharva is the Technology Development Head at Global Vistar. He is
+              the hands behind the technology of the platform.
+            </Text>
+            <div className="social-handles">
+              <LinkedInIcon></LinkedInIcon>
+            </div>
+          </Card>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }

@@ -1,8 +1,11 @@
 import React from "react";
 import "./style.css";
-import pic1 from "./images/blog-1.png";
-import pic2 from "./images/blog-2.jpg";
-import pic3 from "./images/blog-3.jpg";
+import { Link } from "react-router-dom";
+import { Drawer, Button, Group, Avatar } from "@mantine/core";
+import blog1 from "./images/Blog 1 (1).png";
+import blog2 from "./images/Blog 2 (1).png"
+import blog3 from "./images/Blog 3(1).png"
+
 import "./Blogpage.css";
 import author from "./images/author.jpg";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
@@ -40,11 +43,13 @@ function BlogPage() {
             <li className="col-sm">
               <div class="card">
                 <div class="card__header">
-                  <img src={pic1} class="card__image" width="600" />
+                  <img src={blog1} class="card__image" width="600" />
                 </div>
                 <div class="card__body">
                   <span class="tag tag-blue">Technology</span>
-                  <h4>What's new in 2022 Tech</h4>
+                  <h4>
+                    How to Create a Great Distribution Network for Your Product?
+                  </h4>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Sequi perferendis molestiae non nemo doloribus. Doloremque,
@@ -60,8 +65,9 @@ function BlogPage() {
                         <small>2h ago</small>
                       </div>
                     </div>
-
-                    <OpenInFullIcon className="expand-icon" />
+                    <Link to="/newBlog1">
+                      <Button>Know more</Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -70,11 +76,11 @@ function BlogPage() {
             <li>
               <div class="card">
                 <div class="card__header">
-                  <img src={pic2} class="card__image" width="600" />
+                  <img src={blog2} class="card__image" width="600" />
                 </div>
                 <div class="card__body">
                   <span class="tag tag-brown">Technology</span>
-                  <h4>What's new in 2022 Tech</h4>
+                  <h4>10 Things Every Distributor Should Verify!</h4>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Sequi perferendis molestiae non nemo doloribus. Doloremque,
@@ -91,7 +97,9 @@ function BlogPage() {
                       </div>
                     </div>
 
-                    <OpenInFullIcon className="expand-icon" />
+                    <Link to="/newBlog2">
+                      <Button>Know more</Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -100,11 +108,14 @@ function BlogPage() {
             <li>
               <div class="card">
                 <div class="card__header">
-                  <img src={pic3} class="card__image" width="600" />
+                  <img src={blog3} class="card__image" width="600" />
                 </div>
                 <div class="card__body">
                   <span class="tag tag-red">Technology</span>
-                  <h4>What's new in 2022 Tech</h4>
+                  <h4>
+                    How Global Vistar is Disrupting the Manufacturer-Distributor
+                    Landscape?
+                  </h4>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Sequi perferendis molestiae non nemo doloribus. Doloremque,
@@ -121,7 +132,9 @@ function BlogPage() {
                       </div>
                     </div>
 
-                    <OpenInFullIcon className="expand-icon" />
+                    <Link to="/newBlog3">
+                      <Button>Know more</Button>
+                    </Link>
                   </div>
                 </div>
               </div>

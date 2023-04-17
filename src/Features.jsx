@@ -19,9 +19,10 @@ function Features() {
 
         <h2 className="h2 section-title">Categories</h2>
 
-        <ul className="features-list">
+        <ul className="features-list container">
+          
           <li>
-            <a href="#" className="features-card">
+            <a href="#" className="features-card ">
               <div className="card-icon">
                 <DirectionsCarFilledIcon className="feature-icon" />
               </div>
@@ -35,7 +36,7 @@ function Features() {
           </li>
 
           <li>
-            <a href="#" className="features-card">
+            <a href="#" className="features-card ">
               <div className="card-icon">
                 <InvertColorsIcon className="feature-icon" />
               </div>

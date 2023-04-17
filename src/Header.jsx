@@ -10,10 +10,10 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import PinterestIcon from "@mui/icons-material/Pinterest";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import WarehouseIcon from "@mui/icons-material/Warehouse";
-import StorefrontIcon from "@mui/icons-material/Storefront";
+// import Dropdown from "react-bootstrap/Dropdown";
+// import DropdownButton from "react-bootstrap/DropdownButton";
+// import WarehouseIcon from "@mui/icons-material/Warehouse";
+// import StorefrontIcon from "@mui/icons-material/Storefront";
 import { Link } from "react-router-dom";
 import AuthenticationForm from "./AuthenticationForm";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -139,13 +139,19 @@ function Header() {
       <div className="header-bottom">
         <div className="container">
           <div className="logo-website">
-            <img src={pic} alt="" />
+            <a href="/">
+              <img src={pic} alt="" />
+            </a>
           </div>
 
           <nav className="navbar" data-navbar>
             <div className="navbar-top">
-              <a href="#" className="logo">
-                <img src="./images/Global-vistar.png" alt="GlobalVistar logo" />
+              <a href="/" className="logo">
+                <img
+                  src="./images/Global-vistar.png"
+                  alt="GlobalVistar logo"
+                  href="/"
+                />
               </a>
               <button
                 className="nav-close-btn"
@@ -158,11 +164,6 @@ function Header() {
             </div>
             <div className="navbar-bottom">
               <ul className="navbar-list">
-                <li>
-                  <a href="#home" className="navbar-link" data-nav-link>
-                    Home
-                  </a>
-                </li>
                 <li>
                   {/* <a href="#about" className="navbar-link" data-nav-link>
                       About
