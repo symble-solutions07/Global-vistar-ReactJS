@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import {useNavigate, useParams} from "react-router-dom";
 import { useState } from "react";
 import pic from "./images/Global vistar TB.svg";
 import "./style.css";
@@ -9,11 +10,13 @@ import "./header.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import PinterestIcon from "@mui/icons-material/Pinterest";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
 // import Dropdown from "react-bootstrap/Dropdown";
 // import DropdownButton from "react-bootstrap/DropdownButton";
 // import WarehouseIcon from "@mui/icons-material/Warehouse";
 // import StorefrontIcon from "@mui/icons-material/Storefront";
+import { signOut, getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
 import AuthenticationForm from "./AuthenticationForm";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -26,10 +29,30 @@ import { Modal } from "@mantine/core";
 // import { Modal} from "@mantine/core";
 
 function Header() {
-  const [showMenu, setShowMenu] = useState(false);
+  // const [showMenu, setShowMenu] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
 
   const [opened, { open, close }] = useDisclosure(false);
+
+  const navigate = useNavigate();
+  const [email, setEmail] = useState();
+  const {id} = useParams();
+  console.log(id);
+  useEffect(() => {
+    setEmail(sessionStorage.getItem("email"));
+    console.log(email);
+    
+  }, [email])
+  
+
+  const auth = getAuth();
+
+  const signOutUser = () => {
+    signOut(auth).then(() => {
+      sessionStorage.removeItem("email");
+      navigate("/");
+    })
+  };  
 
   // const [openedModal, { openModal, closeModal }] = useDisclosure(false);
 
@@ -127,7 +150,7 @@ function Header() {
               </li>
               <li>
                 <a href="#" className="header-top-social-link">
-                  <PinterestIcon></PinterestIcon>
+                  <LinkedInIcon></LinkedInIcon>
                 </a>
               </li>
             </ul>
@@ -202,21 +225,34 @@ function Header() {
             {/* <Avatar radius="xl" color="black" />
              */}
 
-            <Button
-              className="register-button"
-              onClick={() => setShowLoginForm((prev) => !prev)}
-              style={{
-                fontSize: "medium",
+            {(id!==undefined) ? (
+              <>
+                <p>{id}</p>
+                <Button
+                  onClick={() => {
+                    signOutUser()
+                  }}
+                >
+                  LogOut
+                </Button>
+              </>
+            ) : (
+              <Button
+                className="register-button"
+                onClick={() => setShowLoginForm((prev) => !prev)}
+                style={{
+                  fontSize: "medium",
 
-                // onClick={() => setShowMenu((prev) => !prev)}
-              }}
-            >
-              <AccountCircleIcon
-                style={{ fontSize: "30px", paddingRight: "4px" }}
-                className="profile-icon-register"
-              ></AccountCircleIcon>
-              Register / Login{" "}
-            </Button>
+                  // onClick={() => setShowMenu((prev) => !prev)}
+                }}
+              >
+                <AccountCircleIcon
+                  style={{ fontSize: "30px", paddingRight: "4px" }}
+                  className="profile-icon-register"
+                ></AccountCircleIcon>
+                Register / Login{" "}
+              </Button>
+            )}
 
             {/* <button class="header-bottom-actions-btn" aria-label="Profile">
                   <ProfileIcon
@@ -268,7 +304,14 @@ function Header() {
         </div>
       </div>
       <div className="authentication-section">
-        {showLoginForm ? <AuthenticationForm /> : ""}
+        {showLoginForm ? (
+          <AuthenticationForm
+            showLoginForm={showLoginForm}
+            setShowLoginForm={setShowLoginForm}
+          />
+        ) : (
+          ""
+        )}
       </div>
     </header>
   );

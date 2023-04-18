@@ -14,6 +14,7 @@ function Routing() {
 
       <Routes>
         <Route path="/" element={<App/>} />
+        <Route path="/:id" element={<App/>} />
         <Route path="/BlogPage" element={<BlogPage/>} />
         <Route path="/ProductCategories" element={<ProductCategories/>} />
         <Route path="/AboutUsPage" element={<AboutUsPage />} />

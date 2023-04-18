@@ -35,6 +35,7 @@ function AuthenticationForm(props) {
 
   console.log(user);
   
+
   
   
 
@@ -56,15 +57,7 @@ function AuthenticationForm(props) {
   });
 
   const handleLogin = async () => {
-    // const response = await fetch("http://localhost:8080/login", {
-    //   method: "POST",
-    //   body: JSON.stringify(form),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-
-    // console.log(response);
+    
 
 
     signInWithEmailAndPassword(auth, form.values.email, form.values.password)
@@ -73,19 +66,16 @@ function AuthenticationForm(props) {
         const user = userCredential.user;
         console.log(user);
         console.log("user is logged in");
+        // sessionStorage.setItem("email", user.email);
+        props.setShowLoginForm(false);
+        navigate(`/${user.email}`);
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
-    
-    
-    
-    
-      
-    // console.log(userCreds);
-  };
+};
 
   
   
