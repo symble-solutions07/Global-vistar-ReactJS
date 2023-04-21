@@ -1,10 +1,15 @@
 import React from 'react'
 import "./style.css"
+import { Drawer, Button, Group, Avatar } from "@mantine/core";
+import { Link } from "react-router-dom";
 import pic from "./images/Savouries.jpg";
 import DesiRass from "./images/Desi Rass (1).png";
 import ShivRatna from "./images/ShivRatna Jaggery.png";
 import Anjani from "./images/alphonso aamras_mockup_500gm.jpg";
 import TribeCook from "./images/Tribe-cook.png";
+import BeeBasket from "./images/BeeBasket.jpg";
+import MaxfoodProd from "./images/Max-Food-Products.jpg";
+
 import author from "./images/author.jpg";
 import ProductCard from './ProductCard';
 import "./productsSection.css";
@@ -87,20 +92,26 @@ function ProductSection() {
 
             <li className="feature-card col-sm">
               <ProductCard
-                pic={pic}
+                pic={BeeBasket}
                 Blocation="Punjab"
                 Bname="Fresh Drinks"
-                ownerName="Dilip Singh"
-                ownerLoc="Punjab"
+                ownerName="Amit Godse"
+                ownerLoc="Pune"
+                locationLook="PAN India"
+                MOQ="50 Units"
+                margin="15%-20%"
               />
             </li>
             <li className="feature-card col-sm">
               <ProductCard
-                pic={pic}
+                pic={MaxfoodProd}
                 Blocation="SULA WINES, Nashik"
-                Bname="SULA WINES"
-                ownerName="SR NALAWADE"
-                ownerLoc="Amravati"
+                Bname="Max Food Products"
+                ownerName="Ruturaj Parekh"
+                ownerLoc="Mahad"
+                locationLook="PAN India"
+                MOQ="100 Units"
+                margin="25%-30%"
               />
             </li>
             <li className="feature-card col-sm">
@@ -114,6 +125,9 @@ function ProductSection() {
             </li>
           </ul>
         </div>
+        <Link to="/ProductCategories" className="explore-more-btn">
+          <Button>Explore More</Button>
+        </Link>
       </div>
     </section>
   );

@@ -68,7 +68,7 @@ function HeroSection() {
               <Select
                 mt="md"
                 withinPortal
-                data={["Food", "Groceries", "Toys", "Agro"]}
+                data={["Food and Beverages"]}
                 // placeholder="Pick one"
                 label="Categories"
                 classNames={classes}
@@ -76,7 +76,15 @@ function HeroSection() {
               <Select
                 mt="md"
                 withinPortal
-                data={["Food", "Groceries", "Toys", "Agro"]}
+                data={[
+                  "Mighty Millets",
+                  "Desi Rass",
+                  "Shivratna Jaggery",
+                  "Anjani Food Products",
+                  "Tribe Cook",
+                  "Bee Basket",
+                  "Max Food Products"
+                ]}
                 // placeholder="Pick one"
                 label="Sub-Categories"
                 classNames={classes}

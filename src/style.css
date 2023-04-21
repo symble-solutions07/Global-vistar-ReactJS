@@ -880,7 +880,9 @@ a {
   height: 40px;
   overflow: hidden;
   border-radius: 50%;
+  width:1.8rem;
 }
+
 
 .author-name > a {
   color: var(--dark-jungle-green);

@@ -7,6 +7,7 @@ import "./style.css";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Link } from "react-router-dom";
 
 function ProductCard(props) {
@@ -94,7 +95,8 @@ function ProductCard(props) {
         >
           <div className="card-author">
             <figure className="author-avatar">
-              <img src={author} alt="William Seklo" className="w-100" />
+              {/* <img src={author} alt="William Seklo" className="w-100" /> */}
+              <AccountCircleIcon className="avatar"></AccountCircleIcon>
             </figure>
 
             <div>

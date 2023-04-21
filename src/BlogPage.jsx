@@ -51,20 +51,19 @@ function BlogPage() {
                     How to Create a Great Distribution Network for Your Product?
                   </h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sequi perferendis molestiae non nemo doloribus. Doloremque,
-                    nihil! At ea atque quidem!
+                    As a manufacturer, you know that having a great product is
+                    just the first step towards success.
                   </p>
                 </div>
                 <div class="card__footer">
                   <div class="user">
-                    <div style={{ display: "flex" }}>
+                    {/* <div style={{ display: "flex" }}>
                       <img src={author} alt="user__image" class="user__image" />
                       <div class="user__info">
                         <h5 className="author-name">Jane Doe</h5>
                         <small>2h ago</small>
                       </div>
-                    </div>
+                    </div> */}
                     <Link to="/newBlog1">
                       <Button>Know more</Button>
                     </Link>
@@ -82,20 +81,19 @@ function BlogPage() {
                   <span class="tag tag-brown">Technology</span>
                   <h4>10 Things Every Distributor Should Verify!</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sequi perferendis molestiae non nemo doloribus. Doloremque,
-                    nihil! At ea atque quidem!
+                    As a distributor, your success largely depends on the
+                    quality of the products you offer to your customers.
                   </p>
                 </div>
                 <div class="card__footer">
                   <div class="user">
-                    <div style={{ display: "flex" }}>
+                    {/* <div style={{ display: "flex" }}>
                       <img src={author} alt="user__image" class="user__image" />
                       <div class="user__info">
                         <h5 className="author-name">Jane Doe</h5>
                         <small>2h ago</small>
                       </div>
-                    </div>
+                    </div> */}
 
                     <Link to="/newBlog2">
                       <Button>Know more</Button>
@@ -117,20 +115,19 @@ function BlogPage() {
                     Landscape?
                   </h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sequi perferendis molestiae non nemo doloribus. Doloremque,
-                    nihil! At ea atque quidem!
+                    As a distributor, your success largely depends on the
+                    quality of the products you offer to your customers.
                   </p>
                 </div>
                 <div class="card__footer">
                   <div class="user">
-                    <div style={{ display: "flex" }}>
+                    {/* <div style={{ display: "flex" }}>
                       <img src={author} alt="user__image" class="user__image" />
                       <div class="user__info">
                         <h5 className="author-name">Jane Doe</h5>
                         <small>2h ago</small>
                       </div>
-                    </div>
+                    </div> */}
 
                     <Link to="/newBlog3">
                       <Button>Know more</Button>

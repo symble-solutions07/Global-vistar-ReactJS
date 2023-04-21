@@ -4,6 +4,9 @@ import pic from "./images/Savouries.jpg";
 import DesiRass from "./images/Desi Rass (1).png";
 import ShivRatna from "./images/ShivRatna Jaggery.png";
 import Anjani from "./images/alphonso aamras_mockup_500gm.jpg";
+import TribeCook from "./images/Tribe-cook.png";
+import BeeBasket from "./images/BeeBasket.jpg";
+import MaxfoodProd from "./images/Max-Food-Products.jpg";
 import ProductCard from "./ProductCard";
 import "./productsSection.css";
 import "./ProductCatgories.css";
@@ -19,13 +22,13 @@ function ProductCategories() {
           <p className="section-subtitle">Products</p>
 
           <h2 className="h2 section-title">Featured Products</h2>
-          <div className="blog-navbar product-navbar">
+          {/* <div className="blog-navbar product-navbar">
             <ul className="navbar-list-blogs">
               <li className="list-item-navbar">Trending</li>
               <li className="list-item-navbar">Recently-added</li>
               <li className="list-item-navbar">Most-read</li>
             </ul>
-          </div>
+          </div> */}
           <div className="property-list-container">
             <ul
               className="property-list container row"
@@ -84,30 +87,39 @@ function ProductCategories() {
             <ul className="property-list container row">
               <li className="feature-card col-sm">
                 <ProductCard
-                  pic={pic}
+                  pic={TribeCook}
                   Blocation="Aznec"
-                  Bname="Aznac Biscuits"
-                  ownerName="Pravin Kumar"
-                  ownerLoc="Kolhapur"
+                  Bname="Tribe Cook"
+                  ownerName="Satyajeet Bhillare"
+                  ownerLoc="Pune"
+                  locationLook="Mumbai,Pune"
+                  MOQ="50"
+                  margin="15-20%"
                 />
               </li>
 
               <li className="feature-card col-sm">
                 <ProductCard
-                  pic={pic}
+                  pic={BeeBasket}
                   Blocation="Punjab"
                   Bname="Fresh Drinks"
-                  ownerName="Dilip Singh"
-                  ownerLoc="Punjab"
+                  ownerName="Amit Godse"
+                  ownerLoc="Pune"
+                  locationLook="PAN India"
+                  MOQ="50 Units"
+                  margin="15%-20%"
                 />
               </li>
               <li className="feature-card col-sm">
                 <ProductCard
-                  pic={pic}
+                  pic={MaxfoodProd}
                   Blocation="SULA WINES, Nashik"
-                  Bname="SULA WINES"
-                  ownerName="SR NALAWADE"
-                  ownerLoc="Amravati"
+                  Bname="Max Food Products"
+                  ownerName="Ruturaj Parekh"
+                  ownerLoc="Mahad"
+                  locationLook="PAN India"
+                  MOQ="100 Units"
+                  margin="25%-30%"
                 />
               </li>
               <li className="feature-card col-sm">

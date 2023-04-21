@@ -99,11 +99,12 @@ function AboutUsPage() {
               // style={{ width: "900px", marginLeft: "7rem" }}
             >
               <Title classNames="slogan">
-                <div style={{ display: "flex", fontSize: "2.8rem" }} className="badhaye-apke">
+                <div
+                  style={{ display: "flex", fontSize: "2.8rem" }}
+                  className="badhaye-apke"
+                >
                   Badhaye
-                  <span style={{ color: "#BC1823",  }}>
-                    Apke Business
-                  </span>
+                  <span style={{ color: "#BC1823" }}>Apke Business</span>
                 </div>
                 <span style={{ display: "flex", fontSize: "2.8rem" }}>
                   ki{" "}
@@ -120,7 +121,7 @@ function AboutUsPage() {
                 and distributor deserves to achieve the their full potential.
                 That's why we've created a platform that makes it easy for them
                 to find each other, collaborate, and grow their business.
-                <span style={{ color: "#bc1823" }}>
+                <span style={{ color: "#210d41" }}>
                   "Vistar," means expansion, and that's exactly what we're all
                   about. We want to help our users expand their reach, expand
                   their profits, and expand their impact on the world.
@@ -268,9 +269,12 @@ function AboutUsPage() {
               technology that's connecting distributors and manufactures
               effectively.
             </Text>
-            <div className="social-handles">
+            <a
+              href="https://www.linkedin.com/in/pranav-bankar-6aa451177/?originalSubdomain=in"
+              className="social-handles"
+            >
               <LinkedInIcon></LinkedInIcon>
-            </div>
+            </a>
           </Card>
 
           <Card
@@ -298,9 +302,12 @@ function AboutUsPage() {
               expert and a good technologist. She has been a crucial part of the
               Pure Pluck enterprise, a platform for good food.
             </Text>
-            <div className="social-handles">
+            <a
+              href="https://www.linkedin.com/in/kiran-patil-28b64917a"
+              className="social-handles"
+            >
               <LinkedInIcon></LinkedInIcon>
-            </div>
+            </a>
           </Card>
 
           <Card
@@ -327,9 +334,12 @@ function AboutUsPage() {
               Atharva is the Technology Development Head at Global Vistar. He is
               the hands behind the technology of the platform.
             </Text>
-            <div className="social-handles">
+            <a
+              href="https://www.linkedin.com/in/atharva-kurumbhatte/"
+              className="social-handles"
+            >
               <LinkedInIcon></LinkedInIcon>
-            </div>
+            </a>
           </Card>
         </div>
       </div>

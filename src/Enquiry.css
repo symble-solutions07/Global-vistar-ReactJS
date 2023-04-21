@@ -1,0 +1,49 @@
+form {
+  display: flex;
+  flex-direction: column;
+  
+  max-width: 400px;
+  margin: 5rem auto;
+}
+
+label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+.header-enquiry{
+    text-align:center;
+    color:#bc1823;
+}
+
+.enquiry-hr{
+    margin-top: 10px;
+    color:gray;
+    width:30%;
+    margin: auto;
+    /* text-align: center; */
+}
