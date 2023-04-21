@@ -11,7 +11,7 @@ function CTA(props) {
       <div className="container">
         <div className="cta-card">
           <div className="card-content">
-            <h2 className="h2 card-title">Looking for a Distributors?</h2>
+            <h2 className="h2 card-title">Looking for Distributors?</h2>
 
             <p className="card-text">We can help you to find them</p>
           </div>

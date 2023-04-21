@@ -525,9 +525,11 @@ a {
   #ABOUT
 \*-----------------------------------*/
 
-.about {
-  padding-block: var(--section-padding);
-  margin-top: 4rem;
+@media only screen and(width<400) {
+  .about {
+    /* padding-block: var(--section-padding); */
+    margin-top: 25rem;
+  }
 }
 
 @media only screen and (width > 700) {
@@ -880,9 +882,8 @@ a {
   height: 40px;
   overflow: hidden;
   border-radius: 50%;
-  width:1.8rem;
+  width: 1.8rem;
 }
-
 
 .author-name > a {
   color: var(--dark-jungle-green);

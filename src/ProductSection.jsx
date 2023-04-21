@@ -46,7 +46,7 @@ function ProductSection() {
               <ProductCard
                 pic={DesiRass}
                 Blocation="Punjab"
-                Bname="Desi Rass"
+                Bname="Desi Ras"
                 ownerName="Ashish Bodake"
                 ownerLoc="Nashik"
                 margin="35%-45%"
@@ -114,7 +114,7 @@ function ProductSection() {
                 margin="25%-30%"
               />
             </li>
-            <li className="feature-card col-sm">
+            {/* <li className="feature-card col-sm">
               <ProductCard
                 pic={pic}
                 Blocation="Belmont Garden, Chicago"
@@ -122,7 +122,7 @@ function ProductSection() {
                 ownerName="William Seklo"
                 ownerLoc="Estate Agents"
               />
-            </li>
+            </li> */}
           </ul>
         </div>
         <Link to="/ProductCategories" className="explore-more-btn">

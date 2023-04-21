@@ -121,7 +121,7 @@ function AboutUsPage() {
                 and distributor deserves to achieve the their full potential.
                 That's why we've created a platform that makes it easy for them
                 to find each other, collaborate, and grow their business.
-                <span style={{ color: "#210d41" }}>
+                <span style={{ color: "#210d41", fontWeight:"bold", fontStyle:"italic" }}>
                   "Vistar," means expansion, and that's exactly what we're all
                   about. We want to help our users expand their reach, expand
                   their profits, and expand their impact on the world.

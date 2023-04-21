@@ -13,36 +13,30 @@ import SearchIcon from "@mui/icons-material/Search";
 
 import { createStyles, rem, Select, TextInput } from "@mantine/core";
 
+const useStyles = createStyles((theme) => ({
+  root: {
+    position: "relative",
+  },
 
+  input: {
+    height: rem(54),
+    paddingTop: rem(18),
+    border: "1px solid black",
+    width: "250px",
+  },
 
-  const useStyles = createStyles((theme) => ({
-    root: {
-      position: "relative",
-    },
-
-    input: {
-      height: rem(54),
-      paddingTop: rem(18),
-      border: "1px solid black",
-      width: "250px",
-      
-    },
-
-    label: {
-      // position: "absolute",
-      color:"white",
-      pointerEvents: "none",
-      fontSize: theme.fontSizes.xm,
-      paddingLeft: theme.spacing.sm,
-      paddingTop: `calc(${theme.spacing.sl} / 2)`,
-      zIndex: 1,
-    },
-  }));
-
-
+  label: {
+    // position: "absolute",
+    color: "white",
+    pointerEvents: "none",
+    fontSize: theme.fontSizes.xm,
+    paddingLeft: theme.spacing.sm,
+    paddingTop: `calc(${theme.spacing.sl} / 2)`,
+    zIndex: 1,
+  },
+}));
 
 function HeroSection() {
-
   const { classes } = useStyles();
 
   return (
@@ -73,17 +67,18 @@ function HeroSection() {
                 label="Categories"
                 classNames={classes}
               />
+              {/* Beverage Dairy and Frozen, Grains and Spices Ready-to-Cook Snacks
+              and Savouries Sugar and Confectionery */}
               <Select
                 mt="md"
                 withinPortal
                 data={[
-                  "Mighty Millets",
-                  "Desi Rass",
-                  "Shivratna Jaggery",
-                  "Anjani Food Products",
-                  "Tribe Cook",
-                  "Bee Basket",
-                  "Max Food Products"
+                  "Beverage",
+                  "Dairy and Frozen",
+                  "Grains and Spices",
+                  "Ready-to-cook",
+                  "Snacks and Savouries",
+                  "Sugar and Confectionery",
                 ]}
                 // placeholder="Pick one"
                 label="Sub-Categories"

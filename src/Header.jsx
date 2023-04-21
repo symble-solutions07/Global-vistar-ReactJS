@@ -109,27 +109,24 @@ function Header(props) {
         <div className="container">
           <ul className="header-top-list">
             <li>
-              <a
-                href="mailto:info@globalvsitar.com"
-                className="header-top-link"
-              >
+              <a href="#our-services" className="header-top-link">
                 {/* <ion-icon name="mail-outline"></ion-icon> */}
                 <span> | Build a D2C Website | </span>
               </a>
             </li>
             <li>
-              <a href="#" className="header-top-link">
+              <a href="#our-services" className="header-top-link">
                 <address> | Build Your Brand | </address>
               </a>
             </li>
             <li>
-              <a href="#" className="header-top-link">
+              <a href="#our-servives" className="header-top-link">
                 {/* <ion-icon name="location-outline"></ion-icon> */}
                 <address> | Expand Your Business | </address>
               </a>
             </li>
             <li>
-              <a href="#" className="header-top-link">
+              <a href="#" className="header-top-link" onClick={handleLoginForm}>
                 {/* <ion-icon name="location-outline"></ion-icon> */}
                 <address> | Distributor Registration | </address>
               </a>

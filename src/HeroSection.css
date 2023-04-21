@@ -23,12 +23,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top:7rem;
+    /* padding:auto; */
+    /* margin-top:12rem; */
     background-color: #210d41 ; 
     /* background-color: silver; */
   }
   .hero{
-    padding-top:5rem;
+    padding-top:25rem;
   }
   .search-item-section {
     /* margin-top:-5rem !important; */
@@ -52,7 +53,10 @@
     flex-direction: column;
   }
   .buttons-hero-section{
-      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50% !important;
   }
 
 }
