@@ -1,0 +1,5 @@
+@media only screen and (width < 400px){
+    .about-banner{
+        padding-top:22rem;
+    }
+}

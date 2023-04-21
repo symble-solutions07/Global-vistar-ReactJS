@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import "./About.css"
 import pic from "./images/about-banner-1.png";
 import GroupIcon from "@mui/icons-material/Group";
 import SearchIcon from "@mui/icons-material/Search";
@@ -13,7 +14,7 @@ import RegisterPic from "./images/Untitled design 2.png";
 
 function About() {
   return (
-    <section className="about" id="about">
+    <section className="about about-main" id="about">
       <div className="container" >
         <figure className="about-banner" >
           <img src={RegisterPic} alt="House interior" className="About-us-hero"  />

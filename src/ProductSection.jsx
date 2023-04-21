@@ -37,6 +37,7 @@ function ProductSection() {
                 Bname="Mighty Millets"
                 ownerName="Sahil Jain"
                 ownerLoc="Pune"
+                locationLook="PAN India"
                 margin="20%-30%"
                 MOQ="50 units"
               />
@@ -49,6 +50,7 @@ function ProductSection() {
                 Bname="Desi Ras"
                 ownerName="Ashish Bodake"
                 ownerLoc="Nashik"
+                locationLook="Central Pune, Pimpri Chinchwad, Suburb Pune, Mumbai, Navi Mumbai, Thane, Kalyan"
                 margin="35%-45%"
                 MOQ="100 boxes"
               />
@@ -59,6 +61,7 @@ function ProductSection() {
                 Blocation=", Nashik"
                 Bname="ShivRatna Jaggery"
                 ownerName="Naman Patil"
+                locationLook="Pune,Karad, Sangli, Mumbai"
                 ownerLoc="Sangli, Maharashtra"
                 margin="20-30%"
               />
@@ -70,6 +73,7 @@ function ProductSection() {
                 Bname="Anjani Food Products"
                 ownerName="Pinak Joshi"
                 ownerLoc="Pune"
+                locationLook="PAN India"
                 MOQ="50kgs"
                 margin="15%-20%"
               />

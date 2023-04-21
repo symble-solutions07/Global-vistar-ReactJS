@@ -4,6 +4,7 @@ import pic1 from "./images/Blog 1 (1).png";
 import pic2 from "./images/Blog 2 (1).png";
 import pic3 from "./images/Blog 3(1).png";
 import { margin } from '@mui/system';
+import { Link } from "react-router-dom";
 import "./Blog.css";
 
 
@@ -62,9 +63,9 @@ function Blogs() {
                     <time datetime="2022-27-04">Apr 27, 2022</time>
                   </div>
 
-                  <a href="#" className="read-more-btn">
+                  <Link to="/newBlog1" className="read-more-btn">
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -87,7 +88,7 @@ function Blogs() {
                       <a href="#" className="card-meta-link">
                         <ion-icon name="person"></ion-icon>
 
-                        <span>by: Admin</span>
+                        <span>By Global Vistar</span>
                       </a>
                     </li>
 
@@ -112,9 +113,9 @@ function Blogs() {
                     <time datetime="2022-27-04">Apr 27, 2022</time>
                   </div>
 
-                  <a href="#" className="read-more-btn">
+                  <Link to="/newBlog1" className="read-more-btn">
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -137,7 +138,7 @@ function Blogs() {
                       <a href="#" className="card-meta-link">
                         <ion-icon name="person"></ion-icon>
 
-                        <span>by: Admin</span>
+                        <span>By Global Vistar</span>
                       </a>
                     </li>
 
@@ -165,9 +166,9 @@ function Blogs() {
                     <time datetime="2022-27-04">Apr 27, 2022</time>
                   </div>
 
-                  <a href="#" className="read-more-btn">
+                  <Link to="/newBlog1" className="read-more-btn">
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

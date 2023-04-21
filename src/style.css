@@ -525,17 +525,18 @@ a {
   #ABOUT
 \*-----------------------------------*/
 
-@media only screen and(width<400) {
-  .about {
-    /* padding-block: var(--section-padding); */
-    margin-top: 25rem;
-  }
-}
+
+
 
 @media only screen and (width > 700) {
   .About-us-hero {
     margin-left: -5rem;
+    /* margin-top:10rem; */
   }
+  .about-banner{
+    
+  }
+  
 }
 
 .about-banner {
@@ -546,6 +547,7 @@ a {
 .about-banner > img {
   max-width: max-content;
   width: 100%;
+  /* margin-top:25rem; */
 }
 
 .about-banner .abs-img {
@@ -1454,6 +1456,7 @@ a {
   .about-item-text {
     font-size: 18px;
   }
+  
 
   /**
    * FEATURES
