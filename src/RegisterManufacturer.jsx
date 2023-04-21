@@ -1,11 +1,8 @@
-// import { useState } from "react";
-// import {req } from "request";
 import { useToggle, upperFirst } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
-import { auth,db } from "./Firebase/firebase-config";
+import { auth, db } from "./Firebase/firebase-config";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc, Timestamp } from "firebase/firestore"; 
-
+import { doc, setDoc, Timestamp } from "firebase/firestore";
 import {
   TextInput,
   PasswordInput,
@@ -16,25 +13,23 @@ import {
   Button,
   Divider,
   Checkbox,
+  Box,
   Anchor,
   Stack,
+  createStyles,
+  rem,
 } from "@mantine/core";
-// import { GoogleButton, TwitterButton } from '../SocialButtons/SocialButtons';
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import InstagramIcon from "@mui/icons-material/Instagram";
-// import { dividerClasses } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-
 import "./AuthenticationPage.css";
 
-
 function RegisterManufacturer(props) {
+    const { classes } = useStyles();
   const [type, toggle] = useToggle(["login", "register"]);
 
   const form = useForm({
     initialValues: {
       manufacturer_email: "",
-      name:"",
+      name: "",
       phone: "",
       password: "",
       confirm: "",
@@ -90,138 +85,138 @@ function RegisterManufacturer(props) {
     };
     const docRef = doc(db, `Users/Manufacturers/users/${user.email}`);
     console.log(docRef.path);
-    
+
     await setDoc(docRef, user).then(() => {
-       console.log("registerd");
-    }
-    ); 
+      console.log("registerd");
+    });
   };
 
   return (
-    <div className="authentication-section">
-      <Paper
-        radius="md"
-        p="xl"
-        withBorder
-        {...props}
-        style={{
-          margin: "auto",
-        }}
-        className="auth-container"
+    <Box className="modal">
+      <a href="/">
+        <KeyboardBackspaceIcon />
+      </a>
+
+      <Box className="modal-header">
+        <Text color="dark">You are a Manufacturer</Text>
+      </Box>
+
+      <form
+        className="modal-content"
+        onSubmit={form.onSubmit(() => {
+          handleRegister();
+        })}
       >
-        <a href="/">
-          <KeyboardBackspaceIcon />
-        </a>
+        <Box>
+          <TextInput
+            classNames={classes}
+            label="Email"
+            placeholder="hello@mantine.dev"
+            value={form.values.manufacturer_email}
+            onChange={
+              (event) =>
+                form.setFieldValue(
+                  "manufacturer_email",
+                  event.currentTarget.value
+                )
+              // setEmail(event.target.value)
+            }
+            error={form.errors.manufacturer_email && "Invalid email"}
+            radius="md"
+          />
 
-        <Divider
-          label="You are a manufacturer"
-          labelPosition="center"
-          my="lg"
-        />
+          <TextInput mt={15}
+            classNames={classes}
+            label="Name"
+            placeholder="Enter your full name"
+            value={form.values.name}
+            onChange={
+              (event) => form.setFieldValue("name", event.currentTarget.value)
+              // setEmail(event.target.value)
+            }
+            error={form.errors.name}
+            radius="md"
+          />
 
-        <form
-          onSubmit={form.onSubmit(() => {
-            handleRegister();
-          })}
-        >
-          <Stack>
-            <TextInput
-              // required
-              label="Email"
-              placeholder="hello@mantine.dev"
-              value={form.values.manufacturer_email}
-              onChange={
-                (event) =>
-                  form.setFieldValue(
-                    "manufacturer_email",
-                    event.currentTarget.value
-                  )
-                // setEmail(event.target.value)
-              }
-              error={form.errors.manufacturer_email && "Invalid email"}
-              radius="md"
-            />
+          <TextInput mt={15}
+            classNames={classes}
+            label="Phone"
+            placeholder="+91"
+            value={form.values.phone}
+            onChange={(event) =>
+              form.setFieldValue("phone", event.currentTarget.value)
+            }
+            error={form.errors.phone && "Invalid phone number"}
+            radius="md"
+          />
 
-            <TextInput
-              // required
-              label="Name"
-              placeholder="Enter your full name"
-              value={form.values.name}
-              onChange={
-                (event) =>
-                  form.setFieldValue(
-                    "name",
-                    event.currentTarget.value
-                  )
-                // setEmail(event.target.value)
-              }
-              error={form.errors.name}
-              radius="md"
-            />
+          <TextInput mt={15}
+            classNames={classes}
+            label="Create Password"
+            placeholder="Enter Your Password"
+            value={form.values.password}
+            onChange={(event) =>
+              form.setFieldValue("password", event.currentTarget.value)
+            }
+            error={
+              form.errors.password &&
+              "Password should include at least 6 characters"
+            }
+            radius="md"
+          />
 
-            <TextInput
-              // required
-              label="Phone"
-              placeholder="+91"
-              value={form.values.phone}
-              onChange={(event) =>
-                form.setFieldValue("phone", event.currentTarget.value)
-              }
-              error={form.errors.phone && "Invalid phone number"}
-              radius="md"
-            />
+          <TextInput mt={15}
+            classNames={classes}
+            label="Re-Enter Password"
+            placeholder="Re-Enter Your Password"
+            value={form.values.confirm}
+            onChange={(event) =>
+              form.setFieldValue("confirm", event.currentTarget.value)
+            }
+            error={
+              form.errors.confirm &&
+              "Password should include at least 6 characters"
+            }
+            radius="md"
+          />
+        </Box>
 
-            <TextInput
-              // required
-              label="Create Password"
-              placeholder="Enter Your Password"
-              value={form.values.password}
-              onChange={(event) =>
-                form.setFieldValue("password", event.currentTarget.value)
-              }
-              error={
-                form.errors.password &&
-                "Password should include at least 6 characters"
-              }
-              radius="md"
-            />
-
-            <TextInput
-              // required
-              label="Re-Enter Password"
-              placeholder="Re-Enter Your Password"
-              value={form.values.confirm}
-              onChange={(event) =>
-                form.setFieldValue("confirm", event.currentTarget.value)
-              }
-              error={
-                form.errors.confirm &&
-                "Password should include at least 6 characters"
-              }
-              radius="md"
-            />
-          </Stack>
-
-          <Group position="apart" mt="xl">
-            <Anchor
-              component="button"
-              type="button"
-              color="dimmed"
-              onClick={() => toggle()}
-              size="xs"
-            >
-              {/* {type === "register"
-                ? "Already have an account? Login"
-                : "Don't have an account? Register"} */}
-            </Anchor>
-            <Button type="submit" radius="xl" onClick={handleRegister}>
-              {upperFirst(type) + " as Manufacturer"}
-            </Button>
-          </Group>
-        </form>
-      </Paper>
-    </div>
+        <Group position="apart" mt="xl">
+          <Anchor
+            component="button"
+            type="button"
+            color="dimmed"
+            onClick={() => toggle()}
+            size="xs"
+          >
+          </Anchor>
+          <Button type="submit" radius="xl" onClick={handleRegister}>
+            {upperFirst(type) + " as Manufacturer"}
+          </Button>
+        </Group>
+      </form>
+    </Box>
   );
 }
 
 export default RegisterManufacturer;
+
+const useStyles = createStyles((theme) => ({
+  root: {
+    position: "relative",
+  },
+
+  input: {
+    height: rem(54),
+    paddingTop: rem(18),
+  },
+
+  label: {
+    position: "absolute",
+    pointerEvents: "none",
+    fontSize: theme.fontSizes.xs,
+    paddingLeft: theme.spacing.sm,
+    paddingTop: `calc(${theme.spacing.sm} / 2)`,
+    zIndex: 1,
+  },
+}));

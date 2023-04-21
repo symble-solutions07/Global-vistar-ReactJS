@@ -100,7 +100,7 @@ function AboutUsPage() {
             >
               <Title classNames="slogan">
                 <div
-                  style={{ display: "flex", fontSize: "2.8rem" }}
+                  style={{ display: "flex", fontSize: "2.8rem"}}
                   className="badhaye-apke"
                 >
                   Badhaye

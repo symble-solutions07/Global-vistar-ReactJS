@@ -45,6 +45,7 @@ function ProductCategories() {
                   Bname="Mighty Millets"
                   ownerName="Sahil Jain"
                   ownerLoc="Pune"
+                  locationLook="PAN India"
                   margin="20%-30%"
                   MOQ="50 units"
                 />
@@ -54,9 +55,10 @@ function ProductCategories() {
                 <ProductCard
                   pic={DesiRass}
                   Blocation="Punjab"
-                  Bname="Desi Rass"
+                  Bname="Desi Ras"
                   ownerName="Ashish Bodake"
                   ownerLoc="Nashik"
+                  locationLook="Central Pune, Pimpri Chinchwad, Suburb Pune, Mumbai, Navi Mumbai, Thane, Kalyan"
                   margin="35%-45%"
                   MOQ="100 boxes"
                 />
@@ -67,6 +69,7 @@ function ProductCategories() {
                   Blocation=", Nashik"
                   Bname="ShivRatna Jaggery"
                   ownerName="Naman Patil"
+                  locationLook="Pune,Karad, Sangli, Mumbai"
                   ownerLoc="Sangli, Maharashtra"
                   margin="20-30%"
                 />
@@ -78,6 +81,7 @@ function ProductCategories() {
                   Bname="Anjani Food Products"
                   ownerName="Pinak Joshi"
                   ownerLoc="Pune"
+                  locationLook="PAN India"
                   MOQ="50kgs"
                   margin="15%-20%"
                 />
@@ -122,15 +126,15 @@ function ProductCategories() {
                   margin="25%-30%"
                 />
               </li>
-              <li className="feature-card col-sm">
-                <ProductCard
-                  pic={pic}
-                  Blocation="Belmont Garden, Chicago"
-                  Bname="Luxury Villa in Rego Park"
-                  ownerName="William Seklo"
-                  ownerLoc="Estate Agents"
-                />
-              </li>
+              {/* <li className="feature-card col-sm">
+              <ProductCard
+                pic={pic}
+                Blocation="Belmont Garden, Chicago"
+                Bname="Luxury Villa in Rego Park"
+                ownerName="William Seklo"
+                ownerLoc="Estate Agents"
+              />
+            </li> */}
             </ul>
           </div>
         </div>

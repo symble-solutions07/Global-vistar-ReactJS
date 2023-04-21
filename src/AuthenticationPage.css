@@ -1,7 +1,35 @@
+.modal{
+  position: fixed;
+  left:40%;
+  width:400px;
+  height:fit-content;
+  background-color: #e9edf8;
+  color: white;
+  z-index: 1;
+  border-radius: 16px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22) !important ;
+}
+.modal-header{
+  height: 100px;
+  width: 100%;
+  background-color: #e9edf8;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1.5rem;
+}
+.modal-content {
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+}
+
 .auth-container {
+  margin: auto;
   position: fixed;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  height: 25rem;
+  z-index: 10;
 }
 
 .auth-btns {
@@ -15,36 +43,23 @@
 }
 
 .authentication-section {
-  
-  z-index: "2";
-  /* height: 100vh; */
-
+  z-index: 2;
   display: flex;
   justify-content: center;
   height : fit-content;
-
-  /* margin-top: auto; */
-  /* display:flex;
-    justify-content:center;
-    align-items:center;
-    padding: 50%; */
-  /* margin-left: 10%; */
 }
 
 .login-btn-bottom{
     margin:auto;
-    margin-top: 3rem;
 }
 
-@media only screen and (width<=767) {
+@media only screen and (width<=767px) {
   .authentication-section {
     /* width:10rem !important; */
     margin-bottom: 10rem !important;
+    position: fixed;
   }
-}
-.login-inputs{
-  margin-top:-5rem;
-  margin-bottom:-3rem;
-  /* height: 3vh; */
-  width:15rem;
+  .modal{
+    left:0;
+  }
 }

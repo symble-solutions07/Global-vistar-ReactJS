@@ -48,7 +48,7 @@ function Footer() {
                 >
                   <ion-icon name="mail-outline"></ion-icon>
 
-                  <span>contact@homeverse.com</span>
+                  <span>info@globalvistar.com</span>
                 </a>
               </li>
             </ul>

@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import {useNavigate, useParams} from "react-router-dom";
+import React, { useEffect, useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import pic from "./images/Global vistar TB.svg";
 import "./style.css";
@@ -23,27 +23,22 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Button, Group, Avatar } from "@mantine/core";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-// import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
-// import { useDisclosure } from "@mantine/hooks";
-// import { Modal} from "@mantine/core";
+import {MyContext} from "./Context/MyContext"
 
 function Header(props) {
-  // const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
-
   const [opened, { open, close }] = useDisclosure(false);
 
   const navigate = useNavigate();
   const [email, setEmail] = useState();
-  const {id} = useParams();
+  const { id } = useParams();
   console.log(id);
   useEffect(() => {
     setEmail(sessionStorage.getItem("email"));
     console.log(email);
-    
-  }, [email])
-  
+  }, [email]);
 
   const auth = getAuth();
 
@@ -51,15 +46,12 @@ function Header(props) {
     signOut(auth).then(() => {
       sessionStorage.removeItem("email");
       navigate("/");
-    })
-  };  
+    });
+  };
 
   const handleLoginForm = () => {
     setShowLoginForm((prev) => !prev);
-    
-  }
-
-  // const [openedModal, { openModal, closeModal }] = useDisclosure(false);
+  };
 
   return (
     <header className="header" data-header>
@@ -73,25 +65,16 @@ function Header(props) {
             </a>
           </li>
           <li>
-            {/* <a href="#about" className="navbar-link" data-nav-link>
-                      About
-                    </a> */}
             <Link to="/AboutUsPage" className="navbar-link">
               About
             </Link>
           </li>
           <li>
-            {/* <a href="#service" className="navbar-link" data-nav-link>
-                      Product Categories
-                    </a> */}
             <Link to="/ProductCategories" className="navbar-link">
               Product Categories
             </Link>
           </li>
           <li>
-            {/* <a href="#blog" class="navbar-link" data-nav-link>
-                      Blogs
-                    </a> */}
             <Link to="/BlogPage" className="navbar-link">
               Blogs
             </Link>
@@ -253,8 +236,6 @@ function Header(props) {
                 onClick={handleLoginForm}
                 style={{
                   fontSize: "medium",
-
-                  // onClick={() => setShowMenu((prev) => !prev)}
                 }}
               >
                 <AccountCircleIcon

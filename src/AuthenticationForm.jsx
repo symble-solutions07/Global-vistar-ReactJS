@@ -2,9 +2,14 @@ import { useToggle, upperFirst } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged  } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
 import { auth } from "./Firebase/firebase-config";
 import {
+  Box,
   TextInput,
   PasswordInput,
   Text,
@@ -16,6 +21,9 @@ import {
   Checkbox,
   Anchor,
   Stack,
+  createStyles,
+  rem,
+  Flex,
 } from "@mantine/core";
 // import { GoogleButton, TwitterButton } from '../SocialButtons/SocialButtons';
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -23,10 +31,11 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import { dividerClasses } from "@mui/material";
 import DistributorRegister from "./RegisterDistributor";
 import ManufacturerRegister from "./RegisterManufacturer";
-
 import "./AuthenticationPage.css";
 
+
 function AuthenticationForm(props) {
+  const { classes } = useStyles();
   const [type, toggle] = useToggle(["login", "register"]);
   const [userType, setUserType] = useState("");
 
@@ -35,13 +44,6 @@ function AuthenticationForm(props) {
   const [showRegister, setShowRegister] = useState(true);
   const navigate = useNavigate();
 
-  console.log(user);
-  
-
-  
-  
-
-  
   const form = useForm({
     initialValues: {
       email: "",
@@ -59,117 +61,77 @@ function AuthenticationForm(props) {
   });
 
   const handleLogin = async () => {
-    
-
-
     signInWithEmailAndPassword(auth, form.values.email, form.values.password)
       .then((userCredential) => {
-        // Signed in
         const user = userCredential.user;
         console.log(user);
         console.log("user is logged in");
         // sessionStorage.setItem("email", user.email);
         props.setShowLoginForm(false);
         navigate(`/${user.email}`);
-        // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        console.log(error.message());
       });
-};
-
-  useEffect(() => {
-    
-    console.log(showRegister);
-  }, [showRegister])
-  
-  
+  };
 
   return (
     <div className="authentication-section">
-      <Paper
-        radius="md"
-        p="md"
-        withBorder
-        {...props}
-        style={{
-          margin: "auto",
-        }}
-        className="auth-container"
-      >
-        <Group grow mb="md" mt="md" className="auth-btns">
-          {/* <FacebookIcon radius="xl">Facebook</FacebookIcon> */}
+      <Box className="modal">
+        <Box className="modal-header">
           <Button onClick={() => toggle("login")} className="auth-login-btn">
             Login
           </Button>
-          {/* <InstagramIcon radius="xl">Instagram</InstagramIcon> */}
           <Button onClick={() => toggle("register")} className="auth-reg-btn">
             Register
           </Button>
-        </Group>
-
-        <Divider label="Login" labelPosition="center" my="lg" />
+        </Box>
 
         <form
-          onSubmit={form.onSubmit(() => {
-            handleLogin();
-          })}
+          onSubmit={form.onSubmit(() => handleLogin())}
+          className="modal-content"
         >
-          <Stack>
-            {/* {type === "register" && (
-              <TextInput
-                label="Name"
-                placeholder="Your name"
-                value={form.values.name}
-                onChange={(event) =>
-                  form.setFieldValue("name", event.currentTarget.value)
-                }
-                radius="md"
-              />
-            )} */}
-
+          <Box>
             {type === "register" ? (
-              <>
+              <Flex direction="column" gap="sm" justify="center" align="center">
                 <Button onClick={() => setUserType("manufacturer")}>
                   Register as Manufacturer
                 </Button>
                 <Button onClick={() => setUserType("distributor")}>
                   Register as Distributor
                 </Button>
-              </>
+              </Flex>
             ) : (
-              <>
-                <div className="login-inputs">
-                  <TextInput
-                    // required
-                    label="Email"
-                    placeholder="hello@mantine.dev"
-                    value={form.values.email}
-                    onChange={(event) =>
-                      form.setFieldValue("email", event.currentTarget.value)
-                    }
-                    error={form.errors.email && "Invalid email"}
-                    radius="md"
-                  />
-                  <TextInput
-                    // required
-                    label="Password"
-                    placeholder="Enter Your Password"
-                    value={form.values.password}
-                    onChange={(event) =>
-                      form.setFieldValue("password", event.currentTarget.value)
-                    }
-                    error={
-                      form.errors.password &&
-                      "Password should include at least 6 characters"
-                    }
-                    radius="md"
-                  />
-                </div>
-              </>
+              <div className="login-inputs">
+                <TextInput
+                  classNames={classes}
+                  label="Email"
+                  placeholder="hello@mantine.dev"
+                  value={form.values.email}
+                  onChange={(event) =>
+                    form.setFieldValue("email", event.currentTarget.value)
+                  }
+                  error={form.errors.email && "Invalid email"}
+                  radius="md"
+                />
+                <TextInput
+                  mt={15}
+                  classNames={classes}
+                  label="Password"
+                  placeholder="Enter Your Password"
+                  value={form.values.password}
+                  onChange={(event) =>
+                    form.setFieldValue("password", event.currentTarget.value)
+                  }
+                  error={
+                    form.errors.password &&
+                    "Password should include at least 6 characters"
+                  }
+                  radius="md"
+                />
+              </div>
             )}
-          </Stack>
+          </Box>
 
           <Group position="apart" mt="xl">
             <Anchor
@@ -178,26 +140,43 @@ function AuthenticationForm(props) {
               color="dimmed"
               onClick={() => toggle()}
               size="xs"
-            >
-              {/* {type === "register"
-                ? "Already have an account? Login"
-                : "Don't have an account? Register"} */}
-            </Anchor>
+            ></Anchor>
             <Button type="submit" radius="xl" className="login-btn-bottom">
               {upperFirst(type)}
             </Button>
           </Group>
         </form>
-      </Paper>
-      {userType === "manufacturer" && showRegister ? (
+      </Box>
+      {userType === "manufacturer" && (
         <ManufacturerRegister
           showRegister={showRegister}
           setShowRegister={setShowRegister}
         />
-      ) : null}
+      ) }
       {userType === "distributor" ? <DistributorRegister /> : null}
     </div>
   );
 }
 
 export default AuthenticationForm;
+
+
+const useStyles = createStyles((theme) => ({
+  root: {
+    position: "relative",
+  },
+
+  input: {
+    height: rem(54),
+    paddingTop: rem(18),
+  },
+
+  label: {
+    position: "absolute",
+    pointerEvents: "none",
+    fontSize: theme.fontSizes.xs,
+    paddingLeft: theme.spacing.sm,
+    paddingTop: `calc(${theme.spacing.sm} / 2)`,
+    zIndex: 1,
+  },
+}));
