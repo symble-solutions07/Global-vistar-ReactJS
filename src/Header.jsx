@@ -120,7 +120,7 @@ function Header(props) {
               </a>
             </li>
             <li>
-              <a href="#our-servives" className="header-top-link">
+              <a href="#our-services" className="header-top-link">
                 {/* <ion-icon name="location-outline"></ion-icon> */}
                 <address> | Expand Your Business | </address>
               </a>
