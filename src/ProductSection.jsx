@@ -1,8 +1,10 @@
 import React from 'react'
 import "./style.css"
-import pic from "./images/property-1.jpg";
-import pic2 from "./images/property-2.jpg";
-import pic3 from "./images/property-3.jpg";
+import pic from "./images/Savouries.jpg";
+import DesiRass from "./images/Desi Rass (1).png";
+import ShivRatna from "./images/ShivRatna Jaggery.png";
+import Anjani from "./images/alphonso aamras_mockup_500gm.jpg";
+import TribeCook from "./images/Tribe-cook.png";
 import author from "./images/author.jpg";
 import ProductCard from './ProductCard';
 import "./productsSection.css";
@@ -18,7 +20,7 @@ function ProductSection() {
           <ul
             className="property-list container row"
             // style={{
-              
+
             //   display: "flex",
             //   justifyContent: "center",
             // }}
@@ -26,59 +28,66 @@ function ProductSection() {
             <li className="feature-card col-sm">
               <ProductCard
                 pic={pic}
-                Blocation="Aznec"
-                Bname="Aznac Biscuits"
-                ownerName="Pravin Kumar"
-                ownerLoc="Kolhapur"
+                Blocation="Pune"
+                Bname="Mighty Millets"
+                ownerName="Sahil Jain"
+                ownerLoc="Pune"
+                margin="20%-30%"
+                MOQ="50 units"
               />
             </li>
 
             <li className="feature-card col-sm">
               <ProductCard
-                pic={pic2}
+                pic={DesiRass}
                 Blocation="Punjab"
-                Bname="Fresh Drinks"
-                ownerName="Dilip Singh"
-                ownerLoc="Punjab"
+                Bname="Desi Rass"
+                ownerName="Ashish Bodake"
+                ownerLoc="Nashik"
+                margin="35%-45%"
+                MOQ="100 boxes"
               />
             </li>
             <li className="feature-card col-sm">
               <ProductCard
-                pic={pic3}
-                Blocation="SULA WINES, Nashik"
-                Bname="SULA WINES"
-                ownerName="SR NALAWADE"
-                ownerLoc="Amravati"
+                pic={ShivRatna}
+                Blocation=", Nashik"
+                Bname="ShivRatna Jaggery"
+                ownerName="Naman Patil"
+                ownerLoc="Sangli, Maharashtra"
+                margin="20-30%"
               />
             </li>
             <li className="feature-card col-sm">
               <ProductCard
-                pic={pic3}
+                pic={Anjani}
                 Blocation="Belmont Garden, Chicago"
-                Bname="Luxury Villa in Rego Park"
-                ownerName="William Seklo"
-                ownerLoc="Estate Agents"
+                Bname="Anjani Food Products"
+                ownerName="Pinak Joshi"
+                ownerLoc="Pune"
+                MOQ="50kgs"
+                margin="15%-20%"
               />
             </li>
           </ul>
 
-          <ul
-            className="property-list container row"
-            
-          >
+          <ul className="property-list container row">
             <li className="feature-card col-sm">
               <ProductCard
-                pic={pic}
+                pic={TribeCook}
                 Blocation="Aznec"
-                Bname="Aznac Biscuits"
-                ownerName="Pravin Kumar"
-                ownerLoc="Kolhapur"
+                Bname="Tribe Cook"
+                ownerName="Satyajeet Bhillare"
+                ownerLoc="Pune"
+                locationLook="Mumbai,Pune"
+                MOQ="50"
+                margin="15-20%"
               />
             </li>
 
             <li className="feature-card col-sm">
               <ProductCard
-                pic={pic2}
+                pic={pic}
                 Blocation="Punjab"
                 Bname="Fresh Drinks"
                 ownerName="Dilip Singh"
@@ -87,7 +96,7 @@ function ProductSection() {
             </li>
             <li className="feature-card col-sm">
               <ProductCard
-                pic={pic3}
+                pic={pic}
                 Blocation="SULA WINES, Nashik"
                 Bname="SULA WINES"
                 ownerName="SR NALAWADE"
@@ -96,7 +105,7 @@ function ProductSection() {
             </li>
             <li className="feature-card col-sm">
               <ProductCard
-                pic={pic3}
+                pic={pic}
                 Blocation="Belmont Garden, Chicago"
                 Bname="Luxury Villa in Rego Park"
                 ownerName="William Seklo"

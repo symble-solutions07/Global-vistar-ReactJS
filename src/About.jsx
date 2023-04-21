@@ -16,7 +16,7 @@ function About() {
     <section className="about" id="about">
       <div className="container" >
         <figure className="about-banner" >
-          <img src={RegisterPic} alt="House interior"  />
+          <img src={RegisterPic} alt="House interior" className="About-us-hero"  />
 
           {/* <img src="./assets/images/about-banner-2.jpg" alt="House interior" class="abs-img"> */}
         </figure>

@@ -59,37 +59,42 @@ function HeroSection() {
           </p>
         </div>
         {/* <figure className="hero-banner">
-          <img src={homePic} alt="Modern house model" className="w-100" />
+          <img src={homePic} alt="Modern house model" className="w-100" /> 
           
         </figure> */}
         <div className="search-item-section">
           <div className="search-categories">
-            <Select
-              mt="md"
-              withinPortal
-              data={["Food", "Groceries", "Toys", "Agro"]}
-              // placeholder="Pick one"
-              label="Categories"
-              classNames={classes}
-            />
-            <Select
-              mt="md"
-              withinPortal
-              data={["Food", "Groceries", "Toys", "Agro"]}
-              // placeholder="Pick one"
-              label="Sub-Categories"
-              classNames={classes}
-            />
-            <SearchIcon
-              className="search-icon"
-              style={{
-                fontSize: "45px",
-                // marginLeft: "1rem",
-                // marginTop: "-1.5rem",
-                // marginTop:"2rem",
-                // border: "1px solid black",
-              }}
-            />
+            <div className="drop-list-hero">
+              <Select
+                mt="md"
+                withinPortal
+                data={["Food", "Groceries", "Toys", "Agro"]}
+                // placeholder="Pick one"
+                label="Categories"
+                classNames={classes}
+              />
+              <Select
+                mt="md"
+                withinPortal
+                data={["Food", "Groceries", "Toys", "Agro"]}
+                // placeholder="Pick one"
+                label="Sub-Categories"
+                classNames={classes}
+              />
+            </div>
+
+            <a href="#property">
+              <SearchIcon
+                className="search-icon"
+                style={{
+                  fontSize: "45px",
+                  // marginLeft: "1rem",
+                  // marginTop: "-1.5rem",
+                  // marginTop:"2rem",
+                  // border: "1px solid black",
+                }}
+              />
+            </a>
           </div>
 
           <div className="buttons-hero-section">
@@ -101,7 +106,7 @@ function HeroSection() {
             </button>
             <br />
             <button className="btn" style={{ backgroundColor: "#bc1823" }}>
-              For Distributors
+              For Distributors & Wholesalers
             </button>
           </div>
         </div>

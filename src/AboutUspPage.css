@@ -109,14 +109,18 @@
 }
 
 .slogan{
-  font-size:40px;
+  font-size:10rem !important;
+  line-height: 50px;
 }
 /* .member-card{
     width: 20%;
 
     
 } */
-
+.badhaye-apke{
+  display:flex;
+  flex-direction: column;
+}
 .section-one {
   display: flex;
   justify-content: center;
@@ -125,6 +129,7 @@
 }
 .left-section-text{
   font-size:20px;
+  color:#2d3840 !important;
 }
 
 
@@ -164,6 +169,9 @@
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
+}
+.social-handles:hover{
+  color:#0077b5;
 }
 .dividor {
   width: 30%;

@@ -78,6 +78,7 @@ function RegisterManufacturer(props) {
         form.values.password
       );
       console.log(user);
+      props.setShowRegister((prev) => !prev);
     } catch (err) {
       console.log(err.message);
     }

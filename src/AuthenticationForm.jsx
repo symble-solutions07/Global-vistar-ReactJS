@@ -31,6 +31,8 @@ function AuthenticationForm(props) {
   const [userType, setUserType] = useState("");
 
   const [user, setUser] = useState(null);
+
+  const [showRegister, setShowRegister] = useState(true);
   const navigate = useNavigate();
 
   console.log(user);
@@ -77,6 +79,10 @@ function AuthenticationForm(props) {
       });
 };
 
+  useEffect(() => {
+    
+    console.log(showRegister);
+  }, [showRegister])
   
   
 
@@ -92,11 +98,11 @@ function AuthenticationForm(props) {
         }}
         className="auth-container"
       >
-        <Group grow mb="md" mt="md">
+        <Group grow mb="md" mt="md" className="auth-btns">
           {/* <FacebookIcon radius="xl">Facebook</FacebookIcon> */}
-          <Button onClick={() => toggle("login")}>Login</Button>
+          <Button onClick={() => toggle("login")} className="auth-login-btn">Login</Button>
           {/* <InstagramIcon radius="xl">Instagram</InstagramIcon> */}
-          <Button onClick={() => toggle("register")}>Register</Button>
+          <Button onClick={() => toggle("register")} className="auth-reg-btn">Register</Button>
         </Group>
 
         <Divider label="Login" labelPosition="center" my="lg" />
@@ -129,7 +135,7 @@ function AuthenticationForm(props) {
                 <TextInput
                   // required
                   label="Email"
-                  placeholder="hello@mantine.dev"
+                  placeholder="hello@mantine.dev" 
                   value={form.values.email}
                   onChange={(event) =>
                     form.setFieldValue("email", event.currentTarget.value)
@@ -167,13 +173,13 @@ function AuthenticationForm(props) {
                 ? "Already have an account? Login"
                 : "Don't have an account? Register"} */}
             </Anchor>
-            <Button type="submit" radius="xl" >
+            <Button type="submit" radius="xl" className="login-btn-bottom" >
               {upperFirst(type)}
             </Button>
           </Group>
         </form>
       </Paper>
-      {userType === "manufacturer" ? <ManufacturerRegister /> : null}
+      {(userType === "manufacturer" && showRegister) ? <ManufacturerRegister showRegister={showRegister} setShowRegister={setShowRegister} /> : null}
       {userType === "distributor" ? <DistributorRegister /> : null}
     </div>
   );

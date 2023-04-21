@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
 import "./style.css";
+import AuthenticationForm from "./AuthenticationForm";
 
-function CTA() {
+import { useState } from "react";
+
+function CTA(props) {
+  // const [showLoginPage, setShowLoginPage] = useState(false);
   return (
     <section className="cta">
       <div className="container">
@@ -12,7 +16,10 @@ function CTA() {
             <p className="card-text">We can help you to find them</p>
           </div>
 
-          <button className="btn cta-btn">
+          <button
+            className="btn cta-btn"
+            
+          >
             <span>Explore Oppurtunities</span>
 
             <ion-icon name="arrow-forward-outline"></ion-icon>

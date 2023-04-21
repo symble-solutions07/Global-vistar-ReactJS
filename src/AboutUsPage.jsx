@@ -23,10 +23,13 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Card, Badge } from "@mantine/core";
 // import { IconCheck } from "@tabler/icons-react";
 // import image from "./images/hero-banner.png";
-import homePic from "./images/Untitled design 1.png";
+import AboutUsMain from "./images/about-us-image-main.png"
+import homePic from "./images/About-us-image (2).svg";
 import Header from "./Header";
 import Footer from "./Footer";
-import PranavImg from "./images/pranav_b&w.jpg";
+import PranavImg from "./images/Photo Pranav.svg";
+import KiranImg from "./images/Photo Kiran.svg";
+import AtharvaImg from "./images/Photo Atharva 1.svg";
 import "./AboutUspPage.css";
 const useStyles = createStyles((theme) => ({
   //   inner: {
@@ -95,9 +98,14 @@ function AboutUsPage() {
               className="left-section-one"
               // style={{ width: "900px", marginLeft: "7rem" }}
             >
-              <Title classNames="slogan" style={{ lineHeight: "50px" }}>
-                Badhaye <span style={{ color: "#BC1823" }}>Apke Business</span>{" "}
-                <span style={{ display: "flex" }}>
+              <Title classNames="slogan">
+                <div style={{ display: "flex", fontSize: "2.8rem" }} className="badhaye-apke">
+                  Badhaye
+                  <span style={{ color: "#BC1823",  }}>
+                    Apke Business
+                  </span>
+                </div>
+                <span style={{ display: "flex", fontSize: "2.8rem" }}>
                   ki{" "}
                   <span style={{ color: "#BC1823", paddingLeft: "10px" }}>
                     {" "}
@@ -112,16 +120,17 @@ function AboutUsPage() {
                 and distributor deserves to achieve the their full potential.
                 That's why we've created a platform that makes it easy for them
                 to find each other, collaborate, and grow their business.
-                "Vistar," means expansion, and that's exactly what we're all
-                about. We want to help our users expand their reach, expand
-                their profits, and expand their impact on the world. (Highlight
-                this)
+                <span style={{ color: "#bc1823" }}>
+                  "Vistar," means expansion, and that's exactly what we're all
+                  about. We want to help our users expand their reach, expand
+                  their profits, and expand their impact on the world.
+                </span>
               </Text>
             </div>
             {/* <Image src={image.src} className={classes.image} /> */}
             <img
               className="about-us-img-1"
-              src={homePic}
+              src={AboutUsMain}
               alt="Modern house model"
               // style={{
               //   width: "800px",
@@ -278,7 +287,7 @@ function AboutUsPage() {
               className="member-pic"
             /> */}
 
-            <img src="./" alt="" className="member-pic" />
+            <img src={KiranImg} alt="" className="member-pic" />
 
             <Group position="apart" mt="md" mb="xs">
               <Text className="member-name">Kiran Patil</Text>
@@ -308,11 +317,7 @@ function AboutUsPage() {
               className="member-pic"
             /> */}
 
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt=""
-              className="member-pic"
-            />
+            <img src={AtharvaImg} alt="" className="member-pic" />
 
             <Group position="apart" mt="md" mb="xs">
               <Text className="member-name">Atharva Kurumbhatte</Text>

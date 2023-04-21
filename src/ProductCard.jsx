@@ -7,13 +7,14 @@ import "./style.css";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
+import { Link } from "react-router-dom";
 
 function ProductCard(props) {
   return (
     <div>
       <div
         className="property-card "
-        style={{ marginLeft: "auto", maxHeight: "50rem", width: "22rem" }}
+        style={{ marginLeft: "auto", maxHeight: "40rem", width: "22rem" }}
       >
         <figure className="card-banner">
           <a href="#">
@@ -36,20 +37,26 @@ function ProductCard(props) {
             <button className="banner-actions-btn">
               <ion-icon name="camera"></ion-icon>
 
-              <span>4</span>
+              {/* <span>4</span> */}
             </button>
 
             <button className="banner-actions-btn">
               <ion-icon name="film"></ion-icon>
 
-              <span>2</span>
+              {/* <span>2</span> */}
             </button>
           </div>
         </figure>
 
         <div className="card-content">
-          <div className="card-price">
-            <strong>₹340</strong>/piece
+          <div
+            className="card-price"
+            style={{ display: "flex", color: "#bc1823" }}
+          >
+            <strong>{props.margin}</strong>{" "}
+            <span style={{ fontSize: "20px", paddingLeft: "0.5rem" }}>
+              Margin
+            </span>
           </div>
 
           <h3 className="h3 card-title" style={{ maxHeight: "1rem" }}>
@@ -62,19 +69,19 @@ function ProductCard(props) {
 
           <ul className="card-list">
             <li className="card-item">
-              <strong>100 PCS</strong>
+              <strong>{ props.MOQ}</strong>
 
               <span>MOQ</span>
             </li>
 
-            <li className="card-item">
+            {/* <li className="card-item">
               <strong>100GM, 200GM</strong>
 
               <span>Availble size</span>
-            </li>
+            </li> */}
 
             <li className="card-item">
-              <strong>PAN INDIA</strong>
+              <strong>{ props.locationLook}</strong>
 
               <span>Looking for locations</span>
             </li>
@@ -95,7 +102,7 @@ function ProductCard(props) {
                 <a href="#">{props.ownerName}</a>
               </p>
 
-              <p className="author-title">{props.ownerLoc}</p>
+              <p className="author-title" style={{ fontSize:"15px" }}>{props.ownerLoc}</p>
             </div>
           </div>
 
@@ -106,7 +113,7 @@ function ProductCard(props) {
               flexDirection: "column",
             }}
           >
-            <div style={{ display: "flex" }}>
+            {/* <div style={{ display: "flex" }}>
               <button className="card-footer-actions-btn" style={{ marginRight:"10px" }}>
                 <FavoriteIcon />
               </button>
@@ -114,14 +121,16 @@ function ProductCard(props) {
               <button className="card-footer-actions-btn">
                 <OpenInFullIcon />
               </button>
-            </div>
+            </div> */}
             <div>
-              <button
-                className="card-footer-actions-btn"
-                style={{ width: "7.5rem", padding:"2px"}}
-              >
-                Send Enquiry
-              </button>
+              <Link to="/enquiry">
+                <button
+                  className="card-footer-actions-btn"
+                  style={{ width: "7.5rem", padding: "2px" }}
+                >
+                  Send Enquiry
+                </button>
+              </Link>
             </div>
           </div>
         </div>

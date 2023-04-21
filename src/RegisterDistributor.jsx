@@ -33,6 +33,7 @@ function RegisterDistributor(props) {
       phone: "",
       location: "",
       password: "",
+      confirm:"",
       terms: true,
     },
 
@@ -71,7 +72,7 @@ function RegisterDistributor(props) {
     }
 
     const user = {
-      email: form.values.manufacturer_email,
+      email: form.values.distributor_email,
       name: form.values.name,
       phone: form.values.phone,
     };
@@ -84,7 +85,7 @@ function RegisterDistributor(props) {
   };
 
   return (
-    <div className="authentication-section">
+    <div className="authentication-section" style={{ width:"10rem" }}>
       <Paper
         radius="md"
         p="xl"
@@ -109,9 +110,26 @@ function RegisterDistributor(props) {
               placeholder="hello@mantine.dev"
               value={form.values.distributor_email}
               onChange={(event) =>
-                form.setFieldValue("distributor_email", event.currentTarget.value)
+                form.setFieldValue(
+                  "distributor_email",
+                  event.currentTarget.value
+                )
               }
               error={form.errors.distributor_email && "Invalid email"}
+              radius="md"
+            />
+            <TextInput
+              // required
+              label="Name"
+              placeholder="Enter your name"
+              value={form.values.name}
+              onChange={(event) =>
+                form.setFieldValue(
+                  "name",
+                  event.currentTarget.value
+                )
+              }
+              error={form.errors.name}
               radius="md"
             />
 
@@ -146,12 +164,12 @@ function RegisterDistributor(props) {
               // required
               label="Re-Enter Password"
               placeholder="Re-Enter Your Password"
-              value={form.values.password}
+              value={form.values.confirm}
               onChange={(event) =>
-                form.setFieldValue("password", event.currentTarget.value)
+                form.setFieldValue("confirm", event.currentTarget.value)
               }
               error={
-                form.errors.password &&
+                form.errors.confirm &&
                 "Password should include at least 6 characters"
               }
               radius="md"
@@ -170,7 +188,7 @@ function RegisterDistributor(props) {
                 ? "Already have an account? Login"
                 : "Don't have an account? Register"} */}
             </Anchor>
-            <Button type="submit" radius="xl" onClick={handleRegister} >
+            <Button type="submit" radius="xl" onClick={handleRegister}>
               {upperFirst(type) + " as Distributor"}
             </Button>
           </Group>

@@ -7,6 +7,7 @@ import AboutUsPage from "./AboutUsPage";
 import ExpandBlog1 from "./ExpandBlog1";
 import ExpandBlog2 from "./ExpandBlog2";
 import ExpandBlog3 from "./ExpandBlog3";
+import Enquiry from "./Enquiry";
 
 function Routing() {
   return (
@@ -21,6 +22,7 @@ function Routing() {
         <Route path="/newBlog1" element={<ExpandBlog1/>} />
         <Route path="/newBlog2" element={<ExpandBlog2/>} />
         <Route path="/newBlog3" element={<ExpandBlog3/>} />
+        <Route path="/enquiry" element={<Enquiry/>} />
       </Routes>
 
 

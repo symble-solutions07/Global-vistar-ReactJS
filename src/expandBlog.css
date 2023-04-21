@@ -10,6 +10,11 @@
     
 }
 
+.new-blog p{
+    line-height: 2.4rem;
+    font-size: 18px;
+}
+
 /* .blog-para{
     width:50%;
     font-size: 20px;

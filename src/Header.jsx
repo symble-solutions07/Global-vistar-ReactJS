@@ -28,7 +28,7 @@ import { Modal } from "@mantine/core";
 // import { useDisclosure } from "@mantine/hooks";
 // import { Modal} from "@mantine/core";
 
-function Header() {
+function Header(props) {
   // const [showMenu, setShowMenu] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
 
@@ -53,6 +53,11 @@ function Header() {
       navigate("/");
     })
   };  
+
+  const handleLoginForm = () => {
+    setShowLoginForm((prev) => !prev);
+    
+  }
 
   // const [openedModal, { openModal, closeModal }] = useDisclosure(false);
 
@@ -134,22 +139,31 @@ function Header() {
           <div className="wrapper">
             <ul className="header-top-social-list">
               <li>
-                <a href="#" className="header-top-social-link">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100090696241204&mibextid=ZbWKwL"
+                  className="header-top-social-link"
+                >
                   <FacebookIcon></FacebookIcon>
                 </a>
               </li>
               <li>
-                <a href="#" className="header-top-social-link">
+                <a
+                  href="https://instagram.com/globalvistar?igshid=YmMyMTA2M2Y="
+                  className="header-top-social-link"
+                >
                   <InstagramIcon></InstagramIcon>
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="header-top-social-link">
                   <TwitterIcon></TwitterIcon>
                 </a>
-              </li>
+              </li> */}
               <li>
-                <a href="#" className="header-top-social-link">
+                <a
+                  href="https://www.linkedin.com/company/global-vistar/"
+                  className="header-top-social-link"
+                >
                   <LinkedInIcon></LinkedInIcon>
                 </a>
               </li>
@@ -225,12 +239,12 @@ function Header() {
             {/* <Avatar radius="xl" color="black" />
              */}
 
-            {(id!==undefined) ? (
+            {id !== undefined ? (
               <>
                 <p>{id}</p>
                 <Button
                   onClick={() => {
-                    signOutUser()
+                    signOutUser();
                   }}
                 >
                   LogOut
@@ -239,7 +253,7 @@ function Header() {
             ) : (
               <Button
                 className="register-button"
-                onClick={() => setShowLoginForm((prev) => !prev)}
+                onClick={handleLoginForm}
                 style={{
                   fontSize: "medium",
 
@@ -305,10 +319,7 @@ function Header() {
       </div>
       <div className="authentication-section">
         {showLoginForm ? (
-          <AuthenticationForm
-            showLoginForm={showLoginForm}
-            setShowLoginForm={setShowLoginForm}
-          />
+          <AuthenticationForm showLoginForm={showLoginForm} />
         ) : (
           ""
         )}
