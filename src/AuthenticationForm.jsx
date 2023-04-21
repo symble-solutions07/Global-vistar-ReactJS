@@ -90,7 +90,7 @@ function AuthenticationForm(props) {
     <div className="authentication-section">
       <Paper
         radius="md"
-        p="xl"
+        p="md"
         withBorder
         {...props}
         style={{
@@ -100,14 +100,22 @@ function AuthenticationForm(props) {
       >
         <Group grow mb="md" mt="md" className="auth-btns">
           {/* <FacebookIcon radius="xl">Facebook</FacebookIcon> */}
-          <Button onClick={() => toggle("login")} className="auth-login-btn">Login</Button>
+          <Button onClick={() => toggle("login")} className="auth-login-btn">
+            Login
+          </Button>
           {/* <InstagramIcon radius="xl">Instagram</InstagramIcon> */}
-          <Button onClick={() => toggle("register")} className="auth-reg-btn">Register</Button>
+          <Button onClick={() => toggle("register")} className="auth-reg-btn">
+            Register
+          </Button>
         </Group>
 
         <Divider label="Login" labelPosition="center" my="lg" />
 
-        <form onSubmit={form.onSubmit(() => {handleLogin()})}>
+        <form
+          onSubmit={form.onSubmit(() => {
+            handleLogin();
+          })}
+        >
           <Stack>
             {/* {type === "register" && (
               <TextInput
@@ -132,31 +140,33 @@ function AuthenticationForm(props) {
               </>
             ) : (
               <>
-                <TextInput
-                  // required
-                  label="Email"
-                  placeholder="hello@mantine.dev" 
-                  value={form.values.email}
-                  onChange={(event) =>
-                    form.setFieldValue("email", event.currentTarget.value)
-                  }
-                  error={form.errors.email && "Invalid email"}
-                  radius="md"
-                />
-                <TextInput
-                  // required
-                  label="Password"
-                  placeholder="Enter Your Password"
-                  value={form.values.password}
-                  onChange={(event) =>
-                    form.setFieldValue("password", event.currentTarget.value)
-                  }
-                  error={
-                    form.errors.password &&
-                    "Password should include at least 6 characters"
-                  }
-                  radius="md"
-                />
+                <div className="login-inputs">
+                  <TextInput
+                    // required
+                    label="Email"
+                    placeholder="hello@mantine.dev"
+                    value={form.values.email}
+                    onChange={(event) =>
+                      form.setFieldValue("email", event.currentTarget.value)
+                    }
+                    error={form.errors.email && "Invalid email"}
+                    radius="md"
+                  />
+                  <TextInput
+                    // required
+                    label="Password"
+                    placeholder="Enter Your Password"
+                    value={form.values.password}
+                    onChange={(event) =>
+                      form.setFieldValue("password", event.currentTarget.value)
+                    }
+                    error={
+                      form.errors.password &&
+                      "Password should include at least 6 characters"
+                    }
+                    radius="md"
+                  />
+                </div>
               </>
             )}
           </Stack>
@@ -173,13 +183,18 @@ function AuthenticationForm(props) {
                 ? "Already have an account? Login"
                 : "Don't have an account? Register"} */}
             </Anchor>
-            <Button type="submit" radius="xl" className="login-btn-bottom" >
+            <Button type="submit" radius="xl" className="login-btn-bottom">
               {upperFirst(type)}
             </Button>
           </Group>
         </form>
       </Paper>
-      {(userType === "manufacturer" && showRegister) ? <ManufacturerRegister showRegister={showRegister} setShowRegister={setShowRegister} /> : null}
+      {userType === "manufacturer" && showRegister ? (
+        <ManufacturerRegister
+          showRegister={showRegister}
+          setShowRegister={setShowRegister}
+        />
+      ) : null}
       {userType === "distributor" ? <DistributorRegister /> : null}
     </div>
   );
