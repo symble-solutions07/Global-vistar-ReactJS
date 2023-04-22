@@ -59,11 +59,11 @@ function Header(props) {
 
       <Drawer opened={opened} onClose={close}>
         <ul className="navbar-list">
-          <li>
+          {/* <li>
             <a href="#home" className="navbar-link" data-nav-link>
               Home
             </a>
-          </li>
+          </li> */}
           <li>
             <Link to="/AboutUsPage" className="navbar-link">
               About
