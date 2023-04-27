@@ -3,6 +3,7 @@ import { useForm } from "@mantine/form";
 import { auth, db } from "./Firebase/firebase-config";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc, Timestamp } from "firebase/firestore";
+import { Link } from "react-router-dom";
 import {
   TextInput,
   PasswordInput,
@@ -93,9 +94,9 @@ function RegisterManufacturer(props) {
 
   return (
     <Box className="modal">
-      <a href="/">
+      <Link to="/register">
         <KeyboardBackspaceIcon />
-      </a>
+      </Link>
 
       <Box className="modal-header">
         <Text color="dark">You are a Manufacturer</Text>

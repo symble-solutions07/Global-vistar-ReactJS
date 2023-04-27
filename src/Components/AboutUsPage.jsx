@@ -10,27 +10,27 @@ import {
   ThemeIcon,
   rem,
 } from "@mantine/core";
-import "./style.css";
+import "../style.css";
 import AddBusinessIcon from "@mui/icons-material/AddBusiness";
 import NetworkCheckIcon from "@mui/icons-material/NetworkCheck";
 import ScienceIcon from "@mui/icons-material/Science";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
-import "./features.css";
+import "../features.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Card, Badge } from "@mantine/core";
 // import { IconCheck } from "@tabler/icons-react";
 // import image from "./images/hero-banner.png";
-import AboutUsMain from "./images/about-us-image-main.png"
-import homePic from "./images/About-us-image (2).svg";
-import Header from "./Header";
-import Footer from "./Footer";
-import PranavImg from "./images/Photo Pranav.svg";
-import KiranImg from "./images/Photo Kiran.svg";
-import AtharvaImg from "./images/Photo Atharva 1.svg";
-import "./AboutUspPage.css";
+import AboutUsMain from "../images/about-us-image-main.png";
+import homePic from "../images/About-us-image (2).svg";
+import Header from "../Header";
+import Footer from "../Footer";
+import PranavImg from "../images/Photo Pranav.svg";
+import KiranImg from "../images/Photo Kiran.svg";
+import AtharvaImg from "../images/Photo Atharva 1.svg";
+import "../AboutUspPage.css";
 const useStyles = createStyles((theme) => ({
   //   inner: {
   //     display: "flex",
@@ -100,7 +100,7 @@ function AboutUsPage() {
             >
               <Title classNames="slogan">
                 <div
-                  style={{ display: "flex", fontSize: "2.8rem"}}
+                  style={{ display: "flex", fontSize: "2.8rem" }}
                   className="badhaye-apke"
                 >
                   Badhaye
@@ -121,8 +121,14 @@ function AboutUsPage() {
                 and distributor deserves to achieve the their full potential.
                 That's why we've created a platform that makes it easy for them
                 to find each other, collaborate, and grow their business.
-                <span style={{ color: "#210d41", fontWeight:"bold", fontStyle:"italic" }}>
-                  "Vistar," means expansion, and that's exactly what we're all
+                <span
+                  style={{
+                    color: "#210d41",
+                    fontWeight: "bold",
+                    fontStyle: "italic",
+                  }}
+                >
+                  "Vistar" means expansion, and that's exactly what we're all
                   about. We want to help our users expand their reach, expand
                   their profits, and expand their impact on the world.
                 </span>

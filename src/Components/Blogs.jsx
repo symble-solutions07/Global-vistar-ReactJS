@@ -1,11 +1,11 @@
 import React from 'react'
-import "./style.css"
-import pic1 from "./images/Blog 1 (1).png";
-import pic2 from "./images/Blog 2 (1).png";
-import pic3 from "./images/Blog 3(1).png";
+import "../style.css"
+import pic1 from "../images/Blog 1 (1).png";
+import pic2 from "../images/Blog 2 (1).png";
+import pic3 from "../images/Blog 3(1).png";
 import { margin } from '@mui/system';
 import { Link } from "react-router-dom";
-import "./Blog.css";
+import "../Blog.css";
 
 
 

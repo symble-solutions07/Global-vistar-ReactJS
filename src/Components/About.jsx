@@ -1,14 +1,14 @@
 import React from "react";
-import "./style.css";
-import "./About.css"
-import pic from "./images/about-banner-1.png";
+import "../style.css";
+import "../About.css"
+import pic from "../images/about-banner-1.png";
 import GroupIcon from "@mui/icons-material/Group";
 import SearchIcon from "@mui/icons-material/Search";
 // import { IonIcons } from "@ionic/react";
 import BoltIcon from "@mui/icons-material/Bolt";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import DoneIcon from "@mui/icons-material/Done";
-import RegisterPic from "./images/Untitled design 2.png";
+import RegisterPic from "../images/Untitled design 2.png";
 // import Bolt from "@mui/icons-material/Bolt";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import "./expandBlog.css";
+import Header from "../Header";
+import Footer from "../Footer";
+import "../expandBlog.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
 function ExpandBlog2() {

@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import {  Select } from "@mantine/core";
 import emailjs from "@emailjs/browser";
-import "./Enquiry.css";
+import "../Enquiry.css";
 // import { Header } from "@mantine/core";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../Header";
+import Footer from "../Footer";
 const Enquiry = () => {
   const form = useRef();
 

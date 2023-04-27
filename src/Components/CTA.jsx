@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "../style.css";
 import AuthenticationForm from "./AuthenticationForm";
 
 import { useState } from "react";
@@ -16,10 +16,7 @@ function CTA(props) {
             <p className="card-text">We can help you to find them</p>
           </div>
 
-          <button
-            className="btn cta-btn"
-            
-          >
+          <button className="btn cta-btn">
             <span>Explore Oppurtunities</span>
 
             <ion-icon name="arrow-forward-outline"></ion-icon>

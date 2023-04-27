@@ -1,6 +1,9 @@
 import React, { useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import pic from "./images/Global vistar TB.svg";
 import "./style.css";
 // import Button from "react-bootstrap/Button";
@@ -18,13 +21,13 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 // import StorefrontIcon from "@mui/icons-material/Storefront";
 import { signOut, getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
-import AuthenticationForm from "./AuthenticationForm";
+import AuthenticationForm from "./Components/AuthenticationForm";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Button, Group, Avatar } from "@mantine/core";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Modal } from "@mantine/core";
-import {MyContext} from "./Context/MyContext"
+import { MyContext } from "./Context/MyContext";
 
 function Header(props) {
   const [showMenu, setShowMenu] = useState(false);
@@ -35,10 +38,28 @@ function Header(props) {
   const [email, setEmail] = useState();
   const { id } = useParams();
   console.log(id);
+
+  let string;
+
+  if (id) {
+    string = id;
+
+    console.log("The given string is:", string);
+
+    string = string.substring(0, string.indexOf("@"));
+
+    console.log("The substring before the specific character is:", string);
+  }
+  
   useEffect(() => {
     setEmail(sessionStorage.getItem("email"));
     console.log(email);
-  }, [email]);
+    if (id != null) {
+      toast.success("user logged in!", {
+        toastId: 1,
+      });
+    }
+  }, [email, id]);
 
   const auth = getAuth();
 
@@ -221,7 +242,7 @@ function Header(props) {
 
             {id !== undefined ? (
               <>
-                <p>{id}</p>
+                <p>Welcome, {id ? string : null}</p>
                 <Button
                   onClick={() => {
                     signOutUser();
@@ -231,19 +252,21 @@ function Header(props) {
                 </Button>
               </>
             ) : (
-              <Button
-                className="register-button"
-                onClick={handleLoginForm}
-                style={{
-                  fontSize: "medium",
-                }}
-              >
-                <AccountCircleIcon
-                  style={{ fontSize: "30px", paddingRight: "4px" }}
-                  className="profile-icon-register"
-                ></AccountCircleIcon>
-                Register / Login{" "}
-              </Button>
+              <Link to="/login">
+                <Button
+                  className="register-button"
+                  onClick={handleLoginForm}
+                  style={{
+                    fontSize: "medium",
+                  }}
+                >
+                  <AccountCircleIcon
+                    style={{ fontSize: "30px", paddingRight: "4px" }}
+                    className="profile-icon-register"
+                  ></AccountCircleIcon>
+                  Register / Login{" "}
+                </Button>
+              </Link>
             )}
 
             {/* <button class="header-bottom-actions-btn" aria-label="Profile">
@@ -295,13 +318,20 @@ function Header(props) {
           </div>
         </div>
       </div>
-      <div className="authentication-section">
+      {/* <div className="authentication-section">
         {showLoginForm ? (
-          <AuthenticationForm showLoginForm={showLoginForm} />
+          <AuthenticationForm
+            showLoginForm={showLoginForm}
+            setShowLoginForm={setShowLoginForm}
+          />
         ) : (
           ""
         )}
-      </div>
+      </div> */}
+      <ToastContainer
+        style={{ width: "500px" }}
+        position="top-center"
+      ></ToastContainer>
     </header>
   );
 }

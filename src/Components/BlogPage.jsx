@@ -1,16 +1,16 @@
 import React from "react";
-import "./style.css";
+import "../style.css";
 import { Link } from "react-router-dom";
 import { Drawer, Button, Group, Avatar } from "@mantine/core";
-import blog1 from "./images/Blog 1 (1).png";
-import blog2 from "./images/Blog 2 (1).png"
-import blog3 from "./images/Blog 3(1).png"
+import blog1 from "../images/Blog 1 (1).png";
+import blog2 from "../images/Blog 2 (1).png"
+import blog3 from "../images/Blog 3(1).png"
 
-import "./Blogpage.css";
-import author from "./images/author.jpg";
+import "../Blogpage.css";
+import author from "../images/author.jpg";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
-import Footer from "./Footer.jsx";
-import Header from "./Header";
+import Footer from "../Footer.jsx";
+import Header from "../Header";
 
 
 function BlogPage() {

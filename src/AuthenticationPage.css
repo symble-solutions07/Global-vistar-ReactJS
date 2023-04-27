@@ -1,15 +1,45 @@
-.modal{
+.modal {
+  margin-top: 6rem;
   position: fixed;
-  left:40%;
-  width:400px;
-  height:fit-content;
+  left: 40%;
+  width: 400px;
+  height: fit-content;
   background-color: #e9edf8;
   color: white;
   z-index: 1;
   border-radius: 16px;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22) !important ;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important ;
+  border-color: 2px solid black;
 }
-.modal-header{
+.modal-register {
+  margin-top: 10rem;
+  padding: 3rem;
+
+  position: fixed;
+  left: 40%;
+  width: 400px;
+  height: fit-content;
+  background-color: #e9edf8;
+  color: white;
+  z-index: 1;
+  border-radius: 16px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important ;
+  border-color: 2px solid black;
+}
+.buttons-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.register-question {
+  padding: 10px;
+  padding-top: 20px;
+  text-align: center;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+}
+.modal-header {
   height: 100px;
   width: 100%;
   background-color: #e9edf8;
@@ -17,7 +47,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:1.5rem;
+  gap: 1.5rem;
 }
 .modal-content {
   margin: 0;
@@ -39,18 +69,20 @@
   width: fit-content;
 }
 .auth-reg-btn {
-  width:8rem;
+  width: 8rem;
 }
 
 .authentication-section {
   z-index: 2;
   display: flex;
   justify-content: center;
-  height : fit-content;
+  /* align-items: center; */
+  /* margin: 10rem; */
+  height: fit-content;
 }
 
-.login-btn-bottom{
-    margin:auto;
+.login-btn-bottom {
+  margin: auto;
 }
 
 @media only screen and (width<=767px) {
@@ -59,8 +91,14 @@
     margin-bottom: 10rem !important;
     position: fixed;
   }
-  .modal{
-    left:0;
-    margin-top:-10rem;
+  .modal {
+    left: 0;
+    margin-top: -10rem;
   }
+}
+
+.header-sign-in {
+  color: black;
+  text-align: center;
+  padding: 20px;
 }

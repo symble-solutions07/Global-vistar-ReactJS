@@ -1,23 +1,25 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import "./expandBlog.css";
+import Header from "../Header";
+import Footer from "../Footer";
+import "../expandBlog.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import blog1 from "./images/Blog 1 (1).png"
 
-function ExpandBlog1() {
+function ExpandBlog3() {
   return (
     <div>
       <Header />
       <div className="new-blog">
         <h1 style={{ textAlign: "center" }}>
-          How to Create a Great Distribution Network for Your Product?
+          10 Things Every Distributor Should Verify!
         </h1>
         <p className="blog-para" style={{ color: "gray" }}>
           Apr 11 2023 - 2 min read{" "}
         </p>
 
-        <img src={blog1} alt="" />
+        <img
+          src="https://franchiseindia.s3.ap-south-1.amazonaws.com/opp/article/english/images/1786391288.jpg"
+          alt=""
+        />
 
         <p className="blog-para">
           As a manufacturer, you know that having a great product is just the
@@ -109,4 +111,4 @@ function ExpandBlog1() {
   );
 }
 
-export default ExpandBlog1;
+export default ExpandBlog3;
