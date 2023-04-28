@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 // import pic from "./images/property-1.jpg";
 import pic2 from "./images/property-2.jpg";
 import pic3 from "./images/property-3.jpg";
@@ -8,9 +8,13 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Enquiry from "./Components/Enquiry";
 import { Link } from "react-router-dom";
+// import { useState } from "react";
 
 function ProductCard(props) {
+  const [showEnquiry, setShowEnquiry] = useState(false);
+
   return (
     <div>
       <div
@@ -70,7 +74,7 @@ function ProductCard(props) {
 
           <ul className="card-list">
             <li className="card-item">
-              <strong>{ props.MOQ}</strong>
+              <strong>{props.MOQ}</strong>
 
               <span>MOQ</span>
             </li>
@@ -82,7 +86,7 @@ function ProductCard(props) {
             </li> */}
 
             <li className="card-item">
-              <strong>{ props.locationLook}</strong>
+              <strong>{props.locationLook}</strong>
 
               <span>Looking for locations</span>
             </li>
@@ -104,7 +108,9 @@ function ProductCard(props) {
                 <a href="#">{props.ownerName}</a>
               </p>
 
-              <p className="author-title" style={{ fontSize:"15px" }}>{props.ownerLoc}</p>
+              <p className="author-title" style={{ fontSize: "15px" }}>
+                {props.ownerLoc}
+              </p>
             </div>
           </div>
 
@@ -128,6 +134,9 @@ function ProductCard(props) {
               <Link to="/enquiry">
                 <button
                   className="card-footer-actions-btn"
+                  // onClick={() => {
+                  //   setShowEnquiry(true);
+                  // }}
                   style={{ width: "7.5rem", padding: "2px" }}
                 >
                   Send Enquiry
@@ -137,6 +146,7 @@ function ProductCard(props) {
           </div>
         </div>
       </div>
+      {showEnquiry ? <Enquiry></Enquiry> : null}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "../style.css";
 import AuthenticationForm from "./AuthenticationForm";
-
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function CTA(props) {
@@ -16,15 +16,17 @@ function CTA(props) {
             <p className="card-text">We can help you to find them</p>
           </div>
 
-          <button className="btn cta-btn">
-            <span>Explore Oppurtunities</span>
+          <Link to="/registerDistributor">
+            <button className="btn cta-btn">
+              <span>Explore Oppurtunities</span> 
 
-            <ion-icon name="arrow-forward-outline"></ion-icon>
-          </button>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+          </Link>
         </div>
       </div>
     </section>
   );
-}
+} 
 
 export default CTA;

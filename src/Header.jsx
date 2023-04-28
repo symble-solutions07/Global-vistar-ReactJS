@@ -124,16 +124,20 @@ function Header(props) {
               </a>
             </li>
             <li>
-              <a href="#our-services" className="header-top-link">
+              <Link to="/register" className="header-top-link">
                 {/* <ion-icon name="location-outline"></ion-icon> */}
                 <address> | Expand Your Business | </address>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="header-top-link" onClick={handleLoginForm}>
+              <Link
+                to="/registerDistributor"
+                className="header-top-link"
+                onClick={handleLoginForm}
+              >
                 {/* <ion-icon name="location-outline"></ion-icon> */}
                 <address> | Distributor Registration | </address>
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -169,7 +173,9 @@ function Header(props) {
                 </a>
               </li>
             </ul>
-            <button className="header-top-btn">List your Products</button>
+            <Link to="/registerManufacturer">
+              <button className="header-top-btn">List your Products</button>
+            </Link>
           </div>
         </div>
       </div>
