@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useState} from 'react'
 import "./style.css"
 import { Drawer, Button, Group, Avatar } from "@mantine/core";
 import { Link } from "react-router-dom";
@@ -15,6 +15,10 @@ import ProductCard from './ProductCard';
 import "./productsSection.css";
 
 function ProductSection() {
+ 
+
+  // setShowEnquiry(true);
+
   return (
     <section className="property" id="property">
       <div className="container">
@@ -40,6 +44,8 @@ function ProductSection() {
                 locationLook="PAN India"
                 margin="20%-30%"
                 MOQ="50 units"
+                
+                
               />
             </li>
 

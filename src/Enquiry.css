@@ -47,7 +47,7 @@ input[type="submit"]:hover {
     margin: auto;
 } */
 
-form {
+.enquiry-form-content{
   width: 50%;
   margin: 0 auto;
   font-family: Arial, sans-serif;
@@ -58,11 +58,7 @@ label {
   margin-bottom: 10px;
 }
 
-input[type="text"],
-input[type="tel"],
-input[type="email"],
-input[type="number"],
-select {
+.enquiry-input{
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -75,7 +71,7 @@ select option {
   font-size: 16px;
 }
 
-input[type="submit"] {
+.enquiry-submit {
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
@@ -89,7 +85,7 @@ input[type="submit"]:hover {
   /* background-color: ; */
 }
 
-input[type="range"] {
+.enquiry-input-range {
   -webkit-appearance: none;
   width: 100%;
   height: 10px;
@@ -100,7 +96,7 @@ input[type="range"] {
   outline: none;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+.enquiry-input-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
@@ -110,7 +106,7 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
-input[type="range"]::-moz-range-thumb {
+.enquiry-input-range::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -119,13 +115,15 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .enquiry-form-content{
+
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 .enquiry-form-section{
-  
-
+  position: fixed;
+left: 40%;
+top: 5%;
   z-index: 10;
   background-color: #F5F5DC;
   width:fit-content;
@@ -137,4 +135,11 @@ input[type="range"]::-moz-range-thumb {
 .header-enquiry{
   text-align:center;
   padding-bottom: 10px;
+}
+.close-enquiry-form{
+  margin: 10px;
+}
+
+.close-enquiry-form:hover{
+  color:red;
 }

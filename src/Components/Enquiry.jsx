@@ -1,13 +1,18 @@
 import React, { useRef, useState } from "react";
 import { Select } from "@mantine/core";
 import emailjs from "@emailjs/browser";
+import CloseIcon from "@mui/icons-material/Close";
+
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 import "../Enquiry.css";
 // import { Header } from "@mantine/core";
 import Header from "../Header";
 import Footer from "../Footer";
-const Enquiry = () => {
+const Enquiry = (props) => {
   const form = useRef();
 
+  
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -22,6 +27,10 @@ const Enquiry = () => {
         (result) => {
           console.log(result.text);
           console.log("email sent!");
+          props.setShowEnquiry(!(props.showEnquiry));
+          toast.success("User Enquiry Sent Successfully!", {
+            toastId: 1,
+          });
         },
         (error) => {
           console.log(error.text);
@@ -45,31 +54,63 @@ const Enquiry = () => {
     setQuantity(newQuantityRange / 10);
   };
 
+  const sendEnquiry = () => {
+    props.setShowEnquiry(!(props.showEnquiry));
+
+  }
+
   return (
     <>
+      <ToastContainer
+        style={{ width: "500px" }}
+        position="top-center"
+      ></ToastContainer>
       <div className="enquiry-form-section">
+        <div className="close-enquiry-form">
+          <CloseIcon onClick={()=>{props.setShowEnquiry(!(props.showEnquiry))}}></CloseIcon>
+        </div>
+
         <h1 className="header-enquiry">Enquiry Form</h1>
         {/* <hr className="enquiry-hr" /> */}
         <form ref={form} onSubmit={sendEmail} className="enquiry-form-content">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="user_name" required />
+          <input
+            type="text"
+            id="name"
+            name="user_name"
+            required
+            className="enquiry-input"
+          />
           <br></br>
 
           <label for="phone">Phone number:</label>
-          <input type="tel" id="phone" name="user_phone" required />
+          <input
+            type="tel"
+            id="phone"
+            name="user_phone"
+            required
+            className="enquiry-input"
+          />
           <br></br>
 
           <label for="email">Email address:</label>
-          <input type="email" id="email" name="user_email" required />
+          <input
+            type="email"
+            id="email"
+            name="user_email"
+            required
+            className="enquiry-input"
+          />
           <br></br>
 
           <label for="product">Product:</label>
-          <select id="product" name="user_product">
+          {/* <select id="product" name="user_product" className="enquiry-input">
             <option value="product1">Product 1</option>
             <option value="product2">Product 2</option>
             <option value="product3">Product 3</option>
             <option value="product4">Product 4</option>
-          </select>
+          </select> */}
+          <input type="text" name ="user_product" value={props.Bname} />
           <br></br>
 
           <label for="quantity">Quantity Required:</label>
@@ -83,6 +124,7 @@ const Enquiry = () => {
               value={quantity}
               onChange={handleQuantityChange}
               required
+              className="enquiry-input"
             />
             <input
               type="range"
@@ -92,11 +134,12 @@ const Enquiry = () => {
               max="1000"
               value={quantityRange}
               onChange={handleQuantityRangeChange}
+              className="enquiry-input-range"
             />
           </div>
           <br></br>
 
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" className="enquiry-submit" />
         </form>
       </div>
     </>

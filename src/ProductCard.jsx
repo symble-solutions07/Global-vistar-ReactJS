@@ -13,7 +13,9 @@ import { Link } from "react-router-dom";
 // import { useState } from "react";
 
 function ProductCard(props) {
+  
   const [showEnquiry, setShowEnquiry] = useState(false);
+  
 
   return (
     <div>
@@ -131,22 +133,23 @@ function ProductCard(props) {
               </button>
             </div> */}
             <div>
-              <Link to="/enquiry">
+              {/* <Link to="/enquiry"> */}
                 <button
                   className="card-footer-actions-btn"
-                  // onClick={() => {
-                  //   setShowEnquiry(true);
-                  // }}
+                onClick={() => {
+                  setShowEnquiry(!showEnquiry);
+                  console.log(showEnquiry);
+                  }}
                   style={{ width: "7.5rem", padding: "2px" }}
                 >
                   Send Enquiry
                 </button>
-              </Link>
+              {/* </Link> */}
             </div>
           </div>
         </div>
       </div>
-      {showEnquiry ? <Enquiry></Enquiry> : null}
+      {showEnquiry ? <Enquiry showEnquiry={showEnquiry} setShowEnquiry={setShowEnquiry} Bname={props.Bname}></Enquiry> : null}
     </div>
   );
 }
