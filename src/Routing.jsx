@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useState} from 'react'
 import App from "./App";
 import BlogPage from "./Components/BlogPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,31 +12,47 @@ import AuthenticationForm from './Components/AuthenticationForm';
 import RegisterDistributor from './RegisterDistributor';
 import RegisterManufacturer from './RegisterManufacturer';
 import Register from "./Components/Register";
+import TermsAndCond from "./Components/TermsAndCond";
 
 function Routing() {
+  const [conditionAccepted, setConditionAccepted] = useState(false);
+
+  
   return (
     <BrowserRouter>
-
       <Routes>
-        <Route path="/" element={<App/>} />
-        <Route path="/:id" element={<App/>} />
-        <Route path="/BlogPage" element={<BlogPage/>} />
-        <Route path="/ProductCategories" element={<ProductCategories/>} />
+        <Route path="/" element={<App />} />
+        <Route path="/:id" element={<App />} />
+        <Route path="/BlogPage" element={<BlogPage />} />
+        <Route path="/ProductCategories" element={<ProductCategories />} />
         <Route path="/AboutUsPage" element={<AboutUsPage />} />
-        <Route path="/newBlog1" element={<ExpandBlog1/>} />
-        <Route path="/newBlog2" element={<ExpandBlog2/>} />
-        <Route path="/newBlog3" element={<ExpandBlog3/>} />
-        <Route path="/enquiry" element={<Enquiry/>} />
-        <Route path="/login" element={<AuthenticationForm/>} />
-        <Route path="/register" element={<Register/>} />
-        <Route path="/registerDistributor" element={<RegisterDistributor/>} />
-        <Route path="/registerManufacturer" element={<RegisterManufacturer/>} />
+        <Route path="/newBlog1" element={<ExpandBlog1 />} />
+        <Route path="/newBlog2" element={<ExpandBlog2 />} />
+        <Route path="/newBlog3" element={<ExpandBlog3 />} />
+        <Route path="/enquiry" element={<Enquiry />} />
+        <Route path="/login" element={<AuthenticationForm />} />
+        <Route path="/register" element={<Register />} />
+        <Route
+          path="/registerDistributor"
+          element={
+            <RegisterDistributor conditionAccepted={conditionAccepted} />
+          }
+        />
+        <Route
+          path="/registerManufacturer"
+          element={
+            <RegisterManufacturer conditionAccepted={conditionAccepted} />
+          }
+        />
+        <Route
+          path="/terms&cond"
+          element={
+            <TermsAndCond/>
+          }
+        />
       </Routes>
-
-
-
     </BrowserRouter>
-  )
+  );
 }
 
 export default Routing

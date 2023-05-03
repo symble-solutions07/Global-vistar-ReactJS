@@ -110,7 +110,7 @@ const Enquiry = (props) => {
             <option value="product3">Product 3</option>
             <option value="product4">Product 4</option>
           </select> */}
-          <input type="text" name ="user_product" value={props.Bname} />
+          <input type="text" name ="user_product" value={props.Bname} className="selected-product" />
           <br></br>
 
           <label for="quantity">Quantity Required:</label>

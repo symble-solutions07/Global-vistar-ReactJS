@@ -1,8 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .modal {
   margin-top: 6rem;
-  position: fixed;
+  /* position: fixed; */
   left: 40%;
-  width: 400px;
+  width: auto;
   height: fit-content;
   background-color: #e9edf8;
   color: white;
@@ -10,6 +14,18 @@
   border-radius: 16px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important ;
   border-color: 2px solid black;
+  /* overflow-y: scroll !important; */
+}
+
+.modal-content-sign-in {
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+  display: flex;
+  gap: 3rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 .modal-register {
   margin-top: 10rem;
@@ -26,6 +42,7 @@
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important ;
   border-color: 2px solid black;
 }
+
 .buttons-register {
   display: flex;
   flex-direction: column;
@@ -53,13 +70,26 @@
   margin: 0;
   padding: 10px;
   font-size: 16px;
+  display: flex;
+  gap: 3rem;
+  padding: 20px;
 }
-
+.first-col-dist {
+  width: 50%;
+}
+.second-col-dist {
+  width: 50%;
+}
 .auth-container {
   margin: auto;
   position: fixed;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   z-index: 10;
+}
+
+.register-btn {
+  margin: auto;
+  margin-bottom: 3rem;
 }
 
 .auth-btns {
@@ -85,6 +115,18 @@
   margin: auto;
 }
 
+.distributor-page {
+  width: 90%;
+  position: absolute;
+  margin: auto !important;
+  margin-left: 5rem !important;
+}
+.manufacturer-page {
+  width: 90%;
+  position: absolute;
+  margin: auto !important;
+  margin-left: 5rem !important;
+}
 @media only screen and (width<=767px) {
   .authentication-section {
     /* width:10rem !important; */
@@ -101,4 +143,123 @@
   color: black;
   text-align: center;
   padding: 20px;
+}
+.register-button-manufacturer {
+  margin: auto;
+      margin-bottom: 3rem;
+
+}
+
+.termsandcond-text {
+  position: absolute;
+  left: 45%;
+  margin: auto;
+  color: blue;
+}
+.manufacture-reg-pic {
+  margin-top: 3rem !important;
+  margin: auto;
+}
+.condition-statement{
+  gap:0.3rem;
+  color:black;
+  /* text-align: center; */
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  
+  /* margin-left:50% !important; */
+  /* margin:3rem !important; */
+}
+
+@media only screen and (width<=467px) {
+  .authentication-section {
+    /* width:10rem !important; */
+    margin-bottom: 10rem !important;
+    position: fixed;
+  }
+  .modal {
+    /* position: fixed; */
+    width: 100%;
+    /* min-height: 100%; */
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    /* justify-content: center !important; */
+    /* align-items:center; */
+    margin-top: 5rem !important;
+    /* margin: 1rem; */
+  }
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-register {
+    position: fixed;
+    left: 0;
+    top: 10%;
+    width: 100%;
+  }
+  .manufacturer-page {
+    /* min-height:100%; */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /* position: fixed; */
+    left: 0;
+    margin-left: 0 !important;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    /* margin-left: -5rem; */
+    /* width:100%; */
+  }
+  .distributor-page {
+    /* min-height:100%; */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /* position: fixed; */
+    left: 0;
+    margin-left: 0 !important;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    /* margin-left: -5rem; */
+    /* width:100%; */
+  }
+
+  .first-col-dist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .second-col-dist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .register-button-manufacturer {
+    margin: auto;
+    margin-button: 3rem;
+  }
+  .registration-input {
+    width: 90%;
+  }
+  .manufacture-reg-pic {
+    margin-top: 20px !important;
+    margin: auto;
+  }
+  .condition-statement {
+    
+    color: black;
+    display: flex;
+  }
+  .condition-link {
+    color: blue;
+  }
 }

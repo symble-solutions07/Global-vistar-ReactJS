@@ -1,9 +1,11 @@
+import { react, useState } from "react";
 import { useToggle, upperFirst } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
 import { auth, db } from "./Firebase/firebase-config";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc, Timestamp } from "firebase/firestore";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import TermsAndCond from "./Components/TermsAndCond";
 
 import {
   TextInput,
@@ -21,25 +23,52 @@ import {
   createStyles,
   rem,
 } from "@mantine/core";
+import pic from "./images/Global vistar TB.svg";
+
 // import { GoogleButton, TwitterButton } from '../SocialButtons/SocialButtons';
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { dividerClasses } from "@mui/material";
+import { dividerClasses, formGroupClasses } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "./AuthenticationPage.css";
 
 function RegisterDistributor(props) {
   const { classes } = useStyles();
   const [type, toggle] = useToggle(["login", "register"]);
+    const [isChecked, setIsChecked] = useState(false);
+
+
+  const [showTerms, setShowTerms] = useState(false);
+
+  const [conditionAccepted, setConditionAccepted] = useState(false);
+
+  const handleTerms = () => {
+    setShowTerms(true);
+  };
 
   const form = useForm({
     initialValues: {
       distributor_email: "",
       name: "",
       phone: "",
-      location: "",
       password: "",
       confirm: "",
+      company_name: "",
+      business_address: "",
+      city: "",
+      state: "",
+      pincode: "",
+      country: "",
+      business_email: "",
+      mobile_number: "",
+      websites: "",
+      years_of_exp: "",
+      liscence: "",
+      distributing_products: "",
+      types_of_industries_catered: "",
+      number_of_employees: "",
+      annual_turnover: "",
+      how_did_you_find_us: "",
       terms: true,
     },
 
@@ -55,6 +84,7 @@ function RegisterDistributor(props) {
           : null,
     },
   });
+  const navigate = useNavigate();
 
   // const handleRegister = async () => {
   //   const response = await fetch("http://localhost:8080/registerDistributor", {
@@ -68,6 +98,8 @@ function RegisterDistributor(props) {
   //   console.log(response);
   // };
   const handleRegister = async () => {
+    console.log(form);
+
     try {
       const user = createUserWithEmailAndPassword(
         auth,
@@ -83,6 +115,22 @@ function RegisterDistributor(props) {
       email: form.values.distributor_email,
       name: form.values.name,
       phone: form.values.phone,
+      company_name: form.values.company_name,
+      business_address: form.values.business_address,
+      city: form.values.city,
+      state: form.values.state,
+      pincode: form.values.pincode,
+      country: form.values.country,
+      business_email: form.values.business_emain,
+      mobile_number: form.values.mobile_number,
+      websites: form.values.websites,
+      years_of_exp: form.values.years_of_exp,
+      liscence: form.values.liscence,
+      distributing_products: form.values.distributing_products,
+      types_of_industries_catered: form.values.types_of_industries_catered,
+      number_of_employees: form.values.number_of_employees,
+      annual_turnover: form.values.turnover,
+      how_did_you_find_us: form.values.how_did_you_find_us,
     };
     const docRef = doc(db, `Users/Distributors/users/${user.email}`);
     console.log(docRef.path);
@@ -90,90 +138,425 @@ function RegisterDistributor(props) {
     await setDoc(docRef, user).then(() => {
       console.log("registerd");
     });
+
+    // mongodb data storing
+
+    const response = await fetch("http://localhost:8080/registerDistributor", {
+      method: "POST",
+      body: JSON.stringify(form),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+
+    if (data.status === 422 || !data) {
+      window.alert("invalid regsitration!");
+      console.log("invalid regsitration!");
+    } else {
+      alert("registration successful!");
+      navigate("/login");
+    }
+    console.log(data);
   };
 
+  const isAccepted = sessionStorage.getItem("buttonShow");
+
   return (
-    <Box
-      className="modal"
-    >
-      <Link to="/register">
-        <KeyboardBackspaceIcon />
-      </Link>
+    <div className="distributor-page">
+      <Box className="modal">
+        <Link to="/register">
+          <img src={pic} alt="" className="manufacture-reg-pic" />
+        </Link>
 
-      
-      <Box className="modal-header">
-        <Text color="dark">You are a Distributor</Text>
-      </Box>
-
-      <form  className="modal-content" onSubmit={form.onSubmit(() => {})}>
-        <Box>
-          <TextInput
-            classNames={classes}
-            label="Email"
-            placeholder="hello@mantine.dev"
-            value={form.values.distributor_email}
-            onChange={(event) =>
-              form.setFieldValue("distributor_email", event.currentTarget.value)
-            }
-            error={form.errors.distributor_email && "Invalid email"}
-            radius="md"
-          />
-          <TextInput
-            classNames={classes} mt={10}
-            label="Name"
-            placeholder="Enter your name"
-            value={form.values.name}
-            onChange={(event) =>
-              form.setFieldValue("name", event.currentTarget.value)
-            }
-            error={form.errors.name}
-            radius="md"
-          />
-
-          <TextInput
-            classNames={classes} mt={10}
-            label="Phone"
-            placeholder="+91"
-            value={form.values.phone}
-            onChange={(event) =>
-              form.setFieldValue("phone", event.currentTarget.value)
-            }
-            error={form.errors.phone && "Invalid phone number"}
-            radius="md"
-          />
-
-          <TextInput
-            classNames={classes} mt={10}
-            label="Create Password"
-            placeholder="Enter Your Password"
-            value={form.values.password}
-            onChange={(event) =>
-              form.setFieldValue("password", event.currentTarget.value)
-            }
-            error={
-              form.errors.password &&
-              "Password should include at least 6 characters"
-            }
-            radius="md"
-          />
-
-          <TextInput
-            classNames={classes} mt={10}
-            label="Re-Enter Password"
-            placeholder="Re-Enter Your Password"
-            value={form.values.confirm}
-            onChange={(event) =>
-              form.setFieldValue("confirm", event.currentTarget.value)
-            }
-            error={
-              form.errors.confirm &&
-              "Password should include at least 6 characters"
-            }
-            radius="md"
-          />
+        <Box className="modal-header">
+          <Text color="dark">You are a Distributor</Text>
         </Box>
 
-        <Group position="apart" mt="xl">
+        <form className="modal-content" onSubmit={form.onSubmit(() => {})}>
+          <Box className="first-col-dist">
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              label="Email"
+              placeholder="hello@mantine.dev"
+              value={form.values.distributor_email}
+              onChange={(event) =>
+                form.setFieldValue(
+                  "distributor_email",
+                  event.currentTarget.value
+                )
+              }
+              error={form.errors.distributor_email && "Invalid email"}
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Name"
+              placeholder="Enter your name"
+              value={form.values.name}
+              onChange={(event) =>
+                form.setFieldValue("name", event.currentTarget.value)
+              }
+              error={form.errors.name}
+              radius="md"
+            />
+
+            {/* <TextInput
+              classNames={classes}
+              mt={10}
+              label="Phone"
+              placeholder="+91"
+              value={form.values.phone}
+              onChange={(event) =>
+                form.setFieldValue("phone", event.currentTarget.value)
+              }
+              error={form.errors.phone && "Invalid phone number"}
+              radius="md"
+            /> */}
+
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Create Password"
+              placeholder="Enter Your Password"
+              value={form.values.password}
+              onChange={(event) =>
+                form.setFieldValue("password", event.currentTarget.value)
+              }
+              error={
+                form.errors.password &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Re-Enter Password"
+              placeholder="Re-Enter Your Password"
+              value={form.values.confirm}
+              onChange={(event) =>
+                form.setFieldValue("confirm", event.currentTarget.value)
+              }
+              error={
+                form.errors.confirm &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Company Name"
+              placeholder="Re-Enter Your Password"
+              value={form.values.company_name}
+              onChange={(event) =>
+                form.setFieldValue("company_name", event.currentTarget.value)
+              }
+              error={
+                form.errors.company_name &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Business Address"
+              placeholder="Re-Enter Your Password"
+              value={form.values.business_address}
+              onChange={(event) =>
+                form.setFieldValue(
+                  "business_address",
+                  event.currentTarget.value
+                )
+              }
+              error={
+                form.errors.business_address &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="City"
+              placeholder="Re-Enter Your Password"
+              value={form.values.city}
+              onChange={(event) =>
+                form.setFieldValue("city", event.currentTarget.value)
+              }
+              error={
+                form.errors.city &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="State"
+              placeholder="Re-Enter Your Password"
+              value={form.values.state}
+              onChange={(event) =>
+                form.setFieldValue("state", event.currentTarget.value)
+              }
+              error={
+                form.errors.state &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="PinCode"
+              placeholder="Re-Enter Your Password"
+              value={form.values.pin_code}
+              onChange={(event) =>
+                form.setFieldValue("pin_code", event.currentTarget.value)
+              }
+              error={
+                form.errors.pin_code &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Country"
+              placeholder="Re-Enter Your Password"
+              value={form.values.country}
+              onChange={(event) =>
+                form.setFieldValue("country", event.currentTarget.value)
+              }
+              error={
+                form.errors.country &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Business Email"
+              placeholder="Re-Enter Your Password"
+              value={form.values.business_email}
+              onChange={(event) =>
+                form.setFieldValue("business_email", event.currentTarget.value)
+              }
+              error={
+                form.errors.business_email &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+          </Box>
+          <Box className="second-col-dist">
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Phone Number"
+              placeholder="Re-Enter Your Password"
+              value={form.values.phone_number}
+              onChange={(event) =>
+                form.setFieldValue("phone_number", event.currentTarget.value)
+              }
+              error={
+                form.errors.phone_number &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Mobile Number"
+              placeholder="Re-Enter Your Password"
+              value={form.values.mobile_number}
+              onChange={(event) =>
+                form.setFieldValue("mobile_number", event.currentTarget.value)
+              }
+              error={
+                form.errors.mobile_number &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Website(if any)"
+              placeholder="Re-Enter Your Password"
+              value={form.values.websites}
+              onChange={(event) =>
+                form.setFieldValue("websites", event.currentTarget.value)
+              }
+              error={
+                form.errors.websites &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Years of experience in distribution"
+              placeholder="Re-Enter Your Password"
+              value={form.values.years_of_exp}
+              onChange={(event) =>
+                form.setFieldValue("years_of_exp", event.currentTarget.value)
+              }
+              error={
+                form.errors.years_of_exp &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Distributor Liscence/ Certificate"
+              placeholder="Re-Enter Your Password"
+              value={form.values.liscence}
+              onChange={(event) =>
+                form.setFieldValue("liscence", event.currentTarget.value)
+              }
+              error={
+                form.errors.liscence &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Products Currently Distributing"
+              placeholder="Re-Enter Your Password"
+              value={form.values.distributing_products}
+              onChange={(event) =>
+                form.setFieldValue(
+                  "distributing_products",
+                  event.currentTarget.value
+                )
+              }
+              error={
+                form.errors.distributing_products &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Types of industries catered to"
+              placeholder="Re-Enter Your Password"
+              value={form.values.types_of_industries_catered}
+              onChange={(event) =>
+                form.setFieldValue(
+                  "types_of_industries_catered",
+                  event.currentTarget.value
+                )
+              }
+              error={
+                form.errors.types_of_industries_catered &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Number of employees"
+              placeholder="Re-Enter Your Password"
+              value={form.values.no_of_employees}
+              onChange={(event) =>
+                form.setFieldValue("no_of_employees", event.currentTarget.value)
+              }
+              error={
+                form.errors.no_of_employees &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Annual Turnover"
+              placeholder="Re-Enter Your Password"
+              value={form.values.annual_turnover}
+              onChange={(event) =>
+                form.setFieldValue("annual_turnover", event.currentTarget.value)
+              }
+              error={
+                form.errors.annual_turnover &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="How did you hear about us"
+              placeholder="Re-Enter Your Password"
+              value={form.values.how_did_you_find_us}
+              onChange={(event) =>
+                form.setFieldValue(
+                  "how_did_you_find_us",
+                  event.currentTarget.value
+                )
+              }
+              error={
+                form.errors.how_did_you_find_us &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+          </Box>
+        </form>
+        <div>
+          <label htmlFor="" className="condition-statement">
+            <input
+              type="checkbox"
+              onChange={() => {
+                setIsChecked((prev) => !prev);
+              }}
+            />
+            I Accept all the{" "}
+            <Link to="/terms&cond" className="condition-link">
+              Terms and conditions
+            </Link>
+          </label>
+        </div>
+        
+
+        <Group position="apart" mt="xl" className="Register-btn">
           <Anchor
             component="button"
             type="button"
@@ -185,17 +568,49 @@ function RegisterDistributor(props) {
                 ? "Already have an account? Login"
                 : "Don't have an account? Register"} */}
           </Anchor>
-          <Button type="submit" radius="xl" onClick={handleRegister}>
+          <Button
+            type="submit"
+            radius="xl"
+            className="register-btn"
+            disabled={!isChecked}
+            onClick={handleRegister}
+          >
             {upperFirst(type) + " as Distributor"}
           </Button>
         </Group>
-      </form>
-    </Box>
+      </Box>
+    </div>
   );
 }
 
-export default RegisterDistributor;
+// Distributor Registration Form:
+// Full Name:
+// Company Name:
+// Business Address:
+// City:
+// State:
+// Pincode:
+// Country:
+// Business Email:
+// Phone Number:
+// Mobile Number:
+// Website (if any):
+// Years of experience in distribution:
+// Distributor License/Certificate:
+//  Products currently distributing:
+// Types of industries catered to:
+//  Number of employees:
+// Annual turnover:
+// How did you hear about us?
+// Referral from a friend or colleague
+// Online search engine
+// Social media platform (e.g. Facebook, LinkedIn, Twitter)
+// Industry event or trade show
+// Advertisement (online or offline)
+// Email newsletter or marketing campaign
+// Other (please specify)
 
+export default RegisterDistributor;
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -203,6 +618,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   input: {
+    // width: "180%",
     height: rem(54),
     paddingTop: rem(18),
   },
@@ -214,5 +630,8 @@ const useStyles = createStyles((theme) => ({
     paddingLeft: theme.spacing.sm,
     paddingTop: `calc(${theme.spacing.sm} / 2)`,
     zIndex: 1,
+    // width: "180%",
   },
+
+
 }));

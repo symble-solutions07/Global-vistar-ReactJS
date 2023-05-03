@@ -96,7 +96,7 @@ function AuthenticationForm(props) {
 
           <form
             onSubmit={form.onSubmit(() => handleLogin())}
-            className="modal-content"
+            className="modal-content-sign-in"
           >
             <Box>
               <div className="header-sign-in">
