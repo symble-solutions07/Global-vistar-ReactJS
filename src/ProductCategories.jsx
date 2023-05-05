@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import pic from "./images/Savouries.jpg";
 import DesiRass from "./images/Desi Rass (1).png";
@@ -14,6 +14,14 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 function ProductCategories() {
+  // useEffect(() => {
+  //   window.location.reload(true);
+  window.scrollTo(0,0);
+  // }, [])
+  // useEffect(() => {
+  //   window.location.reload();
+  //   window.scrollTo(0, 0); // Scroll to top
+  // }, []);
   return (
     <>
       <Header></Header>

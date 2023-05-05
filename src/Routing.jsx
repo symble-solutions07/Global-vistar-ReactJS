@@ -13,6 +13,7 @@ import RegisterDistributor from './RegisterDistributor';
 import RegisterManufacturer from './RegisterManufacturer';
 import Register from "./Components/Register";
 import TermsAndCond from "./Components/TermsAndCond";
+import ListYourProducts from './Components/ListYourProducts';
 
 function Routing() {
   const [conditionAccepted, setConditionAccepted] = useState(false);
@@ -44,12 +45,8 @@ function Routing() {
             <RegisterManufacturer conditionAccepted={conditionAccepted} />
           }
         />
-        <Route
-          path="/terms&cond"
-          element={
-            <TermsAndCond/>
-          }
-        />
+        <Route path="/terms&cond" element={<TermsAndCond />} />
+        <Route path="/ListYourProducts" element={<ListYourProducts />} />
       </Routes>
     </BrowserRouter>
   );

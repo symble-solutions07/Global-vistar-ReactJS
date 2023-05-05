@@ -13,7 +13,12 @@
 .new-blog p{
     line-height: 2.4rem;
     font-size: 18px;
-    width:90%;
+    /* width:90%; */
+}
+.blog-subheadings-italic{
+    text-align:center;
+    width:50%;
+    line-height: 2rem;
 }
 
 /* .blog-para{
@@ -25,7 +30,7 @@
 }
 
 .blog-subheadings{
-    width:90%;
+    /* width:90%; */
     text-align: left;
 }
 
@@ -45,4 +50,22 @@
 }
 .blog-like:hover{
     color:red;
+}
+
+@media only screen and (width<=467px) {
+.new-blog p{
+    line-height: 2.4rem;
+    font-size: 18px;
+    width:90%;
+}
+.blog-subheadings{
+    width:90%;
+    text-align: left;
+}
+.blog-subheadings-italic{
+    /* text-align:center; */
+    text-align: left;
+    width:90%;
+    line-height: 2rem;
+}
 }

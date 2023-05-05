@@ -1,7 +1,7 @@
 import {React,useState} from 'react'
 import "./style.css"
 import { Drawer, Button, Group, Avatar } from "@mantine/core";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import pic from "./images/Savouries.jpg";
 import DesiRass from "./images/Desi Rass (1).png";
 import ShivRatna from "./images/ShivRatna Jaggery.png";
@@ -15,7 +15,14 @@ import ProductCard from './ProductCard';
 import "./productsSection.css";
 
 function ProductSection() {
- 
+    const history = useNavigate();
+  function handleNavigation() {
+    // Navigate to a new route
+    history("/productCategories");
+
+    // Reload the page after navigation
+    window.location.reload();
+  }
 
   // setShowEnquiry(true);
 
@@ -44,8 +51,6 @@ function ProductSection() {
                 locationLook="PAN India"
                 margin="20%-30%"
                 MOQ="50 units"
-                
-                
               />
             </li>
 
@@ -136,7 +141,7 @@ function ProductSection() {
           </ul>
         </div>
         <Link to="/ProductCategories" className="explore-more-btn">
-          <Button>Explore More</Button>
+          <Button onClick={handleNavigation}>Explore More</Button>
         </Link>
       </div>
     </section>

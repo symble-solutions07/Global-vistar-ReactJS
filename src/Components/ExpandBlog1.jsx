@@ -6,7 +6,10 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import blog1 from "../images/Blog 1 (1).png"
 
 function ExpandBlog1() {
+  window.scrollTo(0, 0);
   return (
+
+
     <div>
       <Header />
       <div className="new-blog">
@@ -60,7 +63,7 @@ function ExpandBlog1() {
           product based on your specific needs and requirements.{" "}
         </p>
 
-        <h2 className="blog-subheadings">
+        <h2 className="blog-subheadings-italic">
           <i>
             Partnering with Global Vistar can save you time and effort in your
             search for the right distributor, allowing you to focus on what you

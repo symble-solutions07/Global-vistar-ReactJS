@@ -1,15 +1,22 @@
-import React from 'react'
-import "../style.css"
+import React from "react";
+import "../style.css";
 import pic1 from "../images/Blog 1 (1).png";
 import pic2 from "../images/Blog 2 (1).png";
 import pic3 from "../images/Blog 3(1).png";
-import { margin } from '@mui/system';
-import { Link } from "react-router-dom";
+import { margin } from "@mui/system";
+import { Link, useNavigate } from "react-router-dom";
 import "../Blog.css";
 
-
-
 function Blogs() {
+  const history = useNavigate();
+  function handleNavigation() {
+    // Navigate to a new route
+    history("/newBlog1");
+
+    // Reload the page after navigation
+    window.location.reload();
+  }
+
   return (
     <section className="blog" id="blog">
       <div className="container">
@@ -63,7 +70,7 @@ function Blogs() {
                     <time datetime="2022-27-04">Apr 27, 2022</time>
                   </div>
 
-                  <Link to="/newBlog1" className="read-more-btn">
+                  <Link to="/newBlog1" className="read-more-btn" onClick={handleNavigation}>
                     Read More
                   </Link>
                 </div>
@@ -179,4 +186,4 @@ function Blogs() {
   );
 }
 
-export default Blogs
+export default Blogs;
