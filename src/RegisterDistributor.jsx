@@ -9,6 +9,8 @@ import TermsAndCond from "./Components/TermsAndCond";
 
 import {
   TextInput,
+  FileInput,
+  Select,
   PasswordInput,
   Text,
   Paper,
@@ -35,8 +37,7 @@ import "./AuthenticationPage.css";
 function RegisterDistributor(props) {
   const { classes } = useStyles();
   const [type, toggle] = useToggle(["login", "register"]);
-    const [isChecked, setIsChecked] = useState(false);
-
+  const [isChecked, setIsChecked] = useState(false);
 
   const [showTerms, setShowTerms] = useState(false);
 
@@ -180,7 +181,7 @@ function RegisterDistributor(props) {
               classNames={classes}
               className="registration-input"
               label="Email"
-              placeholder="hello@mantine.dev"
+              // placeholder="hello@mantine.dev"
               value={form.values.distributor_email}
               onChange={(event) =>
                 form.setFieldValue(
@@ -196,7 +197,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="Name"
-              placeholder="Enter your name"
+              // placeholder="Enter your name"
               value={form.values.name}
               onChange={(event) =>
                 form.setFieldValue("name", event.currentTarget.value)
@@ -223,7 +224,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="Create Password"
-              placeholder="Enter Your Password"
+              // placeholder="Enter Your Password"
               value={form.values.password}
               onChange={(event) =>
                 form.setFieldValue("password", event.currentTarget.value)
@@ -235,12 +236,12 @@ function RegisterDistributor(props) {
               radius="md"
             />
 
-            <TextInput
+            {/* <TextInput
               classNames={classes}
               className="registration-input"
               mt={10}
               label="Re-Enter Password"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.confirm}
               onChange={(event) =>
                 form.setFieldValue("confirm", event.currentTarget.value)
@@ -250,13 +251,13 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
-            />
+            /> */}
             <TextInput
               classNames={classes}
               className="registration-input"
               mt={10}
               label="Company Name"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.company_name}
               onChange={(event) =>
                 form.setFieldValue("company_name", event.currentTarget.value)
@@ -272,7 +273,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="Business Address"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.business_address}
               onChange={(event) =>
                 form.setFieldValue(
@@ -291,7 +292,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="City"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.city}
               onChange={(event) =>
                 form.setFieldValue("city", event.currentTarget.value)
@@ -308,7 +309,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="State"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.state}
               onChange={(event) =>
                 form.setFieldValue("state", event.currentTarget.value)
@@ -324,7 +325,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="PinCode"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.pin_code}
               onChange={(event) =>
                 form.setFieldValue("pin_code", event.currentTarget.value)
@@ -340,7 +341,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="Country"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.country}
               onChange={(event) =>
                 form.setFieldValue("country", event.currentTarget.value)
@@ -356,7 +357,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="Business Email"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.business_email}
               onChange={(event) =>
                 form.setFieldValue("business_email", event.currentTarget.value)
@@ -374,7 +375,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="Phone Number"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.phone_number}
               onChange={(event) =>
                 form.setFieldValue("phone_number", event.currentTarget.value)
@@ -390,7 +391,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="Mobile Number"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.mobile_number}
               onChange={(event) =>
                 form.setFieldValue("mobile_number", event.currentTarget.value)
@@ -406,7 +407,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="Website(if any)"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.websites}
               onChange={(event) =>
                 form.setFieldValue("websites", event.currentTarget.value)
@@ -422,7 +423,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="Years of experience in distribution"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.years_of_exp}
               onChange={(event) =>
                 form.setFieldValue("years_of_exp", event.currentTarget.value)
@@ -433,12 +434,12 @@ function RegisterDistributor(props) {
               }
               radius="md"
             />
-            <TextInput
+            <FileInput
               classNames={classes}
               className="registration-input"
               mt={10}
               label="Distributor Liscence/ Certificate"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Pick a file"
               value={form.values.liscence}
               onChange={(event) =>
                 form.setFieldValue("liscence", event.currentTarget.value)
@@ -454,7 +455,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="Products Currently Distributing"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.distributing_products}
               onChange={(event) =>
                 form.setFieldValue(
@@ -468,12 +469,39 @@ function RegisterDistributor(props) {
               }
               radius="md"
             />
-            <TextInput
+
+            {/* Food and Beverage
+Fashion and Textile
+Medicines and Nutraceuticals
+Consumer Electronics 
+Toiletries and Cosmetics
+Tooling and Machinery */}
+            <Select
               classNames={classes}
               className="registration-input"
               mt={10}
               label="Types of industries catered to"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Choose One"
+              data={[
+                { value: "Food and Beverage", label: "Food and Beverage" },
+                { value: "Fashion and Textile", label: "Fashion and Textile" },
+                {
+                  value: "Medicines and Nutraceuticals",
+                  label: "Medicines and Nutraceuticals",
+                },
+                {
+                  value: "Consumer Electronics",
+                  label: "Consumer Electronics ",
+                },
+                {
+                  value: "Toiletries and Cosmetics",
+                  label: "Toiletries and Cosmetics",
+                },
+                {
+                  value: "Tooling and Machinery",
+                  label: "Tooling and Machinery ",
+                },
+              ]}
               value={form.values.types_of_industries_catered}
               onChange={(event) =>
                 form.setFieldValue(
@@ -492,7 +520,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="Number of employees"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.no_of_employees}
               onChange={(event) =>
                 form.setFieldValue("no_of_employees", event.currentTarget.value)
@@ -508,7 +536,7 @@ function RegisterDistributor(props) {
               className="registration-input"
               mt={10}
               label="Annual Turnover"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.annual_turnover}
               onChange={(event) =>
                 form.setFieldValue("annual_turnover", event.currentTarget.value)
@@ -519,12 +547,35 @@ function RegisterDistributor(props) {
               }
               radius="md"
             />
-            <TextInput
+            {/* 
+            Through your friend
+Google, Yahoo etc
+Social Media
+Youtube
+Website */}
+            <Select
               classNames={classes}
               className="registration-input"
               mt={10}
               label="How did you hear about us"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
+              data={[
+                { value: "Through your friend", label: "Through your friend" },
+                { value: "Google, Yahoo etc", label: "Google, Yahoo etc" },
+                {
+                  value: "Social Media",
+                  label: "Social Media",
+                },
+                {
+                  value: "Youtube",
+                  label: "Youtube",
+                },
+                {
+                  value: "Website",
+                  label: "Website",
+                },
+                
+              ]}
               value={form.values.how_did_you_find_us}
               onChange={(event) =>
                 form.setFieldValue(
@@ -554,7 +605,6 @@ function RegisterDistributor(props) {
             </Link>
           </label>
         </div>
-        
 
         <Group position="apart" mt="xl" className="Register-btn">
           <Anchor
@@ -632,6 +682,4 @@ const useStyles = createStyles((theme) => ({
     zIndex: 1,
     // width: "180%",
   },
-
-
 }));
