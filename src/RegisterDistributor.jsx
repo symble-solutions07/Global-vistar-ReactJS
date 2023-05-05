@@ -167,7 +167,7 @@ function RegisterDistributor(props) {
   return (
     <div className="distributor-page">
       <Box className="modal">
-        <Link to="/register">
+        <Link to="/">
           <img src={pic} alt="" className="manufacture-reg-pic" />
         </Link>
 

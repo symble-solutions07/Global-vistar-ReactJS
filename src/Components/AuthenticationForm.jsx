@@ -3,8 +3,7 @@ import { useForm } from "@mantine/form";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-
-
+import pic from "../images/Global vistar TB.svg";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -70,9 +69,9 @@ function AuthenticationForm(props) {
         console.log("user is logged in");
         sessionStorage.setItem("email", user.email);
         // props.setShowLoginForm(false);
-        
+
         navigate(`/${user.email}`);
-        
+
         // alert("You are logged in!");
         // window.location.reload();
       })
@@ -99,6 +98,11 @@ function AuthenticationForm(props) {
             className="modal-content-sign-in"
           >
             <Box>
+              <div className="logo-auth">
+                <Link to="/">
+                  <img src={pic} alt="" className="manufacture-reg-pic" />
+                </Link>
+              </div>
               <div className="header-sign-in">
                 <h1>Sign In</h1>
               </div>
