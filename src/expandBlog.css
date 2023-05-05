@@ -13,6 +13,7 @@
 .new-blog p{
     line-height: 2.4rem;
     font-size: 18px;
+    width:90%;
 }
 
 /* .blog-para{
@@ -24,7 +25,8 @@
 }
 
 .blog-subheadings{
-    width:50%;
+    width:90%;
+    text-align: left;
 }
 
 .article-feedback{

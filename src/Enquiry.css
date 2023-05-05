@@ -1,4 +1,5 @@
-.enquiry-form-content {
+
+.enquiry-form-content{
   width: 50%;
   margin: 0 auto;
   font-family: Arial, sans-serif;
@@ -9,7 +10,7 @@ label {
   margin-bottom: 10px;
 }
 
-.enquiry-input {
+.enquiry-input{
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -23,14 +24,14 @@ select option {
 }
 
 .enquiry-submit {
-  background-color: #4caf50;
+  background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  margin-left: 25%;
+  margin-left:25%;
 }
 
 input[type="submit"]:hover {
@@ -54,7 +55,7 @@ input[type="submit"]:hover {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #4caf50;
+  background-color: #4CAF50;
   cursor: pointer;
   touch-action: manipulation;
 }
@@ -63,39 +64,42 @@ input[type="submit"]:hover {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #4caf50;
+  background-color: #4CAF50;
   cursor: pointer;
 }
 
-.enquiry-form-content {
+.enquiry-form-content{
+
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-.enquiry-form-section {
+.enquiry-form-section{
   position: fixed;
-  left: 40%;
-  top: 5%;
+  left: 50%;
+  top: 1%;
   z-index: 10;
-  background-color: #f5f5dc;
-  width: fit-content;
+  background-color: #F5F5DC;
+  width:40%;
   border-radius: 25px;
-  border: 2px solid black;
+  border:2px solid black;
+  transform: translate(-50%, 0);
 }
 
-.header-enquiry {
-  text-align: center;
+
+.header-enquiry{
+  text-align:center;
   padding-bottom: 10px;
 }
-.close-enquiry-form {
+.close-enquiry-form{
   margin: 10px;
 }
 
-.close-enquiry-form:hover {
-  color: red;
+.close-enquiry-form:hover{
+  color:red;
 }
 
-.selected-product {
+.selected-product{
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -104,14 +108,20 @@ input[type="submit"]:hover {
   font-size: 16px;
 }
 
-@media only screen and (width < 486px) {
-  .enquiry-form-section {
-    position: fixed;
-    position: fixed;
+@media only screen and (width < 486px){
+
+  .enquiry-form-section{
+    position:fixed;
+    /* left:10%;  */
+    /* margin:auto !important; */
+    /* position: fixed; */
     width: 80%;
-
+    /* text-align: center; */
+    /* top: 25%; */
     left: 50%;
-
+    /* padding: 20px; */
     transform: translate(-50%, 0);
   }
+
+
 }
