@@ -39,6 +39,14 @@ function Header(props) {
   const { id } = useParams();
   console.log(id);
 
+  const handleProductListing = () => {
+    if (id) {
+      navigate("/ListYourProducts");
+    } else {
+      alert("sign in first!");
+    }
+  }
+
   let string;
 
   if (id) {
@@ -173,9 +181,9 @@ function Header(props) {
                 </a>
               </li>
             </ul>
-            <Link to="/registerManufacturer">
-              <button className="header-top-btn">List your Products</button>
-            </Link>
+            
+              <button className="header-top-btn" onClick={handleProductListing}>List your Products</button>
+            
           </div>
         </div>
       </div>
