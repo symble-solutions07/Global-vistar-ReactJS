@@ -11,6 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import {
   TextInput,
   PasswordInput,
+  Select,
   Text,
   Paper,
   Group,
@@ -63,7 +64,7 @@ function RegisterManufacturer(props) {
       distribution_channels: "",
       annual_revenue: "",
       number_of_employees: "",
-      years_in_business: "", 
+      years_in_business: "",
       company_registration_details: "",
       terms: true,
     },
@@ -87,9 +88,7 @@ function RegisterManufacturer(props) {
       const user = createUserWithEmailAndPassword(
         auth,
         form.values.manufacturer_email,
-        form.values.password,
-        
-
+        form.values.password
       );
       console.log(user);
       props.setShowRegister((prev) => !prev);
@@ -161,7 +160,7 @@ function RegisterManufacturer(props) {
               classNames={classes}
               className="registration-input"
               label="Company name"
-              placeholder="hello@mantine.dev"
+              // placeholder="hello@mantine.dev"
               value={form.values.company_name}
               onChange={
                 (event) =>
@@ -176,7 +175,7 @@ function RegisterManufacturer(props) {
               classNames={classes}
               className="registration-input"
               label="Email"
-              placeholder="hello@mantine.dev"
+              // placeholder="hello@mantine.dev"
               value={form.values.manufacturer_email}
               onChange={
                 (event) =>
@@ -194,7 +193,7 @@ function RegisterManufacturer(props) {
               classNames={classes}
               className="registration-input"
               label="Name"
-              placeholder="Enter your full name"
+              // placeholder="Enter your full name"
               value={form.values.name}
               onChange={
                 (event) => form.setFieldValue("name", event.currentTarget.value)
@@ -208,7 +207,7 @@ function RegisterManufacturer(props) {
               classNames={classes}
               className="registration-input"
               label="Phone"
-              placeholder="+91"
+              // placeholder="+91"
               value={form.values.phone}
               onChange={(event) =>
                 form.setFieldValue("phone", event.currentTarget.value)
@@ -221,7 +220,7 @@ function RegisterManufacturer(props) {
               classNames={classes}
               className="registration-input"
               label="Create Password"
-              placeholder="Enter Your Password"
+              // placeholder="Enter Your Password"
               value={form.values.password}
               onChange={(event) =>
                 form.setFieldValue("password", event.currentTarget.value)
@@ -237,7 +236,7 @@ function RegisterManufacturer(props) {
               classNames={classes}
               className="registration-input"
               label="Re-Enter Password"
-              placeholder="Re-Enter Your Password"
+              // placeholder="Re-Enter Your Password"
               value={form.values.confirm}
               onChange={(event) =>
                 form.setFieldValue("confirm", event.currentTarget.value)
@@ -248,12 +247,13 @@ function RegisterManufacturer(props) {
               }
               radius="md"
             />
+
             <TextInput
               mt={15}
               classNames={classes}
               className="registration-input"
               label="Company address"
-              placeholder="hello@mantine.dev"
+              // placeholder="hello@mantine.dev"
               value={form.values.company_address}
               onChange={
                 (event) =>
@@ -266,14 +266,99 @@ function RegisterManufacturer(props) {
               error={form.errors.company_address && "Invalid email"}
               radius="md"
             />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="City"
+              // placeholder="Re-Enter Your Password"
+              value={form.values.city}
+              onChange={(event) =>
+                form.setFieldValue("city", event.currentTarget.value)
+              }
+              error={
+                form.errors.city &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="State"
+              // placeholder="Re-Enter Your Password"
+              value={form.values.state}
+              onChange={(event) =>
+                form.setFieldValue("state", event.currentTarget.value)
+              }
+              error={
+                form.errors.state &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
           </Box>
           <Box className="second-col-dist">
             <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="PinCode"
+              // placeholder="Re-Enter Your Password"
+              value={form.values.pin_code}
+              onChange={(event) =>
+                form.setFieldValue("pin_code", event.currentTarget.value)
+              }
+              error={
+                form.errors.pin_code &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <TextInput
+              classNames={classes}
+              className="registration-input"
+              mt={10}
+              label="Country"
+              // placeholder="Re-Enter Your Password"
+              value={form.values.country}
+              onChange={(event) =>
+                form.setFieldValue("country", event.currentTarget.value)
+              }
+              error={
+                form.errors.country &&
+                "Password should include at least 6 characters"
+              }
+              radius="md"
+            />
+            <Select
               mt={15}
               classNames={classes}
               className="registration-input"
               label="Type of product(s) manufactured"
-              placeholder="hello@mantine.dev"
+              // placeholder="hello@mantine.dev"
+              data={[
+                { value: "Beverage", label: "Beverage" },
+                { value: "Daily and Frozen", label: "Daily and Frozen" },
+                {
+                  value: "Grains and spices",
+                  label: "Grains and spices",
+                },
+                {
+                  value: "Ready-to-cook",
+                  label: "Ready-to-cook",
+                },
+                {
+                  value: "Snacks and Savouries",
+                  label: "Snacks and Savouries",
+                },
+                {
+                  value: "Sugar and Confectionary",
+                  label: "Sugar and Confectionary",
+                },
+              ]}
               value={form.values.types_of_products}
               onChange={
                 (event) =>
@@ -286,12 +371,12 @@ function RegisterManufacturer(props) {
               error={form.errors.types_of_products && "Invalid email"}
               radius="md"
             />
-            <TextInput
+            {/* <TextInput
               mt={15}
               classNames={classes}
               className="registration-input"
               label="Target market"
-              placeholder="hello@mantine.dev"
+              // placeholder="hello@mantine.dev"
               value={form.values.target_market}
               onChange={
                 (event) =>
@@ -300,13 +385,13 @@ function RegisterManufacturer(props) {
               }
               error={form.errors.target_market && "Invalid email"}
               radius="md"
-            />
+            /> */}
             <TextInput
               mt={15}
               classNames={classes}
               className="registration-input"
               label="Current distribution channels"
-              placeholder="hello@mantine.dev"
+              // placeholder="hello@mantine.dev"
               value={form.values.distribution_channels}
               onChange={
                 (event) =>
@@ -325,7 +410,7 @@ function RegisterManufacturer(props) {
               classNames={classes}
               className="registration-input"
               label="Annual Revenue"
-              placeholder="hello@mantine.dev"
+              // placeholder="hello@mantine.dev"
               value={form.values.annual_revenue}
               onChange={
                 (event) =>
@@ -338,13 +423,20 @@ function RegisterManufacturer(props) {
               error={form.errors.annual_revenue && "Invalid email"}
               radius="md"
             />
+            {/* <Slider
+              marks={[
+                { value: 20, label: "20%" },
+                { value: 50, label: "50%" },
+                { value: 80, label: "80%" },
+              ]}
+            /> */}
 
             <TextInput
               mt={15}
               classNames={classes}
               className="registration-input"
               label="Number of employees"
-              placeholder="hello@mantine.dev"
+              // placeholder="hello@mantine.dev"
               value={form.values.number_of_employees}
               onChange={
                 (event) =>
@@ -363,7 +455,7 @@ function RegisterManufacturer(props) {
               classNames={classes}
               className="registration-input"
               label="Years in business"
-              placeholder="hello@mantine.dev"
+              // placeholder="hello@mantine.dev"
               value={form.values.years_in_business}
               onChange={
                 (event) =>
@@ -382,7 +474,7 @@ function RegisterManufacturer(props) {
               classNames={classes}
               className="registration-input"
               label="Company Registration Details"
-              placeholder="hello@mantine.dev"
+              // placeholder="hello@mantine.dev"
               value={form.values.company_registration_details}
               onChange={
                 (event) =>
@@ -403,7 +495,9 @@ function RegisterManufacturer(props) {
           <label htmlFor="" className="condition-statement">
             <input
               type="checkbox"
-              onChange={() => { setIsChecked((prev) => !prev) }}
+              onChange={() => {
+                setIsChecked((prev) => !prev);
+              }}
             />
             I Accept all the{" "}
             <Link to="/terms&cond" className="condition-link">
@@ -432,8 +526,6 @@ function RegisterManufacturer(props) {
     </div>
   );
 }
-
-
 
 export default RegisterManufacturer;
 
@@ -465,7 +557,7 @@ const useStyles = createStyles((theme) => ({
       paddingTop: "0.25em",
     },
     label: {
-      width:"180%",
+      width: "180%",
       fontSize: "0.9em",
       paddingTop: "0.2em",
     },

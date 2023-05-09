@@ -402,7 +402,7 @@ function RegisterDistributor(props) {
               }
               radius="md"
             />
-            <TextInput
+            {/* <TextInput
               classNames={classes}
               className="registration-input"
               mt={10}
@@ -417,7 +417,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
-            />
+            /> */}
             <TextInput
               classNames={classes}
               className="registration-input"
