@@ -59,8 +59,11 @@ function RegisterManufacturer(props) {
       confirm: "",
       company_name: "",
       company_address: "",
+      city: "",
+      state: "",
+      pincode: "",
+      country: "",
       types_of_products: "",
-      target_market: "",
       distribution_channels: "",
       annual_revenue: "",
       number_of_employees: "",
@@ -80,7 +83,7 @@ function RegisterManufacturer(props) {
         val.length > 10 ? "phone number should be only 10 digits" : null,
     },
   });
-  // console.log(form.values);
+  // console.log(form.values.types_of_products);
 
   const handleRegister = async () => {
     console.log(form);
@@ -339,6 +342,17 @@ function RegisterManufacturer(props) {
               className="registration-input"
               label="Type of product(s) manufactured"
               // placeholder="hello@mantine.dev"
+
+              value={form.values.types_of_products}
+              {...form.getInputProps("types_of_products")}
+              // onChange={
+              //   (event) =>
+              //     form.setFieldValue(
+              //       "types_of_products",
+              //       event.currentTarget.value
+              //     )
+              //   // setEmail(event.target.value)
+              // }
               data={[
                 { value: "Beverage", label: "Beverage" },
                 { value: "Daily and Frozen", label: "Daily and Frozen" },
@@ -359,18 +373,22 @@ function RegisterManufacturer(props) {
                   label: "Sugar and Confectionary",
                 },
               ]}
-              value={form.values.types_of_products}
-              onChange={
-                (event) =>
-                  form.setFieldValue(
-                    "types_of_products",
-                    event.currentTarget.value
-                  )
-                // setEmail(event.target.value)
-              }
               error={form.errors.types_of_products && "Invalid email"}
               radius="md"
-            />
+            ></Select>
+            {/* <TextInput
+              mt={15}
+              classNames={classes}
+              className="registration-input"
+              label="Phone"
+              // placeholder="+91"
+              value={form.values.phone}
+              onChange={(event) =>
+                form.setFieldValue("phone", event.currentTarget.value)
+              }
+              error={form.errors.phone && "Invalid phone number"}
+              radius="md"
+            /> */}
             {/* <TextInput
               mt={15}
               classNames={classes}
@@ -519,7 +537,8 @@ function RegisterManufacturer(props) {
             disabled={!isChecked}
             className="register-button-manufacturer"
           >
-            {upperFirst(type) + " as Manufacturer"}
+            {/* {upperFirst(type) + " as Manufacturer"} */}
+            Register as Manufacturer
           </Button>
         </Group>
       </Box>

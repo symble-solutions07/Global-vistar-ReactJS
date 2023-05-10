@@ -438,12 +438,11 @@ function RegisterDistributor(props) {
               classNames={classes}
               className="registration-input"
               mt={10}
-              label="Distributor Liscence/ Certificate"
-              // placeholder="Pick a file"
+              label="Distributor Licence/ Certificate"
+              placeholder="upload a file"
               value={form.values.liscence}
-              onChange={(event) =>
-                form.setFieldValue("liscence", event.currentTarget.value)
-              }
+              // onChange={(event) => form.setFieldValue("liscence", event[0])}
+              {...form.getInputProps("liscence")}
               error={
                 form.errors.liscence &&
                 "Password should include at least 6 characters"
@@ -503,12 +502,13 @@ Tooling and Machinery */}
                 },
               ]}
               value={form.values.types_of_industries_catered}
-              onChange={(event) =>
-                form.setFieldValue(
-                  "types_of_industries_catered",
-                  event.currentTarget.value
-                )
-              }
+              // onChange={(event) =>
+              //   form.setFieldValue(
+              //     "types_of_industries_catered",
+              //     event.currentTarget.value
+              //   )
+              // }
+              {...form.getInputProps("types_of_industries_catered")}
               error={
                 form.errors.types_of_industries_catered &&
                 "Password should include at least 6 characters"
@@ -574,15 +574,15 @@ Website */}
                   value: "Website",
                   label: "Website",
                 },
-                
               ]}
               value={form.values.how_did_you_find_us}
-              onChange={(event) =>
-                form.setFieldValue(
-                  "how_did_you_find_us",
-                  event.currentTarget.value
-                )
-              }
+              // onChange={(event) =>
+              //   form.setFieldValue(
+              //     "how_did_you_find_us",
+              //     event.currentTarget.value
+              //   )
+              // }
+              {...form.getInputProps("how_did_you_find_us")}
               error={
                 form.errors.how_did_you_find_us &&
                 "Password should include at least 6 characters"
@@ -625,7 +625,8 @@ Website */}
             disabled={!isChecked}
             onClick={handleRegister}
           >
-            {upperFirst(type) + " as Distributor"}
+            {/* {upperFirst(type) + " as Distributor"} */}
+            Register as Distributor
           </Button>
         </Group>
       </Box>

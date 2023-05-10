@@ -10,9 +10,14 @@
 // Minimum Order Quantity*
 
 import React from "react";
+import { auth, db } from "../Firebase/firebase-config";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc, Timestamp } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 import {
   TextInput,
   Select,
+  FileInput,
   PasswordInput,
   Text,
   Paper,
@@ -36,6 +41,14 @@ function ListYourProducts() {
   const form = useForm({
     initialValues: {
       email: "",
+      category: "",
+      product_name: "",
+      product_description: "",
+      product_code: "",
+      upload_image:"",
+      GST: "",
+      min_exp_profit_margin: "",
+      min_order_quantity: "",
       termsOfService: false,
     },
 
@@ -43,11 +56,41 @@ function ListYourProducts() {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
     },
   });
+  console.log(form.values);
+  const navigate = useNavigate();
+
+  const handleListing = async () => {
+
+    
+
+    const user = {
+      email: form.values.email,
+      category: form.values.category,
+      product_name: form.values.product_name,
+      product_description: form.values.product_description,
+      product_code: form.values.product_code,
+      GST: form.values.GST,
+      minimun_expected_profit_margin: form.values.min_exp_profit_margin,
+      min_order_quantity: form.values.min_order_quantity,
+    };
+    const docRef = doc(
+      db,
+      `Users/Manufacturers/users/${sessionStorage.getItem("email")}/Products/${user.product_code}`
+    );
+    console.log(docRef.path);
+
+    await setDoc(docRef, user).then(() => {
+      console.log("Product Listed");
+      navigate("/");
+    });
+
+
+  };
 
   return (
     <>
       <div>
-        <h1>List Your Products</h1>
+        <h1 className="list-your-products-head">List Your Products</h1>
       </div>
       <Box maw={300} mx="auto" className="list-your-products-box">
         <form
@@ -55,22 +98,27 @@ function ListYourProducts() {
           className="list-your-products-section"
         >
           <Box>
-            <TextInput
+            {/* <TextInput
               withAsterisk
               label="Email"
               classNames={classes}
-              placeholder="your@email.com"
-              {...form.getInputProps("email")}
-            />
+              // placeholder="your@email.com"
+              value={form.values.email}
+              onChange={
+                (event) =>
+                  form.setFieldValue("email", event.currentTarget.value)
+                // setEmail(event.target.value)
+              }
+            /> */}
             <Select
               withAsterisk
-              label="Email"
+              label="Choose Category"
               classNames={classes}
               data={[
                 { value: "Beverages", label: "Beverages" },
                 {
                   value: "Fashion and Textile",
-                  label: "Dairy and frozen"
+                  label: "Dairy and frozen",
                 },
                 {
                   value: "Medicines and Nutraceuticals",
@@ -89,58 +137,94 @@ function ListYourProducts() {
                   label: "Sugar and confectionery ",
                 },
               ]}
-              placeholder="your@email.com"
-              {...form.getInputProps("email")}
+              // placeholder="your@email.com"
+              {...form.getInputProps("category")}
+              value={form.values.category}
+              // onChange={
+              //   (event) =>
+              //     form.setFieldValue(
+              //       "category",
+              //       event.currentTarget.value
+              //     )
+              //   // setEmail(event.target.value)
+              // }
             />
             <TextInput
               withAsterisk
-              label="Email"
+              label="Product Name"
               classNames={classes}
-              placeholder="your@email.com"
-              {...form.getInputProps("email")}
+              // placeholder="your@email.com"
+              {...form.getInputProps("product_name")}
             />
             <TextInput
               withAsterisk
-              label="Email"
+              label="Product Code"
               classNames={classes}
-              placeholder="your@email.com"
-              {...form.getInputProps("email")}
+              // placeholder="your@email.com"
+              {...form.getInputProps("product_code")}
+            />
+            <TextInput
+              withAsterisk
+              label="Product Description"
+              classNames={classes}
+              // placeholder="your@email.com"
+              {...form.getInputProps("product_description")}
             />
           </Box>
           <Box>
-            <TextInput
+            <FileInput
               withAsterisk
-              label="Email"
+              label="Upload Picture"
               classNames={classes}
-              placeholder="your@email.com"
-              {...form.getInputProps("email")}
+              // placeholder="your@email.com"
+              {...form.getInputProps("upload_image")}
+            />
+            <Select
+              withAsterisk
+              label="GST * (only choose one option)"
+              classNames={classes}
+              data={[
+                { value: "0%", label: "0%" },
+                {
+                  value: "5%",
+                  label: "5%",
+                },
+                {
+                  value: "12%",
+                  label: "18%",
+                },
+                {
+                  value: "12%",
+                  label: "18%",
+                },
+              ]}
+              // placeholder="your@email.com"
+              {...form.getInputProps("GST")}
+              // 0%  5%  12%  18%  28%
             />
             <TextInput
               withAsterisk
-              label="Email"
+              label="Minimum Expected Profit Margin"
               classNames={classes}
-              placeholder="your@email.com"
-              {...form.getInputProps("email")}
+              // placeholder="your@email.com"
+              {...form.getInputProps("min_exp_profit_margin")}
             />
             <TextInput
               withAsterisk
-              label="Email"
+              label="Minimum Order Quantity*"
               classNames={classes}
-              placeholder="your@email.com"
-              {...form.getInputProps("email")}
-            />
-            <TextInput
-              withAsterisk
-              label="Email"
-              classNames={classes}
-              placeholder="your@email.com"
-              {...form.getInputProps("email")}
+              // placeholder="your@email.com"
+              {...form.getInputProps("min_order_quantity")}
             />
           </Box>
         </form>
-        <Group position="right" mt="md">
-          <Button type="submit">Submit</Button>
-        </Group>
+        <div className="submit-btn-list-products">
+          <Group position="right" mt="md">
+            <Button type="submit" onClick={handleListing}>
+              Submit
+            </Button>
+          </Group>
+        </div>
       </Box>
     </>
   );
@@ -156,9 +240,9 @@ const useStyles = createStyles((theme) => ({
   input: {
     // width: "100%",
     height: rem(54),
-      paddingTop: rem(18),
-      marginTop: rem(20),
-    width:rem(400)
+    paddingTop: rem(18),
+    marginTop: rem(20),
+    width: rem(400),
   },
 
   label: {
