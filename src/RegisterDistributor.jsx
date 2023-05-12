@@ -64,7 +64,7 @@ function RegisterDistributor(props) {
       mobile_number: "",
       websites: "",
       years_of_exp: "",
-      liscence: "",
+      licence: "",
       distributing_products: "",
       types_of_industries_catered: "",
       number_of_employees: "",
@@ -122,15 +122,15 @@ function RegisterDistributor(props) {
       state: form.values.state,
       pincode: form.values.pincode,
       country: form.values.country,
-      business_email: form.values.business_emain,
+      business_email: form.values.business_email,
       mobile_number: form.values.mobile_number,
       websites: form.values.websites,
       years_of_exp: form.values.years_of_exp,
-      liscence: form.values.liscence,
+      // licence: form.values.licence,  
       distributing_products: form.values.distributing_products,
       types_of_industries_catered: form.values.types_of_industries_catered,
       number_of_employees: form.values.number_of_employees,
-      annual_turnover: form.values.turnover,
+      annual_turnover: form.values.annual_turnover,
       how_did_you_find_us: form.values.how_did_you_find_us,
     };
     const docRef = doc(db, `Users/Distributors/users/${user.email}`);
@@ -326,12 +326,12 @@ function RegisterDistributor(props) {
               mt={10}
               label="PinCode"
               // placeholder="Re-Enter Your Password"
-              value={form.values.pin_code}
+              value={form.values.pincode}
               onChange={(event) =>
-                form.setFieldValue("pin_code", event.currentTarget.value)
+                form.setFieldValue("pincode", event.currentTarget.value)
               }
               error={
-                form.errors.pin_code &&
+                form.errors.pincode &&
                 "Password should include at least 6 characters"
               }
               radius="md"
@@ -376,12 +376,12 @@ function RegisterDistributor(props) {
               mt={10}
               label="Phone Number"
               // placeholder="Re-Enter Your Password"
-              value={form.values.phone_number}
+              value={form.values.phone}
               onChange={(event) =>
-                form.setFieldValue("phone_number", event.currentTarget.value)
+                form.setFieldValue("phone", event.currentTarget.value)
               }
               error={
-                form.errors.phone_number &&
+                form.errors.phone &&
                 "Password should include at least 6 characters"
               }
               radius="md"
@@ -440,11 +440,11 @@ function RegisterDistributor(props) {
               mt={10}
               label="Distributor Licence/ Certificate"
               placeholder="upload a file"
-              value={form.values.liscence}
+              value={form.values.licence}
               // onChange={(event) => form.setFieldValue("liscence", event[0])}
-              {...form.getInputProps("liscence")}
+              {...form.getInputProps("licence")}
               error={
-                form.errors.liscence &&
+                form.errors.licence &&
                 "Password should include at least 6 characters"
               }
               radius="md"
@@ -521,12 +521,12 @@ Tooling and Machinery */}
               mt={10}
               label="Number of employees"
               // placeholder="Re-Enter Your Password"
-              value={form.values.no_of_employees}
+              value={form.values.number_of_employees}
               onChange={(event) =>
-                form.setFieldValue("no_of_employees", event.currentTarget.value)
+                form.setFieldValue("number_of_employees", event.currentTarget.value)
               }
               error={
-                form.errors.no_of_employees &&
+                form.errors.number_of_employees &&
                 "Password should include at least 6 characters"
               }
               radius="md"

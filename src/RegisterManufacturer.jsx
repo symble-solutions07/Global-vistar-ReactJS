@@ -12,6 +12,7 @@ import {
   TextInput,
   PasswordInput,
   Select,
+  MultiSelect,
   Text,
   Paper,
   Group,
@@ -64,7 +65,7 @@ function RegisterManufacturer(props) {
       pincode: "",
       country: "",
       types_of_products: "",
-      distribution_channels: "",
+      distribution_channels: [],
       annual_revenue: "",
       number_of_employees: "",
       years_in_business: "",
@@ -83,7 +84,7 @@ function RegisterManufacturer(props) {
         val.length > 10 ? "phone number should be only 10 digits" : null,
     },
   });
-  // console.log(form.values.types_of_products);
+  // console.log(form.values.distribution_channels);
 
   const handleRegister = async () => {
     console.log(form);
@@ -106,7 +107,7 @@ function RegisterManufacturer(props) {
       company_name: form.values.company_name,
       company_address: form.values.company_address,
       types_of_products: form.values.types_of_products,
-      target_market: form.values.target_market,
+      // target_market: form.values.target_market,
       distribution_channels: form.values.distribution_channels,
       annual_revenue: form.values.annual_revenue,
       number_of_employees: form.values.number_of_employees,
@@ -115,7 +116,7 @@ function RegisterManufacturer(props) {
     };
     const docRef = doc(db, `Users/Manufacturers/users/${user.email}`);
     console.log(docRef.path);
-
+    console.log("demo");
     await setDoc(docRef, user).then(() => {
       console.log("registerd");
     });
@@ -404,25 +405,39 @@ function RegisterManufacturer(props) {
               error={form.errors.target_market && "Invalid email"}
               radius="md"
             /> */}
-            <TextInput
+            {/* -Current Distribution Channel (Multiple Options Selection) Stockists
+            Distributors Wholesalers Retailers */}
+            <MultiSelect
               mt={15}
               classNames={classes}
               className="registration-input"
               label="Current distribution channels"
+              data={[
+                { value: "Stockists", label: "Stockists" },
+                { value: "Distributors", label: "Distributors" },
+                {
+                  value: "Wholesalers",
+                  label: "Wholesalers",
+                },
+                {
+                  value: "Retailers",
+                  label: "Retailers",
+                },
+              ]}
               // placeholder="hello@mantine.dev"
               value={form.values.distribution_channels}
-              onChange={
-                (event) =>
-                  form.setFieldValue(
-                    "distribution_channels",
-                    event.currentTarget.value
-                  )
-                // setEmail(event.target.value)
-              }
+              // onChange={
+              //   (event) =>
+              //     form.setFieldValue(
+              //       "distribution_channels",
+              //       event.currentTarget.value
+              //     )
+              //   // setEmail(event.target.value)
+              // }
+              {...form.getInputProps("distribution_channels")}
               error={form.errors.distribution_channels && "Invalid email"}
               radius="md"
             />
-
             <TextInput
               mt={15}
               classNames={classes}
@@ -448,7 +463,6 @@ function RegisterManufacturer(props) {
                 { value: 80, label: "80%" },
               ]}
             /> */}
-
             <TextInput
               mt={15}
               classNames={classes}
@@ -467,13 +481,13 @@ function RegisterManufacturer(props) {
               error={form.errors.number_of_employees && "Invalid email"}
               radius="md"
             />
-
             <TextInput
               mt={15}
               classNames={classes}
               className="registration-input"
               label="Years in business"
               // placeholder="hello@mantine.dev"
+
               value={form.values.years_in_business}
               onChange={
                 (event) =>
@@ -486,7 +500,6 @@ function RegisterManufacturer(props) {
               error={form.errors.years_in_business && "Invalid email"}
               radius="md"
             />
-
             <TextInput
               mt={15}
               classNames={classes}
@@ -536,6 +549,7 @@ function RegisterManufacturer(props) {
             radius="xl"
             disabled={!isChecked}
             className="register-button-manufacturer"
+            onClick={handleRegister}
           >
             {/* {upperFirst(type) + " as Manufacturer"} */}
             Register as Manufacturer
