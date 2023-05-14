@@ -1820,3 +1820,8 @@ a {
     justify-content: flex-start;
   }
 }
+
+
+.select-hero-sub-categories{
+  z-index:10;
+}

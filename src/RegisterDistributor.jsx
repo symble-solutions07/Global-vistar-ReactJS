@@ -429,16 +429,30 @@ function RegisterDistributor(props) {
               }
               radius="md"
             /> */}
-            <TextInput
+            <Select
               classNames={classes}
               className="registration-input"
               mt={10}
               label="Years of experience in distribution"
               // placeholder="Re-Enter Your Password"
+              data={[
+                { value: "0-5years", label: "0 - 5 years" },
+                { value: "5-10years", label: "5 - 10 years" },
+                {
+                  value: "10-15 years",
+                  label: "10 - 15 years",
+                },
+                {
+                  value: "More than 15 years",
+                  label: "More than 15 years",
+                },
+               
+              ]}
               value={form.values.years_of_exp}
-              onChange={(event) =>
-                form.setFieldValue("years_of_exp", event.currentTarget.value)
-              }
+              // onChange={(event) =>
+              //   form.setFieldValue("years_of_exp", event.currentTarget.value)
+              // }
+              {...form.getInputProps("years_of_exp")}
               error={
                 form.errors.years_of_exp &&
                 "Password should include at least 6 characters"

@@ -142,7 +142,7 @@ function RegisterManufacturer(props) {
 
   return (
     <div className="manufacturer-page">
-      <Box className="modal">
+      <Box className="modal register-manufacturer">
         <ToastContainer></ToastContainer>
         <Link to="/">
           <img src={pic} alt="" className="manufacture-reg-pic" />

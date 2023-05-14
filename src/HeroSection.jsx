@@ -72,21 +72,88 @@ function HeroSection() {
               <Select
                 mt="md"
                 withinPortal
+                className="select-hero-sub-categories"
                 data={[
-                  "Beverage",
-                  "Dairy and Frozen",
-                  "Grains and Spices",
-                  "Ready-to-cook",
-                  "Snacks and Savouries",
-                  "Sugar and Confectionery",
+                  { value: "Beverage", label: "Beverage" },
+                  { value: "Daily and Frozen", label: "Daily and Frozen" },
+                  {
+                    value: "Grains and spices",
+                    label: "Grains and spices",
+                  },
+                  {
+                    value: "Ready-to-cook",
+                    label: "Ready-to-cook",
+                  },
+                  {
+                    value: "Snacks and Savouries",
+                    label: "Snacks and Savouries",
+                  },
+                  {
+                    value: "Sugar and Confectionary",
+                    label: "Sugar and Confectionary",
+                  },
                 ]}
                 // placeholder="Pick one"
+                
                 label="Sub-Categories"
                 classNames={classes}
               />
+              {/* <Select
+                withAsterisk
+                label="Choose Category"
+                classNames={classes}
+                data={[
+                  { value: "Beverages", label: "Beverages" },
+                  {
+                    value: "Fashion and Textile",
+                    label: "Dairy and frozen",
+                  },
+                  {
+                    value: "Medicines and Nutraceuticals",
+                    label: "Grains and spices",
+                  },
+                  {
+                    value: "Consumer Electronics",
+                    label: "Ready to cook ",
+                  },
+                  {
+                    value: "Toiletries and Cosmetics",
+                    label: "Snacks and Savouries",
+                  },
+                  {
+                    value: "Tooling and Machinery",
+                    label: "Sugar and confectionery ",
+                  },
+                ]}
+                // placeholder="your@email.com"
+                // {...form.getInputProps("category")}
+                // value={form.values.category}
+                // onChange={
+                //   (event) =>
+                //     form.setFieldValue(
+                //       "category",
+                //       event.currentTarget.value
+                //     )
+                //   // setEmail(event.target.value)
+                // }
+              /> */}
+
+              {/* <Select
+                mt="md"
+                // withinPortal
+                data={["Food and Beverages"]}
+                // placeholder="Pick one"
+                label="Categories"
+                classNames={classes}
+              /> */}
+              {/* <select name="" id="" >
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+              </select> */}
             </div>
 
-            <a href="#property">
+            <a href="#property-one">
               <SearchIcon
                 className="search-icon"
                 style={{

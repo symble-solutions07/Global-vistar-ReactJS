@@ -83,7 +83,7 @@ function AuthenticationForm(props) {
   return (
     <>
       <div className="authentication-section">
-        <Box className="modal">
+        <Box className="modal sign-in-modal">
           {/* <Box className="modal-header">
           <Button onClick={() => toggle("login")} className="auth-login-btn">
             Login

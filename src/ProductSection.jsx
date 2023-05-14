@@ -27,7 +27,7 @@ function ProductSection() {
   // setShowEnquiry(true);
 
   return (
-    <section className="property" id="property">
+    <section className="property" id="property-one">
       <div className="container">
         <p className="section-subtitle">Products</p>
 

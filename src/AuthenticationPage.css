@@ -5,6 +5,7 @@
 .modal {
   margin-top: 6rem;
   /* position: fixed; */
+  /* margin:1.5rem; */
   left: 40%;
   width: auto;
   height: fit-content;
@@ -18,7 +19,7 @@
 }
 
 .modal-content-sign-in {
-  margin: 0;
+  /* margin: 40px; */
   padding: 10px;
   font-size: 16px;
   display: flex;
@@ -176,6 +177,8 @@
   .authentication-section {
     /* width:10rem !important; */
     margin-bottom: 10rem !important;
+    
+    /* margin-right:20px; */
     position: fixed;
   }
   .modal {
@@ -192,9 +195,23 @@
     margin-top: 5rem !important;
     /* margin: 1rem; */
   }
+  .sign-in-modal{
+    margin:1.5rem;
+
+  }
+  .manufacturer-page{
+    margin:50px !important;
+  }
+  .register-manufacturer{
+    width:100%;
+    
+    /* margin-right: 2rem !important; */
+  }
   .modal-content {
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
+
   }
   .modal-register {
     position: fixed;

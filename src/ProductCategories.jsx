@@ -25,7 +25,7 @@ function ProductCategories() {
   return (
     <>
       <Header></Header>
-      <section className="property product-categories" id="property">
+      <section className="property product-categories" id="products">
         <div className="container">
           <p className="section-subtitle">Products</p>
 
