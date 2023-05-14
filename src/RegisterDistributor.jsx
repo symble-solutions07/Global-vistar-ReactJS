@@ -26,7 +26,9 @@ import {
   rem,
 } from "@mantine/core";
 import pic from "./images/Global vistar TB.svg";
-
+// import { storage } from "../Firebase/firebase-config";
+// import { v4 } from "uuid";
+// import { ref, uploadBytes } from "firebase/storage";  
 // import { GoogleButton, TwitterButton } from '../SocialButtons/SocialButtons';
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -37,11 +39,13 @@ import "./AuthenticationPage.css";
 function RegisterDistributor(props) {
   const { classes } = useStyles();
   const [type, toggle] = useToggle(["login", "register"]);
+
   const [isChecked, setIsChecked] = useState(false);
 
   const [showTerms, setShowTerms] = useState(false);
 
   const [conditionAccepted, setConditionAccepted] = useState(false);
+  const [uploadImage, setUploadImage] = useState(null);
 
   const handleTerms = () => {
     setShowTerms(true);
@@ -140,6 +144,13 @@ function RegisterDistributor(props) {
       console.log("registerd");
     });
 
+    // const imageRef = ref(
+    //   storage,
+    //   `image/${form.values.phone}/${uploadImage + v4()}`
+    // );
+    // uploadBytes(imageRef, uploadImage).then(() => {
+    //   alert("image uploaded");
+    // });
     // mongodb data storing
 
     const response = await fetch("http://localhost:8080/registerDistributor", {
@@ -236,7 +247,7 @@ function RegisterDistributor(props) {
               radius="md"
             />
 
-            {/* <TextInput
+            <TextInput
               classNames={classes}
               className="registration-input"
               mt={10}
@@ -251,7 +262,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
-            /> */}
+            />
             <TextInput
               classNames={classes}
               className="registration-input"
@@ -352,6 +363,8 @@ function RegisterDistributor(props) {
               }
               radius="md"
             />
+          </Box>
+          <Box className="second-col-dist">
             <TextInput
               classNames={classes}
               className="registration-input"
@@ -368,8 +381,6 @@ function RegisterDistributor(props) {
               }
               radius="md"
             />
-          </Box>
-          <Box className="second-col-dist">
             <TextInput
               classNames={classes}
               className="registration-input"
@@ -434,20 +445,13 @@ function RegisterDistributor(props) {
               }
               radius="md"
             />
-            <FileInput
-              classNames={classes}
-              className="registration-input"
-              mt={10}
-              label="Distributor Licence/ Certificate"
-              placeholder="upload a file"
-              value={form.values.licence}
-              // onChange={(event) => form.setFieldValue("liscence", event[0])}
-              {...form.getInputProps("licence")}
-              error={
-                form.errors.licence &&
-                "Password should include at least 6 characters"
-              }
-              radius="md"
+            <input
+              multiple
+              type="file"
+              class="file-input"
+              onChange={(event) => {
+                setUploadImage(event.target.files[0]);
+              }}
             />
             <TextInput
               classNames={classes}
@@ -523,7 +527,10 @@ Tooling and Machinery */}
               // placeholder="Re-Enter Your Password"
               value={form.values.number_of_employees}
               onChange={(event) =>
-                form.setFieldValue("number_of_employees", event.currentTarget.value)
+                form.setFieldValue(
+                  "number_of_employees",
+                  event.currentTarget.value
+                )
               }
               error={
                 form.errors.number_of_employees &&

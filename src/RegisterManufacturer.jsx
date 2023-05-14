@@ -500,21 +500,26 @@ function RegisterManufacturer(props) {
               error={form.errors.years_in_business && "Invalid email"}
               radius="md"
             />
-            <TextInput
+            <Select
               mt={15}
               classNames={classes}
               className="registration-input"
               label="Company Registration Details"
               // placeholder="hello@mantine.dev"
               value={form.values.company_registration_details}
-              onChange={
-                (event) =>
-                  form.setFieldValue(
-                    "company_registration_details",
-                    event.currentTarget.value
-                  )
-                // setEmail(event.target.value)
-              }
+              data={[
+                { value: "Stockists", label: "Stockist" },
+                { value: "Distributors", label: "Distributors" },
+                {
+                  value: "Wholesalers",
+                  label: "Wholesalers",
+                },
+                {
+                  value: "Retailers",
+                  label: "Retailers",
+                },
+              ]}
+              {...form.getInputProps("company_registration_details")}
               error={
                 form.errors.company_registration_details && "Invalid email"
               }

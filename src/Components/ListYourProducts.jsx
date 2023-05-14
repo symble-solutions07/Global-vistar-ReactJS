@@ -45,7 +45,7 @@ import { v4 } from "uuid";
 function ListYourProducts() {
   const { classes } = useStyles();
 
-  const [uploadImage, setuploadImage] = useState(null);
+  const [uploadImage, setuploadImage] = useState([]);
   const [uploadCertificate, setuploadCertificate] = useState(null);
 
   const form = useForm({
@@ -113,17 +113,21 @@ function ListYourProducts() {
       // navigate("/${id}");
     });
 
-    const imageRef = ref(
-      storage,
-      `image/${form.values.phone}/${uploadImage + v4()}`
-    );
-    uploadBytes(imageRef, uploadImage).then(() => {
-      alert("image uploaded");
-    });
+    for (let i = 0; i < uploadImage.length; i++) {
+      const imageRef = ref(
+        storage,
+        `image/${form.values.phone}/product_images/${uploadImage[i] + v4()}`
+      );
+      uploadBytes(imageRef, uploadImage[i]).then(() => {
+        // alert("image uploaded");
+      });
+    }
 
     const certificateRef = ref(
       storage,
-      `image/${form.values.phone}/${uploadCertificate + v4()}`
+      `image/${form.values.phone}/Product Certificates/${
+        uploadCertificate + v4()
+      }`
     );
 
     uploadBytes(certificateRef, uploadCertificate).then(() => {
@@ -237,13 +241,20 @@ function ListYourProducts() {
               // placeholder="your@email.com"
               {...form.getInputProps("payment_terms")}
             />
-            <input
-              type="file"
-              class="file-input"
-              onChange={(event) => {
-                setuploadImage(event.target.files[0]);
-              }}
-            />
+            <div className="file-selection">
+              <label for="image-input" className="list-your-products-label">
+                Upload Product Images Here:
+              </label>
+              <input
+                multiple
+                type="file"
+                id="image-input"
+                class="file-input"
+                onChange={(event) => {
+                  setuploadImage(event.target.file);
+                }}
+              />
+            </div>
 
             <TextInput
               withAsterisk
@@ -323,17 +334,19 @@ function ListYourProducts() {
               // {...form.getInputProps("certification_or_accreditation")}
             /> */}
 
-            <label className="list-your-products-label">
-              Product Certification:
-            </label>
-            <input
-              type="file"
-              placeholder="Upload product image"
-              className="file-input"
-              onChange={(event) => {
-                setuploadCertificate(event.target.files[0]);
-              }}
-            />
+            <div className="file-selection">
+              <label for="file-input" className="list-your-products-label">
+                Upload Product Certification Here:
+              </label>
+              <input
+                type="file"
+                id="file-input"
+                className="file-input"
+                onChange={(event) => {
+                  setuploadCertificate(event.target.files[0]);
+                }}
+              />
+            </div>
 
             <TextInput
               withAsterisk
@@ -381,16 +394,17 @@ const useStyles = createStyles((theme) => ({
   label: {
     position: "absolute",
     pointerEvents: "none",
-    fontSize: theme.fontSizes.xs,
+    fontSize: theme.fontSizes.sm,
     paddingLeft: theme.spacing.sm,
     paddingTop: `calc(${theme.spacing.sm} / 2)`,
     zIndex: 1,
+    
     // width: "180%",
   },
 
   [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
     input: {
-      width: "120%",
+      width: "100%",
       height: "2.5em",
       paddingTop: "0.25em",
     },
@@ -398,6 +412,10 @@ const useStyles = createStyles((theme) => ({
       width: "180%",
       fontSize: "0.9em",
       paddingTop: "0.2em",
+    },
+
+    formColumn: {
+      width: "100%",
     },
   },
 }));
