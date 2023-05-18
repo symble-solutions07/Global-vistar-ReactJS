@@ -1,10 +1,38 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 
 import footerLogo from "./images/Global vistar Normal.svg";
 
 function Footer() {
+
+  const history = useNavigate();
+
+  function handleNavigation() {
+    // Navigate to a new route
+    history("/AboutUsPage");
+
+    // Reload the page after navigation
+    window.location.reload();
+  }
+
+  function handleNavigationBlog() {
+    // Navigate to a new route
+    history("/BlogPage");
+
+    // Reload the page after navigation
+    window.location.reload();
+  }
+
+  function handleNavigationProductCategories() {
+    // Navigate to a new route
+    history("/ProductCategories");
+
+    // Reload the page after navigation
+    window.location.reload();
+  }
+  
+
   return (
     <footer className="footer" id="footer">
       <div className="footer-top">
@@ -87,19 +115,27 @@ function Footer() {
               </li>
 
               <li>
-                <Link to="/AboutUsPage" className="footer-link">
+                <Link className="footer-link" onClick={handleNavigation}>
                   About
                 </Link>
               </li>
 
               <li>
-                <Link to="/BlogPage" className="footer-link">
+                <Link
+                  // to="/BlogPage"
+                  className="footer-link"
+                  onClick={handleNavigationBlog}
+                >
                   Blog
                 </Link>
               </li>
 
               <li>
-                <Link to="/ProductCategories" className="footer-link">
+                <Link
+                  // to="/ProductCategories"
+                  className="footer-link"
+                  onClick={handleNavigationProductCategories}
+                >
                   All Products
                 </Link>
               </li>
@@ -117,12 +153,12 @@ function Footer() {
               </li>
 
               <li>
-                <Link to="/" className="footer-link">
+                <Link to="/login" className="footer-link" >
                   Login
                 </Link>
               </li>
               <li>
-                <a to="#our-services" className="footer-link">
+                <a href="#our-services" className="footer-link">
                   Product Market Fit
                 </a>
               </li>

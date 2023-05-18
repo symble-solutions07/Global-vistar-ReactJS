@@ -109,7 +109,7 @@ function ProductSection() {
               <ProductCard
                 pic={BeeBasket}
                 Blocation="Punjab"
-                Bname="Fresh Drinks"
+                Bname="Bee Basket"
                 ownerName="Amit Godse"
                 ownerLoc="Pune"
                 locationLook="PAN India"

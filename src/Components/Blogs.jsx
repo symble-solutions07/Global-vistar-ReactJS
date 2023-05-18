@@ -16,6 +16,20 @@ function Blogs() {
     // Reload the page after navigation
     window.location.reload();
   }
+  function handleNavigation2() {
+    // Navigate to a new route
+    history("/newBlog2");
+
+    // Reload the page after navigation
+    window.location.reload();
+  }
+  function handleNavigation3() {
+    // Navigate to a new route
+    history("/newBlog3");
+
+    // Reload the page after navigation
+    window.location.reload();
+  }
 
   return (
     <section className="blog" id="blog">
@@ -70,7 +84,11 @@ function Blogs() {
                     <time datetime="2022-27-04">Apr 27, 2022</time>
                   </div>
 
-                  <Link to="/newBlog1" className="read-more-btn" onClick={handleNavigation}>
+                  <Link
+                    to="/newBlog1"
+                    className="read-more-btn"
+                    onClick={handleNavigation}
+                  >
                     Read More
                   </Link>
                 </div>
@@ -120,7 +138,11 @@ function Blogs() {
                     <time datetime="2022-27-04">Apr 27, 2022</time>
                   </div>
 
-                  <Link to="/newBlog1" className="read-more-btn">
+                  <Link
+                    to="/newBlog2"
+                    className="read-more-btn"
+                    onClick={handleNavigation2}
+                  >
                     Read More
                   </Link>
                 </div>
@@ -173,7 +195,11 @@ function Blogs() {
                     <time datetime="2022-27-04">Apr 27, 2022</time>
                   </div>
 
-                  <Link to="/newBlog1" className="read-more-btn">
+                  <Link
+                    to="/newBlog3"
+                    className="read-more-btn"
+                    onClick={handleNavigation3}
+                  >
                     Read More
                   </Link>
                 </div>
