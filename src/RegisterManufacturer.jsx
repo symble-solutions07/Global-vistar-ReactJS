@@ -29,6 +29,7 @@ import {
 import pic from "./images/Global vistar TB.svg";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "./AuthenticationPage.css";
+import "./ListYourProducts.css";
 
 function RegisterManufacturer(props) {
   const { classes } = useStyles();
@@ -80,6 +81,8 @@ function RegisterManufacturer(props) {
         val.length <= 6
           ? "Password should include at least 6 characters"
           : null,
+      confirm: (val, password) =>
+        val=== password ? null : "password dont match",
       phone: (val) =>
         val.length > 10 ? "phone number should be only 10 digits" : null,
     },
@@ -438,21 +441,35 @@ function RegisterManufacturer(props) {
               error={form.errors.distribution_channels && "Invalid email"}
               radius="md"
             />
-            <TextInput
+            <Select
               mt={15}
               classNames={classes}
               className="registration-input"
               label="Annual Revenue"
               // placeholder="hello@mantine.dev"
               value={form.values.annual_revenue}
-              onChange={
-                (event) =>
-                  form.setFieldValue(
-                    "annual_revenue",
-                    event.currentTarget.value
-                  )
-                // setEmail(event.target.value)
-              }
+              // onChange={
+              //   (event) =>
+              //     form.setFieldValue(
+              //       "annual_revenue",
+              //       event.currentTarget.value
+              //     )
+              //   // setEmail(event.target.value)
+              // }
+
+              {...form.getInputProps("annual_revenue")}
+              data={[
+                { value: "less than 5 lakh", label: "less than 5 lakh" },
+                { value: "5-10lakh", label: "5 - 10 lakh" },
+                {
+                  value: "10-50 lakh",
+                  label: "10 - 50 lakh",
+                },
+                {
+                  value: "More than 50 years",
+                  label: "More than 50 lakh",
+                },
+              ]}
               error={form.errors.annual_revenue && "Invalid email"}
               radius="md"
             />
@@ -481,7 +498,7 @@ function RegisterManufacturer(props) {
               error={form.errors.number_of_employees && "Invalid email"}
               radius="md"
             />
-            <TextInput
+            <Select
               mt={15}
               classNames={classes}
               className="registration-input"
@@ -489,36 +506,43 @@ function RegisterManufacturer(props) {
               // placeholder="hello@mantine.dev"
 
               value={form.values.years_in_business}
-              onChange={
-                (event) =>
-                  form.setFieldValue(
-                    "years_in_business",
-                    event.currentTarget.value
-                  )
-                // setEmail(event.target.value)
-              }
+              data={[
+                { value: "0-5years", label: "0 - 5 years" },
+                { value: "5-10years", label: "5 - 10 years" },
+                {
+                  value: "10-15 years",
+                  label: "10 - 15 years",
+                },
+                {
+                  value: "More than 15 years",
+                  label: "More than 15 years",
+                },
+              ]}
+              {...form.getInputProps("years_in_business")}
+              // onChange={
+              //   (event) =>
+              //     form.setFieldValue(
+              //       "years_in_business",
+              //       event.currentTarget.value
+              //     )
+              //   // setEmail(event.target.value)
+              // }
               error={form.errors.years_in_business && "Invalid email"}
               radius="md"
             />
-            <Select
+            <label htmlFor="xyz" className="list-your-products-label">
+              Company Registration Details( Company PAN, Registration
+              Certificate, Udhyam Aadhar)
+            </label>
+            <input
+              type="file"
+              id="xyz"
               mt={15}
               classNames={classes}
-              className="registration-input"
+              className="file-input"
               label="Company Registration Details"
               // placeholder="hello@mantine.dev"
               value={form.values.company_registration_details}
-              data={[
-                { value: "Stockists", label: "Stockist" },
-                { value: "Distributors", label: "Distributors" },
-                {
-                  value: "Wholesalers",
-                  label: "Wholesalers",
-                },
-                {
-                  value: "Retailers",
-                  label: "Retailers",
-                },
-              ]}
               {...form.getInputProps("company_registration_details")}
               error={
                 form.errors.company_registration_details && "Invalid email"

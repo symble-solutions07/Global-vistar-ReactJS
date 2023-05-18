@@ -16,7 +16,7 @@
     /* width:90%; */
 }
 .blog-subheadings-italic{
-    text-align:center;
+    text-align:left;
     width:50%;
     line-height: 2rem;
 }
@@ -35,11 +35,11 @@
 
 .blog-para-3{
     width:50%;
-    text-align: center;
+    text-align: left;
 }
 
 .blog-subheadings{
-    /* width:90%; */
+    width:50%;
     text-align: left;
 }
 
@@ -63,7 +63,8 @@
 
 .list-blog-2 p{
     list-style-type: upper-roman;
-
+    font-size: 20px;
+    font-weight: bold;
 }
 .list-blog-2{
     width: 60%;
@@ -79,6 +80,7 @@
 
 .list-blog-2 ul  {
     margin:1rem;
+    font-size: 18px;
     list-style-type: circle !important;
 }
 
@@ -101,5 +103,9 @@
     text-align: left;
     width:90%;
     line-height: 2rem;
+}
+.list-blog-2{
+    margin-left:0.8rem;
+    width:90%;
 }
 }

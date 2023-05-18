@@ -446,7 +446,6 @@ function RegisterDistributor(props) {
                   value: "More than 15 years",
                   label: "More than 15 years",
                 },
-               
               ]}
               value={form.values.years_of_exp}
               // onChange={(event) =>
@@ -459,9 +458,14 @@ function RegisterDistributor(props) {
               }
               radius="md"
             />
+            <label htmlFor="xyz" className="list-your-products-label">
+              Distributor License/Certificate:
+            </label>
             <input
               multiple
+              id="xyz"
               type="file"
+              // placeholder="Distributor License/Certificate:"
               class="file-input"
               onChange={(event) => {
                 setUploadImage(event.target.files[0]);

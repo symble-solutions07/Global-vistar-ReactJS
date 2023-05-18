@@ -42,17 +42,29 @@ const Enquiry = (props) => {
   const [quantity, setQuantity] = useState(50);
   const [quantityRange, setQuantityRange] = useState(50);
 
+  // const handleQuantityChange = (event) => {
+  //   const newQuantity = parseInt(event.target.value);
+  //   setQuantity(newQuantity);
+  //   setQuantityRange(newQuantity * 10);
+  // };
   const handleQuantityChange = (event) => {
     const newQuantity = parseInt(event.target.value);
-    setQuantity(newQuantity);
-    setQuantityRange(newQuantity * 10);
+    if (!isNaN(newQuantity) && newQuantity >= 0) {
+      setQuantity(newQuantity);
+      setQuantityRange(newQuantity * 10);
+    }
   };
 
+  // const handleQuantityRangeChange = (event) => {
+  //   const newQuantityRange = parseInt(event.target.value);
+  //   setQuantityRange(newQuantityRange);
+  //   setQuantity(newQuantityRange / 10);
+  // };
   const handleQuantityRangeChange = (event) => {
-    const newQuantityRange = parseInt(event.target.value);
-    setQuantityRange(newQuantityRange);
-    setQuantity(newQuantityRange / 10);
-  };
+  const newQuantityRange = Math.round(parseInt(event.target.value));
+  setQuantityRange(newQuantityRange);
+  setQuantity(Math.floor(newQuantityRange / 10)); // Use Math.floor() to get the integer part
+};
 
   const sendEnquiry = () => {
     props.setShowEnquiry(!(props.showEnquiry));
@@ -67,7 +79,11 @@ const Enquiry = (props) => {
       ></ToastContainer>
       <div className="enquiry-form-section">
         <div className="close-enquiry-form">
-          <CloseIcon onClick={()=>{props.setShowEnquiry(!(props.showEnquiry))}}></CloseIcon>
+          <CloseIcon
+            onClick={() => {
+              props.setShowEnquiry(!props.showEnquiry);
+            }}
+          ></CloseIcon>
         </div>
 
         <h1 className="header-enquiry">Enquiry Form</h1>
@@ -110,7 +126,12 @@ const Enquiry = (props) => {
             <option value="product3">Product 3</option>
             <option value="product4">Product 4</option>
           </select> */}
-          <input type="text" name ="user_product" value={props.Bname} className="selected-product" />
+          <input
+            type="text"
+            name="user_product"
+            value={props.Bname}
+            className="selected-product"
+          />
           <br></br>
 
           <label for="quantity">Quantity Required:</label>
@@ -120,7 +141,7 @@ const Enquiry = (props) => {
               id="quantity"
               name="quantity"
               min="0"
-              max="100"
+              max="1000"
               value={quantity}
               onChange={handleQuantityChange}
               required
@@ -131,7 +152,7 @@ const Enquiry = (props) => {
               id="quantity-range"
               name="quantity-range"
               min="0"
-              max="1000"
+              max="100000"
               value={quantityRange}
               onChange={handleQuantityRangeChange}
               className="enquiry-input-range"
