@@ -13,7 +13,6 @@
 
 // generateSitemap();
 
-
 const { SitemapStream, streamToPromise } = require("sitemap");
 const { createWriteStream } = require("fs");
 const { Readable } = require("stream");
@@ -27,6 +26,10 @@ const generateSitemap = async () => {
   // Generate the sitemap URLs dynamically
   const urls = [
     { url: "/", changefreq: "daily", priority: 0.7 },
+    { url: "/about", changefreq: "daily", priority: 0.7 },
+    { url: "/BlogPage", changefreq: "daily", priority: 0.7 },
+    { url: "/ProductCategories", changefreq: "daily", priority: 0.7 },
+    { url: "/login", changefreq: "daily", priority: 0.7 },
     // { url: "/about", changefreq: "weekly", priority: 0.5 },
     // Add more URLs as needed
   ];
