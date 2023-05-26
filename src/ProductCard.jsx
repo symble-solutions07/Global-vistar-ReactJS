@@ -11,12 +11,18 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Enquiry from "./Components/Enquiry";
 import { Link } from "react-router-dom";
 // import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ProductCard(props) {
-  
   const [showEnquiry, setShowEnquiry] = useState(false);
-  
-  
+  const history = useNavigate();
+  function handleNavigation() {
+    // Navigate to a new route
+    history("/expandProducts");
+
+    // Reload the page after navigation
+    window.location.reload();
+  }
 
   return (
     <div>
@@ -124,33 +130,43 @@ function ProductCard(props) {
               flexDirection: "column",
             }}
           >
-            {/* <div style={{ display: "flex" }}>
-              <button className="card-footer-actions-btn" style={{ marginRight:"10px" }}>
+            <div style={{ display: "flex" }}>
+              {/* <button className="card-footer-actions-btn" style={{ marginRight:"10px" }}>
                 <FavoriteIcon />
-              </button>
+              </button> */}
 
-              <button className="card-footer-actions-btn">
-                <OpenInFullIcon />
-              </button>
-            </div> */}
-            <div>
-              {/* <Link to="/enquiry"> */}
+              <div>
+                {/* <Link to="/enquiry"> */}
+
                 <button
                   className="card-footer-actions-btn"
+                  onClick={handleNavigation}
+                >
+                  <OpenInFullIcon />
+                </button>
+              </div>
+              <button
+                className="card-footer-actions-btn"
                 onClick={() => {
                   setShowEnquiry(!showEnquiry);
                   console.log(showEnquiry);
-                  }}
-                  style={{ width: "7.5rem", padding: "2px" }}
-                >
-                  Send Enquiry
-                </button>
+                }}
+                style={{ width: "7.5rem", padding: "2px" }}
+              >
+                Send Enquiry
+              </button>
               {/* </Link> */}
             </div>
           </div>
         </div>
       </div>
-      {showEnquiry ? <Enquiry showEnquiry={showEnquiry} setShowEnquiry={setShowEnquiry} Bname={props.Bname}></Enquiry> : null}
+      {showEnquiry ? (
+        <Enquiry
+          showEnquiry={showEnquiry}
+          setShowEnquiry={setShowEnquiry}
+          Bname={props.Bname}
+        ></Enquiry>
+      ) : null}
     </div>
   );
 }

@@ -918,6 +918,7 @@ a {
   display: grid;
   place-items: center;
   font-size: 18px;
+  margin-left:10px;
 }
 
 .card-footer-actions-btn:is(:hover, :focus) {

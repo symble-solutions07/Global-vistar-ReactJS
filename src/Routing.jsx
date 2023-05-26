@@ -14,6 +14,7 @@ import RegisterManufacturer from './RegisterManufacturer';
 import Register from "./Components/Register";
 import TermsAndCond from "./Components/TermsAndCond";
 import ListYourProducts from './Components/ListYourProducts';
+import ExpandProduct from './Components/ExpandProduct';
 
 function Routing() {
   const [conditionAccepted, setConditionAccepted] = useState(false);
@@ -33,6 +34,7 @@ function Routing() {
         <Route path="/enquiry" element={<Enquiry />} />
         <Route path="/login" element={<AuthenticationForm />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/expandProducts" element={<ExpandProduct />} />
         <Route
           path="/registerDistributor"
           element={
