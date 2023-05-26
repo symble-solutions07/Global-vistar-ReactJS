@@ -1,11 +1,7 @@
 import { React, useState } from "react";
-// import pic from "./images/property-1.jpg";
-import pic2 from "./images/property-2.jpg";
-import pic3 from "./images/property-3.jpg";
-import author from "./images/author.jpg";
+
 import "./style.css";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Enquiry from "./Components/Enquiry";
@@ -138,12 +134,13 @@ function ProductCard(props) {
               <div>
                 {/* <Link to="/enquiry"> */}
 
-                <button
+                <Link 
+                    to="/expandProducts"
                   className="card-footer-actions-btn"
                   onClick={handleNavigation}
                 >
                   <OpenInFullIcon />
-                </button>
+                </Link>
               </div>
               <button
                 className="card-footer-actions-btn"
