@@ -1,0 +1,20 @@
+.card-info {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#bc1823;
+}
+
+.card-container{
+    justify-content: center;
+    display: flex;
+    margin:3rem;
+    gap:3rem !important;
+
+
+}

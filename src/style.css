@@ -525,18 +525,13 @@ a {
   #ABOUT
 \*-----------------------------------*/
 
-
-
-
 @media only screen and (width > 700) {
   .About-us-hero {
     margin-left: -5rem;
     /* margin-top:10rem; */
   }
-  .about-banner{
-
+  .about-banner {
   }
-  
 }
 
 .about-banner {
@@ -911,21 +906,29 @@ a {
 }
 
 .card-footer-actions-btn {
-  background: var(--cultured-2);
-  color: var(--cadet);
+  /* background: var(--cultured-2);
+   */
+   background-color: #bc1823;
+  /* color: var(--cadet); */
+  color:white;
   width: 35px;
   height: 35px;
   display: grid;
   place-items: center;
   font-size: 18px;
-  margin-left:10px;
+  margin-left: 10px;
 }
 
 .card-footer-actions-btn:is(:hover, :focus) {
-  background: var(--orange-soda);
+  /* background: var(--orange-soda);
+   */
+  background-color: #210d41;
   color: var(--white);
 }
 
+.know-more-btn{
+  width:100%;
+}
 /*-----------------------------------*\
   #FEATURES
 \*-----------------------------------*/
@@ -1457,7 +1460,6 @@ a {
   .about-item-text {
     font-size: 18px;
   }
-  
 
   /**
    * FEATURES
@@ -1822,7 +1824,6 @@ a {
   }
 }
 
-
-.select-hero-sub-categories{
-  z-index:10;
+.select-hero-sub-categories {
+  z-index: 10;
 }

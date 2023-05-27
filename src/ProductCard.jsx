@@ -131,17 +131,6 @@ function ProductCard(props) {
                 <FavoriteIcon />
               </button> */}
 
-              <div>
-                {/* <Link to="/enquiry"> */}
-
-                <Link 
-                    to="/expandProducts"
-                  className="card-footer-actions-btn"
-                  onClick={handleNavigation}
-                >
-                  <OpenInFullIcon />
-                </Link>
-              </div>
               <button
                 className="card-footer-actions-btn"
                 onClick={() => {
@@ -152,6 +141,17 @@ function ProductCard(props) {
               >
                 Send Enquiry
               </button>
+              <div>
+                {/* <Link to="/enquiry"> */}
+
+                <Link
+                  to="/expandProducts"
+                  className="card-footer-actions-btn know-more-btn"
+                  onClick={handleNavigation}
+                >
+                  Know more
+                </Link>
+              </div>
               {/* </Link> */}
             </div>
           </div>

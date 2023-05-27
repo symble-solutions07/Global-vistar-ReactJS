@@ -75,7 +75,7 @@ function HeroSection() {
                 className="select-hero-sub-categories"
                 data={[
                   { value: "Beverage", label: "Beverage" },
-                  { value: "Daily and Frozen", label: "Daily and Frozen" },
+                  { value: "Dairy and Frozen", label: "Dairy and Frozen" },
                   {
                     value: "Grains and spices",
                     label: "Grains and spices",

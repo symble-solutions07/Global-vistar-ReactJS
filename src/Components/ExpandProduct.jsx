@@ -53,6 +53,15 @@ function ExpandProduct(props) {
                 tempora, blanditiis minus vitae dicta reprehenderit debitis
                 cumque sequi ea?
               </p>
+              <p>
+                consectetur, adipisicing elit. Esse quos earum suscipit
+                molestias, iure ipsa dolor quas perferendis, dignissimos illum,
+                repellendus eligendi repudiandae minus! Numquam delectus
+                consequatur expedita, nobis fugiat a praesentium exercitationem
+                tenetur veniam impedit deserunt aliquam explicabo? Voluptates
+                tempora, blanditiis minus vitae dicta reprehenderit debitis
+                cumque sequi ea?
+              </p>
             </p>
           </div>
           <div className="location-info ">

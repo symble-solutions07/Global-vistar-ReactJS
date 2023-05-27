@@ -12,6 +12,7 @@ import Footer from "./Footer";
 import AuthenticationForm from "./Components/AuthenticationForm";
 import OurServices from "./OurServices";
 import Enquiry from "./Components/Enquiry";
+import InfoCards from "./Components/InfoCards";
 
 function App() {
   // const [openLogin, setOpenLogin] = useState(false);
@@ -42,6 +43,7 @@ function App() {
       <ProductSection />
       {/* <Features /> */}
       <OurServices />
+      <InfoCards/>
       <Blogs />
       <CTA />
       <Footer />
