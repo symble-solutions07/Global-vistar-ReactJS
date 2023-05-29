@@ -10,6 +10,10 @@
   color:#bc1823;
 }
 
+.card-info img{
+  width:100%;
+}
+
 .card-container{
     justify-content: center;
     display: flex;

@@ -13,6 +13,8 @@ import AuthenticationForm from "./Components/AuthenticationForm";
 import OurServices from "./OurServices";
 import Enquiry from "./Components/Enquiry";
 import InfoCards from "./Components/InfoCards";
+import "./Components/BookADemoCall";
+import BookADemoCall from "./Components/BookADemoCall";
 
 function App() {
   // const [openLogin, setOpenLogin] = useState(false);
@@ -38,12 +40,13 @@ function App() {
       <Header />
       <HeroSection />
       {/* <AuthenticationForm/> */}
+      <InfoCards />
       <About />
       <ServiceSection />
       <ProductSection />
       {/* <Features /> */}
       <OurServices />
-      <InfoCards/>
+      <BookADemoCall/>
       <Blogs />
       <CTA />
       <Footer />
