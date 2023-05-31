@@ -1,8 +1,38 @@
 import React from 'react'
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
+
 import footerLogo from "./images/Global vistar Normal.svg";
 
 function Footer() {
+
+  const history = useNavigate();
+
+  function handleNavigation() {
+    // Navigate to a new route
+    history("/AboutUsPage");
+
+    // Reload the page after navigation
+    window.location.reload();
+  }
+
+  function handleNavigationBlog() {
+    // Navigate to a new route
+    history("/BlogPage");
+
+    // Reload the page after navigation
+    window.location.reload();
+  }
+
+  function handleNavigationProductCategories() {
+    // Navigate to a new route
+    history("/ProductCategories");
+
+    // Reload the page after navigation
+    window.location.reload();
+  }
+  
+
   return (
     <footer className="footer" id="footer">
       <div className="footer-top">
@@ -12,7 +42,10 @@ function Footer() {
               <img src={footerLogo} alt="Homeverse logo" />
             </a>
 
-            <p className="section-text" style={{ display:"flex", flexDirection:"column", gap:"1rem" }}>
+            <p
+              className="section-text"
+              style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+            >
               Whether you're a manufacturer looking to expand your distribution
               network, or a distributor seeking new products and suppliers,
               Global Vistar is the platform for you.
@@ -32,7 +65,7 @@ function Footer() {
                 <a href="tel:+91 7350940448" className="contact-link">
                   <ion-icon name="call-outline"></ion-icon>
 
-                  <span>+0123-456789</span>
+                  <span>7058967349</span>
                 </a>
               </li>
 
@@ -43,12 +76,12 @@ function Footer() {
                 >
                   <ion-icon name="mail-outline"></ion-icon>
 
-                  <span>contact@homeverse.com</span>
+                  <span>info@globalvistar.com</span>
                 </a>
               </li>
             </ul>
 
-            <ul className="social-list">
+            {/* <ul className="social-list">
               <li>
                 <a href="#" className="social-link">
                   <ion-icon name="logo-facebook"></ion-icon>
@@ -72,7 +105,7 @@ function Footer() {
                   <ion-icon name="logo-youtube"></ion-icon>
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
 
           <div className="footer-link-box">
@@ -82,37 +115,33 @@ function Footer() {
               </li>
 
               <li>
-                <a href="#" className="footer-link">
+                <Link className="footer-link" onClick={handleNavigation}>
                   About
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="footer-link">
+                <Link
+                  // to="/BlogPage"
+                  className="footer-link"
+                  onClick={handleNavigationBlog}
+                >
                   Blog
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="footer-link">
+                <Link
+                  // to="/ProductCategories"
+                  className="footer-link"
+                  onClick={handleNavigationProductCategories}
+                >
                   All Products
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="footer-link">
-                  Locations Map
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="footer-link">
-                  FAQ
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="footer-link">
+                <a href="#footer" className="footer-link">
                   Contact us
                 </a>
               </li>
@@ -124,80 +153,23 @@ function Footer() {
               </li>
 
               <li>
-                <a href="#" className="footer-link">
-                  Order tracking
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="footer-link">
-                  Wish List
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="footer-link">
+                <Link to="/login" className="footer-link" >
                   Login
+                </Link>
+              </li>
+              <li>
+                <a href="#our-services" className="footer-link">
+                  Product Market Fit
                 </a>
               </li>
-
               <li>
-                <a href="#" className="footer-link">
-                  My account
+                <a href="#our-services" className="footer-link">
+                  Brand Building
                 </a>
               </li>
-
               <li>
-                <a href="#" className="footer-link">
-                  Terms & Conditions
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="footer-link">
-                  Promotional Offers
-                </a>
-              </li>
-            </ul>
-
-            <ul className="footer-list">
-              <li>
-                <p className="footer-list-title">Customer Care</p>
-              </li>
-
-              <li>
-                <a href="#" className="footer-link">
-                  Login
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="footer-link">
-                  My account
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="footer-link">
-                  Wish List
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="footer-link">
-                  Order tracking
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="footer-link">
-                  FAQ
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="footer-link">
-                  Contact us
+                <a href="#our-services" className="footer-link">
+                  Omni-Channel Selling
                 </a>
               </li>
             </ul>

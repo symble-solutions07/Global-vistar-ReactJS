@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
-import {useNavigate, useParams} from "react-router-dom";
+import React, { useEffect, useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import pic from "./images/Global vistar TB.svg";
 import "./style.css";
 // import Button from "react-bootstrap/Button";
@@ -18,32 +21,53 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 // import StorefrontIcon from "@mui/icons-material/Storefront";
 import { signOut, getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
-import AuthenticationForm from "./AuthenticationForm";
+import AuthenticationForm from "./Components/AuthenticationForm";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Button, Group, Avatar } from "@mantine/core";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-// import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
-// import { useDisclosure } from "@mantine/hooks";
-// import { Modal} from "@mantine/core";
+import { MyContext } from "./Context/MyContext";
 
-function Header() {
-  // const [showMenu, setShowMenu] = useState(false);
+function Header(props) {
+  const [showMenu, setShowMenu] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
-
   const [opened, { open, close }] = useDisclosure(false);
 
   const navigate = useNavigate();
   const [email, setEmail] = useState();
-  const {id} = useParams();
+  const { id } = useParams();
   console.log(id);
+
+  const handleProductListing = () => {
+    if (id) {
+      navigate("/ListYourProducts");
+    } else {
+      alert("sign in first!");
+    }
+  }
+
+  let string;
+
+  if (id) {
+    string = id;
+
+    console.log("The given string is:", string);
+
+    string = string.substring(0, string.indexOf("@"));
+
+    console.log("The substring before the specific character is:", string);
+  }
+  
   useEffect(() => {
     setEmail(sessionStorage.getItem("email"));
     console.log(email);
-    
-  }, [email])
-  
+    if (id != null) {
+      toast.success("user logged in!", {
+        toastId: 1,
+      });
+    }
+  }, [email, id]);
 
   const auth = getAuth();
 
@@ -51,10 +75,12 @@ function Header() {
     signOut(auth).then(() => {
       sessionStorage.removeItem("email");
       navigate("/");
-    })
-  };  
+    });
+  };
 
-  // const [openedModal, { openModal, closeModal }] = useDisclosure(false);
+  const handleLoginForm = () => {
+    setShowLoginForm((prev) => !prev);
+  };
 
   return (
     <header className="header" data-header>
@@ -62,31 +88,22 @@ function Header() {
 
       <Drawer opened={opened} onClose={close}>
         <ul className="navbar-list">
-          <li>
+          {/* <li>
             <a href="#home" className="navbar-link" data-nav-link>
               Home
             </a>
-          </li>
+          </li> */}
           <li>
-            {/* <a href="#about" className="navbar-link" data-nav-link>
-                      About
-                    </a> */}
             <Link to="/AboutUsPage" className="navbar-link">
               About
             </Link>
           </li>
           <li>
-            {/* <a href="#service" className="navbar-link" data-nav-link>
-                      Product Categories
-                    </a> */}
             <Link to="/ProductCategories" className="navbar-link">
               Product Categories
             </Link>
           </li>
           <li>
-            {/* <a href="#blog" class="navbar-link" data-nav-link>
-                      Blogs
-                    </a> */}
             <Link to="/BlogPage" className="navbar-link">
               Blogs
             </Link>
@@ -104,57 +121,69 @@ function Header() {
         <div className="container">
           <ul className="header-top-list">
             <li>
-              <a
-                href="mailto:info@globalvsitar.com"
-                className="header-top-link"
-              >
+              <a href="#our-services" className="header-top-link">
                 {/* <ion-icon name="mail-outline"></ion-icon> */}
                 <span> | Build a D2C Website | </span>
               </a>
             </li>
             <li>
-              <a href="#" className="header-top-link">
+              <a href="#our-services" className="header-top-link">
                 <address> | Build Your Brand | </address>
               </a>
             </li>
             <li>
-              <a href="#" className="header-top-link">
+              <Link to="/register" className="header-top-link">
                 {/* <ion-icon name="location-outline"></ion-icon> */}
                 <address> | Expand Your Business | </address>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="header-top-link">
+              <Link
+                to="/registerDistributor"
+                className="header-top-link"
+                onClick={handleLoginForm}
+              >
                 {/* <ion-icon name="location-outline"></ion-icon> */}
                 <address> | Distributor Registration | </address>
-              </a>
+              </Link>
             </li>
           </ul>
 
           <div className="wrapper">
             <ul className="header-top-social-list">
               <li>
-                <a href="#" className="header-top-social-link">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100090696241204&mibextid=ZbWKwL"
+                  className="header-top-social-link"
+                >
                   <FacebookIcon></FacebookIcon>
                 </a>
               </li>
               <li>
-                <a href="#" className="header-top-social-link">
+                <a
+                  href="https://instagram.com/globalvistar?igshid=YmMyMTA2M2Y="
+                  className="header-top-social-link"
+                >
                   <InstagramIcon></InstagramIcon>
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="header-top-social-link">
                   <TwitterIcon></TwitterIcon>
                 </a>
-              </li>
+              </li> */}
               <li>
-                <a href="#" className="header-top-social-link">
+                <a
+                  href="https://www.linkedin.com/company/global-vistar/"
+                  className="header-top-social-link"
+                >
                   <LinkedInIcon></LinkedInIcon>
                 </a>
               </li>
             </ul>
-            <button className="header-top-btn">List your Products</button>
+            
+              <button className="header-top-btn" onClick={handleProductListing}>List your Products</button>
+            
           </div>
         </div>
       </div>
@@ -225,33 +254,33 @@ function Header() {
             {/* <Avatar radius="xl" color="black" />
              */}
 
-            {(id!==undefined) ? (
+            {id !== undefined ? (
               <>
-                <p>{id}</p>
+                <p>Welcome, {id ? string : null}</p>
                 <Button
                   onClick={() => {
-                    signOutUser()
+                    signOutUser();
                   }}
                 >
                   LogOut
                 </Button>
               </>
             ) : (
-              <Button
-                className="register-button"
-                onClick={() => setShowLoginForm((prev) => !prev)}
-                style={{
-                  fontSize: "medium",
-
-                  // onClick={() => setShowMenu((prev) => !prev)}
-                }}
-              >
-                <AccountCircleIcon
-                  style={{ fontSize: "30px", paddingRight: "4px" }}
-                  className="profile-icon-register"
-                ></AccountCircleIcon>
-                Register / Login{" "}
-              </Button>
+              <Link to="/login">
+                <Button
+                  className="register-button"
+                  onClick={handleLoginForm}
+                  style={{
+                    fontSize: "medium",
+                  }}
+                >
+                  <AccountCircleIcon
+                    style={{ fontSize: "30px", paddingRight: "4px" }}
+                    className="profile-icon-register"
+                  ></AccountCircleIcon>
+                  Register / Login{" "}
+                </Button>
+              </Link>
             )}
 
             {/* <button class="header-bottom-actions-btn" aria-label="Profile">
@@ -303,7 +332,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <div className="authentication-section">
+      {/* <div className="authentication-section">
         {showLoginForm ? (
           <AuthenticationForm
             showLoginForm={showLoginForm}
@@ -312,7 +341,11 @@ function Header() {
         ) : (
           ""
         )}
-      </div>
+      </div> */}
+      <ToastContainer
+        style={{ width: "500px" }}
+        position="top-center"
+      ></ToastContainer>
     </header>
   );
 }
