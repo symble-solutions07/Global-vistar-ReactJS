@@ -1,12 +1,12 @@
-// import React from "react";
-// import OpenInFullIcon from "@mui/icons-material/OpenInFull";
-// import "../InfoCard.css";
-// import Beverages from "../images/Beverage .svg";
-// import DairyAndFrozen from "../images/Dairy and Frozen .svg";
-// import Snacks from "../images/Snacks.svg";
-// import Sugar from "../images/Sugar.svg";
-// import ReadyToCook from "../images/Ready to cook 1.svg";
-// import Grains from "../images/Grains .svg";
+import React from "react";
+import OpenInFullIcon from "@mui/icons-material/OpenInFull";
+import "../InfoCard.css";
+import Beverages from "../images/Beverage .svg";
+import DairyAndFrozen from "../images/Dairy and Frozen .svg";
+import Snacks from "../images/Snacks.svg";
+import Sugar from "../images/Sugar.svg";
+import ReadyToCook from "../images/Ready to cook 1.svg";
+import Grains from "../images/Grains .svg";
 
 // function InfoCards() {
 //   return (
