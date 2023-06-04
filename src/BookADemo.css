@@ -18,7 +18,7 @@
   background-color: #bc1823;
 }
 
-@media only screen and (width < 400px) {
+@media only screen and (width < 500px) {
   .call-btn {
     margin-top: 20px;
     width: 100%;

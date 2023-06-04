@@ -14,8 +14,12 @@ function ProductCard(props) {
   const history = useNavigate();
   function handleNavigation() {
     // Navigate to a new route
-    history("/expandProducts");
+    const url = `/expandProducts?id=${props.id}&name=${encodeURIComponent(
+      props.Bname
+    )}`;
 
+    // Navigate to the expand product page
+    history(url);
     // Reload the page after navigation
     window.location.reload();
   }
@@ -144,13 +148,13 @@ function ProductCard(props) {
               <div>
                 {/* <Link to="/enquiry"> */}
 
-                <Link
+                {/* <Link
                   to="/expandProducts"
                   className="card-footer-actions-btn know-more-btn"
                   onClick={handleNavigation}
                 >
                   Know more
-                </Link>
+                </Link> */}
               </div>
               {/* </Link> */}
             </div>

@@ -1,4 +1,4 @@
-/* .card-info {
+.card-info {
   width: 100px;
   height: 100px;
   background-color: #fff;
@@ -27,19 +27,14 @@
 @media only screen and (width < 400px) {
   .card-container {
     display: flex;
-<<<<<<< HEAD
     flex-direction: column;
     margin-top: 25rem;
     align-items: center;
     margin-bottom: -20rem;
   }
 }
-=======
-    margin:3rem;
-    gap:3rem !important;
-    margin: 6rem 0rem;
+    
     
 
 
-} */
->>>>>>> dc434223a3fdd6ebec990188c99c06917bcaa845
+

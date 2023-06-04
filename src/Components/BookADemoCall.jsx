@@ -7,7 +7,7 @@ function BookADemoCall() {
     <div>
       <div className="book-a-demo-section">
         <h1>Not sure? Book a demo call.</h1>
-        <button className="card-footer-actions-btn call-btn">Schedule a tour</button>
+        <button className="card-footer-actions-btn call-btn" >Schedule a tour</button>
       </div>
     </div>
   );
