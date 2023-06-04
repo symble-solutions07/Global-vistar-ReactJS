@@ -101,10 +101,6 @@ function TermsAndCond(props) {
       <p>
         This Agreement shall begin on the date hereof. Our Terms and Conditions
         were created with the help of the{" "}
-        <a href="https://www.termsfeed.com/terms-conditions-generator/">
-          Terms and Conditions Generator
-        </a>
-        .
       </p>
 
       <p>
