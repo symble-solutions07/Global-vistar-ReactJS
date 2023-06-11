@@ -82,12 +82,12 @@ function ExpandProduct(props) {
           </div>
           <div>
             <button
-              className=" send-enquiry-btn send-enquiry-product"
+              className=" send-enquiry-btn-product send-enquiry-product"
               onClick={() => {
                 setShowEnquiry(!showEnquiry);
                 console.log(showEnquiry);
               }}
-              style={{ width: "7.5rem", padding: "2px" }}
+              // style={{ width: "7.5rem", padding: "2px" }}
             >
               <span>Send</span> <span>Enquiry</span>
             </button>
