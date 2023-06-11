@@ -82,7 +82,7 @@ function RegisterManufacturer(props) {
           ? "Password should include at least 6 characters"
           : null,
       confirm: (val, password) =>
-        val=== password ? null : "password dont match",
+        val === password ? null : "password dont match",
       phone: (val) =>
         val.length > 10 ? "phone number should be only 10 digits" : null,
     },
@@ -90,6 +90,34 @@ function RegisterManufacturer(props) {
   // console.log(form.values.distribution_channels);
 
   const handleRegister = async () => {
+    if (
+      !form.values.manufacturer_email ||
+      !form.values.name ||
+      !form.values.phone ||
+      !form.values.city ||
+      !form.values.state ||
+      !form.values.confirm ||
+      !form.values.country ||
+      // !form.values.how_did_you_find_us ||
+      !form.values.company_name ||
+      !form.values.company_address ||
+      !form.values.number_of_employees ||
+      !form.values.pincode ||
+      !form.values.types_of_products ||
+      !form.values.years_in_business ||
+      // !form.values.types_of_industries_catered ||
+      // !form.values.years_of_exp ||
+      !form.values.password ||
+      // !form.values.business_address ||
+      // !form.values.business_email ||
+      !form.values.annual_revenue ||
+      !form.values.distribution_channels
+      // !form.value.website ||
+      // !form.values.licence
+    ) {
+      alert("fill all the details!");
+      return;
+    }
     console.log(form);
     try {
       const user = createUserWithEmailAndPassword(
@@ -122,6 +150,7 @@ function RegisterManufacturer(props) {
     console.log("demo");
     await setDoc(docRef, user).then(() => {
       console.log("registerd");
+      alert("Registartion successful!");
     });
 
     const response = await fetch("http://localhost:8080/registerManufacturer", {
@@ -176,6 +205,7 @@ function RegisterManufacturer(props) {
               }
               error={form.errors.company_name && "Invalid email"}
               radius="md"
+              required
             />
             <TextInput
               mt={15}
@@ -194,6 +224,7 @@ function RegisterManufacturer(props) {
               }
               error={form.errors.manufacturer_email && "Invalid email"}
               radius="md"
+              required
             />
             <TextInput
               mt={15}
@@ -208,6 +239,7 @@ function RegisterManufacturer(props) {
               }
               error={form.errors.name}
               radius="md"
+              required
             />
             <TextInput
               mt={15}
@@ -221,6 +253,7 @@ function RegisterManufacturer(props) {
               }
               error={form.errors.phone && "Invalid phone number"}
               radius="md"
+              required
             />
             <TextInput
               mt={15}
@@ -237,6 +270,7 @@ function RegisterManufacturer(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <TextInput
               mt={15}
@@ -253,6 +287,7 @@ function RegisterManufacturer(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
 
             <TextInput
@@ -272,6 +307,7 @@ function RegisterManufacturer(props) {
               }
               error={form.errors.company_address && "Invalid email"}
               radius="md"
+              required
             />
             <TextInput
               classNames={classes}
@@ -288,6 +324,7 @@ function RegisterManufacturer(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
 
             <TextInput
@@ -305,6 +342,7 @@ function RegisterManufacturer(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
           </Box>
           <Box className="second-col-dist">
@@ -314,15 +352,16 @@ function RegisterManufacturer(props) {
               mt={10}
               label="PinCode"
               // placeholder="Re-Enter Your Password"
-              value={form.values.pin_code}
+              value={form.values.pincode}
               onChange={(event) =>
-                form.setFieldValue("pin_code", event.currentTarget.value)
+                form.setFieldValue("pincode", event.currentTarget.value)
               }
               error={
-                form.errors.pin_code &&
+                form.errors.pincode &&
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <TextInput
               classNames={classes}
@@ -339,6 +378,7 @@ function RegisterManufacturer(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <Select
               mt={15}
@@ -379,6 +419,7 @@ function RegisterManufacturer(props) {
               ]}
               error={form.errors.types_of_products && "Invalid email"}
               radius="md"
+              required
             ></Select>
             {/* <TextInput
               mt={15}
@@ -440,6 +481,7 @@ function RegisterManufacturer(props) {
               {...form.getInputProps("distribution_channels")}
               error={form.errors.distribution_channels && "Invalid email"}
               radius="md"
+              required
             />
             <Select
               mt={15}
@@ -472,6 +514,7 @@ function RegisterManufacturer(props) {
               ]}
               error={form.errors.annual_revenue && "Invalid email"}
               radius="md"
+              required
             />
             {/* <Slider
               marks={[
@@ -497,6 +540,7 @@ function RegisterManufacturer(props) {
               }
               error={form.errors.number_of_employees && "Invalid email"}
               radius="md"
+              required
             />
             <Select
               mt={15}
@@ -529,6 +573,7 @@ function RegisterManufacturer(props) {
               // }
               error={form.errors.years_in_business && "Invalid email"}
               radius="md"
+              required
             />
             <label htmlFor="xyz" className="list-your-products-label">
               Company Registration Details( Company PAN, Registration
@@ -548,6 +593,7 @@ function RegisterManufacturer(props) {
                 form.errors.company_registration_details && "Invalid email"
               }
               radius="md"
+              required
             />
           </Box>
         </form>

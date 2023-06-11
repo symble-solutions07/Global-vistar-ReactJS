@@ -12,25 +12,48 @@ function InfoCards() {
   return (
     <div>
       <div className="card-container">
-        <div className="card-info">
-          <img src={Beverages} alt="" />
-          {/* <Beverages></Beverages> */}
-        </div>
-        <div className="card-info">
-          <img src={DairyAndFrozen} alt="" />
+        <div className="whole-card">
+          <div className="card-info">
+            <img src={Beverages} alt="" />
+
+            {/* <Beverages></Beverages> */}
+          </div>
+          <p>Beverages</p>
         </div>
 
-        <div className="card-info">
-          <img src={Grains} alt="" />
+        <div className="whole-card">
+          <div className="card-info">
+            <img src={DairyAndFrozen} alt="" />
+          </div>
+          <p>Dairy and Frozen</p>
         </div>
-        <div className="card-info">
-          <img src={ReadyToCook} alt="" />
+
+        <div className="whole-card">
+          <div className="card-info">
+            <img src={Grains} alt="" />
+          </div>
+          <p>Grains</p>
         </div>
-        <div className="card-info">
-          <img src={Snacks} alt="" />
+
+        <div className="whole-card">
+          <div className="card-info">
+            <img src={ReadyToCook} alt="" />
+          </div>
+          <p>Ready-to-cook</p>
         </div>
-        <div className="card-info">
-          <img src={Sugar} alt="" />
+
+        <div className="whole-card">
+          <div className="card-info">
+            <img src={Snacks} alt="" />
+          </div>
+          <p>Snacks</p>
+        </div>
+
+        <div className="whole-card">
+          <div className="card-info">
+            <img src={Sugar} alt="" />
+          </div>
+            <p>Sugar</p>
         </div>
       </div>
     </div>

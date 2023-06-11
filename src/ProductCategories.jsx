@@ -5,6 +5,7 @@ import DesiRass from "./images/Desi Rass (1).png";
 import ShivRatna from "./images/ShivRatna Jaggery.png";
 import Anjani from "./images/alphonso aamras_mockup_500gm.jpg";
 import TribeCook from "./images/Tribe-cook.png";
+import { Link } from "react-router-dom";
 import BeeBasket from "./images/BeeBasket.jpg";
 import MaxfoodProd from "./images/Max-Food-Products.jpg";
 import ProductCard from "./ProductCard";
@@ -47,16 +48,18 @@ function ProductCategories() {
               // }}
             >
               <li className="feature-card col-sm">
-                <ProductCard
-                  pic={pic}
-                  Blocation="Pune"
-                  Bname="Mighty Millets"
-                  ownerName="Sahil Jain"
-                  ownerLoc="Pune"
-                  locationLook="PAN India"
-                  margin="20%-30%"
-                  MOQ="50 units"
-                />
+                
+                  <ProductCard
+                    pic={pic}
+                    Blocation="Pune"
+                    Bname="Mighty Millets"
+                    ownerName="Sahil Jain"
+                    ownerLoc="Pune"
+                    locationLook="PAN India"
+                    margin="20%-30%"
+                    MOQ="50 units"
+                  />
+                
               </li>
 
               <li className="feature-card col-sm">

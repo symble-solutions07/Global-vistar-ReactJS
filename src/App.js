@@ -40,7 +40,7 @@ function App() {
       <Header />
       <HeroSection />
       {/* <AuthenticationForm/> */}
-      {/* <InfoCards /> */}
+      <InfoCards />
       <About />
       <ServiceSection />
       <ProductSection />
