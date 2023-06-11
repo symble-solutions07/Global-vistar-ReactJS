@@ -40,16 +40,17 @@
     flex-wrap: wrap;
     /* flex-direction: column; */
     justify-content: center;
+    align-items: center;
     margin-top: 25rem;
     /* align-items: center; */
     margin-bottom: -20rem;
-    margin-left:50px;
+    /* margin-left:50px; */
     /* flex: 0 0 48%; */
   }
   
 
   .whole-card {
-    flex: 0 0 35%;
+    flex: 0 0 29%;
     margin-bottom: 20px;
     text-align: center;
   }

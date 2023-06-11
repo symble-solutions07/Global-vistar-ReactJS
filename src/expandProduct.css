@@ -60,6 +60,10 @@
   
 }
 
+.send-enquiry-btn-product:hover{
+  background-color: #210d41;
+}
+
 .product-figures h4 {
   margin: 1rem;
   color: gray;
