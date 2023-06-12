@@ -1,9 +1,12 @@
 .property-list-container {
+  width:100%;
   display: flex;
   flex-direction: column;
   width: fit-content !important;
   /* justify-content: center; */
-  align-items: center;
+  /* align-items: center; */
+  margin:auto;
+  
 }
 
 /* .feature-card{
@@ -16,6 +19,8 @@
   padding: 0 !important;
   display: flex;
 }
+
+
 
 @media only screen and (width<=767px) {
   .property-list {

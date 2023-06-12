@@ -18,7 +18,7 @@ function BookADemoCall() {
              * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
              */
             rootElement={document.getElementById("root")}
-            text="Schedule A Call With Us"
+            text="Schedule a Call With Us"
           />
         </div>
       </div>
