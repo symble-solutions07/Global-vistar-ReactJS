@@ -52,7 +52,7 @@ function ProductSection() {
                 margin="20%-30%"
                 MOQ="50 units"
               />
-            </li>
+            </li> 
 
             <li className="feature-card col-sm">
               <ProductCard
@@ -141,7 +141,7 @@ function ProductSection() {
           </ul>
         </div>
         <Link to="/ProductCategories" className="explore-more-btn">
-          <Button onClick={handleNavigation}>Explore More</Button>
+          <Button onClick={handleNavigation} >Explore More</Button>
         </Link>
       </div>
     </section>

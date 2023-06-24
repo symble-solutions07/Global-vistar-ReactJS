@@ -16,7 +16,7 @@ function CTA(props) {
             <p className="card-text">We can help you to find them</p>
           </div>
 
-          <Link to="/registerDistributor">
+          <Link to="/registerManufacturer">
             <button className="btn cta-btn">
               <span>Explore Oppurtunities</span> 
 

@@ -12,6 +12,7 @@ import Footer from "./Footer";
 import AuthenticationForm from "./Components/AuthenticationForm";
 import OurServices from "./OurServices";
 import Enquiry from "./Components/Enquiry";
+import Calendly from "./Components/Calendly";
 import InfoCards from "./Components/InfoCards";
 import "./Components/BookADemoCall";
 import BookADemoCall from "./Components/BookADemoCall";
@@ -38,9 +39,10 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Calendly/>
       <HeroSection />
       {/* <AuthenticationForm/> */}
-      {/* <InfoCards /> */}
+      <InfoCards />
       <About />
       <ServiceSection />
       <ProductSection />

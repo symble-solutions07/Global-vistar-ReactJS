@@ -305,7 +305,7 @@ function AboutUsPage() {
 
             <Text size="sm" color="dimmed" className="member-bio">
               Kiran Patil is the Co-founder of Global Vistar. She is a branding
-              expert and a good technologist. She has been a crucial part of the
+              expert and a good food technologist. She has been a crucial part of the
               Pure Pluck enterprise, a platform for good food.
             </Text>
             <a

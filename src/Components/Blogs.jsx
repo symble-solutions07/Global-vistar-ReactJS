@@ -41,41 +41,45 @@ function Blogs() {
         <ul className="blog-list has-scrollbar">
           <li>
             <div className="blog-card">
-              <figure className="card-banner">
-                <img
-                  src={pic1}
-                  alt="The Most Inspiring Interior Design Of 2021"
-                  className="w-100"
-                />
-              </figure>
+              <Link onClick={handleNavigation}>
+                <figure className="card-banner">
+                  <img
+                    src={pic1}
+                    alt="The Most Inspiring Interior Design Of 2021"
+                    className="w-100"
+                  />
+                </figure>
+              </Link>
 
               <div className="blog-content">
-                <div className="blog-content-top">
-                  <ul className="card-meta-list">
-                    <li>
-                      <a href="#" className="card-meta-link">
-                        <ion-icon name="person"></ion-icon>
+                <Link onClick={handleNavigation}>
+                  <div className="blog-content-top">
+                    <ul className="card-meta-list">
+                      <li>
+                        <a href="#" className="card-meta-link">
+                          <ion-icon name="person"></ion-icon>
 
-                        <span>By Global Vistar</span>
-                      </a>
-                    </li>
+                          <span>By Global Vistar</span>
+                        </a>
+                      </li>
 
-                    {/* <li>
+                      {/* <li>
                         <a href="#" className="card-meta-link">
                           <ion-icon name="pricetags"></ion-icon>
 
                           <span>Dummy</span>
                         </a>
                       </li> */}
-                  </ul>
+                    </ul>
 
-                  <h3 className="h3 blog-title">
-                    <a href="#">
-                      How to Create a Great Distribution Network for Your
-                      Product?
-                    </a>
-                  </h3>
-                </div>
+                    <h3 className="h3 blog-title">
+                      <a href="#">
+                        How to Create a Great Distribution Network for Your
+                        Product?
+                      </a>
+                    </h3>
+                  </div>
+                </Link>
 
                 <div className="blog-content-bottom">
                   <div className="publish-date">
@@ -98,38 +102,42 @@ function Blogs() {
 
           <li>
             <div className="blog-card">
-              <figure className="card-banner">
-                <img
-                  src={pic2}
-                  alt="Recent Commercial Real Estate Transactions"
-                  className="w-100"
-                />
-              </figure>
+              <Link onClick={handleNavigation2}>
+                <figure className="card-banner">
+                  <img
+                    src={pic2}
+                    alt="Recent Commercial Real Estate Transactions"
+                    className="w-100"
+                  />
+                </figure>
+              </Link>
 
               <div className="blog-content">
-                <div className="blog-content-top">
-                  <ul className="card-meta-list">
-                    <li>
-                      <a href="#" className="card-meta-link">
-                        <ion-icon name="person"></ion-icon>
+                <Link onClick={handleNavigation2}>
+                  <div className="blog-content-top">
+                    <ul className="card-meta-list">
+                      <li>
+                        <a href="#" className="card-meta-link">
+                          <ion-icon name="person"></ion-icon>
 
-                        <span>By Global Vistar</span>
-                      </a>
-                    </li>
+                          <span>By Global Vistar</span>
+                        </a>
+                      </li>
 
-                    {/* <li>
+                      {/* <li>
                         <a href="#" className="card-meta-link">
                           <ion-icon name="pricetags"></ion-icon>
 
                           <span>Dummy</span>
                         </a>
                       </li> */}
-                  </ul>
+                    </ul>
 
-                  <h3 className="h3 blog-title">
-                    <a href="#">10 Things Every Distributor Should Verify!</a>
-                  </h3>
-                </div>
+                    <h3 className="h3 blog-title">
+                      <a href="#">10 Things Every Distributor Should Verify!</a>
+                    </h3>
+                  </div>
+                </Link>
 
                 <div className="blog-content-bottom">
                   <div className="publish-date">
@@ -152,41 +160,45 @@ function Blogs() {
 
           <li>
             <div className="blog-card">
-              <figure className="card-banner">
-                <img
-                  src={pic3}
-                  alt="Renovating a Living Room? Experts Share Their Secrets"
-                  className="w-100"
-                />
-              </figure>
+              <Link onClick={handleNavigation3}>
+                <figure className="card-banner">
+                  <img
+                    src={pic3}
+                    alt="Renovating a Living Room? Experts Share Their Secrets"
+                    className="w-100"
+                  />
+                </figure>
+              </Link>
 
               <div className="blog-content">
-                <div className="blog-content-top">
-                  <ul className="card-meta-list">
-                    <li>
-                      <a href="#" className="card-meta-link">
-                        <ion-icon name="person"></ion-icon>
+                <Link onClick={handleNavigation3}>
+                  <div className="blog-content-top">
+                    <ul className="card-meta-list">
+                      <li>
+                        <a href="#" className="card-meta-link">
+                          <ion-icon name="person"></ion-icon>
 
-                        <span>By Global Vistar</span>
-                      </a>
-                    </li>
+                          <span>By Global Vistar</span>
+                        </a>
+                      </li>
 
-                    {/* <li>
+                      {/* <li>
                         <a href="#" className="card-meta-link">
                           <ion-icon name="pricetags"></ion-icon>
 
                           <span>Dummy</span>
                         </a>
                       </li> */}
-                  </ul>
+                    </ul>
 
-                  <h3 className="h3 blog-title">
-                    <a href="#">
-                      How Global Vistar Is Disrupting The
-                      Manufacturer-Distributor Landscape?
-                    </a>
-                  </h3>
-                </div>
+                    <h3 className="h3 blog-title">
+                      <a href="#">
+                        How Global Vistar Is Disrupting The
+                        Manufacturer-Distributor Landscape?
+                      </a>
+                    </h3>
+                  </div>
+                </Link>
 
                 <div className="blog-content-bottom">
                   <div className="publish-date">

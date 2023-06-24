@@ -6,6 +6,8 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc, Timestamp } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
 import TermsAndCond from "./Components/TermsAndCond";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 import {
   TextInput,
@@ -28,7 +30,7 @@ import {
 import pic from "./images/Global vistar TB.svg";
 // import { storage } from "../Firebase/firebase-config";
 // import { v4 } from "uuid";
-// import { ref, uploadBytes } from "firebase/storage";  
+// import { ref, uploadBytes } from "firebase/storage";
 // import { GoogleButton, TwitterButton } from '../SocialButtons/SocialButtons';
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -40,12 +42,14 @@ function RegisterDistributor(props) {
   const { classes } = useStyles();
   const [type, toggle] = useToggle(["login", "register"]);
 
+  const [error, setError] = useState();
   const [isChecked, setIsChecked] = useState(false);
 
   const [showTerms, setShowTerms] = useState(false);
 
   const [conditionAccepted, setConditionAccepted] = useState(false);
   const [uploadImage, setUploadImage] = useState(null);
+  const [isRegistered, SetIsRegistered] = useState("");
 
   const handleTerms = () => {
     setShowTerms(true);
@@ -78,7 +82,14 @@ function RegisterDistributor(props) {
     },
 
     validate: {
-      email: (val) => (/^\S+@\S+$/.test(val) ? null : "Invalid email"),
+      distributor_email: (val) => (val ? null : "Email is required"),
+      name: (val) => (val ? null : "Name is required"),
+      // password: (val) => (val ? null : "Name is required"),
+      confirm: (val) => (val ? null : "Name is required"),
+      company_name: (val) => (val ? null : "Name is required"),
+      business_address: (val) => (val ? null : "Name is required"),
+      city: (val) => (val ? null : "Name is required"),
+
       password: (val) =>
         val.length <= 6
           ? "Password should include at least 6 characters"
@@ -105,6 +116,54 @@ function RegisterDistributor(props) {
   const handleRegister = async () => {
     console.log(form);
 
+    // distributor_email: "",
+    //   name: "",
+    //   phone: "",
+    //   password: "",
+    //   confirm: "",
+    //   company_name: "",
+    //   business_address: "",
+    //   city: "",
+    //   state: "",
+    //   pincode: "",
+    //   country: "",
+    //   business_email: "",
+    //   mobile_number: "",
+    //   websites: "",
+    //   years_of_exp: "",
+    //   licence: "",
+    //   distributing_products: "",
+    //   types_of_industries_catered: "",
+    //   number_of_employees: "",
+    //   annual_turnover: "",
+    //   how_did_you_find_us: "",
+    //   terms: true,
+
+    if (
+      !form.values.distributor_email ||
+      !form.values.name ||
+      !form.values.phone ||
+      !form.values.city ||
+      !form.values.state ||
+      !form.values.confirm ||
+      !form.values.country ||
+      !form.values.how_did_you_find_us ||
+      !form.values.company_name ||
+      !form.values.number_of_employees ||
+      !form.values.pincode ||
+      !form.values.types_of_industries_catered ||
+      !form.values.years_of_exp ||
+      !form.values.password ||
+      !form.values.business_address ||
+      !form.values.business_email ||
+      !form.values.annual_turnover 
+      // !form.value.website ||
+      // !form.values.licence
+    ) {
+      alert("fill all the details!");
+      return;
+    }
+
     try {
       const user = createUserWithEmailAndPassword(
         auth,
@@ -130,7 +189,7 @@ function RegisterDistributor(props) {
       mobile_number: form.values.mobile_number,
       websites: form.values.websites,
       years_of_exp: form.values.years_of_exp,
-      // licence: form.values.licence,  
+      // licence: form.values.licence,
       distributing_products: form.values.distributing_products,
       types_of_industries_catered: form.values.types_of_industries_catered,
       number_of_employees: form.values.number_of_employees,
@@ -141,7 +200,9 @@ function RegisterDistributor(props) {
     console.log(docRef.path);
 
     await setDoc(docRef, user).then(() => {
-      console.log("registerd");
+      console.log("reg");
+      // SetIsRegistered(true);
+      alert("Registration successful!");
     });
 
     // const imageRef = ref(
@@ -177,6 +238,12 @@ function RegisterDistributor(props) {
 
   return (
     <div className="distributor-page">
+      {isRegistered ? (
+        <ToastContainer
+          style={{ width: "500px" }}
+          position="top-center"
+        ></ToastContainer>
+      ) : null}
       <Box className="modal">
         <Link to="/">
           <img src={pic} alt="" className="manufacture-reg-pic" />
@@ -202,6 +269,7 @@ function RegisterDistributor(props) {
               }
               error={form.errors.distributor_email && "Invalid email"}
               radius="md"
+              required
             />
             <TextInput
               classNames={classes}
@@ -215,6 +283,7 @@ function RegisterDistributor(props) {
               }
               error={form.errors.name}
               radius="md"
+              required
             />
 
             {/* <TextInput
@@ -245,6 +314,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
 
             <TextInput
@@ -262,6 +332,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <TextInput
               classNames={classes}
@@ -278,6 +349,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <TextInput
               classNames={classes}
@@ -297,6 +369,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <TextInput
               classNames={classes}
@@ -313,6 +386,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
 
             <TextInput
@@ -330,6 +404,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <TextInput
               classNames={classes}
@@ -346,6 +421,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <TextInput
               classNames={classes}
@@ -362,6 +438,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
           </Box>
           <Box className="second-col-dist">
@@ -380,6 +457,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <TextInput
               classNames={classes}
@@ -396,6 +474,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <TextInput
               classNames={classes}
@@ -412,6 +491,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             {/* <TextInput
               classNames={classes}
@@ -457,6 +537,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <label htmlFor="xyz" className="list-your-products-label">
               Distributor License/Certificate:
@@ -489,6 +570,7 @@ function RegisterDistributor(props) {
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
 
             {/* Food and Beverage
@@ -536,6 +618,7 @@ Tooling and Machinery */}
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <TextInput
               classNames={classes}
@@ -555,6 +638,7 @@ Tooling and Machinery */}
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             <TextInput
               classNames={classes}
@@ -571,6 +655,7 @@ Tooling and Machinery */}
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
             {/* 
             Through your friend
@@ -613,6 +698,7 @@ Website */}
                 "Password should include at least 6 characters"
               }
               radius="md"
+              required
             />
           </Box>
         </form>

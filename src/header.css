@@ -100,12 +100,14 @@
   color:black;
 }
 
+.header-bottom-actions Button:hover{
+  background-color: #BC1823;
+}
+
 .dropdown-item{
   padding:10px;
   color:black;
   text-decoration: none;
-  
-
 }
 .dropdown-item:hover{
   background-color: gray;

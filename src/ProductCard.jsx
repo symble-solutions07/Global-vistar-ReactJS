@@ -14,26 +14,35 @@ function ProductCard(props) {
   const history = useNavigate();
   function handleNavigation() {
     // Navigate to a new route
-    history("/expandProducts");
+    const url = `/expandProducts?id=${props.id}&name=${encodeURIComponent(
+      props.Bname
+    )}`;
 
+    // Navigate to the expand product page
+    history(url);
     // Reload the page after navigation
     window.location.reload();
   }
 
   return (
     <div>
+      {/* <Link
+        to="/expandProducts"
+        className="card-footer-actions-btn know-more-btn"
+        onClick={handleNavigation}
+      > */}
       <div
         className="property-card "
         style={{ marginLeft: "auto", maxHeight: "40rem", width: "22rem" }}
       >
         <figure className="card-banner">
-          <a href="#">
+          <Link to="/expandProducts" onClick={handleNavigation}>
             <img
               src={props.pic}
               alt="New Apartment Nice View"
               className="w-100"
             />
-          </a>
+          </Link>
 
           <div className="card-badge green">Assured By Global Vistar</div>
 
@@ -57,47 +66,47 @@ function ProductCard(props) {
             </button>
           </div>
         </figure>
+        <Link to="/expandProducts" onClick={handleNavigation}>
+          <div className="card-content">
+            <div
+              className="card-price"
+              style={{ display: "flex", color: "#bc1823" }}
+            >
+              <strong>{props.margin}</strong>{" "}
+              <span style={{ fontSize: "20px", paddingLeft: "0.5rem" }}>
+                Margin
+              </span>
+            </div>
 
-        <div className="card-content">
-          <div
-            className="card-price"
-            style={{ display: "flex", color: "#bc1823" }}
-          >
-            <strong>{props.margin}</strong>{" "}
-            <span style={{ fontSize: "20px", paddingLeft: "0.5rem" }}>
-              Margin
-            </span>
-          </div>
+            <h3 className="h3 card-title" style={{ maxHeight: "1rem" }}>
+              <a href="#">{props.Bname}</a>
+            </h3>
+            <br />
+            <br />
 
-          <h3 className="h3 card-title" style={{ maxHeight: "1rem" }}>
-            <a href="#">{props.Bname}</a>
-          </h3>
-          <br />
-          <br />
+            {/* <p className="card-text">Write some info about them</p> */}
 
-          {/* <p className="card-text">Write some info about them</p> */}
+            <ul className="card-list">
+              <li className="card-item">
+                <strong>{props.MOQ}</strong>
 
-          <ul className="card-list">
-            <li className="card-item">
-              <strong>{props.MOQ}</strong>
+                <span>MOQ</span>
+              </li>
 
-              <span>MOQ</span>
-            </li>
-
-            {/* <li className="card-item">
+              {/* <li className="card-item">
               <strong>100GM, 200GM</strong>
 
               <span>Availble size</span>
             </li> */}
 
-            <li className="card-item">
-              <strong>{props.locationLook}</strong>
+              <li className="card-item">
+                <strong>{props.locationLook}</strong>
 
-              <span>Looking for locations</span>
-            </li>
-          </ul>
-        </div>
-
+                <span>Looking for locations</span>
+              </li>
+            </ul>
+          </div>
+        </Link>
         <div
           className="card-footer"
           style={{ display: "flex", flexDirection: "column" }}
@@ -157,6 +166,7 @@ function ProductCard(props) {
           </div>
         </div>
       </div>
+      {/* </Link> */}
       {showEnquiry ? (
         <Enquiry
           showEnquiry={showEnquiry}
