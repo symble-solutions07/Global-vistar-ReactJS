@@ -137,7 +137,7 @@ function ProductCard(props) {
                   setShowEnquiry(!showEnquiry);
                   console.log(showEnquiry);
                 }}
-                style={{ width: "1.5rem", padding: "2px" }}
+                style={{ width: "7.5rem", padding: "2px" }}
               >
                 Send Enquiry
               </button>
