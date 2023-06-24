@@ -153,13 +153,13 @@ function ProductCard(props) {
               <div>
                 {/* <Link to="/enquiry"> */}
 
-                <Link
+                {/* <Link
                   to="/expandProducts"
                   className="card-footer-actions-btn know-more-btn"
                   onClick={handleNavigation}
                 >
                   {/* Know more */}
-                </Link>
+                </Link> */}
               </div>
               {/* </Link> */}
             </div>
