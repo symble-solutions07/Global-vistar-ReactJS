@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #210d41;
+  background-color: #bc1823;
   color: #ffffff;
   border-radius: 4px;
   padding: 12px 24px;
@@ -18,7 +18,7 @@
 }
 
 .calendly-button:hover {
-  background-color: #bc1823 !important;
+  background-color: #210d41 !important;
 }
 
 @media (width< 768px) {
@@ -39,6 +39,6 @@
     /* margin: 20px auto; */
   }
   .btn-calendly:hover {
-    background-color: #bc1823 !important;
+    background-color: #210d41 !important;
   }
 }
