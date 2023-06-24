@@ -149,7 +149,7 @@ function ProductCard(props) {
                   className="card-footer-actions-btn know-more-btn"
                   onClick={handleNavigation}
                 >
-                  Know more
+                  {/* Know more */}
                 </Link>
               </div>
               {/* </Link> */}
