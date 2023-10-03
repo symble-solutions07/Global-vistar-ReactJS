@@ -44,7 +44,7 @@ function HeroSection() {
       <div className="container landing-page">
         <div className="hero-content">
           <h2 className="h1 hero-title" style={{ color: "red" }}>
-            Connecting FMCG Sellers and Distributors <br />
+            Connecting FM Sellers and Distributors <br />
             <span className="header-text">Faster and Better!</span>
           </h2>
           <p className="hero-text" style={{}}>
