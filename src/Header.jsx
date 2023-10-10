@@ -14,7 +14,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
+import LoginReg from "./Components/loginReg";
 // import Dropdown from "react-bootstrap/Dropdown";
 // import DropdownButton from "react-bootstrap/DropdownButton";
 // import WarehouseIcon from "@mui/icons-material/Warehouse";
@@ -37,7 +37,7 @@ function Header(props) {
   const navigate = useNavigate();
   const [email, setEmail] = useState();
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   const handleProductListing = () => {
     if (id) {
@@ -45,7 +45,7 @@ function Header(props) {
     } else {
       alert("sign in first!");
     }
-  }
+  };
 
   let string;
 
@@ -58,10 +58,10 @@ function Header(props) {
 
     console.log("The substring before the specific character is:", string);
   }
-  
+
   useEffect(() => {
     setEmail(sessionStorage.getItem("email"));
-    console.log(email);
+    // console.log(email);
     if (id != null) {
       toast.success("user logged in!", {
         toastId: 1,
@@ -110,7 +110,7 @@ function Header(props) {
           </li>
 
           <li>
-            <a href="#footer" class="navbar-link" data-nav-link>
+            <a href="#footer" className="navbar-link" data-nav-link>
               Contact
             </a>
           </li>
@@ -181,9 +181,10 @@ function Header(props) {
                 </a>
               </li>
             </ul>
-            
-              <button className="header-top-btn" onClick={handleProductListing}>List your Products</button>
-            
+
+            <button className="header-top-btn" onClick={handleProductListing}>
+              List your Products
+            </button>
           </div>
         </div>
       </div>
@@ -253,36 +254,7 @@ function Header(props) {
           <div class="header-bottom-actions">
             {/* <Avatar radius="xl" color="black" />
              */}
-
-            {id !== undefined ? (
-              <>
-                <p>Welcome, {id ? string : null}</p>
-                <Button
-                  onClick={() => {
-                    signOutUser();
-                  }}
-                >
-                  LogOut
-                </Button>
-              </>
-            ) : (
-              <Link to="/login">
-                <Button
-                  className="register-button"
-                  onClick={handleLoginForm}
-                  style={{
-                    fontSize: "medium",
-                  }}
-                >
-                  <AccountCircleIcon
-                    style={{ fontSize: "30px", paddingRight: "4px" }}
-                    className="profile-icon-register"
-                  ></AccountCircleIcon>
-                  Register / Login{" "}
-                </Button>
-              </Link>
-            )}
-
+            <LoginReg />{" "}
             {/* <button class="header-bottom-actions-btn" aria-label="Profile">
                   <ProfileIcon
                     className="btn-profile"
