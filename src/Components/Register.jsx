@@ -56,6 +56,9 @@ function OTPForm() {
     console.log(value);
     setRegisteras(value);
   };
+  const logoClick = () => {
+    navigate("/")
+  };
   function checkAllInputs() {
     var res = 1;
     if (NameOfUser == "") {
@@ -102,6 +105,7 @@ function OTPForm() {
     if (response.status === 200) {
       console.log(data);
       localStorage.setItem("token", data.token);
+      localStorage.setItem("pNumber", phoneNumber);
       if (data.token) navigate("/");
       else {
         alert("invalid Username or password");
@@ -122,7 +126,7 @@ function OTPForm() {
           <img className="sign-up-img" src={signUpImg} alt="" />
         </div>
         <div className="otp-verification-card">
-          <h1 className="otp-gv-logo">
+          <h1 className="otp-gv-logo" onClick={logoClick}>
             <span className="otp-global">Global</span>{" "}
             <span className="otp-vistar">Vistar</span>
           </h1>

@@ -107,13 +107,16 @@ function OTPLogin() {
     if (response.status === 200) {
       console.log(data);
       localStorage.setItem("token", data.token);
+      localStorage.setItem("pNumber", phoneNumber);
       if (data.token) navigate("/");
       else {
         alert("invalid Username or password");
       }
     }
   };
-
+  const logoClick = () => {
+    navigate("/");
+  };
   return (
     <div>
       {isPopupVisible && (
@@ -121,12 +124,13 @@ function OTPLogin() {
           <div className="popup">
             Number Not registered.
             <br />
-            Register first</div>
+            Register first
+          </div>
         </div>
       )}
       <div className="otp-login">
         <div className="otp-login-card">
-          <h2 className="gv-logo">
+          <h2 className="gv-logo" onClick={logoClick}>
             <span className="global">Global</span>{" "}
             <span className="vistar">Vistar</span>
           </h2>

@@ -40,11 +40,9 @@ function Header(props) {
   // console.log(id);
 
   const handleProductListing = () => {
-    if (id) {
-      navigate("/ListYourProducts");
-    } else {
-      alert("sign in first!");
-    }
+
+      navigate("/productListing");
+ 
   };
 
   let string;

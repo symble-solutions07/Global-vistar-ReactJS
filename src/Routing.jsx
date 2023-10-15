@@ -10,7 +10,8 @@ import ExpandBlog3 from "./Components/ExpandBlog3";
 import Enquiry from "./Components/Enquiry";
 import AuthenticationForm from './Components/AuthenticationForm';
 import OTPLogin from "./Components/OTPLogin";
-import LoginReg from "./Components/loginReg";
+import ProductListing from "./Components/productListing";
+import ProductListing2 from "./Components/productListing2";
 import RegisterDistributor from './RegisterDistributor';
 import RegisterManufacturer from './RegisterManufacturer';
 import Register from "./Components/Register";
@@ -35,7 +36,8 @@ function Routing() {
         <Route path="/newBlog3" element={<ExpandBlog3 />} />
         <Route path="/enquiry" element={<Enquiry />} />
         <Route path="/login" element={<OTPLogin />} />
-        {/* <Route path="/loginReg" element={<LoginReg />} /> */}
+        <Route path="/productListing" element={<ProductListing />} />
+        <Route path="/productListing/2" element={<ProductListing2 />} />
         <Route path="/register" element={<Register />} />
         <Route path="/expandProducts" element={<ExpandProduct />} />
         <Route
