@@ -2,7 +2,6 @@ import "./productListing.css";
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import InputAdornment from "@mui/material/InputAdornment";
 import { useNavigate } from "react-router-dom";
 import moqImg from "../images/MOQimg.jpeg";
 import ricon from "../images/rupeeIcon.svg";
@@ -22,14 +21,9 @@ function ProductListing() {
   const [ppp1error, setppp1error] = useState("");
   const [moq2error, setMoq2error] = useState("");
   const [ppp2error, setppp2error] = useState("");
- const [numberError, setnumberError] = useState("");
-  const [otp, setOTP] = useState("");
-  const [otpInfo, SetOTPInfo] = useState("");
-  const [verificationStatus, setVerificationStatus] = useState("");
-  const [verificationError, setVerificationError] = useState("");
   const [isPopupVisible, setPopupVisible] = useState(false);
 
-  useEffect(async () => {
+  const checkUser = async () => {
     // setPopupVisible(true);
     const phoneNumber = localStorage.getItem("pNumber");
     const resp = await fetch(
@@ -49,10 +43,14 @@ function ProductListing() {
       setPopupVisible(true);
       const timeout = setTimeout(() => {
         // console.log("This text will be displayed after 2 seconds.");
-        navigate("/");
+        navigate("/login");
       }, 2000);
-    } 
-  },[]) 
+    }
+    return;
+  };
+  useEffect(() => {
+    checkUser();
+  }, []);
   function checkAllInputs() {
     var res = 1;
 
@@ -76,8 +74,12 @@ function ProductListing() {
       setppp2error("*required");
       res = 0;
     }
-    if (ppp3 == "") {ppp3="0"}
-    if (moq3 == "") {moq3="0"}
+    if (ppp3 == "") {
+      ppp3 = "0";
+    }
+    if (moq3 == "") {
+      moq3 = "0";
+    }
 
     return res;
   }
@@ -107,7 +109,6 @@ function ProductListing() {
     if (response.status === 200) {
       console.log(data);
       navigate("/productListing/2");
-      
     }
     localStorage.setItem("pName", nameOfProduct);
   };
@@ -117,9 +118,9 @@ function ProductListing() {
       {isPopupVisible && (
         <div className="popUpWrapper">
           <div className="popup">
-            Number Not registered.
+           user not logged in
             <br />
-            Register first
+            Please log-in
           </div>
         </div>
       )}
