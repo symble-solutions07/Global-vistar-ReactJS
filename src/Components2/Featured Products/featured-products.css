@@ -106,7 +106,7 @@
     }
 
     .featured-products-card-img{
-        width: 23.35rem;
+        width: max-content;
         height: 11rem;
         margin-bottom: 1rem;
         object-fit: cover;
