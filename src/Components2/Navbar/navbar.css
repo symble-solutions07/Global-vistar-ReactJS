@@ -18,7 +18,7 @@
 }
 
 .center-navbar{
-    flex: 2.7;
+    flex: 2.4;
     display: flex;
     padding-left: 4rem;
 }
@@ -30,7 +30,7 @@
 .navbar-links{
     text-decoration: none;
     margin: 0;
-    margin-right: 3.5rem;
+    margin-right: 2rem;
     margin-top: 0.2rem;
     cursor: pointer;
     padding: 0.3rem 0.5rem 0.3rem 0.5rem;
@@ -111,7 +111,7 @@
     }
 
     .left-navbar{
-        margin-left: 5rem;
+        margin-left: 4rem;
     }
 
     .hamburger-menu{
@@ -187,7 +187,7 @@
 
     #menuToggle a:hover
     {
-    color: tomato;
+    color: rgb(173, 47, 25);
     }
 
 
@@ -283,7 +283,7 @@
     border-radius: 10px;
     
     background-color: rgb(255, 255, 255, 0.3);
-    backdrop-filter: blur(11px);
+    backdrop-filter: blur(20px);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */

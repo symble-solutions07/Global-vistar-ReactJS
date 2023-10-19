@@ -51,6 +51,11 @@
     cursor: pointer;
 }
 
+.footer-2-links-a{
+    text-decoration: none;
+    color: black;
+}
+
 .footer-2-links:hover{
     transition: 0.35s;
     color: rgb(188,24,35);

@@ -1,5 +1,6 @@
 import './footer.css'
 import GVlogo from "./Images/global-vistar-logo.png"
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -11,22 +12,22 @@ export default function Footer() {
             </div>
             <div className="footer-2">
                 <h1 className='footer-2-title'>Pages</h1>
-                <p className="footer-2-links">Home</p>
-                <p className="footer-2-links">About Us</p>
-                <p className="footer-2-links">Categories</p>
-                <p className="footer-2-links">Blogs</p>
-                <p className="footer-2-links">Contact</p>
+                <Link to="/" className='navbar-links-text'><p className='footer-2-links'>Home</p></Link>
+                <Link to="/AboutUsPage" className='navbar-links-text'><p className='footer-2-links'>About Us</p></Link>
+                <Link to="/" className='navbar-links-text'><p className='footer-2-links'>Categories</p></Link>
+                <Link to="/BlogPage" className='navbar-links-text'><p className='footer-2-links'>Blogs</p></Link>
+                <Link to="/" className='navbar-links-text'><p className='footer-2-links'>Contact</p></Link>
             </div>
             <div className="footer-3">
                 <h1 className='footer-2-title'>Follow Us</h1>
-                <p className="footer-2-links">Instagram</p>
-                <p className="footer-2-links">Facebook</p>
-                <p className="footer-2-links">Linked In</p>
+                <a href="https://instagram.com/globalvistar?igshid=YmMyMTA2M2Y=" className="footer-2-links-a"><p className="footer-2-links">Instagram</p></a>
+                <a href="https://www.facebook.com/profile.php?id=100090696241204&mibextid=ZbWKwL" className="footer-2-links-a"><p className="footer-2-links">Facebook</p></a>
+                <a href="https://www.linkedin.com/company/global-vistar/" className="footer-2-links-a"><p className="footer-2-links">Linked In</p></a>
             </div>
             <div className="footer-4">
                 <h1 className='footer-2-title'>Useful Links</h1>
-                <p className="footer-2-links">Terms of Use</p>
-                <p className="footer-2-links">Privacy Policy</p>
+                <Link to="/terms&cond" className='navbar-links-text'><p className="footer-2-links">Terms of Use</p></Link>
+                <Link to="/terms&cond" className='navbar-links-text'><p className="footer-2-links">Privacy Policy</p></Link>
             </div>
         </div>
         <div className="footer-copyright">

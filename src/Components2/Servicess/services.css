@@ -2,25 +2,26 @@
     background: rgb(188,24,35);
     background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
     margin: 0 0 5rem 0;
-    height: 26.8rem;
+    height: auto;
     color: white;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    padding-left: 4rem;
+    padding-left: 3.5rem;
     display: flex;
 }
 
 .service-card{
-    height: 20.8rem;
+    position: relative;
+    height: auto;
     width: auto;
     padding: 1rem;
-    margin-right: 1.6rem;
+    margin-right: 2rem;
     background-color: rgb(255, 255, 255, 0.1);
     border-radius: 10px;
 }
 
 .service-card-4{
-    margin-right: 3.6rem;
+    margin-right: 3.5rem;
 }
 
 .service-card-title{

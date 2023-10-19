@@ -1,6 +1,6 @@
 .hero-section{
     width: auto;
-    margin: 4.5rem 3.6rem 4.9rem 4rem;
+    margin: 3.5rem 3.5rem 4.9rem 3.5rem;
     display: flex;
 }
 
@@ -142,7 +142,7 @@
     .fa-magnifying-glass{
         /* border: 1px solid rgb(160, 160, 160); */
         border-radius: 10px 0 0 10px;
-        padding: 1.25rem;
+        padding: 1.27rem;
         padding-top: 1.28rem;
         color: rgb(255, 255, 255);
         background: rgb(188,24,35);
