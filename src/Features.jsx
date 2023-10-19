@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 import DirectionsCarFilledIcon from "@mui/icons-material/DirectionsCarFilled";
 import InvertColorsIcon from "@mui/icons-material/InvertColors";
 import GppGoodIcon from "@mui/icons-material/GppGood";

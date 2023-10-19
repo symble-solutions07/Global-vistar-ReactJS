@@ -1,5 +1,4 @@
 import React from "react";
-import "../style.css";
 import "../About.css"
 import pic from "../images/about-banner-1.png";
 import GroupIcon from "@mui/icons-material/Group";

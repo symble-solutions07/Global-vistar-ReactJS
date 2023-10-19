@@ -8,15 +8,11 @@ import ExpandBlog1 from "./Components/ExpandBlog1";
 import ExpandBlog2 from "./Components/ExpandBlog2";
 import ExpandBlog3 from "./Components/ExpandBlog3";
 import Enquiry from "./Components/Enquiry";
-import AuthenticationForm from './Components/AuthenticationForm';
 import OTPLogin from "./Components/OTPLogin";
 import ProductListing from "./Components/productListing";
 import ProductListing2 from "./Components/productListing2";
-import RegisterDistributor from './RegisterDistributor';
-import RegisterManufacturer from './RegisterManufacturer';
 import Register from "./Components/Register";
 import TermsAndCond from "./Components/TermsAndCond";
-import ListYourProducts from './Components/ListYourProducts';
 import ExpandProduct from './Components/ExpandProduct';
 
 function Routing() {
@@ -40,20 +36,7 @@ function Routing() {
         <Route path="/productListing/2" element={<ProductListing2 />} />
         <Route path="/register" element={<Register />} />
         <Route path="/expandProducts" element={<ExpandProduct />} />
-        <Route
-          path="/registerDistributor"
-          element={
-            <RegisterDistributor conditionAccepted={conditionAccepted} />
-          }
-        />
-        <Route
-          path="/registerManufacturer"
-          element={
-            <RegisterManufacturer conditionAccepted={conditionAccepted} />
-          }
-        />
         <Route path="/terms&cond" element={<TermsAndCond />} />
-        <Route path="/ListYourProducts" element={<ListYourProducts />} />
       </Routes>
     </BrowserRouter>
   );

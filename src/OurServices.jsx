@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 import serviceIcon1 from "./images/Product Market Fit .svg";
 import serviceIcon2 from "./images/Brand Building.svg";
 import serviceIcon3 from "./images/Omni Logo.svg";

@@ -13,6 +13,9 @@
   font-size: 20px;
 }
 
+.list-item-navbar{
+  list-style-type: none;
+}
 
 .list-item-navbar:hover {
   color: #ff5a3d;

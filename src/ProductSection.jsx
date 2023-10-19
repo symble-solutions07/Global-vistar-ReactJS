@@ -1,5 +1,4 @@
 import {React,useState} from 'react'
-import "./style.css"
 import { Drawer, Button, Group, Avatar } from "@mantine/core";
 import { Link, useNavigate } from "react-router-dom";
 import pic from "./images/Savouries.jpg";

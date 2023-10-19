@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 import serviceIcon1 from "./images/Step 1 Icon(1).svg";
 import serviceIcon2 from "./images/Step 1 Icon 1.svg";
 import serviceIcon3 from "./images/Step 1 Icon 2.svg";  

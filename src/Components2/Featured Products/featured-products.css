@@ -1,0 +1,122 @@
+.featured-products{
+    margin: 0 3.6rem 5rem 4rem;
+}
+
+.featured-products-title{
+    font-family: 'General Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.featured-products-flex{
+    display: flex;
+}
+
+.featured-products-card{
+    width: 17rem;
+    height: 28rem;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 10px;
+    margin-right: 2.9rem;
+}
+
+.featured-products-card-img{
+    width: 16.85rem;
+    height: 9.5rem;
+    margin-bottom: 2rem;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.featured-products-card-description{
+    margin: 1rem;
+}
+
+.featured-products-card-title{
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.featured-products-card-title:hover{
+    transition: 0.35s;
+    color: rgb(188,24,35);
+}
+
+.featured-products-card-price{
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.featured-products-card-margin{
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: rgb(188,24,35);
+}
+
+.featured-products-card-verified{
+    background-color: rgb(153, 248, 109);
+    color: rgb(0, 51, 0);
+    width: fit-content;
+    padding: 0.2rem;
+    border-radius: 5px;
+    font-size: 0.7rem;
+}
+
+.featured-products-card-btn{
+    outline: none;
+    width: 15rem;
+    padding: 0.5rem;
+    background-color: rgba(33,13,65,1);
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+.featured-products-card-btn:hover{
+    transition: 0.35s;
+    background-color: rgb(188,24,35);
+}
+
+@media (max-width: 500px){
+    .featured-products{
+        margin: 0 1.5rem 2rem 1.5rem;
+    }
+    
+    .featured-products-title{
+        font-family: 'General Sans', sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+    
+    .featured-products-flex{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .featured-products-card{
+        width: 23.5rem;
+        height: 29rem;
+        border: 1px solid rgb(160, 160, 160);
+        border-radius: 10px;
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .featured-products-card-img{
+        width: 23.35rem;
+        height: 11rem;
+        margin-bottom: 1rem;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .featured-products-card-btn{
+        width: 21.4rem;
+        padding: 0.5rem;
+        border-radius: 5px;
+        color: white;
+    }
+}

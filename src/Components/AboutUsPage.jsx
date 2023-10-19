@@ -10,7 +10,6 @@ import {
   ThemeIcon,
   rem,
 } from "@mantine/core";
-import "../style.css";
 import AddBusinessIcon from "@mui/icons-material/AddBusiness";
 import NetworkCheckIcon from "@mui/icons-material/NetworkCheck";
 import ScienceIcon from "@mui/icons-material/Science";
@@ -26,11 +25,13 @@ import { Card, Badge } from "@mantine/core";
 import AboutUsMain from "../images/about-us-image-main.png";
 import homePic from "../images/About-us-image (2).svg";
 import Header from "../Header";
-import Footer from "../Footer";
+import Footer from "../Components2/Footer/Footer";
 import PranavImg from "../images/Photo Pranav.svg";
 import KiranImg from "../images/Photo Kiran.svg";
 import AtharvaImg from "../images/Photo Atharva 1.svg";
 import "../AboutUspPage.css";
+import Navbar from "../Components2/Navbar/Navbar";
+
 const useStyles = createStyles((theme) => ({
   //   inner: {
   //     display: "flex",
@@ -90,7 +91,7 @@ function AboutUsPage() {
   const { classes } = useStyles();
   return (
     <>
-      <Header />
+      <Navbar />
       <div className="about-us-page">
         <div>
           <div className="section-one">

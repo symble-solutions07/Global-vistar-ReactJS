@@ -1,7 +1,5 @@
 import { React, useState } from "react";
 
-import "./style.css";
-
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Enquiry from "./Components/Enquiry";

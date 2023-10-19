@@ -1,0 +1,89 @@
+.register{
+    margin: 0 3.6rem 1rem 4rem;
+}
+
+.register-title{
+    font-family: 'General Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.register-flex{
+    display: flex;
+}
+
+.register-right{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.register-img{
+    width: 30rem;
+    margin-right: 15rem;
+}
+
+.register-right-card{
+    width: 13rem;
+    height: 13.5rem;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 10px;
+    margin-right: 4rem;
+    margin-bottom: 4rem;
+    padding: 1rem;
+    text-align: justify;
+}
+
+.register-right-card-img{
+    width: 8rem;
+    margin-bottom: 2rem;
+    margin-left: 1.4rem;
+}
+
+@media (max-width: 500px){
+    .register{
+        margin: 0 1.5rem 3rem 1.5rem;
+    }
+    
+    .register-title{
+        font-family: 'General Sans', sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+    
+    .register-flex{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .register-img{
+        width: 24rem;
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .register-right{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .register-right-card{
+        width: 11.5rem;
+        height: 13.5rem;
+        border: 1px solid rgb(160, 160, 160);
+        border-radius: 10px;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        text-align: justify;
+    }
+
+    .register-right-card-img{
+        width: 7rem;
+        margin-bottom: 2rem;
+        margin-left: 1.2rem;
+    }
+}

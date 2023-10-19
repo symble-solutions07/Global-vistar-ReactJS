@@ -1,5 +1,4 @@
 import React from "react";
-import "../style.css";
 import { Link } from "react-router-dom";
 import { Drawer, Button, Group, Avatar } from "@mantine/core";
 import blog1 from "../images/Blog 1 (1).png";
@@ -9,15 +8,16 @@ import blog3 from "../images/Blog 3(1).png"
 import "../Blogpage.css";
 import author from "../images/author.jpg";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
-import Footer from "../Footer.jsx";
+import Footer from "../Components2/Footer/Footer";
 import Header from "../Header";
+import Navbar from "../Components2/Navbar/Navbar";
 
 
 function BlogPage() {
   window.scrollTo(0, 0);
   return (
     <>
-      <Header></Header>
+      <Navbar />
       <section className="blog-page" id="blog">
         <div className="container">
           <p className="section-subtitle">News & Blogs</p>

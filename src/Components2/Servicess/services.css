@@ -1,0 +1,99 @@
+.services{
+    background: rgb(188,24,35);
+    background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
+    margin: 0 0 5rem 0;
+    height: 26.8rem;
+    color: white;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 4rem;
+    display: flex;
+}
+
+.service-card{
+    height: 20.8rem;
+    width: 18rem;
+    padding: 1rem;
+    margin-right: 1.6rem;
+    background-color: rgb(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.service-card-4{
+    margin-right: 0;
+}
+
+.service-card-title{
+    font-family: 'General Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.service-card-p{
+    line-height: 30px;
+    margin-bottom: 2rem;
+}
+
+.service-card-btn{
+    background-color: white;
+    color: black;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.service-card-btn:hover{
+    transition: 0.35s;
+    border: 1px solid white;
+    color: white;
+    background-color: rgba(0,0,0,.1);
+}
+
+@media (max-width: 500px){
+    .services{
+        background: rgb(188,24,35);
+        background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
+        margin: 0 0 5rem 0;
+        height: auto;
+        color: white;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .service-card{
+        height: 19rem;
+        width: 24rem;
+        padding: 1rem;
+        margin-right: 1.5rem;
+        margin-bottom: 1.5rem;
+        background-color: rgb(255, 255, 255, 0.1);
+        border-radius: 10px;
+    }
+    
+    .service-card-4{
+        margin-right: 0;
+    }
+    
+    .service-card-title{
+        font-family: 'General Sans', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+    
+    .service-card-p{
+        line-height: 30px;
+        margin-bottom: 2rem;
+    }
+    
+    .service-card-btn{
+        background-color: white;
+        color: black;
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
+}

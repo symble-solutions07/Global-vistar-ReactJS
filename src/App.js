@@ -1,58 +1,25 @@
 import "./App.css";
 import { useState, useEffect, useRef } from "react";
-import Header from "./Header";
-import HeroSection from "./HeroSection";
-import About from "./Components/About";
-import ServiceSection from "./ServiceSection";
-import ProductSection from "./ProductSection";
-import Features from "./Features";
-import Blogs from "./Components/Blogs.jsx";
-import CTA from "./Components/CTA";
-import Footer from "./Footer";
-import AuthenticationForm from "./Components/AuthenticationForm";
-import OurServices from "./OurServices";
-import Enquiry from "./Components/Enquiry";
-import Calendly from "./Components/Calendly";
-import InfoCards from "./Components/InfoCards";
-import "./Components/BookADemoCall";
-import BookADemoCall from "./Components/BookADemoCall";
+import Navbar from "./Components2/Navbar/Navbar"
+import HeroSection from "./Components2/Hero Section/HeroSection";
+import Services from "./Components2/Servicess/Services"
+import Categories from './Components2/Categories/Categories';
+import FeaturedProduct from './Components2/Featured Products/FeaturedProduct';
+import Register from './Components2/Register/Register';
+import CTA from './Components2/CTA/CTA';
+import Footer from './Components2/Footer/Footer';
 
 function App() {
-  // const [openLogin, setOpenLogin] = useState(false);
-  // const initialUrlRef = useRef(window.location.href);
-  const id=sessionStorage.getItem("email");
-
-  // useEffect(() => {
-  //   window.history.forward();
-  //   const handlePreventBack = (event) => {
-  //     event.preventDefault();
-  //     window.history.forward();
-  //   };
-  //   window.addEventListener("popstate", handlePreventBack);
-  //   return () => {
-  //     window.removeEventListener("popstate", handlePreventBack);
-  //   };
-  // }, []);
-  
-  
-
   return (
     <div className="App">
-      <Header />
-      <Calendly/>
+      <Navbar />
       <HeroSection />
-      {/* <AuthenticationForm/> */}
-      <InfoCards />
-      <About />
-      <ServiceSection />
-      <ProductSection />
-      {/* <Features /> */}
-      <OurServices />
-      <BookADemoCall/>
-      <Blogs />
+      <Services />
+      <Categories />
+      <FeaturedProduct />
+      <Register />
       <CTA />
       <Footer />
-      {/* <Enquiry></Enquiry> */}
     </div>
   );
 }

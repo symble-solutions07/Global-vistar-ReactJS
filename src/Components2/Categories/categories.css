@@ -1,0 +1,150 @@
+.categories{
+    margin: 0 3.6rem 5rem 4rem;
+}
+
+.categories-title{
+    font-family: 'General Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.categories-flex{
+    display: flex;
+}
+
+.categories-img{
+    width: 4.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+    user-select: none;
+   -moz-user-select: none;
+   -webkit-user-drag: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+}
+
+.bakery-product-img{
+    width: 4rem;
+}
+
+.beverages-img{
+    width: 4rem;
+}
+
+.chocolates-img{
+    width: 5rem;
+    margin-bottom: 2rem;
+}
+
+.dairy-products{
+    width: 5.2rem;
+    margin-left: 0.5rem;
+}
+
+.grains-img{
+    width: 4.1rem;
+}
+
+.ready-to-cook-img{
+    width: 4.2rem;
+}
+
+.hygiene-img{
+    width: 6rem;
+}
+
+.snacks-img{
+    margin-right: 0;
+    width: 4.3rem;
+}
+
+.categories-card{
+    width: 11rem;
+    padding: 1rem;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 10px;
+    margin-right: 3rem;
+}
+
+.categories-card:hover{
+    transition: 0.35s;
+    background-color: rgb(236, 236, 236);
+}
+
+.snacks-card{
+    margin-right: 0;
+}
+
+@media (max-width: 500px){
+    .categories{
+        margin: 0 1.5rem 2rem 1.5rem;
+    }
+    
+    .categories-title{
+        font-family: 'General Sans', sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+    
+    .categories-flex{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .categories-card{
+        width: 10rem;
+        padding: 1rem;
+        border: 1px solid rgb(160, 160, 160);
+        border-radius: 10px;
+        margin-right: 3rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .categories-img{
+        width: 4.5rem;
+        margin-bottom: 1.5rem;
+        margin-left: 1.8rem;
+        user-select: none;
+       -moz-user-select: none;
+       -webkit-user-drag: none;
+       -webkit-user-select: none;
+       -ms-user-select: none;
+    }
+
+    .bakery-product-img{
+        width: 4rem;
+    }
+    
+    .beverages-img{
+        width: 4rem;
+    }
+    
+    .chocolates-img{
+        width: 5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .dairy-products{
+        width: 5.2rem;
+        margin-left: 1.2rem;
+    }
+    
+    .grains-img{
+        width: 4.1rem;
+    }
+    
+    .ready-to-cook-img{
+        width: 4.2rem;
+    }
+    
+    .hygiene-img{
+        width: 6rem;
+    }
+    
+    .snacks-img{
+        margin-right: 0;
+        width: 4.3rem;
+    }
+}

@@ -5,7 +5,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import pic from "./images/Global vistar TB.svg";
-import "./style.css";
 // import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ProfileIcon from "@mui/icons-material/PermIdentity";
@@ -21,7 +20,6 @@ import LoginReg from "./Components/loginReg";
 // import StorefrontIcon from "@mui/icons-material/Storefront";
 import { signOut, getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
-import AuthenticationForm from "./Components/AuthenticationForm";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Button, Group, Avatar } from "@mantine/core";
