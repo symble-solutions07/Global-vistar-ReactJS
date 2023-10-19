@@ -107,7 +107,7 @@
 @media (max-width: 500px){
     .hero-section{
         width: auto;
-        margin: 3rem 0.5rem 3rem 1.5rem;
+        margin: 3rem 1rem 3rem 1.5rem;
         display: flex;
         flex-direction: column;
     }
@@ -154,7 +154,7 @@
         outline: none;
         border: 1px solid rgb(160, 160, 160);
         border-radius: 0 10px 10px 0;
-        width: 20rem;
+        width: auto;
         padding: 0.5rem;
         margin-bottom: 3rem;
     }
@@ -163,7 +163,7 @@
         background: rgb(188,24,35);
         background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
         color: white;
-        width: 24rem;
+        width: auto;
         height: 11rem;
         margin-left: 0;
         margin-bottom: 1.3rem;

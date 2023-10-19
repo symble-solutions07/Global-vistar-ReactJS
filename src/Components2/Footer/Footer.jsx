@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer-flex">
             <div className="footer-1">
                 <img className='footer-GVlogo' src={GVlogo} alt="" />
-                <p className='footer-1-p'>Global Vistar makes it easy for Manufacturers to help expand their Distribution Network as well as for Distributors to find New Products and Supliers.</p>
+                <p className='footer-1-p'>Global Vistar makes it easy for Manufacturers to help expand their Distribution Network as well as for Distributors to find New Products and Suppliers.</p>
             </div>
             <div className="footer-2">
                 <h1 className='footer-2-title'>Pages</h1>

@@ -110,7 +110,8 @@
     .cta-child{
         position: relative;
         padding-top: 2rem;
-        height: 17rem;
+        padding-bottom: 2rem;
+        height: auto;
         background: rgb(188,24,35);
         background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
         text-align: center;
@@ -119,14 +120,14 @@
     
     .cta-title{
         font-family: 'General Sans', sans-serif;
-        font-size: 2.4rem;
+        font-size: 2.1rem;
         font-weight: 600;
         color: white;
         margin-bottom: 1rem;
     }
 
     .cta-p{
-        font-size: 1.15rem;
+        font-size: 1rem;
         color: white;
         width: 80%;
         margin: auto;
@@ -173,7 +174,7 @@
     }
 
     .contact-info-card{
-        width: 23rem;
+        width: auto;
         height: 9.5rem;
         border: 1px solid rgb(160, 160, 160);
         border-radius: 10px;
