@@ -1,6 +1,7 @@
 import './navbar.css'
 import GVlogo from "./global-vistar-logo.png"
 import { Link } from "react-router-dom";
+import  LoginReg from "../../Components/loginReg";
 
 function Navbar() {
   return (
@@ -17,8 +18,9 @@ function Navbar() {
             <a href="#"><li>Categories</li></a>
             <Link to="/BlogPage" className='navbar-links-text'><a href="#"><li>Blogs</li></a></Link>
             <a href="#"><li>Contact</li></a>
-            <Link to="/login" className="btn2 login-btn">Login</Link>
-            <Link to="/register" className="btn2 register-btn">Sign Up</Link>
+            {/* <Link to="/login" className="btn2 login-btn">Login</Link>
+            <Link to="/register" className="btn2 register-btn">Sign Up</Link> */}
+            <LoginReg/>
           </ul>
         </div>
       </div>
@@ -33,8 +35,9 @@ function Navbar() {
         <Link to="/" className='navbar-links-text'><p className='navbar-links'>Contact</p></Link>
       </div>
       <div className="right-navbar-new">
-        <Link to="/login" className="btn2 login-btn">Login</Link>
-        <Link to="/register" className="btn2 register-btn">Sign Up</Link>
+        {/* <Link to="/login" className="btn2 login-btn">Login</Link>
+        <Link to="/register" className="btn2 register-btn">Sign Up</Link> */}
+        <LoginReg/>
       </div>
     </div>
   )

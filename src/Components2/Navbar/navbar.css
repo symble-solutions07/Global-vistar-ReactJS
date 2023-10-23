@@ -67,7 +67,14 @@
     padding-right: 0.8rem;
     padding-left: 0.8rem;
 }
-
+/* for LoginReg Component */
+.name-btn{
+    border: none;
+    display: inline;
+}
+.name-btn:hover{
+    border: none;
+}
 .login-btn:hover{
     background-color: rgba(33,13,65,1);
     color: white;

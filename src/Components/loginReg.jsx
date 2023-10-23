@@ -1,6 +1,7 @@
 import { Typography, Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 function LoginReg() {
   const navigate = useNavigate();
   const [user, setUser] = useState();
@@ -35,67 +36,38 @@ function LoginReg() {
           }}
         >
           <div>
-            <Button
-              className="StandardButton"
-              variant="text"
+            <div
+              className="btn2 name-btn"
               style={{
-                margin: 5,
+                marginRight: 5,
               }}
             >
               Hello, {user}
-            </Button>
-            <Button
-              className="StandardButton"
-              variant="contained"
+            </div>
+
+            <button
+              className="btn2 login-btn"
               onClick={() => {
                 localStorage.setItem("token", null);
                 setUser(null);
                 navigate("/");
               }}
-              style={{
-                margin: 5,
-              }}
             >
               Log out
-            </Button>
+            </button>
           </div>
         </div>
       </div>
     );
   } else
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <div>
-          <Button
-            className="StandardButton"
-            variant="contained"
-            style={{
-              margin: 5,
-            }}
-            onClick={() => {
-              navigate("/register");
-            }}
-          >
-            Sign up
-          </Button>
-          <Button
-            className="StandardButton"
-            variant="contained"
-            onClick={() => {
-              navigate("/login");
-            }}
-            style={{
-              margin: 5,
-            }}
-          >
-            Sign in
-          </Button>
-        </div>
+      <div>
+        <Link to="/login" className="btn2 login-btn">
+          Login
+        </Link>
+        <Link to="/register" className="btn2 register-btn">
+          Sign Up
+        </Link>{" "}
       </div>
     );
 }
