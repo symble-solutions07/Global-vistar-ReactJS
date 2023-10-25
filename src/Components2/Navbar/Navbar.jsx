@@ -18,7 +18,7 @@ function Navbar() {
             <Link to="/AboutUsPage" className='navbar-links-text'><a href="#"><li>About Us</li></a></Link>
             <Link to="/" className='navbar-links-text'><a href="#"><li>Categories</li></a></Link>
             <Link to="/BlogPage" className='navbar-links-text'><a href="#"><li>Blogs</li></a></Link>
-            <Link to="/ctasection" className='navbar-links-text'><a href="#"><li>Contact</li></a></Link>
+            <a href="#cta"><li>Contact</li></a>
             {/* <Link to="/login" className="btn2 login-btn">Login</Link>
             <Link to="/register" className="btn2 register-btn">Sign Up</Link> */}
             <LoginReg/>
