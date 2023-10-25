@@ -7,7 +7,7 @@ import TribeCook from "./Images/Tribe-cook.png"
 
 export default function FeaturedProduct() {
   return (
-    <div className='featured-products'>
+    <div id='featured-products'>
       <h1 className="featured-products-title">Featured Products</h1>
       <div className="featured-products-flex">
         <div className="featured-products-card">

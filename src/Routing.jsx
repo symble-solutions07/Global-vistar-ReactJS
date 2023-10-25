@@ -14,10 +14,10 @@ import ProductListing2 from "./Components/productListing2";
 import Register from "./Components/Register";
 import TermsAndCond from "./Components/TermsAndCond";
 import ExpandProduct from './Components/ExpandProduct';
+import AboutUs from './Components2/AboutUs/AboutUs';
+import CTA from './Components2/CTA/CTA';
 
 function Routing() {
-  const [conditionAccepted, setConditionAccepted] = useState(false);
-
   
   return (
     <BrowserRouter>
@@ -27,6 +27,7 @@ function Routing() {
         <Route path="/BlogPage" element={<BlogPage />} />
         <Route path="/ProductCategories" element={<ProductCategories />} />
         <Route path="/AboutUsPage" element={<AboutUsPage />} />
+        <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/newBlog1" element={<ExpandBlog1 />} />
         <Route path="/newBlog2" element={<ExpandBlog2 />} />
         <Route path="/newBlog3" element={<ExpandBlog3 />} />

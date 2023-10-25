@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function CTA() {
   return (
-    <div className='cta'>
+    <div id='cta'>
         <div className="cta-child">
             <h1 className='cta-title'>Ready to get started?</h1>
             <p className="cta-p">Badhaye Aapke Business Ki Raftaar by Signing Up Today!</p>

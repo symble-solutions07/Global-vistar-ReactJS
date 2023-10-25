@@ -26,7 +26,7 @@ function HeroSection() {
 
             <div className="hero-section-card">
                 <h1 className='hero-section-card-title'>Looking for Products?</h1>
-                <button className='hero-section-card-btn'>Explore Now</button>
+                <a href="#featured-products"><button className='hero-section-card-btn'>Explore Now</button></a>
                 <img src={CardImg2} alt="" className='card-img' />
             </div>
         </div>
