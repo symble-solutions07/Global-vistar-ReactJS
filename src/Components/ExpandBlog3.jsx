@@ -1,16 +1,16 @@
 import React from "react";
-import Header from "../Header";
-import Footer from "../Footer";
 import "../expandBlog.css";
 import Blog3Img from "../images/Blog 3(1).png";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import Footer from "../Components2/Footer/Footer";
+import Navbar from "../Components2/Navbar/Navbar";
 
 function ExpandBlog3() {
 
   window.scrollTo(0, 0);
   return (
     <div>
-      <Header />
+      <Navbar />
       <div className="new-blog">
         <h1 style={{ textAlign: "center" }}>
           How Global Vistar is Disrupting the Manufacturer-Distributor

@@ -15,6 +15,7 @@
 
 .list-item-navbar{
   list-style-type: none;
+  cursor: pointer;
 }
 
 .list-item-navbar:hover {
@@ -22,14 +23,16 @@
   transition: 300ms;
 }
 
-/* .blog-list{
+.blog-list{
     display: flex;
-    justify-content: space-between !important;  
-} */
+    justify-content: space-between !important;
+    list-style: none; 
+}
 
 .blog-navbar {
   display: flex;
   justify-content: center;
+  margin-top: 3rem;
 }
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
@@ -191,6 +194,13 @@ img {
     font-size: 13px;
     width:fit-content;
   }
+
+  .blog-list{
+    display: flex;
+    justify-content: space-between !important;
+    list-style: none;
+    flex-direction: column;
+}
 
 
 }
