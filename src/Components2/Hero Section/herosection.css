@@ -22,6 +22,7 @@
     background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
     -webkit-text-fill-color: transparent; 
     -webkit-background-clip: text; 
+    background-clip:text;
 }
 
 .hero-p1{
@@ -130,6 +131,7 @@
         background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
         -webkit-text-fill-color: transparent; 
         -webkit-background-clip: text; 
+        background-clip: text;
     }
 
     .hero-p1{
@@ -209,3 +211,27 @@
     
 }
 
+.popUpWrapper {
+  display: flex;
+  /* display: none; */
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  height: 120vh;
+  width: 100%;
+  font-size: 2.5rem;
+  background-color: #210d410c;
+  backdrop-filter: blur(5px);
+  margin-top: -5rem;
+}
+.popup {
+    font-size: 2rem;
+  position: relative;
+  bottom: 5rem;
+  /* height: 5rem; */
+  text-align: center;
+  /* width:140%; */
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 1.5rem;
+}

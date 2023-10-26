@@ -36,7 +36,7 @@ function OTPLogin() {
       const timeout = setTimeout(() => {
         // console.log("This text will be displayed after 2 seconds.");
         navigate("/register");
-      }, 2000);
+      }, 3000);
     } else {
       const response = await fetch(
         "https://gv-backend-production.up.railway.app/auth/sendOTP",
@@ -122,9 +122,9 @@ function OTPLogin() {
       {isPopupVisible && (
         <div className="popUpWrapper">
           <div className="popup">
-            Number Not registered.
-            <br />
-            Register first
+          Number not Registered.
+            <hr />
+            <h2>Please Sign-Up</h2>
           </div>
         </div>
       )}

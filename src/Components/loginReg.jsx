@@ -1,4 +1,3 @@
-import { Typography, Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -33,9 +32,9 @@ function LoginReg() {
           style={{
             display: "flex",
             justifyContent: "space-between",
+    alignItems: "center",
           }}
         >
-          <div>
             <div
               className="btn2 name-btn"
               style={{
@@ -55,7 +54,6 @@ function LoginReg() {
             >
               Log out
             </button>
-          </div>
         </div>
       </div>
     );
