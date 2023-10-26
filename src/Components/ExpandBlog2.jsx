@@ -1,14 +1,14 @@
 import React from "react";
-import Header from "../Header";
-import Footer from "../Footer";
 import "../expandBlog.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Blog2Img from "../images/Blog 2 (1).png";
+import Navbar from "../Components2/Navbar/Navbar";
+import Footer from "../Components2/Footer/Footer";
 function ExpandBlog2() {
   window.scrollTo(0, 0);
   return (
     <div>
-      <Header />
+      <Navbar />
       <div className="new-blog">
         <h1 style={{ textAlign: "center" }}>
           10 Things Every Distributor Should Verify!

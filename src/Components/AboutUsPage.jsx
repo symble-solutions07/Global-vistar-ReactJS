@@ -15,7 +15,6 @@ import NetworkCheckIcon from "@mui/icons-material/NetworkCheck";
 import ScienceIcon from "@mui/icons-material/Science";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
-import "../features.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -23,8 +22,6 @@ import { Card, Badge } from "@mantine/core";
 // import { IconCheck } from "@tabler/icons-react";
 // import image from "./images/hero-banner.png";
 import AboutUsMain from "../images/about-us-image-main.png";
-import homePic from "../images/About-us-image (2).svg";
-import Header from "../Header";
 import Footer from "../Components2/Footer/Footer";
 import PranavImg from "../images/Photo Pranav.svg";
 import KiranImg from "../images/Photo Kiran.svg";
@@ -311,38 +308,6 @@ function AboutUsPage() {
             </Text>
             <a
               href="https://www.linkedin.com/in/kiran-patil-28b64917a"
-              className="social-handles"
-            >
-              <LinkedInIcon></LinkedInIcon>
-            </a>
-          </Card>
-
-          <Card
-            shadow="sm"
-            padding="lg"
-            radius="md"
-            withBorder
-            className="member-card"
-          >
-            {/* <Image
-              src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
-              height={160}
-              alt="Norway"
-              className="member-pic"
-            /> */}
-
-            <img src={AtharvaImg} alt="" className="member-pic" />
-
-            <Group position="apart" mt="md" mb="xs">
-              <Text className="member-name">Atharva Kurumbhatte</Text>
-            </Group>
-
-            <Text size="sm" color="dimmed" className="member-bio">
-              Atharva is the Technology Development Head at Global Vistar. He is
-              the hands behind the technology of the platform.
-            </Text>
-            <a
-              href="https://www.linkedin.com/in/atharva-kurumbhatte/"
               className="social-handles"
             >
               <LinkedInIcon></LinkedInIcon>

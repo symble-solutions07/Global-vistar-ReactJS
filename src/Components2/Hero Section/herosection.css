@@ -57,6 +57,11 @@
     padding: 0.5rem;
 }
 
+.search-bar:hover{
+    border: 1px solid black;
+    transition: 0.35s;
+}
+
 .hero-section-card{
     background: rgb(188,24,35);
     background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);

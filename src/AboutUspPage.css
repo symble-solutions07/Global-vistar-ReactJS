@@ -24,6 +24,7 @@
     display: flex;
     flex-direction: column;
     font-size: 25px !important;
+    list-style: none;
   }
 
   .title-why-choose-us {
@@ -200,6 +201,7 @@
   gap: 5rem;
   padding: 6rem;
   font-size: 2rem;
+  list-style: none;
 }
 .reason-card {
   display: flex;
