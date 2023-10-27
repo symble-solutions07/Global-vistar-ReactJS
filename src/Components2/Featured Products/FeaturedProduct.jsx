@@ -50,7 +50,7 @@ export default function FeaturedProduct() {
           <h2 className="popUp">Please log-in</h2>
         </div>
       )}
-      <div className="featured-products">
+      <div id="featured-products">
         <h1 className="featured-products-title">Featured Products</h1>
         <div className="featured-products-flex">
           <div className="featured-products-card">
