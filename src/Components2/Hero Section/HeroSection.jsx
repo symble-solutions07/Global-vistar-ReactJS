@@ -14,7 +14,7 @@ function HeroSection() {
     setPopupVisible(true);
     const timeout = setTimeout(() => {
       navigate("/login");
-    }, 3000);
+    }, 2900);
   };
   const handleProductListing = () => {
     if (localStorage.getItem("token") != null) {
