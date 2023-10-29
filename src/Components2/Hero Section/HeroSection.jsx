@@ -4,6 +4,7 @@ import CardImg2 from "./fmcg-bg2.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import Button from "@mui/material/Button";
 function HeroSection() {
   const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -14,7 +15,7 @@ function HeroSection() {
     setPopupVisible(true);
     const timeout = setTimeout(() => {
       navigate("/login");
-    }, 2900);
+    }, 4000);
   };
   const handleProductListing = () => {
     if (localStorage.getItem("token") != null) {
@@ -27,8 +28,6 @@ function HeroSection() {
         }).then((res) => {
           res.json().then((data) => {
             if (data.user) {
-              //   setUser(data.user.name);
-              //   console.log(data.user.name + " signed in");
               openInNewTab(
                 "https://docs.google.com/forms/d/e/1FAIpQLSciD5NwlybLK058JZyyC4TYjYhHt0-6-4AQarBsb0tt1CduDg/viewform?usp=sf_link"
               );
@@ -43,9 +42,23 @@ function HeroSection() {
       {isPopupVisible && (
         <div className="popUpWrapper">
           <div className="popup">
-            User not Logged in.
+            <b>Login Required.</b>
+            <div className="popupText">
+              You need to login to access this page.
+            </div>
             <hr />
-            <h2>Please log-in</h2>
+            <div className="popButtons">
+              <Button
+                variant="contained"
+                onClick={() => {
+                  navigate("/login");
+                }}
+                sx={{ backgroundColor: "rgb(74,36,136)" }}
+              >
+                Login
+              </Button>
+              
+            </div>
           </div>
         </div>
       )}
@@ -85,7 +98,9 @@ function HeroSection() {
 
           <div className="hero-section-card">
             <h1 className="hero-section-card-title">Looking for Products?</h1>
-            <a href="#featured-products"><button className="hero-section-card-btn">Explore Now</button></a>
+            <a href="#featured-products">
+              <button className="hero-section-card-btn">Explore Now</button>
+            </a>
             <img src={CardImg2} alt="" className="card-img" />
           </div>
         </div>

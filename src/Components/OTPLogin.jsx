@@ -122,9 +122,21 @@ function OTPLogin() {
       {isPopupVisible && (
         <div className="popUpWrapper">
           <div className="popup">
-          Number not Registered.
+            <b>Number not Registered.</b>
+            <div className="popupText">
+              You must signup first.
+            </div>
             <hr />
-            <h2>Please Sign-Up</h2>
+
+            <Button
+              variant="contained"
+              onClick={() => {
+                  navigate("/register");
+              }}
+              sx={{ backgroundColor: "rgb(74,36,136)" }}
+            >
+              Sign up
+            </Button>
           </div>
         </div>
       )}

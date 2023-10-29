@@ -5,6 +5,7 @@ import MightyMillets from "./Images/Mighty-Millets.jpg"
 import DesiRass from "./Images/Desi-Rass.png"
 import ShivratnaJaggery from "./Images/ShivRatna-Jaggery.png"
 import TribeCook from "./Images/Tribe-cook.png"
+import Button from "@mui/material/Button";
 
 
 export default function FeaturedProduct() {
@@ -47,9 +48,28 @@ export default function FeaturedProduct() {
     <>
       {isPopupVisible && (
         <div className="popWrapper">
-          <h2 className="popUp">Please log-in</h2>
+          <div className="popup">
+            <b>Login Required.</b>
+            <div className="popupText">
+              You need to login to access this page.
+            </div>
+            <hr />
+            <div className="popButtons">
+              <Button
+                variant="contained"
+                onClick={() => {
+                  navigate("/login");
+                }}
+                sx={{ backgroundColor: "rgb(74,36,136)" }}
+              >
+                Login
+              </Button>
+             
+            </div>
+          </div>
         </div>
       )}
+      {isPopupVisible && <div className="popUpWrapper"></div>}
       <div id="featured-products">
         <h1 className="featured-products-title">Featured Products</h1>
         <div className="featured-products-flex">

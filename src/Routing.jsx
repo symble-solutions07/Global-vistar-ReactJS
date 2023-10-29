@@ -12,6 +12,7 @@ import ProductListing2 from "./Components/productListing2";
 import Register from "./Components/Register";
 import TermsAndCond from "./Components/TermsAndCond";
 import AboutUs from './Components2/AboutUs/AboutUs';
+import Enquiry from './Components/enquiry';
 
 function Routing() {
   
@@ -31,6 +32,7 @@ function Routing() {
         <Route path="/productListing/2" element={<ProductListing2 />} />
         <Route path="/register" element={<Register />} />
         <Route path="/terms&cond" element={<TermsAndCond />} />
+        <Route path="/Enquiry" element={<Enquiry />} />
       </Routes>
     </BrowserRouter>
   );
