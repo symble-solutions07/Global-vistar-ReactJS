@@ -50,7 +50,7 @@ function AboutUs() {
         </div>
         <div className="abt-us-vission-mission">
           <div className="abt-us-vission">
-            <h1 className="vission-title">Our Vission</h1>
+            <h1 className="vission-title">Our Vision</h1>
             <hr />
             <p className="vission-mission-p">Deliver innovative solutions and best-in-class technology and sales support that enables manufacturers and distributors to succeed in today's rapidly evolving retail landscape</p>
           </div>
