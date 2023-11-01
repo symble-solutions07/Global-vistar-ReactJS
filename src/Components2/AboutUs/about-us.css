@@ -43,22 +43,23 @@
 
 .about-us-title-2{
     font-family: 'General Sans', sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-top: 3rem;
     margin-left: 3.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     background: rgb(188,24,35);
     background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
     -webkit-text-fill-color: transparent; 
     -webkit-background-clip: text;
-    width: 60%;
+    width: 80%;
 }
 
 .about-us-img-flex{
     display: flex;
     margin-left: 3.5rem;
     margin-right: 3.5rem;
+    margin-bottom: 5rem;
     justify-content: space-between;
 }
 
@@ -69,4 +70,224 @@
 .about-us-img{
     width: 6rem;
     object-fit: contain;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.innovation-p{
+    margin-left: 2rem;
+}
+
+.trusted-net-p{
+    margin-left: 0.7rem;
+}
+
+
+.auimg2{
+    width: 4.9rem;
+}
+
+.auimg3{
+    width: 4.5rem;
+}
+
+.auimg4{
+    width: 3.4rem;
+}
+
+.auimg5{
+    width: 3.85rem;
+}
+
+.abt-us-vission-mission{
+    background: rgb(188,24,35);
+    background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
+    padding: 3rem 3.5rem 3rem 3.5rem;
+    margin-bottom: 5rem;
+    display: flex;
+}
+
+.abt-us-vission{
+    margin-right: auto;
+    width: 45%;
+}
+
+.abt-us-mission{
+    width: 45%;
+}
+
+hr{
+    color: white;
+    width: 70%;
+}
+
+.vission-title{
+    font-family: 'General Sans', sans-serif;
+    color: white;
+    font-weight: 600;
+}
+
+.vission-mission-p{
+    color: white;
+    text-align: justify;
+}
+
+.our-team-title{
+    font-family: 'General Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-left: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: rgb(188,24,35);
+    background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    text-decoration: none;
+    color: black;
+}
+
+.abt-us-team{
+    margin: 2rem 3.5rem 5rem 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+}
+
+.team-card{
+    width: auto;
+    padding: 1rem;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.team-card:hover{
+    transition: 0.35s;
+    background-color: rgb(236, 236, 236);
+}
+
+.team-profile-icon{
+    width: 5rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-card-header{
+    display: flex;
+}
+
+.team-card-title{
+    font-weight: bold;
+    margin: 0;
+    margin-right: 3rem;
+    text-decoration: none;
+    color: black;
+}
+
+a{
+    text-decoration: none;
+}
+
+.team-card-desg{
+    font-weight: normal;
+}
+
+@media (max-width: 500px){
+    .about-us-flex{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-us-title{
+        font-family: 'General Sans', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 3rem;
+        margin-left: 1.5rem;
+        margin-bottom: 2rem;
+        background: rgb(188,24,35);
+        background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;
+    }
+
+    .about-us-p{
+        line-height: 33px;
+        margin-left: 1.5rem;
+        font-size: 1.05rem;
+    }
+
+    .about-us-p-2{
+        line-height: 33px;
+        margin-left: 1.5rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: rgba(33,13,65,1);
+    }
+
+    .about-us-title-2{
+        font-family: 'General Sans', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 3rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        margin-bottom: 3rem;
+        background: rgb(188,24,35);
+        background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;
+    }
+
+    .about-us-img-flex{
+        display: grid;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        margin-bottom: 5rem;
+        justify-content: space-between;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 2rem;
+    }
+
+    .abt-us-vission-mission{
+        background: rgb(188,24,35);
+        background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
+        padding: 3rem 1.5rem 3rem 1.5rem;
+        margin-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .abt-us-vission{
+        width: auto;
+        margin-bottom: 2rem;
+    }
+    
+    .abt-us-mission{
+        width: auto;
+    }
+
+    .abt-us-team{
+        margin: 2rem 1.5rem 5rem 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .our-team-title{
+        font-family: 'General Sans', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 3rem;
+        margin-left: 1.5rem;
+        margin-bottom: 1.5rem;
+        background: rgb(188,24,35);
+        background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;
+        text-decoration: none;
+        color: black;
+    }
 }

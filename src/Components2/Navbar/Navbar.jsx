@@ -15,7 +15,7 @@ function Navbar() {
           <span></span>
           <ul id="menu">
             <Link to="/" className='navbar-links-text'><a href="#"><li>Home</li></a></Link>
-            <Link to="/AboutUsPage" className='navbar-links-text'><a href="#"><li>About Us</li></a></Link>
+            <Link to="/aboutus" className='navbar-links-text'><a href="#"><li>About Us</li></a></Link>
             <Link to="/" className='navbar-links-text'><a href="#"><li>Categories</li></a></Link>
             <Link to="/BlogPage" className='navbar-links-text'><a href="#"><li>Blogs</li></a></Link>
             <a href="#cta"><li>Contact</li></a>
@@ -30,7 +30,7 @@ function Navbar() {
       </div>
       <div className="center-navbar">
         <Link to="/" className='navbar-links-text'><p className='navbar-links'>Home</p></Link>
-        <Link to="/AboutUsPage" className='navbar-links-text'><p className='navbar-links'>About Us</p></Link>
+        <Link to="/aboutus" className='navbar-links-text'><p className='navbar-links'>About Us</p></Link>
         <Link to="/" className='navbar-links-text'><p className='navbar-links'>Categories</p></Link>
         <Link to="/BlogPage" className='navbar-links-text'><p className='navbar-links'>Blogs</p></Link>
         <a className='navbar-links' href="#cta">Contact</a>

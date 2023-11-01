@@ -38,15 +38,16 @@
     margin-bottom: 1rem;
 }
 
-.fa-magnifying-glass{
-    /* border: 1px solid rgb(160, 160, 160); */
+.magnifying-glass{
+    color: white;
+}
+
+.magnifying-glass-btn{
+    border: none;
     border-radius: 10px 0 0 10px;
-    padding: 1.25rem;
-    padding-top: 1.28rem;
-    color: rgb(255, 255, 255);
+    padding: 0.57rem 0.7rem 0.4rem 0.7rem;
     background: rgb(188,24,35);
     background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
-    margin: 0;
 }
 
 .search-bar{
@@ -146,15 +147,16 @@
         margin-bottom: 2rem;
     }
 
-    .fa-magnifying-glass{
-        /* border: 1px solid rgb(160, 160, 160); */
+    .magnifying-glass{
+        color: white;
+    }
+    
+    .magnifying-glass-btn{
+        border: none;
         border-radius: 10px 0 0 10px;
-        padding: 1.27rem;
-        padding-top: 1.28rem;
-        color: rgb(255, 255, 255);
+        padding: 0.57rem 0.7rem 0.43rem 0.7rem;
         background: rgb(188,24,35);
         background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
-        margin: 0;
     }
     
     .search-bar{
@@ -174,6 +176,7 @@
         height: 11rem;
         margin-left: 0;
         margin-bottom: 1.3rem;
+        margin-right: 0.5rem;
         border-radius: 10px;
         padding: 1rem;
         position: relative;

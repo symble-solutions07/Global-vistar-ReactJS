@@ -3,20 +3,26 @@ import CardImg1 from "./fmcg-bg.png";
 import CardImg2 from "./fmcg-bg2.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 
 import Button from "@mui/material/Button";
 function HeroSection() {
   const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
+  const [searchField, setSearchField] = useState(false);
+  var searchLink = "#";
+
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
   };
+
   const popupRedirect = () => {
     setPopupVisible(true);
     const timeout = setTimeout(() => {
       navigate("/login");
     }, 4000);
   };
+
   const handleProductListing = () => {
     if (localStorage.getItem("token") != null) {
       if (localStorage.getItem("token").length > 10) {
@@ -37,6 +43,7 @@ function HeroSection() {
       } else popupRedirect();
     } else popupRedirect();
   };
+  
   return (
     <>
       {isPopupVisible && (
@@ -74,7 +81,12 @@ function HeroSection() {
             reach a wider market and distributors to source products seamlessly.
           </p>
           <p className="search-bar-p">Search from a Wide Variety of Products</p>
-          <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+          <a href="#featured-products">
+            <button className="magnifying-glass-btn">
+              <SearchRoundedIcon className="magnifying-glass" />
+            </button>
+          </a>
+
           <input
             type="text"
             placeholder="Search for a Product, Category or Service"

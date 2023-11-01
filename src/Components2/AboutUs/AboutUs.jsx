@@ -6,6 +6,9 @@ import AboutUsImg2 from "./2.png"
 import AboutUsImg3 from "./3.png"
 import AboutUsImg4 from "./4.png"
 import AboutUsImg5 from "./5.png"
+import ProfileIcon from "./profile-icon.svg"
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Footer from '../Footer/Footer'
 
 
 function AboutUs() {
@@ -25,26 +28,104 @@ function AboutUs() {
         <h1 className="about-us-title-2">Choosing Global Vistar means Choosing Expansion</h1>
         <div className="about-us-img-flex">
             <div className="about-us-flex-div">
-            <img className='about-us-img ' src={AboutUsImg1} alt="" />
-            <p className="about-us-img-p">All-in-one solution</p>
+            <img className='about-us-img auimg1' src={AboutUsImg1} alt="" />
+            <p className="about-us-img-p">All-In-One Solution</p>
             </div>
             <div className="about-us-flex-div">
-            <img className='about-us-img' src={AboutUsImg2} alt="" />
-            <p className="about-us-img-p">All-in-one solution</p>
+            <img className='about-us-img auimg2' src={AboutUsImg2} alt="" />
+            <p className="about-us-img-p">Product-Market Fit</p>
             </div>
             <div className="about-us-flex-div">
-            <img className='about-us-img' src={AboutUsImg3} alt="" />
-            <p className="about-us-img-p">All-in-one solution</p>
+            <img className='about-us-img auimg3' src={AboutUsImg3} alt="" />
+            <p className="about-us-img-p trusted-net-p">Trusted Network</p>
             </div>
             <div className="about-us-flex-div">
-            <img className='about-us-img' src={AboutUsImg4} alt="" />
-            <p className="about-us-img-p">All-in-one solution</p>
+            <img className='about-us-img auimg4' src={AboutUsImg4} alt="" />
+            <p className="about-us-img-p innovation-p">Innovation</p>
             </div>
             <div className="about-us-flex-div">
-            <img className='about-us-img' src={AboutUsImg5} alt="" />
-            <p className="about-us-img-p">All-in-one solution</p>
+            <img className='about-us-img auimg5' src={AboutUsImg5} alt="" />
+            <p className="about-us-img-p">Customer Centric</p>
             </div>
         </div>
+        <div className="abt-us-vission-mission">
+          <div className="abt-us-vission">
+            <h1 className="vission-title">Our Vission</h1>
+            <hr />
+            <p className="vission-mission-p">Deliver innovative solutions and best-in-class technology and sales support that enables manufacturers and distributors to succeed in today's rapidly evolving retail landscape</p>
+          </div>
+          <div className="abt-us-mission">
+            <h1 className="vission-title">Our Mission</h1>
+            <hr />
+            <p className="vission-mission-p">We envision to be the most trusted ecosystem where manufacturers and distributors have the tools, technology, and support they need to reach their customers, sell their products, and achieve their business goals.</p>
+          </div>
+        </div>
+
+        <h1 className="our-team-title">Our Team</h1>
+        <div className="abt-us-team">
+          <a href="https://www.linkedin.com/in/pranav-bankar-6aa451177/" target="_blank">
+          <div className="team-card">
+            <div className="team-card-header">
+              <img className='team-profile-icon' src={ProfileIcon} alt="" />
+              <p className="team-card-title">
+                Pranav Bankar
+                <br />
+                <span className='team-card-desg'>Cofounder @Global Vistar</span>
+              </p>
+            </div>
+          </div>
+          </a>
+          <a href="https://www.linkedin.com/in/kiran-patil-28b64917a/" target="_blank">
+          <div className="team-card">
+            <div className="team-card-header">
+              <img className='team-profile-icon' src={ProfileIcon} alt="" />
+              <p className="team-card-title">
+                Kiran Patil
+                <br />
+                <span className='team-card-desg'>Cofounder @Global Vistar</span>
+              </p>
+            </div>
+          </div>
+          </a>
+          <a href="" target="_blank">
+          <div className="team-card">
+            <div className="team-card-header">
+              <img className='team-profile-icon' src={ProfileIcon} alt="" />
+              <p className="team-card-title">
+                Yash
+                <br />
+                <span className='team-card-desg'>Sales & Marketing</span>
+              </p>
+            </div>
+          </div>
+          </a>
+          <a href="https://www.linkedin.com/in/rohan-vaidya-359680190/" target="_blank">
+          <div className="team-card">
+            <div className="team-card-header">
+              <img className='team-profile-icon' src={ProfileIcon} alt="" />
+              <p className="team-card-title">
+                Rohan Vaidya
+                <br />
+                <span className='team-card-desg'>Web Developement</span>
+              </p>
+            </div>
+          </div>
+          </a>
+          <a href="https://www.linkedin.com/in/amey-kisan-gaikwad/" target="_blank">
+          <div className="team-card">
+            <div className="team-card-header">
+              <img className='team-profile-icon' src={ProfileIcon} alt="" />
+              <p className="team-card-title">
+                Amey Gaikwad
+                <br />
+                <span className='team-card-desg'>Web Developement</span>
+              </p>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <Footer />
     </div>
   )
 }
