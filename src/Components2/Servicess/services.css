@@ -11,6 +11,7 @@
 }
 
 .service-card{
+    flex: 1;
     position: relative;
     height: auto;
     width: auto;
