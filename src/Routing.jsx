@@ -12,7 +12,9 @@ import ProductListing2 from "./Components/productListing2";
 import Register from "./Components/Register";
 import TermsAndCond from "./Components/TermsAndCond";
 import AboutUs from './Components2/AboutUs/AboutUs';
+import Upload from "./Components2/ListingForm/upload";
 import Enquiry from './Components/enquiry';
+import ProductsPage from './Components2/ProductsPage/productsPage'
 
 function Routing() {
   
@@ -30,6 +32,8 @@ function Routing() {
         <Route path="/login" element={<OTPLogin />} />
         <Route path="/productListing" element={<ProductListing />} />
         <Route path="/productListing/2" element={<ProductListing2 />} />
+        <Route path="/ProductsPage" element={<ProductsPage />} />
+        <Route path="/Upload" element={<Upload />} />
         <Route path="/register" element={<Register />} />
         <Route path="/terms&cond" element={<TermsAndCond />} />
         <Route path="/Enquiry" element={<Enquiry />} />

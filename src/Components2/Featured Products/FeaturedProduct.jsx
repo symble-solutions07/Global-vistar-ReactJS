@@ -1,22 +1,21 @@
-import './featured-products.css'
+import "./featured-products.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import MightyMillets from "./Images/Mighty-Millets.jpg"
-import DesiRass from "./Images/Desi-Rass.png"
-import ShivratnaJaggery from "./Images/ShivRatna-Jaggery.png"
-import TribeCook from "./Images/Tribe-cook.png"
+import MightyMillets from "./Images/Mighty-Millets.jpg";
+import DesiRass from "./Images/Desi-Rass.png";
+import ShivratnaJaggery from "./Images/ShivRatna-Jaggery.png";
+import TribeCook from "./Images/Tribe-cook.png";
 import Button from "@mui/material/Button";
 
-
 export default function FeaturedProduct() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
   };
   const popupRedirect = () => {
     setPopupVisible(true);
-    console.log("log in bro", isPopupVisible)
+    console.log("log in bro", isPopupVisible);
     setTimeout(() => {
       navigate("/login");
     }, 2000);
@@ -24,7 +23,7 @@ export default function FeaturedProduct() {
   const handleSendEnquiry = () => {
     if (localStorage.getItem("token") != null) {
       if (localStorage.getItem("token").length > 10) {
-        fetch("https://gv-backend-production.up.railway.app/user/me", {
+        fetch("https://globalvistarbackend-production.up.railway.app/user/me", {
           method: "GET",
           headers: {
             authorization: "Bearer " + localStorage.getItem("token"),
@@ -64,7 +63,6 @@ export default function FeaturedProduct() {
               >
                 Login
               </Button>
-             
             </div>
           </div>
         </div>

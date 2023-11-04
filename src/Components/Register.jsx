@@ -24,7 +24,7 @@ function OTPForm() {
   const handleSendOTP = async () => {
     // setPopupVisible(true);
     const resp = await fetch(
-      "https://gv-backend-production.up.railway.app/user/check",
+      "https://globalvistarbackend-production.up.railway.app/user/check",
       {
         method: "POST",
         headers: {
@@ -43,7 +43,7 @@ function OTPForm() {
       }, 3000);
     } else {
       const response = await fetch(
-        "https://gv-backend-production.up.railway.app/auth/sendOTP",
+        "https://globalvistarbackend-production.up.railway.app/auth/sendOTP",
         {
           method: "POST",
           headers: {
@@ -58,10 +58,9 @@ function OTPForm() {
     }
   };
 
-
   const handleVerifyOTP = async () => {
     const response = await fetch(
-      "https://gv-backend-production.up.railway.app/auth/verifyOTP",
+      "https://globalvistarbackend-production.up.railway.app/auth/verifyOTP",
       {
         method: "POST",
         headers: {
@@ -82,7 +81,7 @@ function OTPForm() {
     setRegisteras(value);
   };
   const logoClick = () => {
-    navigate("/")
+    navigate("/");
   };
   function checkAllInputs() {
     var res = 1;
@@ -112,7 +111,7 @@ function OTPForm() {
     const toProceed = checkAllInputs();
     if (toProceed == 0) return;
     const response = await fetch(
-      "https://gv-backend-production.up.railway.app/user/signup",
+      "https://globalvistarbackend-production.up.railway.app/user/signup",
       {
         method: "POST",
         headers: {

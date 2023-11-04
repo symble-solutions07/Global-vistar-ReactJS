@@ -9,7 +9,7 @@ function LoginReg() {
   useEffect(() => {
     if (localStorage.getItem("token") != null) {
       if (localStorage.getItem("token").length > 10) {
-        fetch("https://gv-backend-production.up.railway.app/user/me", {
+        fetch("https://globalvistarbackend-production.up.railway.app/user/me", {
           method: "GET",
           headers: {
             authorization: "Bearer " + localStorage.getItem("token"),
