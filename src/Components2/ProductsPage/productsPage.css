@@ -1,0 +1,6 @@
+.productsWrapper {
+  margin: 5rem;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+}

@@ -27,7 +27,7 @@ function ProductListing() {
     // setPopupVisible(true);
     const phoneNumber = localStorage.getItem("pNumber");
     const resp = await fetch(
-      "https://gv-backend-production.up.railway.app/user/check",
+      "https://globalvistarbackend-production.up.railway.app/user/check",
       {
         method: "POST",
         headers: {
@@ -88,7 +88,7 @@ function ProductListing() {
     if (toProceed == 0) return;
     // console.log(phoneNumber);
     const response = await fetch(
-      "https://gv-backend-production.up.railway.app/user/addProduct",
+      "https://globalvistarbackend-production.up.railway.app/user/addProduct",
       {
         method: "POST",
         headers: {
@@ -118,7 +118,7 @@ function ProductListing() {
       {isPopupVisible && (
         <div className="popUpWrapper">
           <div className="popup">
-           user not logged in
+            user not logged in
             <br />
             Please log-in
           </div>

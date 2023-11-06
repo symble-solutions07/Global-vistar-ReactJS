@@ -3,7 +3,7 @@ import CardImg1 from "./fmcg-bg.png";
 import CardImg2 from "./fmcg-bg2.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 
 import Button from "@mui/material/Button";
 function HeroSection() {
@@ -26,7 +26,7 @@ function HeroSection() {
   const handleProductListing = () => {
     if (localStorage.getItem("token") != null) {
       if (localStorage.getItem("token").length > 10) {
-        fetch("https://gv-backend-production.up.railway.app/user/me", {
+        fetch("https://globalvistarbackend-production.up.railway.app/user/me", {
           method: "GET",
           headers: {
             authorization: "Bearer " + localStorage.getItem("token"),
@@ -43,7 +43,7 @@ function HeroSection() {
       } else popupRedirect();
     } else popupRedirect();
   };
-  
+
   return (
     <>
       {isPopupVisible && (
@@ -64,7 +64,6 @@ function HeroSection() {
               >
                 Login
               </Button>
-              
             </div>
           </div>
         </div>

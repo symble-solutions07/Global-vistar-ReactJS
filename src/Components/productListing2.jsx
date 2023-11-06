@@ -27,31 +27,6 @@ function ProductListing2() {
   const [pSizeError, setpSizeError] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
-  const [isPopupVisible, setPopupVisible] = useState(false);
-
-  const handleSendOTP = async () => {
-    // setPopupVisible(true);
-    const resp = await fetch(
-      "https://gv-backend-production.up.railway.app/user/check",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ phoneNumber }),
-      }
-    );
-    const dat = await resp.json();
-    console.log(dat);
-
-    if (dat.message != "Exists") {
-      setPopupVisible(true);
-      const timeout = setTimeout(() => {
-        // console.log("This text will be displayed after 2 seconds.");
-        navigate("/register");
-      }, 2000);
-    }
-  };
   function checkAllInputs(data) {
     var res = 1;
     console.log(!data.get("Lead-time-in-days"));
@@ -135,7 +110,7 @@ function ProductListing2() {
     const Pname = localStorage.getItem("pName");
 
     const response = await fetch(
-      "https://gv-backend-production.up.railway.app/user/ProductDetails",
+      "https://globalvistarbackend-production.up.railway.app/user/ProductDetails",
       {
         method: "POST",
         headers: {
@@ -160,7 +135,7 @@ function ProductListing2() {
       }
     );
     const data1 = await response.json();
-    navigate("/")
+    navigate("/");
   };
   const leadClick = (str) => {
     // setleadTime(str);
@@ -170,15 +145,6 @@ function ProductListing2() {
 
   return (
     <div>
-      {isPopupVisible && (
-        <div className="popUpWrapper">
-          <div className="popup">
-            Number Not registered.
-            <br />
-            Register first
-          </div>
-        </div>
-      )}
       <div className="otp-login">
         <h2 className="gv-logo">
           <span className="global">Global</span>{" "}

@@ -19,7 +19,7 @@ function OTPLogin() {
   const handleSendOTP = async () => {
     // setPopupVisible(true);
     const resp = await fetch(
-      "https://gv-backend-production.up.railway.app/user/check",
+      "https://globalvistarbackend-production.up.railway.app/user/check",
       {
         method: "POST",
         headers: {
@@ -39,7 +39,7 @@ function OTPLogin() {
       }, 3000);
     } else {
       const response = await fetch(
-        "https://gv-backend-production.up.railway.app/auth/sendOTP",
+        "https://globalvistarbackend-production.up.railway.app/auth/sendOTP",
         {
           method: "POST",
           headers: {
@@ -56,7 +56,7 @@ function OTPLogin() {
 
   const handleVerifyOTP = async () => {
     const response = await fetch(
-      "https://gv-backend-production.up.railway.app/auth/verifyOTP",
+      "https://globalvistarbackend-production.up.railway.app/auth/verifyOTP",
       {
         method: "POST",
         headers: {
@@ -92,7 +92,7 @@ function OTPLogin() {
     if (toProceed == 0) return;
     console.log(phoneNumber);
     const response = await fetch(
-      "https://gv-backend-production.up.railway.app/user/login",
+      "https://globalvistarbackend-production.up.railway.app/user/login",
       {
         method: "POST",
         headers: {
@@ -123,15 +123,13 @@ function OTPLogin() {
         <div className="popUpWrapper">
           <div className="popup">
             <b>Number not Registered.</b>
-            <div className="popupText">
-              You must signup first.
-            </div>
+            <div className="popupText">You must signup first.</div>
             <hr />
 
             <Button
               variant="contained"
               onClick={() => {
-                  navigate("/register");
+                navigate("/register");
               }}
               sx={{ backgroundColor: "rgb(74,36,136)" }}
             >
