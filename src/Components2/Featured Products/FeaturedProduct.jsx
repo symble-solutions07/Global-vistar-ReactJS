@@ -74,25 +74,14 @@ export default function FeaturedProduct() {
         <h1 className="featured-products-title">Featured Products</h1>
         <div className="featured-products-flex">
           <div className="featured-products-card">
-            <img
-              className="featured-products-card-img"
-              src={MightyMillets}
-              alt=""
-            />
+            <img className="featured-products-card-img" src={MightyMillets} alt="" />
             <div className="featured-products-card-description">
-              <p className="featured-products-card-verified">
-                Global Vistar Verified
-              </p>
+              <p className="featured-products-card-verified">Global Vistar Verified</p>
               <h1 className="featured-products-card-title">Mighty Millets</h1>
               <p className="featured-products-card-price">Price: ₹7200</p>
-              <p className="featured-products-card-price">
-                MOQ: 1 Box - 120 nos
-              </p>
-              <p className="featured-products-card-margin">Margin: 20%-30%</p>
-              <button
-                className="featured-products-card-btn"
-                onClick={handleSendEnquiry}
-              >
+              <p className="featured-products-card-price">MOQ: 1 Box - 120 nos</p>
+              <p className="featured-products-card-margin">Expected Margin: 20%-30%</p>
+              <button className="featured-products-card-btn" onClick={handleSendEnquiry}>
                 Send Enquiry
               </button>
             </div>
@@ -100,13 +89,11 @@ export default function FeaturedProduct() {
           <div className="featured-products-card">
             <img className="featured-products-card-img" src={DesiRass} alt="" />
             <div className="featured-products-card-description">
-              <p className="featured-products-card-verified">
-                Global Vistar Verified
-              </p>
+              <p className="featured-products-card-verified">Global Vistar Verified</p>
               <h1 className="featured-products-card-title">Desi Rass</h1>
-              <p className="featured-products-card-price">Price: ₹---</p>
+              <p className="featured-products-card-price">Price: ₹50000</p>
               <p className="featured-products-card-price">MOQ: 100 boxes</p>
-              <p className="featured-products-card-margin">Margin: 35%-45%</p>
+              <p className="featured-products-card-margin">Expected Margin: 15%-25%</p>
               <button
                 className="featured-products-card-btn"
                 onClick={handleSendEnquiry}
@@ -130,7 +117,7 @@ export default function FeaturedProduct() {
               </h1>
               <p className="featured-products-card-price">Price: ₹48000</p>
               <p className="featured-products-card-price">MOQ: 1000kg</p>
-              <p className="featured-products-card-margin">Margin: 20%-30%</p>
+              <p className="featured-products-card-margin">Expected Margin: 10%-20%</p>
               <button
                 className="featured-products-card-btn"
                 onClick={handleSendEnquiry}
@@ -150,11 +137,11 @@ export default function FeaturedProduct() {
                 Global Vistar Verified
               </p>
               <h1 className="featured-products-card-title">Tribe Cook</h1>
-              <p className="featured-products-card-price">Price: ₹---</p>
+              <p className="featured-products-card-price">Price: ₹6000</p>
               <p className="featured-products-card-price">
                 MOQ: 1 Box - 120 nos
               </p>
-              <p className="featured-products-card-margin">Margin: 20%-30%</p>
+              <p className="featured-products-card-margin">Expected Margin: 25%-35%</p>
               <button
                 className="featured-products-card-btn"
                 onClick={handleSendEnquiry}

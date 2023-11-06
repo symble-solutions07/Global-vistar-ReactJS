@@ -17,7 +17,7 @@
     font-family: 'General Sans', sans-serif;
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     background: rgb(188,24,35);
     background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
     -webkit-text-fill-color: transparent; 
@@ -25,11 +25,31 @@
     background-clip:text;
 }
 
+.hero-title-new{
+    font-family: 'General Sans', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: rgba(33,13,65,1);
+}
+
+.hero-title-new2{
+    font-family: 'General Sans', sans-serif;
+    font-weight: 700;
+    color: rgba(188,24,35,1);
+}
+
 .hero-p1{
+    font-family: 'General Sans', sans-serif;
     line-height: 33px;
-    color: rgb(97, 97, 97);
-    font-size: 1.07rem;
+    font-size: 1.7rem;
     margin-bottom: 2rem;
+    text-align: justify;
+    background: rgb(188,24,35);
+    background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text; 
+    background-clip:text;
+    font-weight: 600;
 }
 
 .search-bar-p{
@@ -141,10 +161,13 @@
     }
 
     .hero-p1{
-        line-height: 33px;
-        color: rgb(97, 97, 97);
-        font-size: 1rem;
+        line-height: 37px;
+        font-size: 1.5rem;
         margin-bottom: 2rem;
+    }
+
+    .hero-p-hidden{
+        display: none;
     }
 
     .magnifying-glass{

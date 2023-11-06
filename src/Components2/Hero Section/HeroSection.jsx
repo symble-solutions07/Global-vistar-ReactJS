@@ -72,15 +72,12 @@ function HeroSection() {
       <div className="hero-section">
         <div className="hero-section-left">
           <h1 className="hero-title1">
-            Connecting FMCG Sellers and Distributors.
+            Badhaye Apke Business ki Raftaar
           </h1>
           <p className="hero-p1">
-            We provide a cutting-edge platform that facilitates efficient
-            connections between FMCG sellers and distributors. Our technology
-            streamlines the entire supply chain process, enabling sellers to
-            reach a wider market and distributors to source products seamlessly.
+            Connecting FMCG Sellers and Distribution Partners. <br />
+            Faster & Better.
           </p>
-          <p className="search-bar-p">Search from a Wide Variety of Products</p>
           <a href="#featured-products">
             <button className="magnifying-glass-btn">
               <SearchRoundedIcon className="magnifying-glass" />

@@ -16,7 +16,8 @@
 .categories-img{
     width: auto;
     margin-bottom: 1.5rem;
-    margin-left: 1rem;
+    margin-left: auto;
+    margin-right: auto;
     user-select: none;
    -moz-user-select: none;
    -webkit-user-drag: none;
@@ -25,44 +26,40 @@
 }
 
 .bakery-product-img{
-    width: 4rem;
+    width: 3rem;
 }
 
 .beverages-img{
-    width: 4rem;
+    width: 3rem;
 }
 
 .chocolates-img{
-    width: 5rem;
+    width: 3.7rem;
     margin-bottom: 2rem;
 }
 
 .dairy-products{
-    width: 5.2rem;
-    margin-left: 0.5rem;
+    width: 4rem;
 }
 
 .grains-img{
-    width: 4.1rem;
+    width: 3.2rem;
 }
 
 .ready-to-cook-img{
-    width: 4.2rem;
-}
-
-.hygiene-img{
-    width: 6rem;
+    width: 3rem;
 }
 
 .snacks-img{
-    margin-right: 0;
-    width: 4.3rem;
+    width: 3.3rem;
 }
 
 .categories-card{
     flex: 1;
     width: auto;
+    height: auto;
     padding: 1rem;
+    padding-bottom: 0.5rem;
     border: 1px solid rgb(160, 160, 160);
     border-radius: 10px;
     margin-right: 3rem;
@@ -92,60 +89,57 @@
     .categories-flex{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        justify-items: stretch;
+        justify-content: space-between;
     }
 
     .categories-card{
-        width: 9.5rem;
+        width: 8.7rem;
+        height: 10.5rem;
         padding: 1rem;
         border: 1px solid rgb(160, 160, 160);
         border-radius: 10px;
-        margin-right: auto;
         margin-bottom: 1.8rem;
     }
 
     .categories-img{
-        width: 4.5rem;
+        width: auto;
         margin-bottom: 1.5rem;
-        margin-left: 1.6rem;
+        margin-left: auto;
+        margin-right: auto;
         user-select: none;
        -moz-user-select: none;
        -webkit-user-drag: none;
        -webkit-user-select: none;
        -ms-user-select: none;
     }
-
+    
     .bakery-product-img{
-        width: 4rem;
+        width: 3rem;
     }
     
     .beverages-img{
-        width: 4rem;
+        width: 3rem;
     }
     
     .chocolates-img{
-        width: 5rem;
+        width: 3.7rem;
         margin-bottom: 2rem;
     }
     
     .dairy-products{
-        width: 5.2rem;
-        margin-left: 1.2rem;
+        width: 4rem;
     }
     
     .grains-img{
-        width: 4.1rem;
+        width: 3.2rem;
     }
     
     .ready-to-cook-img{
-        width: 4.2rem;
-    }
-    
-    .hygiene-img{
-        width: 6rem;
+        width: 3rem;
     }
     
     .snacks-img{
-        margin-right: 0;
-        width: 4.3rem;
+        width: 3.3rem;
     }
 }

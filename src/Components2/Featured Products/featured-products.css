@@ -57,12 +57,26 @@
 }
 
 .featured-products-card-verified {
-  background-color: rgb(153, 248, 109);
-  color: rgb(0, 51, 0);
+  background: rgb(49,19,96);
+  background: linear-gradient(45deg, rgba(49,19,96,1), rgba(145,81,255,1));
+  animation: gra 15s ease infinite;
+  color: white;
   width: fit-content;
   padding: 0.2rem;
   border-radius: 5px;
   font-size: 0.7rem;
+}
+
+@keyframes gra {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .featured-products-card-btn {
