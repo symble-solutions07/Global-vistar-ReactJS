@@ -20,7 +20,7 @@ function ExpandBlog1() {
           Apr 11 2023 - 2 min read{" "}
         </p>
 
-        <img src={blog1} alt="" />
+        <img className="expand-blog-img" src={blog1} alt="" />
 
         <p className="blog-para">
           As a manufacturer, you know that having a great product is just the

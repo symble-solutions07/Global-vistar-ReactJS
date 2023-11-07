@@ -15,7 +15,7 @@ export default function Footer() {
                 <Link to="/" className='navbar-links-text'><p className='footer-2-links'>Home</p></Link>
                 <Link to="/AboutUsPage" className='navbar-links-text'><p className='footer-2-links'>About Us</p></Link>
                 <Link to="/" className='navbar-links-text'><p className='footer-2-links'>Categories</p></Link>
-                <Link to="/BlogPage" className='navbar-links-text'><p className='footer-2-links'>Blogs</p></Link>
+                <Link to="/blogpage" className='navbar-links-text'><p className='footer-2-links'>Blogs</p></Link>
                 <Link to="/" className='navbar-links-text'><p className='footer-2-links'>Contact</p></Link>
             </div>
             <div className="footer-3">

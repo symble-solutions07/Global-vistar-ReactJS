@@ -17,7 +17,7 @@ function ExpandBlog2() {
           Apr 11 2023 - 2 min read{" "}
         </p>
 
-        <img src={Blog2Img} alt="" />
+        <img className="expand-blog-img" src={Blog2Img} alt="" />
 
         <p className="blog-para-2">
           As a distributor, your success largely depends on the quality of the

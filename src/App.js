@@ -8,6 +8,7 @@ import FeaturedProduct from './Components2/Featured Products/FeaturedProduct';
 import Register from './Components2/Register/Register';
 import CTA from './Components2/CTA/CTA';
 import Footer from './Components2/Footer/Footer';
+import Blogsection from "./Components2/Blogs Section/Blogsection";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <FeaturedProduct />
       <Register />
       <CTA />
+      <Blogsection />
       <Footer />
     </div>
   );

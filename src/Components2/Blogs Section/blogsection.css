@@ -1,0 +1,115 @@
+.blog-section{
+    margin: 0 3.5rem 5rem 3.5rem;
+}
+
+.blog-title-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-title{
+    font-family: "General Sans", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.blog-explore-btn{
+    outline: none;
+    width: max-content;
+    height: fit-content;
+    padding: 0.4rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    background-color: #fff;
+}
+
+.blog-explore-btn:hover{
+    transition: 0.35s;
+    background-color: rgba(33, 13, 65, 1);
+    color: white;
+}
+
+.blog-section-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-section-card{
+    position: relative;
+    width: 22rem;
+    height: 31rem;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 10px;
+}
+
+.blog-section-img{
+    width: auto;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.blog-card-description{
+    margin: 1rem;
+}
+
+.blog-category{
+    width: fit-content;
+    background: rgb(49,19,96);
+    background: linear-gradient(90deg, rgba(49,19,96,1), rgba(145,81,255,1));
+    color: white;
+    padding: 0.2rem;
+    font-size: 0.7rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.blog-card-title{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.blog-card-p{
+    color: rgb(97, 97, 97);
+}
+
+.blog-card-btn{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    outline: none;
+    width: max-content;
+    padding: 0.4rem;
+    background-color: rgba(33, 13, 65, 1);
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+.blog-card-btn:hover{
+    transition: 0.35s;
+    background-color: rgb(188, 24, 35);
+}
+
+@media (max-width: 500px){
+    .blog-section{
+        margin: 0 1.5rem 5rem 1.5rem;
+    }
+
+    .blog-section-flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .blog-section-card{
+        position: relative;
+        width: auto;
+        height: 30.5rem;
+        border: 1px solid rgb(160, 160, 160);
+        border-radius: 10px;
+        margin-bottom: 2rem;
+    }
+}

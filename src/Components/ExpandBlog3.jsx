@@ -20,7 +20,7 @@ function ExpandBlog3() {
           Apr 11 2023 - 2 min read{" "}
         </p>
 
-        <img src={Blog3Img} alt="" />
+        <img className="expand-blog-img" src={Blog3Img} alt="" />
 
         <p className="blog-para-3">
           In recent years, the manufacturing and distribution industries have

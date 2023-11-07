@@ -1,6 +1,5 @@
 import {React,useState} from 'react'
 import App from "./App";
-import BlogPage from "./Components/BlogPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutUsPage from "./Components/AboutUsPage";
 import ExpandBlog1 from "./Components/ExpandBlog1";
@@ -15,6 +14,7 @@ import AboutUs from './Components2/AboutUs/AboutUs';
 import Upload from "./Components2/ListingForm/upload";
 import Enquiry from './Components/enquiry';
 import ProductsPage from './Components2/ProductsPage/productsPage'
+import BlogPage from './Components2/Blog Page/BlogPage';
 
 function Routing() {
   
@@ -23,7 +23,6 @@ function Routing() {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/:id" element={<App />} />
-        <Route path="/BlogPage" element={<BlogPage />} />
         <Route path="/AboutUsPage" element={<AboutUsPage />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/newBlog1" element={<ExpandBlog1 />} />
@@ -37,6 +36,7 @@ function Routing() {
         <Route path="/register" element={<Register />} />
         <Route path="/terms&cond" element={<TermsAndCond />} />
         <Route path="/Enquiry" element={<Enquiry />} />
+        <Route path="/blogpage" element={<BlogPage />} />
       </Routes>
     </BrowserRouter>
   );
