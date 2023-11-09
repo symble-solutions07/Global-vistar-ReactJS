@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { Link } from "react-router-dom";
 function LoginReg() {
   const navigate = useNavigate();
   const [user, setUser] = useState();
-  const currLocation = useLocation();
   // console.log(currLocation)
   useEffect(() => {
     if (localStorage.getItem("token") != null) {
@@ -15,12 +14,17 @@ function LoginReg() {
             authorization: "Bearer " + localStorage.getItem("token"),
           },
         }).then((res) => {
-          res.json().then((data) => {
+          res.json()
+          .then((data) => {
             if (data.user) {
               setUser(data.user.name);
               console.log(data.user.name + " signed in");
             }
-          });
+          })
+          .catch((err)=>{
+            console.log(err);
+            localStorage.removeItem("token");
+          })
         });
       }
     }

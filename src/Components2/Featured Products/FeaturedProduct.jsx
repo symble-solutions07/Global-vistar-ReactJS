@@ -6,10 +6,12 @@ import DesiRass from "./Images/Desi-Rass.png";
 import ShivratnaJaggery from "./Images/ShivRatna-Jaggery.png";
 import TribeCook from "./Images/Tribe-cook.png";
 import Button from "@mui/material/Button";
+import Enquiry from "../../Components/enquiry";
 
 export default function FeaturedProduct() {
   const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
+  const [isEnquiryPopupVisible, setEnquiryPopupVisible] = useState(false);
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
   };
@@ -32,17 +34,35 @@ export default function FeaturedProduct() {
           res.json().then((data) => {
             if (data.user) {
               //   setUser(data.user.name);
-              //   console.log(data.user.name + " signed in");
-              openInNewTab(
-                // "https://docs.google.com/forms/d/e/1FAIpQLSciD5NwlybLK058JZyyC4TYjYhHt0-6-4AQarBsb0tt1CduDg/viewform?usp=sf_link"
-                "https://globalvistar.com"
-              );
+              console.log(data.user.name + " enquired");
+              // openInNewTab(
+              //   // "https://docs.google.com/forms/d/e/1FAIpQLSciD5NwlybLK058JZyyC4TYjYhHt0-6-4AQarBsb0tt1CduDg/viewform?usp=sf_link"
+              //   "https://globalvistar.com"
+              // );
+              handleOpen();
+              // setEnquiryPopupVisible(true);
             } else popupRedirect();
           });
         });
       } else popupRedirect();
     } else popupRedirect();
   };
+
+  //pop-up
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
+
+
+
   return (
     <>
       {isPopupVisible && (
@@ -67,19 +87,40 @@ export default function FeaturedProduct() {
           </div>
         </div>
       )}
+      {/* <Enquiry /> */}
+      {/* {isEnquiryPopupVisible && <Enquiry />} */}
+      {/* <button onClick={handleOpen}>Open Form</button> */}
+      <Enquiry open={open} handleClose={handleClose} />
+
       {isPopupVisible && <div className="popUpWrapper"></div>}
       <div id="featured-products">
         <h1 className="featured-products-title">Featured Products</h1>
         <div className="featured-products-flex">
           <div className="featured-products-card">
-            <img className="featured-products-card-img" src={MightyMillets} alt="" />
+            <img
+              className="featured-products-card-img"
+              src={MightyMillets}
+              alt=""
+            />
             <div className="featured-products-card-description">
-              <p className="featured-products-card-verified">Global Vistar Verified</p>
+              <p className="featured-products-card-verified">
+                Global Vistar Verified
+              </p>
               <h1 className="featured-products-card-title">Mighty Millets</h1>
               <p className="featured-products-card-price">Price: ₹7200</p>
-              <p className="featured-products-card-price">MOQ: 1 Box - 120 nos</p>
-              <p className="featured-products-card-margin">Expected Margin: 20%-30%</p>
-              <button className="featured-products-card-btn" onClick={handleSendEnquiry}>
+              <p className="featured-products-card-price">
+                MOQ: 1 Box - 120 nos
+              </p>
+              <p className="featured-products-card-margin">
+                Expected Margin: 20%-30%
+              </p>
+              <button
+                className="featured-products-card-btn"
+                onClick={() => {
+                  handleSendEnquiry();
+                  localStorage.setItem("ProductToEnquire", "Mighty Millets");
+                }}
+              >
                 Send Enquiry
               </button>
             </div>
@@ -87,14 +128,21 @@ export default function FeaturedProduct() {
           <div className="featured-products-card">
             <img className="featured-products-card-img" src={DesiRass} alt="" />
             <div className="featured-products-card-description">
-              <p className="featured-products-card-verified">Global Vistar Verified</p>
+              <p className="featured-products-card-verified">
+                Global Vistar Verified
+              </p>
               <h1 className="featured-products-card-title">Desi Rass</h1>
               <p className="featured-products-card-price">Price: ₹50000</p>
               <p className="featured-products-card-price">MOQ: 100 boxes</p>
-              <p className="featured-products-card-margin">Expected Margin: 15%-25%</p>
+              <p className="featured-products-card-margin">
+                Expected Margin: 15%-25%
+              </p>
               <button
                 className="featured-products-card-btn"
-                onClick={handleSendEnquiry}
+                onClick={() => {
+                  handleSendEnquiry();
+                  localStorage.setItem("ProductToEnquire", "Desi Ras");
+                }}
               >
                 Send Enquiry
               </button>
@@ -115,10 +163,15 @@ export default function FeaturedProduct() {
               </h1>
               <p className="featured-products-card-price">Price: ₹48000</p>
               <p className="featured-products-card-price">MOQ: 1000kg</p>
-              <p className="featured-products-card-margin">Expected Margin: 10%-20%</p>
+              <p className="featured-products-card-margin">
+                Expected Margin: 10%-20%
+              </p>
               <button
                 className="featured-products-card-btn"
-                onClick={handleSendEnquiry}
+                onClick={() => {
+                  handleSendEnquiry();
+                  localStorage.setItem("ProductToEnquire", "Shivratna Jaggery");
+                }}
               >
                 Send Enquiry
               </button>
@@ -139,10 +192,15 @@ export default function FeaturedProduct() {
               <p className="featured-products-card-price">
                 MOQ: 1 Box - 120 nos
               </p>
-              <p className="featured-products-card-margin">Expected Margin: 25%-35%</p>
+              <p className="featured-products-card-margin">
+                Expected Margin: 25%-35%
+              </p>
               <button
                 className="featured-products-card-btn"
-                onClick={handleSendEnquiry}
+                onClick={() => {
+                  handleSendEnquiry();
+                  localStorage.setItem("ProductToEnquire", "Tribe Cook");
+                }}
               >
                 Send Enquiry
               </button>
