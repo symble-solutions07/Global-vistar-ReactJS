@@ -7,7 +7,10 @@ function Upload() {
     const formdata = new FormData();
     formdata.append("file", file);
     axios
-      .post("http://localhost:3003/upload", formdata)
+      .post(
+        "http://globalvistarbackend-production.up.railway.app:3003/upload",
+        formdata
+      )
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
