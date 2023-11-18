@@ -10,7 +10,7 @@ const FeaturedProductCard = (props) => {
 
   return (
     <div className="featured-products-card">
-      <img className="featured-products-card-img" src="./Images/Desi-Rass.png" alt="" />
+      <img className="featured-products-card-img" src={MightyMillets} alt="" />
       <div className="featured-products-card-description">
         <p className="featured-products-card-verified">
           Global Vistar Verified

@@ -16,7 +16,7 @@
 
 .featured-products-card {
   width: 17rem;
-  height: 28rem;
+  height: 27rem;
   border: 1px solid rgb(160, 160, 160);
   border-radius: 10px;
   margin-right: 2.9rem;
@@ -25,7 +25,7 @@
 .featured-products-card-img {
   width: 16.85rem;
   height: 9.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
@@ -57,8 +57,7 @@
 }
 
 .featured-products-card-verified {
-  background: rgb(49,19,96);
-  background: linear-gradient(45deg, rgba(49,19,96,1), rgba(145,81,255,1));
+  background-color: rgb(50, 179, 38);
   animation: gra 15s ease infinite;
   color: white;
   width: fit-content;

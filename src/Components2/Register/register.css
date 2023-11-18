@@ -38,7 +38,7 @@
 .register-right-card-img{
     width: 8rem;
     margin-bottom: 2rem;
-    margin-left: auto;
+    margin-left: 1.5rem;
     margin-right: auto;
 }
 
@@ -84,7 +84,7 @@
     .register-right-card-img{
         width: 7rem;
         margin-bottom: 2rem;
-        margin-left: auto;
+        margin-left: 0.7rem;
         margin-right: auto;
     }
 }

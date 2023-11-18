@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import FeaturedProductCard from "./ProductCard"; // adjust the path based on your project structure
 import "./productsPage.css";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 const ProductsPage = () => {
      const [products, setProducts] = useState([]);
@@ -43,9 +45,32 @@ const ProductsPage = () => {
       price: "---", // Replace this with the actual price
       moq: "140 boxes", // Replace this with the actual MOQ
     },
+    {
+      title: "Desi Rass",
+      price: "---", // Replace this with the actual price
+      moq: "140 boxes", // Replace this with the actual MOQ
+    },
+    {
+      title: "Desi Rass",
+      price: "---", // Replace this with the actual price
+      moq: "140 boxes", // Replace this with the actual MOQ
+    },
+    {
+      title: "Desi Rass",
+      price: "---", // Replace this with the actual price
+      moq: "140 boxes", // Replace this with the actual MOQ
+    },
+    {
+      title: "Desi Rass",
+      price: "---", // Replace this with the actual price
+      moq: "140 boxes", // Replace this with the actual MOQ
+    },
     // Add more products as needed
   ];
   return (
+    <>
+    <Navbar />
+    <h1 className="products-page-title">Explore All Products</h1>
     <div className="productsWrapper">
       {productss.map((product, index) => (
         <FeaturedProductCard
@@ -56,13 +81,9 @@ const ProductsPage = () => {
           handleSendEnquiry={handleSendEnquiry}
         />
       ))}
-      <FeaturedProductCard
-        title="Desi Rass"
-        price="---" // Replace this with the actual price
-        moq="100 boxes" // Replace this with the actual MOQ
-        handleSendEnquiry={handleSendEnquiry}
-      />
     </div>
+    <Footer />
+    </>
   );
 };
 
