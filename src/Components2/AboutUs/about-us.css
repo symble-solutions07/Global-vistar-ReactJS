@@ -237,6 +237,10 @@ a{
         -webkit-background-clip: text;
     }
 
+    .about-us-flex-right-img{
+        width: 100%;
+    }
+
     .about-us-img-flex{
         display: grid;
         margin-left: 1.5rem;
@@ -245,6 +249,11 @@ a{
         justify-content: space-between;
         grid-template-columns: 1fr 1fr;
         row-gap: 2rem;
+        column-gap: 1rem;
+    }
+
+    .about-us-flex-div{
+        width: auto;
     }
 
     .abt-us-vission-mission{

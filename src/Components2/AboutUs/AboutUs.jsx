@@ -22,7 +22,7 @@ function AboutUs() {
             <p className="about-us-p-2">"Vistar" means expansion, and that's exactly what we're all about. We want to help our users expand their reach, expand their profits, and expand their impact on the world.</p>
             </div>
             <div className="about-us-flex-right">
-            <img src={AboutUsImg} alt="" />
+            <img className="about-us-flex-right-img" src={AboutUsImg} alt="" />
             </div>
         </div>
         <h1 className="about-us-title-2">Choosing Global Vistar means Choosing Expansion</h1>
@@ -70,7 +70,7 @@ function AboutUs() {
               <p className="team-card-title">
                 Pranav Bankar
                 <br />
-                <span className='team-card-desg'>Cofounder @Global Vistar</span>
+                <span className='team-card-desg'>Cofounder</span>
               </p>
             </div>
           </div>
@@ -82,7 +82,7 @@ function AboutUs() {
               <p className="team-card-title">
                 Kiran Patil
                 <br />
-                <span className='team-card-desg'>Cofounder @Global Vistar</span>
+                <span className='team-card-desg'>Cofounder</span>
               </p>
             </div>
           </div>
@@ -94,7 +94,7 @@ function AboutUs() {
               <p className="team-card-title">
                 Yash
                 <br />
-                <span className='team-card-desg'>Sales & Marketing</span>
+                <span className='team-card-desg'>Sales & Operations</span>
               </p>
             </div>
           </div>
