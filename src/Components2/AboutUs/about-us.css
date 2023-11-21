@@ -64,7 +64,8 @@
 }
 
 .about-us-flex-div{
-    width: 9rem;
+    width: 12rem;
+    text-align: center;
 }
 
 .about-us-img{
@@ -75,14 +76,9 @@
     margin-right: auto;
 }
 
-.innovation-p{
-    margin-left: 2rem;
+.about-us-img-p{
+    font-size: 1.1rem;
 }
-
-.trusted-net-p{
-    margin-left: 0.7rem;
-}
-
 
 .auimg2{
     width: 4.9rem;

@@ -10,14 +10,13 @@
 }
 
 .categories-flex{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    row-gap: 1.5rem;
 }
 
 .categories-img{
-    width: auto;
-    margin-bottom: 1.5rem;
-    margin-left: 1.5rem;
-    margin-right: auto;
     user-select: none;
    -moz-user-select: none;
    -webkit-user-drag: none;
@@ -35,7 +34,6 @@
 
 .chocolates-img{
     width: 3.7rem;
-    margin-bottom: 2rem;
 }
 
 .dairy-products{
@@ -55,24 +53,29 @@
 }
 
 .categories-card{
-    flex: 1;
-    width: auto;
-    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15rem;
+    height: 6rem;
     padding: 1rem;
     padding-bottom: 0.5rem;
     border: 1px solid rgb(160, 160, 160);
     border-radius: 10px;
-    margin-right: 3rem;
 }
+
 
 .categories-card:hover{
     transition: 0.35s;
     background-color: rgb(236, 236, 236);
 }
 
-.snacks-card{
-    margin-right: 0;
+.categories-card-p{
+    font-size: 1.075rem;
+    font-weight: bold;
+    color: rgb(80, 80, 80);
 }
+
 
 @media (max-width: 500px){
     .categories{
@@ -89,24 +92,22 @@
     .categories-flex{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        justify-items: stretch;
-        justify-content: space-between;
+        column-gap: 2rem;
     }
 
     .categories-card{
-        width: 8.7rem;
-        height: 10.5rem;
+        display: block;
+        width: auto;
+        height: 10rem;
         padding: 1rem;
         border: 1px solid rgb(160, 160, 160);
         border-radius: 10px;
-        margin-bottom: 1.8rem;
+        text-align: center;
     }
 
     .categories-img{
         width: auto;
-        margin-bottom: 1.5rem;
-        margin-left: 1.5rem;
-        margin-right: auto;
+        margin-bottom: 1rem;
         user-select: none;
        -moz-user-select: none;
        -webkit-user-drag: none;
@@ -124,7 +125,6 @@
     
     .chocolates-img{
         width: 3.7rem;
-        margin-bottom: 2rem;
     }
     
     .dairy-products{

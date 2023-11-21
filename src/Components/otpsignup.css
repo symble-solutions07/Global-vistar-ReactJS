@@ -17,7 +17,7 @@
   padding: 1rem;
   border-radius: 10px;
   width: 20rem;
-  margin-top: 3rem;
+  margin-top: 0;
   border: 1px solid rgb(0, 0, 0);
   box-shadow: 10px 15px 15px 4px rgba(0, 0, 0, 0.1);
 }
@@ -53,20 +53,21 @@
 
 .btnn {
   display: flex;
+  outline: none;
+  border: none;
   align-items: center;
   justify-content: center;
   width: 7rem;
   color: white;
   padding: 0.5rem;
   border-radius: 4px;
-  background-color: blue;
+  background-color: rgba(33, 13, 65, 1);
 
 
 }
 .btnn:hover{
-  transition: 0.4s;
-  color: black;
-  background-color: lightblue;
+  transition: 0.35s;
+  background-color: rgb(188, 24, 35);
 }
 /* .otp-verify-btn {
   outline: none;

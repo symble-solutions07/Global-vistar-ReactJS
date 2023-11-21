@@ -77,17 +77,17 @@ function HeroSection() {
             Connecting FMCG Sellers and Distribution Partners. <br />
             Faster & Better.
           </p>
-          <a href="#featured-products">
-            <button className="magnifying-glass-btn">
-              <SearchRoundedIcon className="magnifying-glass" />
-            </button>
-          </a>
 
           <input
             type="text"
             placeholder="Search for a Product, Category or Service"
             className="search-bar"
           />
+          <a href="#featured-products">
+            <button className="magnifying-glass-btn">
+              <SearchRoundedIcon className="magnifying-glass" />
+            </button>
+          </a>
         </div>
 
         <div className="hero-section-right">

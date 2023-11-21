@@ -227,7 +227,7 @@ function OTPForm() {
                 style={{
                   display: "inline",
                   marginLeft: "1rem",
-                  fontSize: "1.2rem",
+                  fontSize: "1.1rem",
                 }}
               >
                 {registerAs}
@@ -258,7 +258,7 @@ function OTPForm() {
 
             <div className="sendOtpbtn">
               <button
-                className="btnn btn-outline-secondary StandardButton"
+                className="btnn"
                 onClick={handleSendOTP}
               >
                 Send OTP
@@ -280,7 +280,7 @@ function OTPForm() {
             </div>
             <div className="VerifyFlex sendOtpbtn">
               <button
-                className=" btnn btn-outline-secondary StandardButton"
+                className=" btnn"
                 onClick={handleVerifyOTP}
               >
                 Verify OTP
@@ -289,7 +289,7 @@ function OTPForm() {
             </div>
             <div className="lastSubmit">
               <input
-                class="btnn btn-primary StandardButton"
+                class="btnn"
                 type="submit"
                 value="Submit"
                 onClick={handleSubmitButton}

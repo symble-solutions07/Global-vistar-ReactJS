@@ -169,7 +169,7 @@ function OTPLogin() {
 
           <div className="sendOtpbtn">
             <button
-              className="btnn btn-outline-secondary StandardButton"
+              className="btnn"
               onClick={handleSendOTP}
             >
               Send OTP
@@ -191,7 +191,7 @@ function OTPLogin() {
           </div>
           <div className="VerifyFlex sendOtpbtn">
             <button
-              className=" btnn btn-outline-secondary StandardButton"
+              className=" btnn"
               onClick={handleVerifyOTP}
             >
               Verify OTP
@@ -200,7 +200,7 @@ function OTPLogin() {
           </div>
           <div className="lastSubmit">
             <input
-              class="btnn btn-primary StandardButtonSubmit"
+              class="btnn"
               type="submit"
               value="Submit"
               onClick={handleSubmitButton}

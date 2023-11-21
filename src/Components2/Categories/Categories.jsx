@@ -31,7 +31,7 @@ export default function Categories() {
         </div>
         <div className="categories-card">
             <img src={Grains} alt="" className='categories-img grains-img' />
-            <p className="categories-card-p">Grains</p>
+            <p className="categories-card-p">Whole Grains</p>
         </div>
         {/* <div className="categories-card">
             <img src={Hygiene} alt="" className='categories-img hygiene-img' />
