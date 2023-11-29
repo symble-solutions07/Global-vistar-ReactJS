@@ -1,12 +1,12 @@
 .register{
-    margin: 0 3.6rem 1rem 4rem;
+    margin: 0 3.5rem 0 3.5rem;
 }
 
 .register-title{
     font-family: 'General Sans', sans-serif;
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .register-flex{
@@ -42,16 +42,72 @@
     margin-right: auto;
 }
 
+#carouselExampleAutoplaying{
+    width: 32rem;
+    margin: auto;
+}
+
+.carousel-img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.list-your-product-btn{
+    outline: none;
+    border: none;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: #241043;
+    color: white;
+    border-radius: 5px;
+}
+
+.list-your-product-btn:hover{
+    background-color: #bd1d26;
+    transition: 0.35s;
+}
+
+.popup {
+    font-size: 1.4rem;
+    position: relative;
+    bottom: 5rem;
+    /* height: 5rem; */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* width:140%; */
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+  .popupText{
+    font-size: 0.9rem;
+    margin:1rem;
+    /* margin-bottom: 1.7rem; */
+  }
+  .popLoginBtn{
+    background: #4c00aa;
+    width: fit-content;
+    padding: 0.35rem 1rem;
+    border-radius: 10px;
+    color: #fff;
+  }
+  
+  .popButtons{
+      display: flex;
+      gap: 1.3rem;
+  }
+
 @media (max-width: 500px){
     .register{
-        margin: 0 1rem 3rem 1.5rem;
+        margin: 0 1rem 0 1.5rem;
     }
     
     .register-title{
         font-family: 'General Sans', sans-serif;
         font-size: 2rem;
         font-weight: 600;
-        margin-bottom: 1.5rem;
     }
     
     .register-flex{
@@ -86,5 +142,10 @@
         margin-bottom: 2rem;
         margin-left: 0.7rem;
         margin-right: auto;
+    }
+
+    #carouselExampleAutoplaying{
+        width: 100%;
+        margin: auto;
     }
 }

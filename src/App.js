@@ -9,12 +9,14 @@ import Register from './Components2/Register/Register';
 import CTA from './Components2/CTA/CTA';
 import Footer from './Components2/Footer/Footer';
 import Blogsection from "./Components2/Blogs Section/Blogsection";
+import Simplesteps from "./Components2/Simplesteps/Simplesteps";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <HeroSection />
+      <Simplesteps />
       <Services />
       <Categories />
       <FeaturedProduct />

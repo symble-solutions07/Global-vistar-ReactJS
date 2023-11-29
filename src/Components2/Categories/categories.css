@@ -22,6 +22,7 @@
    -webkit-user-drag: none;
    -webkit-user-select: none;
    -ms-user-select: none;
+   margin-right: 1rem;
 }
 
 .bakery-product-img{
@@ -52,16 +53,17 @@
     width: 3.3rem;
 }
 
+.frozen-img{
+    width: 3.8rem;
+}
+
 .categories-card{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 15rem;
+    width: 16rem;
     height: 6rem;
     padding: 1rem;
-    padding-bottom: 0.5rem;
-    border: 1px solid rgb(160, 160, 160);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 
@@ -74,6 +76,7 @@
     font-size: 1.075rem;
     font-weight: bold;
     color: rgb(80, 80, 80);
+    margin: 0;
 }
 
 
@@ -98,9 +101,8 @@
     .categories-card{
         display: block;
         width: auto;
-        height: 10rem;
-        padding: 1rem;
-        border: 1px solid rgb(160, 160, 160);
+        height: auto;
+        padding: 0.5rem;
         border-radius: 10px;
         text-align: center;
     }
@@ -141,5 +143,9 @@
     
     .snacks-img{
         width: 3.3rem;
+    }
+
+    .frozen-img{
+        width: 3.8rem;
     }
 }

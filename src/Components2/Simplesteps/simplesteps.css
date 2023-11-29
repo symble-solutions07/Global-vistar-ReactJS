@@ -1,0 +1,157 @@
+.simple-steps{
+    margin: 0rem 3.5rem 3rem 3.5rem;
+}
+
+.simple-steps-title{
+    font-family: 'General Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.for-manufacturers-m{
+  outline: none;
+  padding: 0.5rem;
+  background-color: rgba(33, 13, 65, 1);
+  border-radius: 5px;
+  color: white;
+  border: 1px solid rgba(33, 13, 65, 1);
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.for-distributors-m{
+    outline: none;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 5px;
+    color: rgba(33, 13, 65, 1);
+    border: 1px solid rgba(33, 13, 65, 1);
+    margin-bottom: 2rem;
+}
+
+.for-manufacturers-d{
+    outline: none;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 5px;
+    color: rgba(33, 13, 65, 1);
+    border: 1px solid rgba(33, 13, 65, 1);
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+  }
+  
+  .for-distributors-d{
+    outline: none;
+    padding: 0.5rem;
+    background-color: rgba(33, 13, 65, 1);
+    border-radius: 5px;
+    color: white;
+    border: 1px solid rgba(33, 13, 65, 1);
+    margin-bottom: 2rem;
+  }
+
+.simple-steps-flex{
+    display: flex;
+    align-items: center;
+}
+
+.simple-steps-flex-card{
+    text-align: center;
+}
+
+.simple-steps-flex-card-img{
+    width: 15rem;
+    margin-bottom: 1rem;
+}
+
+.manu-img1{
+    margin-top: 0.3rem;
+}
+
+.manu-img3{
+    width: 16.5rem;
+}
+
+.disimg2{
+    width: 16rem;
+}
+
+.dotted-line{
+    width: 20rem;
+    height: 0;
+    border: 2px solid rgb(80, 80, 80);
+    border-style: dashed;
+}
+
+.simple-steps-flex-card-title{
+    font-family: 'General Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+@media (max-width: 500px) {
+    .simple-steps{
+        margin: 0rem 1.5rem 3rem 1.5rem;
+    }
+
+    .simple-steps-title{
+        font-family: 'General Sans', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    .for-manufacturers-m{
+        outline: none;
+        padding: 0.5rem;
+        background-color: rgba(33, 13, 65, 1);
+        border-radius: 5px;
+        color: white;
+        border: 1px solid rgba(33, 13, 65, 1);
+        margin-right: 1rem;
+        margin-bottom: 2rem;
+    }
+
+      .for-manufacturers-d{
+        outline: none;
+        padding: 0.5rem;
+        background-color: white;
+        border-radius: 5px;
+        color: rgba(33, 13, 65, 1);
+        border: 1px solid rgba(33, 13, 65, 1);
+        margin-bottom: 2rem;
+        margin-right: 1rem;
+    }
+
+    .simple-steps-flex{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .simple-steps-flex-card-img{
+        width: 13rem;
+        margin-bottom: 1rem;
+    }
+
+    .manu-img1{
+        margin-top: 0;
+    }
+    
+    .manu-img3{
+        width: 14rem;
+    }
+    
+    .disimg2{
+        width: 13.5rem;
+    }
+
+    .dotted-line{
+        width: 4rem;
+        height: 0;
+        border: 2px solid rgb(80, 80, 80);
+        border-style: dashed;
+        transform: rotate(90deg);
+    }
+}

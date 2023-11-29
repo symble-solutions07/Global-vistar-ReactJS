@@ -9,8 +9,6 @@ import Button from "@mui/material/Button";
 function HeroSection() {
   const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
-  const [searchField, setSearchField] = useState(false);
-  var searchLink = "#";
 
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
@@ -88,6 +86,13 @@ function HeroSection() {
               <SearchRoundedIcon className="magnifying-glass" />
             </button>
           </a>
+
+          <div className="frequently-searched">
+            <p className="frequently-searched-p1">Frequently Searched: </p>
+            <button className="frequently-searched-btn">Mighty Millets</button>
+            <button className="frequently-searched-btn">Desi Rass</button>
+            <button className="frequently-searched-btn">Tribe Cook</button>
+          </div>
         </div>
 
         <div className="hero-section-right">
