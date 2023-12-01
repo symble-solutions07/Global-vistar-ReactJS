@@ -1,4 +1,4 @@
-.footer{
+#footer{
     margin: 0;
     background-color: rgb(230, 230, 230);
     height: 20rem;
@@ -8,26 +8,12 @@
 .footer-flex{
     display: flex;
     justify-content: space-between;
-    margin: 2rem 3.6rem 2rem 4rem;
+    margin: 2rem 3.5rem 2rem 3.5rem;
+
 }
 
 .footer-1{
-    flex: 1.7;
-    margin-right: 10rem;
-}
-
-.footer-2{
-    flex: 1;
-    margin-right: 5rem;
-}
-
-.footer-3{
-    flex: 1;
-    margin-right: 5rem;
-}
-
-.footer-4{
-    flex: 1;
+    width: 30%;
 }
 
 .footer-GVlogo{
@@ -73,7 +59,7 @@
 }
 
 @media (max-width: 500px){
-    .footer{
+    #footer{
         margin: 0;
         background-color: rgb(230, 230, 230);
         height: auto;
@@ -86,8 +72,15 @@
         justify-content: space-between;
         margin: 2rem 1.5rem 2rem 1.5rem;
     }
+/* 
+    .footer-mobile-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+    } */
     
     .footer-1{
+        width: auto;
         flex: 1.7;
         margin-right: 0;
         margin-bottom: 1rem;
@@ -107,6 +100,10 @@
     
     .footer-4{
         flex: 1;
+    }
+
+    .footer-5{
+        margin-bottom: 2rem;
     }
 
     .footer-2-title{

@@ -131,7 +131,7 @@ export default function FeaturedProduct() {
               <p className="featured-products-card-verified">
                 Global Vistar Verified
               </p>
-              <h1 className="featured-products-card-title">Desi Rass</h1>
+              <h1 className="featured-products-card-title">Desi Ras</h1>
               <p className="featured-products-card-price">Price: ₹50000</p>
               <p className="featured-products-card-price">MOQ: 100 boxes</p>
               <p className="featured-products-card-margin">

@@ -12,6 +12,7 @@ import Footer from '../Footer/Footer'
 
 
 function AboutUs() {
+  window.scrollTo(0, 0);
   return (
     <div className='about-us'>
         <Navbar />

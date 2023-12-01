@@ -137,6 +137,10 @@
         display: block;
     }
 
+    .navbar-links-contact{
+        margin-bottom: 2rem;
+    }
+
     .navbar-GVlogo{
         margin-top: 0.5rem;
         cursor: pointer;
@@ -290,9 +294,8 @@
     padding: 50px;
     padding-top: 125px;
     border-radius: 10px;
-    
     background-color: rgb(255, 255, 255, 0.3);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */

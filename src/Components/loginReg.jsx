@@ -36,7 +36,7 @@ function LoginReg() {
           style={{
             display: "flex",
             justifyContent: "space-between",
-    alignItems: "center",
+            alignItems: "center",
           }}
         >
             <div

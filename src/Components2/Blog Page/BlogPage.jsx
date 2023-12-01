@@ -7,6 +7,7 @@ import BlogImg3 from "./Images/Blog 3(1).png"
 import { Link } from "react-router-dom";
 
 function BlogPage() {
+    window.scrollTo(0, 0);
   return (
     <div className='blog-page'>
         <Navbar />

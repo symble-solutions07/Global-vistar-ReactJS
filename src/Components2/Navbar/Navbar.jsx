@@ -18,7 +18,7 @@ function Navbar() {
             <Link to="/aboutus" className='navbar-links-text'><a href="#"><li>About Us</li></a></Link>
             <Link to="/ProductsPage" className='navbar-links-text'><a href="#"><li>Products</li></a></Link>
             <Link to="/blogpage" className='navbar-links-text'><a href="#"><li>Blogs</li></a></Link>
-            <a className='navbar-links-contact' href="#cta"><li>Contact</li></a>
+            <a className='navbar-links-contact' href="#footer"><li className='navbar-links-contact'>Contact</li></a>
             <LoginReg/>
           </ul>
         </div>
@@ -31,7 +31,7 @@ function Navbar() {
         <Link to="/aboutus" className='navbar-links-text'><p className='navbar-links'>About Us</p></Link>
         <Link to="/ProductsPage" className='navbar-links-text'><p className='navbar-links'>Products</p></Link>
         <Link to="/BlogPage" className='navbar-links-text'><p className='navbar-links'>Blogs</p></Link>
-        <a className='navbar-links' href="#cta">Contact</a>
+        <a className='navbar-links' href="#footer">Contact</a>
       </div>
       <div className="right-navbar-new">
         <LoginReg/>

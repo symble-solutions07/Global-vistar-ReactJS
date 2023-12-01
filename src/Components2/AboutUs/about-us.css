@@ -212,25 +212,26 @@ a{
     .about-us-p{
         line-height: 33px;
         margin-left: 1.5rem;
+        margin-right: 1.5rem;
         font-size: 1.05rem;
+        text-align: justify;
     }
 
     .about-us-p-2{
         line-height: 33px;
         margin-left: 1.5rem;
+        margin-right: 1.5rem;
         font-size: 1.1rem;
         font-weight: bold;
         color: rgba(33,13,65,1);
+        text-align: justify;
     }
 
     .about-us-title-2{
         font-family: 'General Sans', sans-serif;
-        font-size: 2rem;
+        font-size: 1.75rem;
         font-weight: 700;
-        margin-top: 3rem;
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
-        margin-bottom: 3rem;
+        margin: 3rem 1.5rem 3rem 1.5rem;
         background: rgb(188,24,35);
         background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
         -webkit-text-fill-color: transparent; 

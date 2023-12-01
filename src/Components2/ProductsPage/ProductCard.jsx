@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 
 const FeaturedProductCard = (props) => {
   const { title, price, moq, handleSendEnquiry } = props;
-
+  window.scrollTo(0, 0);
   return (
     <div className="featured-products-card">
       <img className="featured-products-card-img" src={MightyMillets} alt="" />

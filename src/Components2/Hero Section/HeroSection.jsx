@@ -90,7 +90,7 @@ function HeroSection() {
           <div className="frequently-searched">
             <p className="frequently-searched-p1">Frequently Searched: </p>
             <button className="frequently-searched-btn">Mighty Millets</button>
-            <button className="frequently-searched-btn">Desi Rass</button>
+            <button className="frequently-searched-btn">Desi Ras</button>
             <button className="frequently-searched-btn">Tribe Cook</button>
           </div>
         </div>
@@ -110,7 +110,7 @@ function HeroSection() {
           </div>
 
           <div className="hero-section-card">
-            <h1 className="hero-section-card-title">Looking for Products?</h1>
+            <h1 className="hero-section-card-title">Looking for Distribution Opportunities?</h1>
             <a href="#featured-products">
               <button className="hero-section-card-btn">Explore Now</button>
             </a>
