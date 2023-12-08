@@ -32,9 +32,10 @@ function HeroSection() {
         }).then((res) => {
           res.json().then((data) => {
             if (data.user) {
-              openInNewTab(
-                "https://docs.google.com/forms/d/e/1FAIpQLSciD5NwlybLK058JZyyC4TYjYhHt0-6-4AQarBsb0tt1CduDg/viewform?usp=sf_link"
-              );
+              navigate("/addManufacturer")
+              // openInNewTab(
+              //   "https://docs.google.com/forms/d/e/1FAIpQLSciD5NwlybLK058JZyyC4TYjYhHt0-6-4AQarBsb0tt1CduDg/viewform?usp=sf_link"
+              // );
             } else popupRedirect();
           });
         });

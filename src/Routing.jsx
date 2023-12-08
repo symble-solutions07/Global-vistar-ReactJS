@@ -1,4 +1,4 @@
-import {React,useState} from 'react'
+import { React, useState } from "react";
 import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutUsPage from "./Components/AboutUsPage";
@@ -8,16 +8,24 @@ import ExpandBlog3 from "./Components/ExpandBlog3";
 import OTPLogin from "./Components/OTPLogin";
 import ProductListing from "./Components/productListing";
 import ProductListing2 from "./Components/productListing2";
+import ProductListing3 from "./Components/productListing3";
 import Register from "./Components/Register";
 import TermsAndCond from "./Components/TermsAndCond";
-import AboutUs from './Components2/AboutUs/AboutUs';
+import AboutUs from "./Components2/AboutUs/AboutUs";
 import Upload from "./Components2/ListingForm/upload";
-import Enquiry from './Components/enquiry';
-import ProductsPage from './Components2/ProductsPage/productsPage'
-import BlogPage from './Components2/Blog Page/BlogPage';
+import Enquiry from "./Components/enquiry";
+import ProductsPage from "./Components2/ProductsPage/productsPage";
+import ProductDetails from "./Components2/ProductsPage/productDetails";
+import ProductListingForm from "./Components2/ProductListingForm/addProducts";
+import AboutManufacturer from "./Components2/ProductListingForm/AboutManufacturer";
+import CompanyDetails from "./Components2/ProductListingForm/CompanyDetails";
+import ProductSuccess from "./Components2/ProductListingForm/ProductSuccess";
+import BlogPage from "./Components2/Blog Page/BlogPage";
+import Test from "./Components/test";
+import Loading from "./Components2/loadingScreen";
+// import ProductDetails from './Components2/ProductsPage/productDetails';
 
 function Routing() {
-  
   return (
     <BrowserRouter>
       <Routes>
@@ -31,15 +39,21 @@ function Routing() {
         <Route path="/login" element={<OTPLogin />} />
         <Route path="/productListing" element={<ProductListing />} />
         <Route path="/productListing/2" element={<ProductListing2 />} />
+        <Route path="/productListing/3" element={<ProductListing3 />} />
+        <Route path="/addProducts" element={<ProductListingForm />} />
+        <Route path="/addManufacturer" element={<AboutManufacturer />} />
+        <Route path="/CompanyDetails" element={<CompanyDetails />} />
         <Route path="/ProductsPage" element={<ProductsPage />} />
+        <Route path="/ProductsPage/:productID" element={<ProductDetails />} />
         <Route path="/Upload" element={<Upload />} />
         <Route path="/register" element={<Register />} />
         <Route path="/terms&cond" element={<TermsAndCond />} />
         <Route path="/Enquiry" element={<Enquiry />} />
         <Route path="/blogpage" element={<BlogPage />} />
+        <Route path="/ProductSuccess" element={<ProductSuccess />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
-export default Routing
+export default Routing;

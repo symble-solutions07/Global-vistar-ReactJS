@@ -12,7 +12,7 @@ function OTPLogin() {
   const [numberError, setnumberError] = useState("");
   const [otp, setOTP] = useState("");
   const [otpInfo, SetOTPInfo] = useState("");
-  const [verificationStatus, setVerificationStatus] = useState("");
+  const [verificationStatus, setVerificationStatus] = useState("Verified");
   const [verificationError, setVerificationError] = useState("");
   const [isPopupVisible, setPopupVisible] = useState(false);
 

@@ -36,6 +36,7 @@ const Enquiry = ({ open, handleClose }) => {
     console.log(formData);
     fetch(
       "https://globalvistarbackend-production.up.railway.app/enquire/product",
+      // "http://localhost:3001/enquire/product",
       {
         method: "POST",
         headers: {
@@ -56,81 +57,88 @@ const Enquiry = ({ open, handleClose }) => {
   };
 
   return (
-    <div className="App">
-      <Modal open={open} onClose={handleClose}>
-        <div
-          className="enquiryFormWrapper"
-          style={{
-            position: "absolute",
+    <div className="topWrapper">
+      <div className="App">
+        <Modal open={open} onClose={handleClose}>
+          <div
+            className="enquiryFormWrapper"
+            style={{
+              position: "absolute",
 
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            backgroundColor: "#fff",
-            padding: "20px",
-          }}
-        >
-          <Typography variant="h5">Enquiry Form</Typography>
-          <form onSubmit={handleSubmit} className="EnquiryPop-upForm">
-            <TextField
-              id="outlined-read-only-input"
-              label="Product"
-              defaultValue={ProductToEnquire}
-              InputProps={{
-                readOnly: true,
-              }}
-              name="userName"
-            />
-
-            <br />
-            <TextField
-              id="outlined-read-only-input"
-              label="User Contact Number"
-              defaultValue={UserNumber}
-              InputProps={{
-                readOnly: true,
-              }}
-              name="PhoneNumber"
-            />
-            <br />
-            <div className="QuantityUnit">
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              backgroundColor: "#fff",
+              padding: "20px",
+            }}
+          >
+            <Typography variant="h5">Enquiry Form</Typography>
+            <form onSubmit={handleSubmit} className="EnquiryPop-upForm">
               <TextField
-              value={Quantity}
-                type="number"
-                label="Required Quantity"
-                variant="outlined"
-                name="quantity"
+                id="outlined-read-only-input"
+                label="Product"
+                defaultValue={ProductToEnquire}
+                InputProps={{
+                  readOnly: true,
+                }}
+                name="userName"
+              />
+
+              <br />
+              <TextField
+                id="outlined-read-only-input"
+                label="User Contact Number"
+                defaultValue={UserNumber}
+                InputProps={{
+                  readOnly: true,
+                }}
+                name="PhoneNumber"
+              />
+              <br />
+              <div className="QuantityUnit">
+                <TextField
+                  value={Quantity}
+                  type="number"
+                  label="Required Quantity"
+                  variant="outlined"
+                  name="quantity"
+                  onChange={(e) => {
+                    setQuantity(e.target.value);
+                    console.log(e.target.value);
+                  }}
+                />
+                <br />
+                <Select label="unit" value={unit} onChange={handleUnitChange}>
+                  <MenuItem value={"kg"}>kg</MenuItem>
+                  <MenuItem value={"boxes"}>boxes</MenuItem>
+                  <MenuItem value={"Litres"}>Litres</MenuItem>
+                </Select>
+              </div>
+              <Slider
+                aria-label="Quantity"
+                defaultValue={Quantity}
+                valueLabelDisplay="auto"
+                step={10}
+                marks
+                min={10}
+                max={100}
                 onChange={(e) => {
                   setQuantity(e.target.value);
                   console.log(e.target.value);
                 }}
               />
-              <br />
-              <Select label="unit" value={unit} onChange={handleUnitChange}>
-                <MenuItem value={"kg"}>kg</MenuItem>
-                <MenuItem value={"boxes"}>boxes</MenuItem>
-                <MenuItem value={"Litres"}>Litres</MenuItem>
-              </Select>
-            </div>
-            <Slider
-              aria-label="Quantity"
-              defaultValue={Quantity}
-              valueLabelDisplay="auto"
-              step={10}
-              marks
-              min={10}
-              max={100}
-              onChange={(e)=>{
-                setQuantity(e.target.value)
-                 console.log(e.target.value)
-              }}
-            />
-            <Button variant="contained" color="primary" type="submit">
-              Send
-            </Button>
-          </form>
-        </div>
-      </Modal>
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                style={{ marginTop: "1rem" }}
+              >
+                Send
+              </Button>
+            </form>
+          </div>
+        </Modal>
+      </div>
     </div>
   );
 };

@@ -131,7 +131,7 @@ function ProductListing() {
         </h2>
         <div className="error">{nameOfProductError}</div>
         <h4 className="otp-login-title">Add Product</h4>
-        <div className="otp-login-card">
+        <div className="product-card">
           <Box
             component="form"
             sx={{
@@ -157,86 +157,94 @@ function ProductListing() {
             लिखिए. निचे दिए गए उदाहरण को देखे:)
             <img src={moqImg} alt="image of moq" width={"95%"} />
             <br />
-            <TextField
-              id="standard-basic"
-              label="MoQ 1"
-              variant="outlined"
-              value={moq1}
-              onChange={(e) => setMoq1(e.target.value)}
-            />
-            <br />
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "flex-end",
-                justifyContent: "center",
-              }}
-            >
-              {/* <AccountCircle sx={{ color: "action.active", mr: 1, my: 0.5 }} /> */}
-              <img src={ricon} alt="" className="rupeeIcon" />
-              <TextField
-                id="input-with-sx"
-                label="Price Per piece- MoQ 1"
-                value={ppp1}
-                onChange={(e) => setppp1(e.target.value)}
-                variant="standard"
-              />
-            </Box>
-            <br />
-            <br />
-            <span className="errorMsg">{moq2error}</span>
-            <TextField
-              id="outlined-basic"
-              label="MoQ 2"
-              variant="outlined"
-              value={moq2}
-              onChange={(e) => setMoq2(e.target.value)}
-            />
-            <br />
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "flex-end",
-                justifyContent: "center",
-              }}
-            >
-              <span className="errorMsg">{ppp2error}</span>
-              <img src={ricon} alt="" className="rupeeIcon" />
-              <TextField
-                id="input-with-sx"
-                label="Price Per piece- MoQ 2"
-                value={ppp2}
-                onChange={(e) => setppp2(e.target.value)}
-                variant="standard"
-              />
-            </Box>
-            <br />
-            <br />
-            <TextField
-              id="outlined-basic"
-              label="MoQ 3"
-              variant="outlined"
-              value={moq3}
-              onChange={(e) => setMoq3(e.target.value)}
-            />
-            <br />
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "flex-end",
-                justifyContent: "center",
-              }}
-            >
-              {/* <AccountCircle sx={{ color: "action.active", mr: 1, my: 0.5 }} /> */}
-              <img src={ricon} alt="" className="rupeeIcon" />
-              <TextField
-                id="input-with-sx"
-                label="Price Per piece- MoQ 3"
-                value={ppp3}
-                onChange={(e) => setppp3(e.target.value)}
-                variant="standard"
-              />
-            </Box>
+            <div className="Moq123">
+              <div className="moq1">
+                <TextField
+                  id="standard-basic"
+                  label="MoQ 1"
+                  variant="outlined"
+                  value={moq1}
+                  onChange={(e) => setMoq1(e.target.value)}
+                />
+                <br />
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-end",
+                    justifyContent: "center",
+                  }}
+                >
+                  {/* <AccountCircle sx={{ color: "action.active", mr: 1, my: 0.5 }} /> */}
+                  <img src={ricon} alt="" className="rupeeIcon" />
+                  <TextField
+                    id="input-with-sx"
+                    label="Price Per piece- MoQ 1"
+                    value={ppp1}
+                    onChange={(e) => setppp1(e.target.value)}
+                    variant="standard"
+                  />
+                </Box>
+              </div>
+              <br />
+              <br />
+              <div className="moq2">
+                <span className="errorMsg">{moq2error}</span>
+                <TextField
+                  id="outlined-basic"
+                  label="MoQ 2"
+                  variant="outlined"
+                  value={moq2}
+                  onChange={(e) => setMoq2(e.target.value)}
+                />
+                <br />
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-end",
+                    justifyContent: "center",
+                  }}
+                >
+                  <span className="errorMsg">{ppp2error}</span>
+                  <img src={ricon} alt="" className="rupeeIcon" />
+                  <TextField
+                    id="input-with-sx"
+                    label="Price Per piece- MoQ 2"
+                    value={ppp2}
+                    onChange={(e) => setppp2(e.target.value)}
+                    variant="standard"
+                  />
+                </Box>
+              </div>
+              <br />
+              <br />
+              <div className="moq3">
+                <TextField
+                  id="outlined-basic"
+                  label="MoQ 3"
+                  variant="outlined"
+                  value={moq3}
+                  onChange={(e) => setMoq3(e.target.value)}
+                />
+                <br />
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-end",
+                    justifyContent: "center",
+                  }}
+                >
+                  {/* <AccountCircle sx={{ color: "action.active", mr: 1, my: 0.5 }} /> */}
+                  <img src={ricon} alt="" className="rupeeIcon" />
+                  <TextField
+                    id="input-with-sx"
+                    label="Price Per piece- MoQ 3"
+                    value={ppp3}
+                    onChange={(e) => setppp3(e.target.value)}
+                    variant="standard"
+                  />
+                </Box>
+              </div>
+            </div>
           </Box>
           <hr />
           <div className="lastSubmit">

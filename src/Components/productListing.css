@@ -7,10 +7,10 @@
   margin-top: 4rem;
 }
 
-.otp-login-card {
+.product-card {
   border: 1px solid black;
   border-radius: 10px;
-  width: 22rem;
+  /* width: 22rem; */
   /* height: 23rem; */
   padding: 1rem;
   box-shadow: 10px 15px 15px 4px rgba(0, 0, 0, 0.1);
@@ -119,16 +119,26 @@
   font-size: 0.7rem;
   color: red;
   animation: blink 1s 2;
-
 }
 @keyframes blink {
-            0% {
-                border-color: red;
-            }
-            50% {
-                border-color: transparent;
-            }
-            100% {
-                border-color: red;
-            }
-        }
+  0% {
+    border-color: red;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: red;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .Moq123 {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .product-card {
+    width: 50rem;
+  }
+}

@@ -10,9 +10,19 @@ const ProductsPage = () => {
      useEffect(() => {
        const fetchProducts = async () => {
          try {
-           const response = await fetch("http://example.com/api/products"); // Replace with your backend endpoint
+           const response = await fetch(
+            //  "http://localhost:3001/user/allProducts",
+             "https://globalvistarbackend-production.up.railway.app/user/allProducts",
+             {
+               method: "GET",
+               headers: {
+                 authorization: "Bearer " + localStorage.getItem("token"),
+               },
+             }
+           ); // Replace with your backend endpoint
            const data = await response.json();
-           setProducts(data);
+           console.log(data.products)
+           setProducts(data.products);
          } catch (error) {
            console.error("Error fetching products: ", error);
          }
@@ -21,64 +31,22 @@ const ProductsPage = () => {
        fetchProducts();
      }, []);
 
-  const handleSendEnquiry = () => {
-    // handle send enquiry logic here
-  };
-  const productss = [
-    {
-      title: "Desi Rass",
-      price: "---", // Replace this with the actual price
-      moq: "10 boxes", // Replace this with the actual MOQ
-    },
-    {
-      title: "eawrsedtrfgyjkuh",
-      price: "---", // Replace this with the actual price
-      moq: "1440 boxes", // Replace this with the actual MOQ
-    },
-    {
-      title: "Desi jvhbkn",
-      price: "---", // Replace this with the actual price
-      moq: "140 boxes", // Replace this with the actual MOQ
-    },
-    {
-      title: "Desi Rass",
-      price: "---", // Replace this with the actual price
-      moq: "140 boxes", // Replace this with the actual MOQ
-    },
-    {
-      title: "Desi Rass",
-      price: "---", // Replace this with the actual price
-      moq: "140 boxes", // Replace this with the actual MOQ
-    },
-    {
-      title: "Desi Rass",
-      price: "---", // Replace this with the actual price
-      moq: "140 boxes", // Replace this with the actual MOQ
-    },
-    {
-      title: "Desi Rass",
-      price: "---", // Replace this with the actual price
-      moq: "140 boxes", // Replace this with the actual MOQ
-    },
-    {
-      title: "Desi Rass",
-      price: "---", // Replace this with the actual price
-      moq: "140 boxes", // Replace this with the actual MOQ
-    },
-    // Add more products as needed
-  ];
+     
+    //  console.log(products[0]._id)
   return (
     <>
     <Navbar />
     <h1 className="products-page-title">Explore All Products</h1>
     <div className="productsWrapper">
-      {productss.map((product, index) => (
+      {products.map((product, index) => (
         <FeaturedProductCard
-          key={index}
+          keyy={product._id}
+          imageLink = {product.productimg1}
           title={product.title}
           price={product.price}
           moq={product.moq}
-          handleSendEnquiry={handleSendEnquiry}
+          margin = {product.margin}
+          // handleSendEnquiry={handleSendEnquiry}
         />
       ))}
     </div>
