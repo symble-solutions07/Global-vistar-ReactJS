@@ -1,4 +1,4 @@
-import "./ProductDetails.css";
+import "./productsPage.css";
 import ProductDetailsComponent from "./productDetailsComponent";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";

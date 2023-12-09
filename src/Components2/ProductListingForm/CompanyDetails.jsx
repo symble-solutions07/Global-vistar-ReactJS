@@ -153,7 +153,7 @@ const CompanyDetails = () => {
             >
               <br />
               <br />
-              <FormControl>
+              <FormControl sx={{"width":"80%"}}>
                 <div className="error">{AboutCompanyError}</div>
                 <TextField
                   id="AboutCompany"
