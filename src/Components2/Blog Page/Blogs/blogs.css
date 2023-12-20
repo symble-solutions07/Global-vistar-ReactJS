@@ -1,0 +1,45 @@
+.all-blogs{
+    margin: 3rem 3.5rem 5rem 3.5rem;
+}
+
+.blog-title{
+    font-size: 2.5rem;
+}
+
+.blog-date{
+    font-size: 1.25rem;
+    color: rgb(116, 114, 114);
+}
+
+.blog-p{
+    font-size: 1.15rem;
+    width: 90%;
+}
+
+h4{
+    width: 90%;
+}
+
+/* a{
+    text-decoration: underline;
+} */
+
+.blog-like-btn{
+    outline: none;
+    border: none;
+}
+
+@media (max-width: 500px){
+    .all-blogs{
+        margin: 3rem 1.5rem 3rem 1.5rem;
+    }
+
+    .blog-title{
+        font-size: 2rem;
+    }
+
+    .blog-p{
+        font-size: 1.1rem;
+        width: 90%;
+    }
+}

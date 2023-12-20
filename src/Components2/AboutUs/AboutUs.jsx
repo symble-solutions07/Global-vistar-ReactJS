@@ -1,12 +1,14 @@
 import Navbar from '../Navbar/Navbar'
 import React from './about-us.css'
-import AboutUsImg from "./about-us-image-main.png"
-import AboutUsImg1 from "./1.png"
-import AboutUsImg2 from "./2.png"
-import AboutUsImg3 from "./3.png"
-import AboutUsImg4 from "./4.png"
-import AboutUsImg5 from "./5.png"
-import ProfileIcon from "./profile-icon.svg"
+import AboutUsImg from "./Images/about-us-image-main.png"
+import AboutUsImg1 from "./Images/1.png"
+import AboutUsImg2 from "./Images/2.png"
+import AboutUsImg3 from "./Images/3.png"
+import AboutUsImg4 from "./Images/4.png"
+import AboutUsImg5 from "./Images/5.png"
+import ProfileIcon from "./Images/profile-icon.png"
+import PranavImg from "./Images/Photo Pranav.svg"
+import KiranImg from "./Images/Photo Kiran.svg"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Footer from '../Footer/Footer'
 
@@ -67,60 +69,70 @@ function AboutUs() {
           <a href="https://www.linkedin.com/in/pranav-bankar-6aa451177/" target="_blank">
           <div className="team-card">
             <div className="team-card-header">
-              <img className='team-profile-icon' src={ProfileIcon} alt="" />
+              <img className='team-profile-icon' src={PranavImg} alt="" />
               <p className="team-card-title">
                 Pranav Bankar
                 <br />
-                <span className='team-card-desg'>Cofounder</span>
+                <span className='team-card-desg'>Co-founder</span>
               </p>
+              <LinkedInIcon></LinkedInIcon>
+              {/* <p className="team-card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, quos.</p> */}
             </div>
           </div>
           </a>
           <a href="https://www.linkedin.com/in/kiran-patil-28b64917a/" target="_blank">
           <div className="team-card">
             <div className="team-card-header">
-              <img className='team-profile-icon' src={ProfileIcon} alt="" />
+              <img className='team-profile-icon' src={KiranImg} alt="" />
               <p className="team-card-title">
                 Kiran Patil
                 <br />
-                <span className='team-card-desg'>Cofounder</span>
+                <span className='team-card-desg'>Co-founder</span>
               </p>
+              <LinkedInIcon></LinkedInIcon>
+              {/* <p className="team-card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, quos.</p> */}
             </div>
           </div>
           </a>
           <a href="" target="_blank">
           <div className="team-card">
             <div className="team-card-header">
-              <img className='team-profile-icon' src={ProfileIcon} alt="" />
+              <img className='team-profile-icon icon-default' src={ProfileIcon} alt="" />
               <p className="team-card-title">
                 Yash
                 <br />
                 <span className='team-card-desg'>Sales & Operations</span>
               </p>
+              <LinkedInIcon></LinkedInIcon>
+              {/* <p className="team-card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, quos.</p> */}
             </div>
           </div>
           </a>
           <a href="https://www.linkedin.com/in/rohan-vaidya-359680190/" target="_blank">
           <div className="team-card">
             <div className="team-card-header">
-              <img className='team-profile-icon' src={ProfileIcon} alt="" />
+              <img className='team-profile-icon icon-default' src={ProfileIcon} alt="" />
               <p className="team-card-title">
                 Rohan Vaidya
                 <br />
                 <span className='team-card-desg'>Web Developement</span>
               </p>
+              <LinkedInIcon></LinkedInIcon>
+              {/* <p className="team-card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, quos.</p> */}
             </div>
           </div>
           </a>
           <a href="https://www.linkedin.com/in/amey-kisan-gaikwad/" target="_blank">
           <div className="team-card">
             <div className="team-card-header">
-              <img className='team-profile-icon' src={ProfileIcon} alt="" />
+              <img className='team-profile-icon icon-default' src={ProfileIcon} alt="" />
               <p className="team-card-title">
                 Amey Gaikwad
                 <br />
                 <span className='team-card-desg'>Web Developement</span>
               </p>
+              <LinkedInIcon></LinkedInIcon>
+              {/* <p className="team-card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, quos.</p> */}
             </div>
           </div>
           </a>

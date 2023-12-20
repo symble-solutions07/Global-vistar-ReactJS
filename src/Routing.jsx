@@ -24,6 +24,7 @@ import BlogPage from "./Components2/Blog Page/BlogPage";
 import Test from "./Components/test";
 import Loading from "./Components2/loadingScreen";
 // import ProductDetails from './Components2/ProductsPage/productDetails';
+import Blog4 from "./Components2/Blog Page/Blogs/Blog4";
 
 function Routing() {
   return (
@@ -50,6 +51,7 @@ function Routing() {
         <Route path="/terms&cond" element={<TermsAndCond />} />
         <Route path="/Enquiry" element={<Enquiry />} />
         <Route path="/blogpage" element={<BlogPage />} />
+        <Route path="/blog4" element={<Blog4 />} />
         <Route path="/ProductSuccess" element={<ProductSuccess />} />
       </Routes>
     </BrowserRouter>

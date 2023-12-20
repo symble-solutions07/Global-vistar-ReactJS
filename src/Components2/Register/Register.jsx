@@ -7,13 +7,12 @@ import Img5 from "./5.png"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
+import Carousel from './Carousel'
 
 
 export default function Register() {
   const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
-  const [searchField, setSearchField] = useState(false);
-  var searchLink = "#";
 
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
@@ -78,19 +77,19 @@ export default function Register() {
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="2000">
-                <img className='carousel-img' src={Img1} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                <img className='carousel-img' src={Img2} class="d-block w-100" alt="..." />
+                    <img className='carousel-img' src={Img1} class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                <img className='carousel-img' src={Img3} class="d-block w-100" alt="..." />
+                    <img className='carousel-img' src={Img2} class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                <img className='carousel-img' src={Img4} class="d-block w-100" alt="..." />
+                    <img className='carousel-img' src={Img3} class="d-block w-100" alt="..." />
                 </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                <img className='carousel-img' src={Img5} class="d-block w-100" alt="..." />
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img className='carousel-img' src={Img4} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img className='carousel-img' src={Img5} class="d-block w-100" alt="..." />
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -102,10 +101,11 @@ export default function Register() {
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
         <div style={{textAlign: 'center', marginBottom: '5rem'}}>
-        <button className="list-your-product-btn" onClick={handleProductListing}>
-            List your Product Now
-        </button>
+          <button className="list-your-product-btn" onClick={handleProductListing}>
+              List your Product Now
+          </button>
         </div>
         
     </div>

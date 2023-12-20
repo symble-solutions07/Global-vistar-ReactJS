@@ -4,6 +4,7 @@ import './blog-page.css'
 import BlogImg1 from "./Images/Blog 1 (1).png"
 import BlogImg2 from "./Images/Blog 2 (1).png"
 import BlogImg3 from "./Images/Blog 3(1).png"
+import BlogImg4 from "./Images/blog4.png"
 import { Link } from "react-router-dom";
 
 function BlogPage() {
@@ -16,13 +17,25 @@ function BlogPage() {
         <p className="blog-page-subtitle">Recent Blogs</p>
         <div className="blog-page-grid">
             <div className="blog-section-card">
-                <img className='blog-section-img' src={BlogImg1} alt="" />
+                <img className='blog-section-img' src={BlogImg4} alt="" />
                 <div className="blog-card-description">
                     <p className="blog-category">Technology</p>
-                    <h1 className="blog-card-title">How To Create A Great Distribution Network For Your Product?</h1>
-                    <p className="blog-card-p">As a manufacturer, you know that having a great product is just the first step towards success.</p>
-                    <Link to="/newBlog1"><button className="blog-card-btn">Know More</button></Link>
+                    <h1 className="blog-card-title">Must-Follow Product Packaging Strategies for Great Distributorship Opportunities.</h1>
+                    <p className="blog-card-p">In the fast-moving world of FMCG (Fast-Moving Consumer Goods), product packaging plays a
+                    crucial role in catching the eye of consumers and making a lasting impression. Your product
+                    might be top-notch, but if it doesn't stand out on the retail shelf, it can easily get lost in the
+                    crowd. Here's the ultimate guide to grab all eyeballs on your product.</p>
+                    <Link to="/Blog4"><button className="blog-card-btn">Know More</button></Link>
                 </div>
+            </div>
+            <div className="blog-section-card">
+              <img className='blog-section-img' src={BlogImg1} alt="" />
+              <div className="blog-card-description">
+                <p className="blog-category">Technology</p>
+                <h1 className="blog-card-title">How To Create A Great Distribution Network For Your Product?</h1>
+                <p className="blog-card-p">As a manufacturer, you know that having a great product is just the first step towards success.</p>
+                <Link to="/newBlog1"><button className="blog-card-btn">Know More</button></Link>
+              </div>
             </div>
             <div className="blog-section-card">
                 <img className='blog-section-img' src={BlogImg2} alt="" />
@@ -42,6 +55,7 @@ function BlogPage() {
                     <Link to="/newBlog3"><button className="blog-card-btn">Know More</button></Link>
                 </div>
             </div>
+            
         </div>
         </div>
         <Footer />

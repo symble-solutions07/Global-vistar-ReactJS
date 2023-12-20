@@ -166,12 +166,6 @@ function ExpandBlog2() {
           distribution business and stay competitive in the market.
         </p>
       </div>
-      <div className="article-feedback">
-        Was this article helpful?
-        <button>
-          <FavoriteIcon className="blog-like"></FavoriteIcon>
-        </button>
-      </div>
 
       <Footer />
     </div>

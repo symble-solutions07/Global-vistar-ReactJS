@@ -147,17 +147,17 @@ hr{
 .abt-us-team{
     margin: 2rem 3.5rem 5rem 3.5rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
 }
 
 .team-card{
-    width: auto;
+    width: 15rem;
     padding: 1rem;
     border: 1px solid rgb(160, 160, 160);
     border-radius: 10px;
     cursor: pointer;
+    border-bottom: 5px solid #241043;
 }
 
 .team-card:hover{
@@ -166,28 +166,44 @@ hr{
 }
 
 .team-profile-icon{
-    width: 5rem;
+    width: 10rem;
+    border-radius: 50%;
     margin-bottom: 0.5rem;
 }
 
+.icon-default{
+    width: 9.9rem;
+    border-radius: 0;
+}
+
 .team-card-header{
-    display: flex;
+    /* display: flex; */
+    text-align: center;
 }
 
 .team-card-title{
     font-weight: bold;
     margin: 0;
-    margin-right: 3rem;
     text-decoration: none;
     color: black;
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
 }
 
 a{
     text-decoration: none;
+    width: fit-content;
 }
 
 .team-card-desg{
     font-weight: normal;
+    color: black;
+    font-size: 1.05rem;
+
+}
+
+.team-card-description{
+    color: rgb(87, 87, 87);
 }
 
 @media (max-width: 500px){
@@ -295,5 +311,19 @@ a{
         -webkit-background-clip: text;
         text-decoration: none;
         color: black;
+    }
+
+    .team-card{
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid rgb(160, 160, 160);
+        border-radius: 10px;
+        cursor: pointer;
+        border-bottom: 5px solid #241043;
+    }
+
+    a{
+        text-decoration: none;
+        width: 100%;
     }
 }

@@ -1,7 +1,7 @@
 
 import Footer from '../Footer/Footer'
 import Navbar from '../Navbar/Navbar'
-import "./productdetails.css";
+import "./productDetails.css";
 
 export default function ProductDetails(props) {
   return (
