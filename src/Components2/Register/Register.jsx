@@ -1,13 +1,14 @@
 import './register.css'
-import Img1 from "./1.png"
-import Img2 from "./2.png"
-import Img3 from "./3.png"
-import Img4 from "./4.png"
-import Img5 from "./5.png"
+import Img1 from "./1.webp"
+import Img2 from "./2.webp"
+import Img3 from "./3.webp"
+import Img4 from "./4.webp"
+import Img5 from "./5.webp"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
-import Carousel from './Carousel'
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 
 export default function Register() {
@@ -74,34 +75,42 @@ export default function Register() {
     <div className='register'>
         <h1 className='register-title'>Why Register With Us?</h1>
 
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img className='carousel-img' src={Img1} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img className='carousel-img' src={Img2} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img className='carousel-img' src={Img3} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img className='carousel-img' src={Img4} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img className='carousel-img' src={Img5} class="d-block w-100" alt="..." />
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon visually-hidden" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                <span class="carousel-control-next-icon visually-hidden" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        <div className="carousel-flex">
+          <div className="carousel-div">
+            <Splide
+              options={{
+                autoplay: true,
+                type: 'loop',
+                interval: 2000,
+                arrows: false,
+                perPage: 1,
+                pauseOnHover : false,
+                resetProgress: false,
+                rewind: true,
+                pagination: false
+              }}
+              aria-label="My Favorite Images"
+              className='splide-carousel'
+            >
+              <SplideSlide>
+                <img className='carousel-banner' src={Img1} alt="Image 1"/>
+              </SplideSlide>
+              <SplideSlide>
+                <img className='carousel-banner' src={Img2} alt="Image 2"/>
+              </SplideSlide>
+              <SplideSlide>
+                <img className='carousel-banner' src={Img3} alt="Image 2"/>
+              </SplideSlide>
+              <SplideSlide>
+                <img className='carousel-banner' src={Img4} alt="Image 2"/>
+              </SplideSlide>
+              <SplideSlide>
+                <img className='carousel-banner' src={Img5} alt="Image 2"/>
+              </SplideSlide>
+            </Splide>
+          </div>
         </div>
-
+        
         <div style={{textAlign: 'center', marginBottom: '5rem'}}>
           <button className="list-your-product-btn" onClick={handleProductListing}>
               List your Product Now

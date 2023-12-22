@@ -1,5 +1,6 @@
 .register{
     margin: 0 3.5rem 0 3.5rem;
+    
 }
 
 .register-title{
@@ -50,6 +51,20 @@
 .carousel-img{
     width: 100%;
     border-radius: 10px;
+}
+
+.carousel-banner{
+    width: 100%;
+}
+
+.carousel-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-div{
+    width: 50%;
 }
 
 .list-your-product-btn{
@@ -147,5 +162,19 @@
     #carouselExampleAutoplaying{
         width: 100%;
         margin: auto;
+    }
+
+    .carousel-banner{
+        width: 100%;
+    }
+    
+    .carousel-flex{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .carousel-div{
+        width: 100%;
     }
 }

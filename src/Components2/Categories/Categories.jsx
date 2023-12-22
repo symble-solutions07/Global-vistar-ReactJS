@@ -1,13 +1,12 @@
 import './categories.css'
-import BakeryProducts from "./Images/bakery-products.png"
-import Beverages from "./Images/beverages.png"
-import Chocolates from "./Images/chocolates.png"
-import DairyProducts from "./Images/dairy-products.png"
-import Grains from "./Images/grains.png"
-import Hygiene from "./Images/hygiene.png"
-import ReadyToCook from "./Images/ready-to-cook.png"
-import Snacks from "./Images/snacks.png"
-import Frozen from "./Images/Frozen Products .png"
+import BakeryProducts from "./Images/bakery-products.webp"
+import Beverages from "./Images/beverages.webp"
+import Chocolates from "./Images/chocolates.webp"
+import DairyProducts from "./Images/dairy-products.webp"
+import Grains from "./Images/grains.webp"
+import ReadyToCook from "./Images/ready-to-cook.webp"
+import Snacks from "./Images/snacks.webp"
+import Frozen from "./Images/Frozen Products .webp"
 
 
 export default function Categories() {

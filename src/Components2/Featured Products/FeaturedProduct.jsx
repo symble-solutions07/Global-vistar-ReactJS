@@ -1,10 +1,10 @@
 import "./featured-products.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import MightyMillets from "./Images/Mighty-Millets.jpg";
-import DesiRass from "./Images/Desi-Rass.png";
-import ShivratnaJaggery from "./Images/ShivRatna-Jaggery.png";
-import TribeCook from "./Images/Tribe-cook.png";
+import MightyMillets from "./Images/Mighty-Millets.webp";
+import DesiRass from "./Images/Desi-Rass.webp";
+import ShivratnaJaggery from "./Images/ShivRatna-Jaggery.webp";
+import TribeCook from "./Images/Tribe-cook.webp";
 import Button from "@mui/material/Button";
 import Enquiry from "../../Components/enquiry";
 

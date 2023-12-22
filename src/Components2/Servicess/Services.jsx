@@ -1,6 +1,6 @@
 import React from './services.css'
-import ManuImgS1 from './manufacturer-img.png'
-import DisImgS1 from './distributor-img.png'
+import ManuImgS1 from './manufacturer-img.webp'
+import DisImgS1 from './distributor-img.webp'
 
 export default function Services() {
   return (

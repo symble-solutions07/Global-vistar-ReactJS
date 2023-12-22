@@ -1,10 +1,10 @@
 import './simplesteps.css'
-import Manuimg1 from './Images/manu-img1.png'
-import Manuimg2 from './Images/manu-img2.png'
-import Manuimg3 from './Images/manu-img3.png'
-import Disimg1 from './Images/1.png'
-import Disimg2 from './Images/2.png'
-import Disimg3 from './Images/3.png'
+import Manuimg1 from './Images/manu-img1.webp'
+import Manuimg2 from './Images/manu-img2.webp'
+import Manuimg3 from './Images/manu-img3.webp'
+import Disimg1 from './Images/1.webp'
+import Disimg2 from './Images/2.webp'
+import Disimg3 from './Images/3.webp'
 import { useState } from 'react';
 
 function Simplesteps() {

@@ -1,7 +1,7 @@
 import './blogsection.css'
-import BlogImg1 from "./Images/Blog 1 (1).png"
-import BlogImg2 from "./Images/Blog 2 (1).png"
-import BlogImg3 from "./Images/Blog 3(1).png"
+import BlogImg1 from "./Images/Blog 1 (1).webp"
+import BlogImg2 from "./Images/Blog 2 (1).webp"
+import BlogImg3 from "./Images/Blog 3(1).webp"
 import { Link } from "react-router-dom";
 
 function Blogsection() {
