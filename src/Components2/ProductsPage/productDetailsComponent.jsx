@@ -5,7 +5,7 @@ import Navbar from '../Navbar/Navbar'
 
 export default function ProductDetails(props) {
   return (
-    <div className='productpage'>
+    <div className="productpage">
       <Navbar />
       <div className="product-flex">
         <div className="productPage-card">
@@ -18,13 +18,13 @@ export default function ProductDetails(props) {
               </div> */}
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img className='productimg' src={props.productimg1} alt="" />
+                  <img className="productimg" src={props.productimg1} alt="" />
                 </div>
                 <div className="carousel-item">
-                  <img className='productimg' src={props.productimg2} alt="" />
+                  <img className="productimg" src={props.image2} alt="" />
                 </div>
                 <div className="carousel-item">
-                  <img className='productimg' src={props.productimg3} alt="" />
+                  <img className="productimg" src={props.image3} alt="" />
                 </div>
               </div>
               {/* <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -39,8 +39,10 @@ export default function ProductDetails(props) {
           </div>
 
           <div className="right">
-            <h2 className='product-title'>{props.title} <br /> <span className='popular'>Popular</span> </h2>
-            <p className="product-p margin">Margin: 20% - 30%</p>
+            <h2 className="product-title">
+              {props.title} <br /> <span className="popular">Popular</span>{" "}
+            </h2>
+            <p className="product-p margin">{props.expectedmargin}</p>
 
             <div className="pieces">
               <div className="pieces-item">
@@ -57,13 +59,23 @@ export default function ProductDetails(props) {
               </div>
             </div>
 
-            <p className="product-p">MOQ: <span className="bold">{props.moq}</span></p>
-            <p className="product-p">Looking for locations:  <span className='bold'>{props.locations}</span></p>
-            <p className="product-p">Supplier: <span className='bold'>{props.supplier}</span></p>
-            <p className="product-p">Years of market expirience: <span className='bold'>{props.marketexp}</span></p>
+            <p className="product-p">
+              MOQ: <span className="bold">{props.moq}</span>
+            </p>
+            <p className="product-p">
+              Looking for locations:{" "}
+              <span className="bold">{props.locations}</span>
+            </p>
+            <p className="product-p">
+              Supplier: <span className="bold">{props.supplier}</span>
+            </p>
+            <p className="product-p">
+              Years of market experience:{" "}
+              <span className="bold">{props.marketexp}</span>
+            </p>
 
             <div className="purchase-details">
-              <h2 className='purchase-details-title'>Purchase details</h2>
+              <h2 className="purchase-details-title">Purchase details</h2>
               <div className="purchase-details-flex">
                 <p className="p1">Shipping:</p>
                 <p className="p2">{props.shipping}</p>
@@ -79,19 +91,24 @@ export default function ProductDetails(props) {
             </div>
           </div>
           <div className="product-sidebar">
-            <p className="sidebar-p1">The minimum order quantity is {props.moq}</p>
-            <p className="sidebar-p2">{props.moq} from <span className="price">{props.moq1}</span></p>
-            <p className="sidebar-p3">Lead time: <span className="price">{props.leadtime}</span></p>
-            <p className="sidebar-p3">Shipping: <span className="price">{props.shipping}</span></p>
+            <p className="sidebar-p1">
+              The minimum order quantity is {props.moq}
+            </p>
+            <p className="sidebar-p2">
+              {props.moq} from <span className="price">{props.moq1}</span>
+            </p>
+            <p className="sidebar-p3">
+              Lead time: <span className="price">{props.leadtime}</span>
+            </p>
+            <p className="sidebar-p3">
+              Shipping: <span className="price">{props.shipping}</span>
+            </p>
             <p className="contact-supplier-btn">Contact supplier</p>
           </div>
-          
         </div>
-
-        
       </div>
 
-      <h2 className='product-details-title'>Product details</h2>
+      <h2 className="product-details-title">Product details</h2>
       <div className="product-details">
         <div className="description1">
           <h2 className="overview-title">Description</h2>
@@ -124,7 +141,9 @@ export default function ProductDetails(props) {
             <p className="p2 description-p2">{props.samples}</p>
           </div>
           <div className="description-flex">
-            <p className="p1 description-p1">Third party manufacturing / white labeling:</p>
+            <p className="p1 description-p1">
+              Third party manufacturing / white labeling:
+            </p>
             <p className="p2 description-p2">{props.manufacturing}</p>
           </div>
         </div>
@@ -133,18 +152,45 @@ export default function ProductDetails(props) {
       <div className="company-details">
         <h2 className="company-details-title">Company details</h2>
         <h2 className="overview-title">Overview</h2>
-        <p className="overview-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sint asperiores distinctio alias. Reprehenderit, rem. Dolor quas eius doloremque sit repellat temporibus sint ducimus id ab! Hic minima sequi nisi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem nobis quia unde. Blanditiis libero quos ex sapiente odit! Eaque officiis laudantium odit quaerat accusantium voluptas facilis inventore rerum porro soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat ab at eum earum animi deleniti quod quisquam itaque quidem aspernatur quas mollitia odit fugit et architecto iusto illo, quia ullam!</p>
+        <p className="overview-p">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sint
+          asperiores distinctio alias. Reprehenderit, rem. Dolor quas eius
+          doloremque sit repellat temporibus sint ducimus id ab! Hic minima
+          sequi nisi. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Exercitationem nobis quia unde. Blanditiis libero quos ex sapiente
+          odit! Eaque officiis laudantium odit quaerat accusantium voluptas
+          facilis inventore rerum porro soluta. Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit. Placeat ab at eum earum animi deleniti
+          quod quisquam itaque quidem aspernatur quas mollitia odit fugit et
+          architecto iusto illo, quia ullam!
+        </p>
         <br />
         <h2 className="overview-title">Manufacturing facilities</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore obcaecati laboriosam nisi eius quam autem, totam velit ratione aut deleniti adipisci perspiciatis aspernatur quo eos sed odio in facilis. Temporibus? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi qui, odit corrupti repudiandae dolore est reprehenderit, exercitationem, voluptates voluptate accusantium consequuntur id temporibus facere nemo quod ea. Odio, veniam reprehenderit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe nihil sit eum ipsum tempore commodi tempora aperiam consectetur sequi dicta, necessitatibus ab molestiae qui quae ducimus dolorum nam quidem a.</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore
+          obcaecati laboriosam nisi eius quam autem, totam velit ratione aut
+          deleniti adipisci perspiciatis aspernatur quo eos sed odio in facilis.
+          Temporibus? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Quasi qui, odit corrupti repudiandae dolore est reprehenderit,
+          exercitationem, voluptates voluptate accusantium consequuntur id
+          temporibus facere nemo quod ea. Odio, veniam reprehenderit. Lorem
+          ipsum dolor sit amet consectetur, adipisicing elit. Saepe nihil sit
+          eum ipsum tempore commodi tempora aperiam consectetur sequi dicta,
+          necessitatibus ab molestiae qui quae ducimus dolorum nam quidem a.
+        </p>
         <br />
         <h2 className="overview-title">Certifications</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit mollitia iste optio autem nemo reiciendis quos fuga vitae voluptatum sint. Nesciunt totam quisquam fugit alias excepturi voluptatem pariatur obcaecati facilis!</p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit mollitia
+          iste optio autem nemo reiciendis quos fuga vitae voluptatum sint.
+          Nesciunt totam quisquam fugit alias excepturi voluptatem pariatur
+          obcaecati facilis!
+        </p>
         <br />
       </div>
       <Footer />
     </div>
-  )
+  );
 }
 
 

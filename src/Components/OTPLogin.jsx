@@ -67,7 +67,29 @@ function OTPLogin() {
     );
     const data = await response.json();
     if (response.status === 200 && data.status === "approved") {
-      setVerificationStatus("Verified");
+      
+      const response = await fetch(
+        "https://globalvistarbackend-production.up.railway.app/user/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            phoneNumber,
+          }),
+        }
+      );
+      const data = await response.json();
+      if (response.status === 200) {
+        console.log(data);
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("pNumber", phoneNumber);
+        if (data.token) navigate("/");
+        else {
+          alert("invalid Username or password");
+        }
+      }
     } else {
       setVerificationStatus("Wrong OTP");
     }
@@ -87,33 +109,6 @@ function OTPLogin() {
     }
     return res;
   }
-  const handleSubmitButton = async () => {
-    const toProceed = checkAllInputs();
-    if (toProceed == 0) return;
-    console.log(phoneNumber);
-    const response = await fetch(
-      "https://globalvistarbackend-production.up.railway.app/user/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          phoneNumber,
-        }),
-      }
-    );
-    const data = await response.json();
-    if (response.status === 200) {
-      console.log(data);
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("pNumber", phoneNumber);
-      if (data.token) navigate("/");
-      else {
-        alert("invalid Username or password");
-      }
-    }
-  };
   const logoClick = () => {
     navigate("/");
   };
@@ -147,7 +142,9 @@ function OTPLogin() {
           <h4 className="otp-login-title">Sign In</h4>
           <div className="red">{numberError}</div>
           <div className="otp-input-field">
+          <span>+91</span>
             {/* <i class="fa-solid fa-phone"></i> */}
+            
             <input
               type="text"
               id="phoneNumber"
@@ -168,10 +165,7 @@ function OTPLogin() {
           </div>
 
           <div className="sendOtpbtn">
-            <button
-              className="btnn"
-              onClick={handleSendOTP}
-            >
+            <button className="btnn" onClick={handleSendOTP}>
               Send OTP
             </button>
             <div class="otpinfo">{otpInfo}</div>
@@ -190,12 +184,12 @@ function OTPLogin() {
             />
           </div>
           <div className="VerifyFlex sendOtpbtn">
-            <button
+            {/* <button
               className=" btnn"
               onClick={handleVerifyOTP}
             >
               Verify OTP
-            </button>
+            </button> */}
             <div class="otpinfo">{verificationStatus}</div>
           </div>
           <div className="lastSubmit">
@@ -203,7 +197,9 @@ function OTPLogin() {
               class="btnn"
               type="submit"
               value="Submit"
-              onClick={handleSubmitButton}
+              onClick={(e) => {
+                handleVerifyOTP();
+              }}
             ></input>
           </div>
           <br />

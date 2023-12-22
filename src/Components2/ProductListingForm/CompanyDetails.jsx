@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./companyDetails.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -22,6 +22,34 @@ const CompanyDetails = () => {
   const [manufacError, setmanufacError] = useState("");
   const [imageError, setimageError] = useState("");
 
+   useEffect(() => {
+     if (localStorage.getItem("token") != null) {
+       if (localStorage.getItem("token").length > 10) {
+         fetch(
+           "https://globalvistarbackend-production.up.railway.app/formCheck/manufacturer",
+          //  "http://localhost:3001/formCheck/company",
+           {
+             method: "GET",
+             headers: {
+               authorization: "Bearer " + localStorage.getItem("token"),
+             },
+           }
+         ).then((res) => {
+           res
+             .json()
+             .then((data) => {
+               console.log(data.msg);
+               if (data.msg == "Filled") navigate("/addProducts");
+             })
+             .catch((err) => {
+               console.log(err);
+               // navigate("/");
+             });
+         });
+         
+       }
+     }
+   }, []);
   function checkAllInputs(data) {
     var res = 1;
 
@@ -110,9 +138,9 @@ const CompanyDetails = () => {
     axios
       .post(
         "https://globalvistarbackend-production.up.railway.app/form/uploadCompanyDetails",
+        // "http://localhost:3001/form/uploadCompanyDetails",
         data,
         {
-          // .post("http://localhost:3001/form/uploadCompanyDetails", data, {
           headers: {
             authorization: "Bearer " + localStorage.getItem("token"),
           },
@@ -191,6 +219,11 @@ const CompanyDetails = () => {
                       value="10-15"
                       control={<Radio />}
                       label="10-15 Years"
+                    />
+                    <FormControlLabel
+                      value="15+"
+                      control={<Radio />}
+                      label="15+ Years"
                     />
                   </RadioGroup>
                 </div>

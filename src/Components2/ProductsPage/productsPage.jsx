@@ -21,7 +21,7 @@ const ProductsPage = () => {
              }
            ); // Replace with your backend endpoint
            const data = await response.json();
-           console.log(data.products)
+           console.log(data.products[0].image1);
            setProducts(data.products);
          } catch (error) {
            console.error("Error fetching products: ", error);
@@ -35,22 +35,22 @@ const ProductsPage = () => {
     //  console.log(products[0]._id)
   return (
     <>
-    <Navbar />
-    <h1 className="products-page-title">Explore All Products</h1>
-    <div className="productsWrapper">
-      {products.map((product, index) => (
-        <FeaturedProductCard
-          keyy={product._id}
-          imageLink = {product.productimg1}
-          title={product.title}
-          price={product.price}
-          moq={product.moq}
-          margin = {product.margin}
-          // handleSendEnquiry={handleSendEnquiry}
-        />
-      ))}
-    </div>
-    <Footer />
+      <Navbar />
+      <h1 className="products-page-title">Explore All Products</h1>
+      <div className="productsWrapper">
+        {products.map((product, index) => (
+          <FeaturedProductCard
+            keyy={product._id}
+            imageLink={product.image1}
+            title={product.title}
+            price={product.price2}
+            moq={product.minOrderQuantity}
+            margin={product.expectedMargin}
+            // handleSendEnquiry={handleSendEnquiry}
+          />
+        ))}
+      </div>
+      <Footer />
     </>
   );
 };
