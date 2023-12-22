@@ -25,6 +25,7 @@ import Test from "./Components/test";
 import Loading from "./Components2/loadingScreen";
 // import ProductDetails from './Components2/ProductsPage/productDetails';
 import Blog4 from "./Components2/Blog Page/Blogs/Blog4";
+import Dashboard from "./Components2/Dashboard/Dashboard";
 
 function Routing() {
   return (
@@ -53,6 +54,7 @@ function Routing() {
         <Route path="/blogpage" element={<BlogPage />} />
         <Route path="/blog4" element={<Blog4 />} />
         <Route path="/ProductSuccess" element={<ProductSuccess />} />
+        <Route path="/userdashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

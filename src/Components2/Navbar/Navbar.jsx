@@ -31,7 +31,7 @@ function Navbar() {
         <Link to="/aboutus" className='navbar-links-text'><p className='navbar-links'>About Us</p></Link>
         <Link to="/ProductsPage" className='navbar-links-text'><p className='navbar-links'>Products</p></Link>
         <Link to="/BlogPage" className='navbar-links-text'><p className='navbar-links'>Blogs</p></Link>
-        <a className='navbar-links' href="#footer">Contact</a>
+        <a className='navbar-links navbar-links-contact' href="#footer">Contact</a>
       </div>
       <div className="right-navbar-new">
         <LoginReg/>
