@@ -7,6 +7,7 @@ import axios from "axios";
 const ProductListingFormFinal = () => {
   const [numProducts, setNumProducts] = useState(1);
   const [productList, setProductList] = useState([{}]);
+  const [previewImg, setpreviewimg] = useState([]);
   const [ErrorList, setErrorList] = useState([{}]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [successfulUploads, setSuccessfulUploads] = useState(0);
@@ -39,7 +40,7 @@ const ProductListingFormFinal = () => {
       formdata.append("phoneNumber", phoneNumber);
       axios
         .post(
-          // "https://globalvistarbackend-production.up.railway.app/form/upload",
+          // "http://localhost:3001/form/addProduct",
           "https://globalvistarbackend-production.up.railway.app/form/addProduct",
           formdata,
           {
@@ -187,6 +188,9 @@ const ProductListingFormFinal = () => {
       ...newProductList[index],
       image: e.target.files[0],
     };
+    const newPreviewImgs = [...previewImg];
+    newPreviewImgs[index] = URL.createObjectURL(e.target.files[0]);
+    setpreviewimg(newPreviewImgs);
     setProductList(newProductList);
   };
 
@@ -224,59 +228,47 @@ const ProductListingFormFinal = () => {
 
     if (!product.Type || product.Type.trim() === "") {
       isValid = false;
-      newErrorList[index].Type = "required.";
+      newErrorList[index].Type = "Required";
     }
 
-    if (
-      !product.ProductionLead ||
-      isNaN(parseInt(product.ProductionLead, 10))
-    ) {
+    if (!product.ProductionLead || product.ProductionLead.trim() === "") {
       isValid = false;
-      newErrorList[index].ProductionLead = "Must be a valid number.";
+      newErrorList[index].ProductionLead = "Required";
     }
 
-    if (
-      !product.minOrderQuantity ||
-      isNaN(parseInt(product.minOrderQuantity, 10))
-    ) {
+    if (!product.minOrderQuantity || product.minOrderQuantity.trim() === "") {
       isValid = false;
-      newErrorList[index].minOrderQuantity = "Must be a valid number.";
+      newErrorList[index].minOrderQuantity = "Required";
     }
 
-    if (!product.price || isNaN(parseFloat(product.price))) {
+    if (!product.price || product.price.trim() === "") {
       isValid = false;
-      newErrorList[index].price = "Must be a valid number.";
+      newErrorList[index].price = "Required";
     }
 
-    if (
-      !product.minOrderQuantity2 ||
-      isNaN(parseInt(product.minOrderQuantity2, 10))
-    ) {
+    if (!product.minOrderQuantity2 || product.minOrderQuantity2.trim() === "") {
       isValid = false;
-      newErrorList[index].minOrderQuantity2 = "Must be a valid number.";
+      newErrorList[index].minOrderQuantity2 = "Required";
     }
 
-    if (!product.price2 || isNaN(parseFloat(product.price2))) {
+    if (!product.price2 || product.price2.trim() === "") {
       isValid = false;
-      newErrorList[index].price2 = "Must be a valid number.";
+      newErrorList[index].price2 = "Required";
     }
 
-    if (
-      !product.minOrderQuantity3 ||
-      isNaN(parseInt(product.minOrderQuantity3, 10))
-    ) {
+    if (!product.minOrderQuantity3 || product.minOrderQuantity3.trim() === "") {
       isValid = false;
-      newErrorList[index].minOrderQuantity3 = "Must be a valid number.";
+      newErrorList[index].minOrderQuantity3 = "Required";
     }
 
-    if (!product.price3 || isNaN(parseFloat(product.price3))) {
+    if (!product.price3 || product.price3.trim() === "") {
       isValid = false;
-      newErrorList[index].price3 = "Must be a valid number.";
+      newErrorList[index].price3 = "Required";
     }
 
-    if (!product.expectedMargin || isNaN(parseFloat(product.expectedMargin))) {
+    if (!product.expectedMargin || product.expectedMargin.trim() === "") {
       isValid = false;
-      newErrorList[index].expectedMargin = "Must be a valid number.";
+      newErrorList[index].expectedMargin = "Required";
     }
 
     if (!product.ProductSizes || product.ProductSizes.trim() === "") {
@@ -286,23 +278,20 @@ const ProductListingFormFinal = () => {
 
     if (!product.StorageType || product.StorageType.trim() === "") {
       isValid = false;
-      newErrorList[index].StorageType = "Storage Type is required.";
+      newErrorList[index].StorageType = "Required";
     }
 
-    if (
-      !product.ProductShelfLife ||
-      isNaN(parseInt(product.ProductShelfLife, 10))
-    ) {
+    if (!product.ProductShelfLife || product.ProductShelfLife.trim() === "") {
       isValid = false;
-      newErrorList[index].ProductShelfLife = "Must be a valid number.";
+      newErrorList[index].ProductShelfLife = "Required";
     }
 
     if (
       !product.SupplyCapacityPerMonth ||
-      isNaN(parseInt(product.SupplyCapacityPerMonth, 10))
+      product.SupplyCapacityPerMonth.trim() === ""
     ) {
       isValid = false;
-      newErrorList[index].SupplyCapacityPerMonth = "Must be a valid number.";
+      newErrorList[index].SupplyCapacityPerMonth = "Required";
     }
 
     setErrorList(newErrorList);
@@ -342,6 +331,13 @@ const ProductListingFormFinal = () => {
             }}
             className="input-field"
           />
+          {previewImg && (
+            <img
+              src={previewImg[currentIndex]}
+              alt="No Image Selected"
+              style={{ maxWidth: "100%" , margin:"1rem"}}
+            />
+          )}
         </div>
         <div className="card-input">
           <div className="ProductError"> {ErrorList[currentIndex].Type}</div>
@@ -448,7 +444,7 @@ const ProductListingFormFinal = () => {
             {" "}
             {ErrorList[currentIndex].expectedMargin}
           </div>
-          <label className="input-label">Expected Margin:</label>
+          <label className="input-label">Expected Margin (in %) :</label>
           <input
             required
             type="text"
@@ -590,15 +586,18 @@ const ProductListingFormFinal = () => {
             >
               Back
             </button>
-            <button
-              onClick={() => {
-                console.log(productList);
-                handleNextClick();
-              }}
-              className="navigation-button"
-            >
-              Next
-            </button>
+
+            {numProducts != currentIndex + 1 && (
+              <button
+                onClick={() => {
+                  console.log(productList);
+                  handleNextClick();
+                }}
+                className="navigation-button"
+              >
+                Next
+              </button>
+            )}
           </div>
         )}
         {numProducts == currentIndex + 1 && (

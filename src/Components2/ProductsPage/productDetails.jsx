@@ -11,7 +11,9 @@ export default function ProductDetails() {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3001/user/ProductDetails/" + productID
+          "https://globalvistarbackend-production.up.railway.app/user//ProductDetails/" +
+            productID,
+          // "http://localhost:3001/user/ProductDetails/" + productID
         );
         const data = await response.json();
         console.log(data);
@@ -26,26 +28,26 @@ export default function ProductDetails() {
   return (
     <ProductDetailsComponent
       title={product.title}
-      productimg1={product.productimg1}
-      moq1={product.moq1}
-      moq1cost={product.moq1cost}
-      moq2={product.moq2}
-      moq2cost={product.moq2cost}
-      moq3={product.moq3}
-      moq3cost={product.moq3cost}
-      moq={product.moq}
+      productimg1={product.image1}
+      moq1={product.minOrderQuantity}
+      moq1cost={product.price}
+      moq2={product.minOrderQuantity2}
+      moq2cost={product.price2}
+      moq3={product.minOrderQuantity3}
+      moq3cost={product.price3}
+      moq={product.minOrderQuantity}
       supplier={product.supplier}
       locations={product.locations}
       marketexp={[product.marketexp]}
       shipping={product.shipping}
       returns={product.returns}
-      leadtime={product.leadtime}
-      type={product.type}
+      leadtime={product.ProductionLead}
+      type={product.Type}
       packaging={product.packaging}
-      storage={product.storage}
+      storage={product.StorageType}
       shelflife={product.shelflife}
       manufacturingplace={product.manufacturingplace}
-      supplyability={product.supplyability}
+      supplyability={product.SupplyCapacityPerMonth}
       samples={product.samples}
       manufacturing={product.manufacturing}
     ></ProductDetailsComponent>

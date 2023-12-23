@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
 
 const AboutManufacturer = () => {
   const [UserNumber, setUserNumber] = useState();
@@ -22,6 +24,27 @@ const AboutManufacturer = () => {
   useEffect(() => {
     if (localStorage.getItem("token") != null) {
       if (localStorage.getItem("token").length > 10) {
+        fetch(
+          "https://globalvistarbackend-production.up.railway.app/formCheck/manufacturer",
+          // "http://localhost:3001/formCheck/manufacturer",
+          {
+            method: "GET",
+            headers: {
+              authorization: "Bearer " + localStorage.getItem("token"),
+            },
+          }
+        ).then((res) => {
+          res
+            .json()
+            .then((data) => {
+              console.log(data.msg);
+              if (data.msg=="Filled") navigate("/CompanyDetails");
+            })
+            .catch((err) => {
+              console.log(err);
+              // navigate("/");
+            });
+        });
         fetch("https://globalvistarbackend-production.up.railway.app/user/me", {
           method: "GET",
           headers: {
@@ -181,13 +204,29 @@ const AboutManufacturer = () => {
               >
                 {BusinessTypeError}
               </div>
-              <TextField
-                id="outlined-basic"
-                label="Business Type"
-                variant="outlined"
-                value={BusinessType}
-                onChange={(e) => setBusinessType(e.target.value)}
-              />
+              <div className="BTypeInput">
+                <span>Business Type</span>
+
+                <Select
+                  sx={{ width: "60%" }}
+                  id="business-type-select"
+                  value={BusinessType}
+                  onChange={(e) => setBusinessType(e.target.value)}
+                >
+                  <MenuItem value="Private Limited">Private Limited</MenuItem>
+                  <MenuItem value="Public Limited">Public Limited</MenuItem>
+                  <MenuItem value="Limited Liability Partnership (LLP)">
+                    Limited Liability Partnership (LLP)
+                  </MenuItem>
+                  <MenuItem value="Sole Proprietorship">
+                    Sole Proprietorship
+                  </MenuItem>
+                  <MenuItem value="Partnership Firm">Partnership Firm</MenuItem>
+                  <MenuItem value="One Person Company">
+                    One Person Company
+                  </MenuItem>
+                </Select>
+              </div>
               <div className="submit-button-wrapper">
                 <button
                   onClick={() => {
@@ -195,7 +234,7 @@ const AboutManufacturer = () => {
                   }}
                   className="submit-button"
                 >
-                  Submit
+                  Next
                 </button>
               </div>
             </Stack>

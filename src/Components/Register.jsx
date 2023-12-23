@@ -23,6 +23,10 @@ function OTPForm() {
 
   const handleSendOTP = async () => {
     // setPopupVisible(true);
+    const toProceed = checkAllInputs();
+    if (toProceed == 0) {
+      return;
+    }
     const resp = await fetch(
       "https://globalvistarbackend-production.up.railway.app/user/check",
       {
@@ -42,7 +46,7 @@ function OTPForm() {
         navigate("/login");
       }, 3000);
     } else {
-      const response = await fetch(
+      let response = await fetch(
         "https://globalvistarbackend-production.up.railway.app/auth/sendOTP",
         {
           method: "POST",
@@ -52,14 +56,15 @@ function OTPForm() {
           body: JSON.stringify({ phoneNumber }),
         }
       );
-      const data = await response.json();
+      let data = await response.json();
       SetOTPInfo(data);
+
       console.log(data);
     }
   };
 
   const handleVerifyOTP = async () => {
-    const response = await fetch(
+    let response = await fetch(
       "https://globalvistarbackend-production.up.railway.app/auth/verifyOTP",
       {
         method: "POST",
@@ -69,9 +74,35 @@ function OTPForm() {
         body: JSON.stringify({ phoneNumber, code: otp }),
       }
     );
-    const data = await response.json();
+    let data = await response.json();
     if (response.status === 200 && data.status === "approved") {
       setVerificationStatus("Verified");
+
+      response = await fetch(
+        "https://globalvistarbackend-production.up.railway.app/user/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            phoneNumber,
+            name: NameOfUser,
+            email,
+            registerAs,
+          }),
+        }
+      );
+      data = await response.json();
+      if (response.status === 200) {
+        console.log(data);
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("pNumber", phoneNumber);
+        if (data.token) navigate("/");
+        else {
+          alert("invalid Username or password");
+        }
+      }
     } else {
       setVerificationStatus("Wrong OTP");
     }
@@ -101,41 +132,9 @@ function OTPForm() {
       setRegisterAsError("*This is required");
       res = 0;
     }
-    if (verificationStatus != "Verified") {
-      setVerificationError("*Verify your Phone Number");
-      res = 0;
-    }
     return res;
   }
-  const handleSubmitButton = async () => {
-    const toProceed = checkAllInputs();
-    if (toProceed == 0) return;
-    const response = await fetch(
-      "https://globalvistarbackend-production.up.railway.app/user/signup",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          phoneNumber,
-          name: NameOfUser,
-          email,
-          registerAs,
-        }),
-      }
-    );
-    const data = await response.json();
-    if (response.status === 200) {
-      console.log(data);
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("pNumber", phoneNumber);
-      if (data.token) navigate("/");
-      else {
-        alert("invalid Username or password");
-      }
-    }
-  };
+  const handleSubmitButton = async () => {};
 
   return (
     <>
@@ -237,6 +236,7 @@ function OTPForm() {
             <div className="red">{numberError}</div>
             <div className="otp-input-field">
               {/* <i class="fa-solid fa-phone"></i> */}
+              <span>+91</span>
               <input
                 type="text"
                 id="phoneNumber"
@@ -257,10 +257,7 @@ function OTPForm() {
             </div>
 
             <div className="sendOtpbtn">
-              <button
-                className="btnn"
-                onClick={handleSendOTP}
-              >
+              <button className="btnn" onClick={handleSendOTP}>
                 Send OTP
               </button>
               <div class="otpinfo">{otpInfo}</div>
@@ -279,12 +276,12 @@ function OTPForm() {
               />
             </div>
             <div className="VerifyFlex sendOtpbtn">
-              <button
+              {/* <button
                 className=" btnn"
                 onClick={handleVerifyOTP}
               >
                 Verify OTP
-              </button>
+              </button> */}
               <div class="otpinfo">{verificationStatus}</div>
             </div>
             <div className="lastSubmit">
@@ -292,7 +289,10 @@ function OTPForm() {
                 class="btnn"
                 type="submit"
                 value="Submit"
-                onClick={handleSubmitButton}
+                onClick={() => {
+                  handleVerifyOTP();
+                  handleSubmitButton();
+                }}
               ></input>
             </div>
           </div>
