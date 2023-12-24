@@ -11,8 +11,8 @@ const ProductsPage = () => {
        const fetchProducts = async () => {
          try {
            const response = await fetch(
-             "http://localhost:3001/user/allProducts",
-            //  "https://globalvistarbackend-production.up.railway.app/user/allProducts",
+            //  "http://localhost:3001/user/allProducts",
+             "https://globalvistarbackend-production.up.railway.app/user/allProducts",
              {
                method: "GET",
                headers: {

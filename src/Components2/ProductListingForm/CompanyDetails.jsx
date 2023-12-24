@@ -26,8 +26,8 @@ const CompanyDetails = () => {
      if (localStorage.getItem("token") != null) {
        if (localStorage.getItem("token").length > 10) {
          fetch(
-          //  "https://globalvistarbackend-production.up.railway.app/formCheck/company",
-            "http://localhost:3001/formCheck/company",
+           "https://globalvistarbackend-production.up.railway.app/formCheck/company",
+            // "http://localhost:3001/formCheck/company",
            {
              method: "GET",
              headers: {

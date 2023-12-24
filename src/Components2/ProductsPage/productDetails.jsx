@@ -14,9 +14,9 @@ export default function ProductDetails() {
       try {
         console.log("reached here2");
         const response = await fetch(
-          // "https://globalvistarbackend-production.up.railway.app/user//ProductDetails/" +
-          //   productID,
-          "http://localhost:3001/user/ProductDetails/" + productID
+          "https://globalvistarbackend-production.up.railway.app/user//ProductDetails/" +
+            productID,
+          // "http://localhost:3001/user/ProductDetails/" + productID
         );
         console.log("reached here3");
         const data = await response.json();
