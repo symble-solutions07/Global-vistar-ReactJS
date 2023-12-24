@@ -1,180 +1,222 @@
-.register{
-    margin: 0 3.5rem 0 3.5rem;
-    
+.register {
+  margin: 0 3.5rem 0 3.5rem;
 }
 
-.register-title{
-    font-family: 'General Sans', sans-serif;
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
+.register-title {
+  font-family: "General Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
 }
 
-.register-flex{
-    display: flex;
+.register-flex {
+  display: flex;
 }
 
-.register-right{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+.register-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
-.register-img{
-    width: 30rem;
-    margin-right: 15rem;
+.register-img {
+  width: 30rem;
+  margin-right: 15rem;
 }
 
-.register-right-card{
-    width: 13rem;
-    height: 13.5rem;
-    border: 1px solid rgb(160, 160, 160);
-    border-radius: 10px;
-    margin-right: 4rem;
-    margin-bottom: 4rem;
-    padding: 1rem;
-    text-align: justify;
+.register-right-card {
+  width: 13rem;
+  height: 13.5rem;
+  border: 1px solid rgb(160, 160, 160);
+  border-radius: 10px;
+  margin-right: 4rem;
+  margin-bottom: 4rem;
+  padding: 1rem;
+  text-align: justify;
 }
 
-.register-right-card-img{
-    width: 8rem;
-    margin-bottom: 2rem;
-    margin-left: 1.5rem;
-    margin-right: auto;
+.register-right-card-img {
+  width: 8rem;
+  margin-bottom: 2rem;
+  margin-left: 1.5rem;
+  margin-right: auto;
 }
 
-#carouselExampleAutoplaying{
-    width: 32rem;
-    margin: auto;
+#carouselExampleAutoplaying {
+  width: 32rem;
+  margin: auto;
 }
 
-.carousel-img{
-    width: 100%;
-    border-radius: 10px;
+.carousel-img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-.carousel-banner{
-    width: 100%;
+.carousel-banner {
+  width: 100%;
 }
 
-.carousel-flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.carousel-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel-div{
-    width: 50%;
+.carousel-div {
+  width: 50%;
 }
 
-.list-your-product-btn{
-    outline: none;
-    border: none;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    background-color: #241043;
-    color: white;
-    border-radius: 5px;
+.list-your-product-btn {
+  outline: none;
+  border: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: #241043;
+  color: white;
+  border-radius: 5px;
 }
 
-.list-your-product-btn:hover{
-    background-color: #bd1d26;
-    transition: 0.35s;
+.list-your-product-btn:hover {
+  background-color: #bd1d26;
+  transition: 0.35s;
 }
 
 .popup {
-    font-size: 1.4rem;
-    position: relative;
-    bottom: 5rem;
-    /* height: 5rem; */
-    text-align: center;
+  font-size: 1.4rem;
+  position: relative;
+  bottom: 5rem;
+  /* height: 5rem; */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* width:140%; */
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+.popupText {
+  font-size: 0.9rem;
+  margin: 1rem;
+  /* margin-bottom: 1.7rem; */
+}
+.popLoginBtn {
+  background: #4c00aa;
+  width: fit-content;
+  padding: 0.35rem 1rem;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.popButtons {
+  display: flex;
+  gap: 1.3rem;
+}
+
+@media (max-width: 500px) {
+  .register {
+    margin: 0 1rem 0 1.5rem;
+  }
+
+  .register-title {
+    font-family: "General Sans", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .register-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .register-img {
+    width: 21rem;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .register-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .register-right-card {
+    width: auto;
+    height: auto;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 10px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .register-right-card-img {
+    width: 7rem;
+    margin-bottom: 2rem;
+    margin-left: 0.7rem;
+    margin-right: auto;
+  }
+
+  #carouselExampleAutoplaying {
+    width: 100%;
+    margin: auto;
+  }
+
+  .carousel-banner {
+    width: 100%;
+  }
+
+  .carousel-flex {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    /* width:140%; */
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 1.5rem;
-  }
-  .popupText{
-    font-size: 0.9rem;
-    margin:1rem;
-    /* margin-bottom: 1.7rem; */
-  }
-  .popLoginBtn{
-    background: #4c00aa;
-    width: fit-content;
-    padding: 0.35rem 1rem;
-    border-radius: 10px;
-    color: #fff;
-  }
-  
-  .popButtons{
-      display: flex;
-      gap: 1.3rem;
   }
 
-@media (max-width: 500px){
-    .register{
-        margin: 0 1rem 0 1.5rem;
-    }
-    
-    .register-title{
-        font-family: 'General Sans', sans-serif;
-        font-size: 2rem;
-        font-weight: 600;
-    }
-    
-    .register-flex{
-        display: flex;
-        flex-direction: column;
-    }
+  .carousel-div {
+    width: 100%;
+  }
+}
 
-    .register-img{
-        width: 21rem;
-        margin-right: 0;
-        margin-bottom: 1.5rem;
-    }
-
-    .register-right{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
-
-    .register-right-card{
-        width: auto;
-        height: auto;
-        border: 1px solid rgb(160, 160, 160);
-        border-radius: 10px;
-        margin-right: 1rem;
-        margin-bottom: 1rem;
-        padding: 1rem;
-    }
-
-    .register-right-card-img{
-        width: 7rem;
-        margin-bottom: 2rem;
-        margin-left: 0.7rem;
-        margin-right: auto;
-    }
-
-    #carouselExampleAutoplaying{
-        width: 100%;
-        margin: auto;
-    }
-
-    .carousel-banner{
-        width: 100%;
-    }
-    
-    .carousel-flex{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .carousel-div{
-        width: 100%;
-    }
+.popUpWrapperr {
+    z-index: 1000;
+  /* position: fixed; */
+  height: fit-content;
+  /* top: 400vh; */
+  width: 100%;
+  font-size: 2.5rem;
+  background-color: #210d410c;
+  backdrop-filter: blur(5px);
+  margin-top: -5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popupp {
+  z-index: 101;
+  font-size: 1.4rem;
+  position: relative;
+  /* bottom: 5rem; */
+  /* height: 5rem; */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* width:140%; */
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+.popupText {
+  font-size: 0.9rem;
+  margin: 1rem;
+  /* margin-bottom: 1.7rem; */
+}
+.popLoginBtn {
+  background: #4c00aa;
+  width: fit-content;
+  padding: 0.35rem 1rem;
+  border-radius: 10px;
+  color: #fff;
 }

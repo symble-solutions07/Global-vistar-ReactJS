@@ -40,8 +40,8 @@ const ProductListingFormFinal = () => {
       formdata.append("phoneNumber", phoneNumber);
       axios
         .post(
-          // "http://localhost:3001/form/addProduct",
-          "https://globalvistarbackend-production.up.railway.app/form/addProduct",
+          "http://localhost:3001/form/addProduct",
+          // "https://globalvistarbackend-production.up.railway.app/form/addProduct",
           formdata,
           {
             headers: {

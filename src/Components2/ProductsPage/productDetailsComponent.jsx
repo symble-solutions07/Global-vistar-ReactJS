@@ -1,11 +1,54 @@
-
-import Footer from '../Footer/Footer'
-import Navbar from '../Navbar/Navbar'
+import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Enquiry from "../../Components/enquiry";
 // import "./productDetails.css";
 
 export default function ProductDetails(props) {
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const [isPopupVisible, setPopupVisible] = useState(false);
+
+  const popupRedirect = () => {
+    setPopupVisible(true);
+    console.log("log in bro", isPopupVisible);
+    setTimeout(() => {
+      navigate("/login");
+    }, 2000);
+  };
+  const handleSendEnquiry = () => {
+    if (localStorage.getItem("token") != null) {
+      if (localStorage.getItem("token").length > 10) {
+        fetch("https://globalvistarbackend-production.up.railway.app/user/me", {
+          method: "GET",
+          headers: {
+            authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }).then((res) => {
+          res.json().then((data) => {
+            if (data.user) {
+              // console.log(data.user.name + " enquired");
+              handleOpen();
+            } else popupRedirect();
+          });
+        });
+      } else popupRedirect();
+    } else popupRedirect();
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div className="productpage">
+      <Enquiry open={open} handleClose={handleClose} />
+
       <Navbar />
       <div className="product-flex">
         <div className="productPage-card">
@@ -103,7 +146,15 @@ export default function ProductDetails(props) {
             <p className="sidebar-p3">
               Shipping: <span className="price">{props.shipping}</span>
             </p>
-            <p className="contact-supplier-btn">Contact supplier</p>
+            <p
+              className="contact-supplier-btn"
+              onClick={() => {
+                handleSendEnquiry();
+                localStorage.setItem("ProductToEnquire", props.title);
+              }}
+            >
+              Send Enquiry
+            </p>
           </div>
         </div>
       </div>
@@ -152,39 +203,14 @@ export default function ProductDetails(props) {
       <div className="company-details">
         <h2 className="company-details-title">Company details</h2>
         <h2 className="overview-title">Overview</h2>
-        <p className="overview-p">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sint
-          asperiores distinctio alias. Reprehenderit, rem. Dolor quas eius
-          doloremque sit repellat temporibus sint ducimus id ab! Hic minima
-          sequi nisi. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Exercitationem nobis quia unde. Blanditiis libero quos ex sapiente
-          odit! Eaque officiis laudantium odit quaerat accusantium voluptas
-          facilis inventore rerum porro soluta. Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit. Placeat ab at eum earum animi deleniti
-          quod quisquam itaque quidem aspernatur quas mollitia odit fugit et
-          architecto iusto illo, quia ullam!
-        </p>
+        <p className="overview-p">{props.about}</p>
         <br />
         <h2 className="overview-title">Manufacturing facilities</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore
-          obcaecati laboriosam nisi eius quam autem, totam velit ratione aut
-          deleniti adipisci perspiciatis aspernatur quo eos sed odio in facilis.
-          Temporibus? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Quasi qui, odit corrupti repudiandae dolore est reprehenderit,
-          exercitationem, voluptates voluptate accusantium consequuntur id
-          temporibus facere nemo quod ea. Odio, veniam reprehenderit. Lorem
-          ipsum dolor sit amet consectetur, adipisicing elit. Saepe nihil sit
-          eum ipsum tempore commodi tempora aperiam consectetur sequi dicta,
-          necessitatibus ab molestiae qui quae ducimus dolorum nam quidem a.
-        </p>
+        <p>{props.manufacturingplace}</p>
         <br />
         <h2 className="overview-title">Certifications</h2>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit mollitia
-          iste optio autem nemo reiciendis quos fuga vitae voluptatum sint.
-          Nesciunt totam quisquam fugit alias excepturi voluptatem pariatur
-          obcaecati facilis!
+          <img src={props.fssaiImage} alt="" className="fssaiImage" />
         </p>
         <br />
       </div>
@@ -192,5 +218,3 @@ export default function ProductDetails(props) {
     </div>
   );
 }
-
-
