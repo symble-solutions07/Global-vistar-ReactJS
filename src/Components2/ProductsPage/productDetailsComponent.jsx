@@ -167,10 +167,10 @@ export default function ProductDetails(props) {
             <p className="p1 description-p1">Product type:</p>
             <p className="p2 description-p2">{props.type}</p>
           </div>
-          <div className="description-flex">
+          {/* <div className="description-flex">
             <p className="p1 description-p1">Packaging material:</p>
             <p className="p2 description-p2">{props.packaging}</p>
-          </div>
+          </div> */}
           <div className="description-flex">
             <p className="p1 description-p1">Storage type:</p>
             <p className="p2 description-p2">{props.storage}</p>
@@ -195,7 +195,7 @@ export default function ProductDetails(props) {
             <p className="p1 description-p1">
               Third party manufacturing / white labeling:
             </p>
-            <p className="p2 description-p2">{props.manufacturing}</p>
+            <p className="p2 description-p2">{props.TPMWhiteLabelling}</p>
           </div>
         </div>
       </div>

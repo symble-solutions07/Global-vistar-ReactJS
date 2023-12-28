@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutUsPage from "./Components/AboutUsPage";
@@ -21,8 +21,8 @@ import AboutManufacturer from "./Components2/ProductListingForm/AboutManufacture
 import CompanyDetails from "./Components2/ProductListingForm/CompanyDetails";
 import ProductSuccess from "./Components2/ProductListingForm/ProductSuccess";
 import BlogPage from "./Components2/Blog Page/BlogPage";
-import Test from "./Components/test";
-import Loading from "./Components2/loadingScreen";
+// import Test from "./Components/test";
+// import Loading from "./Components2/loadingScreen";
 // import ProductDetails from './Components2/ProductsPage/productDetails';
 import Blog4 from "./Components2/Blog Page/Blogs/Blog4";
 import Dashboard from "./Components2/Dashboard/Dashboard";

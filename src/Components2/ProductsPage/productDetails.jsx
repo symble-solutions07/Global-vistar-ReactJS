@@ -68,6 +68,7 @@ export default function ProductDetails() {
           manufacturing={product.manufacturing}
           about={product.AboutCompany}
           fssaiImage={product.fssaiImage}
+          TPMWhiteLabelling={product.TPMWhiteLabelling}
         ></ProductDetailsComponent>
       </>
     );
