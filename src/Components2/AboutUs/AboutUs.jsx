@@ -115,7 +115,7 @@ function AboutUs() {
               <p className="team-card-title">
                 Rohan Vaidya
                 <br />
-                <span className='team-card-desg'>Web Developement</span>
+                <span className='team-card-desg'>Web Development</span>
               </p>
               <LinkedInIcon></LinkedInIcon>
               {/* <p className="team-card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, quos.</p> */}
@@ -129,7 +129,7 @@ function AboutUs() {
               <p className="team-card-title">
                 Amey Gaikwad
                 <br />
-                <span className='team-card-desg'>Web Developement</span>
+                <span className='team-card-desg'>Web Development</span>
               </p>
               <LinkedInIcon></LinkedInIcon>
               {/* <p className="team-card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, quos.</p> */}
