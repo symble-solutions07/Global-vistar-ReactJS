@@ -1,0 +1,192 @@
+.dashboard-flex{
+    display: flex;
+}
+
+.dashboard-sidebar{
+    width: 25rem;
+    height: 36rem;
+    position: sticky;
+    top: 3.3rem;
+    left: 0;
+    padding-top: 1rem;
+}
+
+.mobile-sidebar{
+    display: none;
+}
+
+.dashboard-profile{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-profile-icon{
+    width: 5rem;
+    margin-bottom: 1rem;
+}
+
+.user-name{
+    font-size: 1.15rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.user-info{
+    font-size: 0.85rem;
+    margin: 0;
+    margin-bottom: 0.25rem;
+}
+
+.dashboard-features{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    height: 18rem;
+}
+
+.dashboard-btn{
+    width: 100%;
+    outline: none;
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 5px;
+    padding: 0.5rem 0 0.5rem 0;
+    margin-bottom: 0.25rem;
+    background-color: white;
+    color: black;
+}
+
+.dashboard-btn:hover{
+    color: rgb(188,24,35);
+    transition: 0.35s;
+}
+
+.btn-active{
+    color: rgb(188,24,35);
+}
+
+.dashboard-body{
+    background-color: rgb(238, 238, 238);
+    width: 100%;
+}
+
+.dashboard-title{
+    font-family: 'General Sans', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    background: rgb(188,24,35);
+    background: linear-gradient(90deg, rgba(188,24,35,1) 0%, rgba(33,13,65,1) 83%, rgba(33,13,65,1) 100%);
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text; 
+    background-clip:text;
+    margin: 1rem 3.5rem 0 1.5rem;
+}
+
+.mobile-arrow{
+    display: none;
+}
+
+.arrow-btn{
+    display: none;
+}
+
+.profile-strength{
+    margin: 2rem 3.5rem 2rem 1.5rem;
+    background-color: white;
+    padding: 1rem;
+}
+
+.profile-str-flex{
+    display: flex;
+    font-size: 1.35rem;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.profile-str-percentage{
+    color: rgb(188,24,35);
+}
+
+.profile-str-links{
+    color: blue;
+    margin: 0;
+    margin-bottom: 0.25rem;
+}
+
+.your-listings{
+    background-color: white;
+    padding: 1rem;
+    margin: 0 3.5rem 3rem 1.5rem;
+}
+
+.listings-title{
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+
+.dashboard-footer{
+    text-align: center;
+}
+
+.dashboard-footer-p{
+    color: rgb(110, 110, 110);
+}
+
+@media (max-width: 500px){
+    .mobile-arrow{
+        display: block;
+        padding: 0.5rem;
+        background-color: white;
+        border-radius: 50%;
+        border: 1px solid white;
+    }
+
+    .mobile-arrow:hover{
+        border: 1px solid gray;
+    }
+
+    .arrow-btn{
+        border: none;
+    }
+
+    .dashboard-title{
+        margin: 0;
+        margin-left: 1rem;
+    }
+
+    .dashboard-title-flex{
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+
+    .dashboard-sidebar{
+        display: none;
+    }
+
+    .profile-strength{
+        margin: 1rem 1rem 2rem 1rem;
+        background-color: white;
+        padding: 1rem;
+    }
+
+    .your-listings{
+        background-color: white;
+        padding: 1rem;
+        margin: 0 1rem 3rem 1rem;
+    }
+
+    .dashboard{
+        position: relative;
+    }
+
+    .mobile-sidebar{
+        display: block;
+        position: absolute;
+        top: 7.75rem;
+        left: 1rem;
+        background-color: rgb(255, 255, 255, 0.3);
+        backdrop-filter: blur(25px);
+        width: 20rem;
+        padding-top: 1rem;
+    }
+}

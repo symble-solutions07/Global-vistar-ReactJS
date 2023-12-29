@@ -11,7 +11,7 @@
 
 .featured-products-flex {
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .featured-products-card {
