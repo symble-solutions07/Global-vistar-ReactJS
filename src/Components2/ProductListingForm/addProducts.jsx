@@ -329,13 +329,14 @@ const ProductListingFormFinal = () => {
               // setFile(e.target.files[0]);
               handleImageUpload(e, currentIndex);
             }}
-            className="input-field"
+            style={{width:"33%"}}
+            className="image-input input-field"
           />
           {previewImg && (
             <img
               src={previewImg[currentIndex]}
               alt="No Image Selected"
-              style={{ maxWidth: "100%" , margin:"1rem"}}
+              style={{ maxWidth: "100%", margin: "1rem" }}
             />
           )}
         </div>
