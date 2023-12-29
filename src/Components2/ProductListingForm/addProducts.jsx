@@ -329,8 +329,7 @@ const ProductListingFormFinal = () => {
               // setFile(e.target.files[0]);
               handleImageUpload(e, currentIndex);
             }}
-            style={{width:"33%"}}
-            className="image-input input-field"
+            className="image-input "
           />
           {previewImg && (
             <img

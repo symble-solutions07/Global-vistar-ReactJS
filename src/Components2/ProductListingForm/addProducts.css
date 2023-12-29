@@ -1,22 +1,21 @@
-
-.topDivider{
+.topDivider {
   display: flex;
   /* gap:10vw; */
   justify-content: center;
   padding-top: 5%;
 }
-.leftManDiv{
-  width:50%;
+.leftManDiv {
+  width: 50%;
   background-image: url("backgroundLeft.png");
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.manImage{
+.manImage {
   position: relative;
-  left:3vw;
+  left: 3vw;
 }
-.RightSideForm{
+.RightSideForm {
   width: 50%;
 }
 .Productform-container {
@@ -28,7 +27,13 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.image-input {
+  width: 7.4rem;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 .form-label {
   display: inline;
   font-size: 16px;
@@ -121,7 +126,6 @@
   background-color: #0056b3;
 }
 
-
 /* codepen */
 
 form {
@@ -153,9 +157,9 @@ form {
 .valuee-button:hover {
   cursor: pointer;
 }
-.plusminus{
+.plusminus {
   position: relative;
-  bottom:0.8rem;
+  bottom: 0.8rem;
 }
 form #decrease {
   margin-right: -4px;
@@ -182,12 +186,12 @@ input#number {
   height: 40px;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-.ProductError{
+.ProductError {
   color: red;
   font-size: 0.8rem;
 }
