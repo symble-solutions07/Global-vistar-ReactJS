@@ -26,8 +26,8 @@ const CompanyDetails = () => {
      if (localStorage.getItem("token") != null) {
        if (localStorage.getItem("token").length > 10) {
          fetch(
-           "https://globalvistarbackend-production.up.railway.app/formCheck/manufacturer",
-          //  "http://localhost:3001/formCheck/company",
+           "https://globalvistarbackend-production.up.railway.app/formCheck/company",
+            // "http://localhost:3001/formCheck/company",
            {
              method: "GET",
              headers: {
@@ -35,10 +35,11 @@ const CompanyDetails = () => {
              },
            }
          ).then((res) => {
+          // console.log(res)
            res
              .json()
              .then((data) => {
-               console.log(data.msg);
+               console.log(data);
                if (data.msg == "Filled") navigate("/addProducts");
              })
              .catch((err) => {
@@ -163,8 +164,8 @@ const CompanyDetails = () => {
 
   return (
     <>
-      <div className="topDivider">
-        <div className="RightSideForm">
+      <div className="topDivider companyformDiv">
+        <div className="RightSideForm companyform">
           <h4 className="otp-login-title">Company Details</h4>
           <div className="form-container">
             <br />

@@ -14,7 +14,7 @@ const ProductListingFormFinal = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
-    if (successfulUploads == productList.length) navigate("/");
+    if (successfulUploads == productList.length) navigate("/ProductSuccess");
   }, [successfulUploads]);
   useEffect(() => {
     let value = 1;
@@ -52,10 +52,10 @@ const ProductListingFormFinal = () => {
         .then((res) => {
           if (res.status === 200) {
             setSuccessfulUploads((prevCount) => prevCount + 1);
-            if (successfulUploads == productList.length) {
-              console.log("all products uploaded");
-              navigate("/ProductSuccess");
-            }
+            // if (successfulUploads == productList.length) {
+            //   console.log("all products uploaded");
+            //   navigate("/ProductSuccess");
+            // }
           }
           // navigate("Successfully")
         })
