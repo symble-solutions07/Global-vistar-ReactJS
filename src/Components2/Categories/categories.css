@@ -116,6 +116,10 @@
        -webkit-user-select: none;
        -ms-user-select: none;
     }
+
+    .categories-card-p{
+        font-weight: normal;
+    }
     
     .bakery-product-img{
         width: 3rem;
