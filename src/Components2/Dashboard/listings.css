@@ -1,7 +1,8 @@
 .productsListingWrapper{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 0;
+    row-gap: 2rem;
 }
 
 @media (max-width: 500px){
