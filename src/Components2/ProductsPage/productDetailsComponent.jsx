@@ -45,6 +45,18 @@ export default function ProductDetails(props) {
     setOpen(false);
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleImageClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleCloseClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setIsOpen(false);
+    }
+  };
+
   return (
     <div className="productpage">
       <Enquiry open={open} handleClose={handleClose} />
@@ -83,7 +95,7 @@ export default function ProductDetails(props) {
 
           <div className="right">
             <h2 className="product-title">
-              {props.title} <br /> <span className="popular">Popular</span>{" "}
+              {props.title}  <span className="popular">Popular</span>
             </h2>
             <p className="product-p margin">{props.expectedmargin}</p>
 
@@ -209,9 +221,43 @@ export default function ProductDetails(props) {
         <p>{props.manufacturingplace}</p>
         <br />
         <h2 className="overview-title">Certifications</h2>
-        <p>
+        {/* <p>
           <img src={props.fssaiImage} alt="" className="fssaiImage" />
-        </p>
+        </p> */}
+
+<div>
+      <img
+        src={props.fssaiImage}
+        alt="Enlarged"
+        onClick={handleImageClick}
+        style={{ cursor: 'pointer' }}
+        className="fssaiImage"
+      />
+      {isOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'rgba(0, 0, 0, 0.7)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+          onClick={handleCloseClick}
+        >
+          <img
+            src={props.fssaiImage}
+            alt="Enlarged"
+            style={{ width: 'auto', height: '100vh' }}
+            onClick={handleImageClick}
+            className="fssaiImage"
+          />
+        </div>
+      )}
+    </div>
         <br />
       </div>
       <Footer />

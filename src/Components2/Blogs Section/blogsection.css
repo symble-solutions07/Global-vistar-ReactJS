@@ -33,7 +33,8 @@
 
 .blog-section-flex{
     display: flex;
-    justify-content: space-between;
+    gap: 4rem;
+    justify-content: center;
 }
 
 .blog-section-card{

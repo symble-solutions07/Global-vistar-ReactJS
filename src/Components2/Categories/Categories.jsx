@@ -40,11 +40,11 @@ export default function Categories() {
         </div>
         <div className="categories-card snacks-card">
             <img src={Snacks} alt="" className='categories-img snacks-img' />
-            <p className="categories-card-p">Snacks</p>
+            <p className="categories-card-p cat-p-snacks">Snacks</p>
         </div>
         <div className="categories-card snacks-card">
             <img src={Frozen} alt="" className='categories-img frozen-img' />
-            <p className="categories-card-p">Frozen Products</p>
+            <p className="categories-card-p cat-p-frozen">Frozen Products</p>
         </div>
       </div>
     </div>

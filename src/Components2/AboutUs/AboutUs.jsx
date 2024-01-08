@@ -9,6 +9,9 @@ import AboutUsImg5 from "./Images/5.png"
 import ProfileIcon from "./Images/profile-icon.png"
 import PranavImg from "./Images/Photo Pranav.svg"
 import KiranImg from "./Images/Photo Kiran.svg"
+import YashImg from "./Images/yashpp.jpg"
+import RohanImg from "./Images/rohanpp.jpg"
+import AmeyImg from "./Images/ameypp.jpg"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Footer from '../Footer/Footer'
 
@@ -97,7 +100,7 @@ function AboutUs() {
           <a href="" target="_blank">
           <div className="team-card">
             <div className="team-card-header">
-              <img className='team-profile-icon icon-default' src={ProfileIcon} alt="" />
+              <img className='team-profile-icon' style={{width: '7.75rem'}} src={YashImg} alt="" />
               <p className="team-card-title">
                 Yash
                 <br />
@@ -111,7 +114,7 @@ function AboutUs() {
           <a href="https://www.linkedin.com/in/rohan-vaidya-359680190/" target="_blank">
           <div className="team-card">
             <div className="team-card-header">
-              <img className='team-profile-icon icon-default' src={ProfileIcon} alt="" />
+              <img className='team-profile-icon' src={RohanImg} alt="" />
               <p className="team-card-title">
                 Rohan Vaidya
                 <br />
@@ -125,7 +128,7 @@ function AboutUs() {
           <a href="https://www.linkedin.com/in/amey-kisan-gaikwad/" target="_blank">
           <div className="team-card">
             <div className="team-card-header">
-              <img className='team-profile-icon icon-default' src={ProfileIcon} alt="" />
+              <img className='team-profile-icon' src={AmeyImg} alt="" />
               <p className="team-card-title">
                 Amey Gaikwad
                 <br />

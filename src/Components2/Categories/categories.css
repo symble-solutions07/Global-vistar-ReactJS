@@ -152,4 +152,12 @@
     .frozen-img{
         width: 3.8rem;
     }
+
+    .cat-p-snacks{
+        margin-right: 1.5rem;
+    }
+
+    .cat-p-frozen{
+        margin-right: 1rem;
+    }
 }

@@ -39,7 +39,7 @@
   font-size: 1.4rem;
   margin-bottom: 1rem;
   cursor: pointer;
-  /* white-space: nowrap; */
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   transition: all 0.5s ease;
@@ -49,7 +49,7 @@
 .featured-products-card-title:hover {
   transition: 0.35s;
   color: rgb(188, 24, 35);
-  white-space: normal;
+  /* white-space: normal; */
 }
 
 .featured-products-card-price {
@@ -120,6 +120,10 @@
     margin-bottom: 1rem;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
+  }
+
+  .featured-products-card-title{
+    white-space: normal;
   }
 
   .featured-products-card-btn {

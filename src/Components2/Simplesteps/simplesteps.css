@@ -54,6 +54,7 @@
 .simple-steps-flex{
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .simple-steps-flex-card{
@@ -66,7 +67,8 @@
 }
 
 .manu-img1{
-    margin-top: 0.3rem;
+    /* margin-top: 0.3rem; */
+    margin-bottom: 1rem;
 }
 
 .manu-img3{
@@ -78,7 +80,7 @@
 }
 
 .dotted-line{
-    width: 20rem;
+    width: 100%;
     height: 0;
     border: 2px solid rgb(80, 80, 80);
     border-style: dashed;
