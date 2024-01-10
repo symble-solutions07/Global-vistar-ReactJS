@@ -5,6 +5,7 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
 const ProductsPage = () => {
+  window.scrollTo(0, 0);
      const [products, setProducts] = useState([]);
 
      useEffect(() => {
@@ -34,6 +35,7 @@ const ProductsPage = () => {
      
     //  console.log(products[0]._id)
   return (
+    
     <>
       <Navbar />
       <h1 className="products-page-title">Explore All Products</h1>

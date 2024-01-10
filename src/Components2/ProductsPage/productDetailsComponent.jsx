@@ -3,9 +3,15 @@ import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Enquiry from "../../Components/enquiry";
+import UserIcon from './Images/user.svg'
+import CalenderIcon from './Images/calendar.svg'
+import MapIcon from './Images/map-pin.svg'
+import ArrowIcon from './Images/arrow-right.svg'
+
 // import "./productDetails.css";
 
 export default function ProductDetails(props) {
+  window.scrollTo(0, 0);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -168,6 +174,36 @@ export default function ProductDetails(props) {
               Send Enquiry
             </p>
           </div>
+          {/* <div className="product-sidebar-sticky">
+            <div className="new-product-sidebar">
+              <p className="seller-details-title">Seller Details</p>
+              <p className="business-name">Business Name</p>
+              <p className="gst-title">GST: 22AAAAA0000A1Z5</p>
+              <div className="info-flex">
+                <img src={UserIcon} alt="" className="info-icons" />
+                <p className="info-p">Seller Name</p>
+              </div>
+              <div className="info-flex">
+                <img src={CalenderIcon} alt="" className="info-icons" />
+                <p className="info-p">Market Experience: 2 Years</p>
+              </div>
+              <div className="info-flex">
+                <img src={MapIcon} alt="" className="info-icons" />
+                <p className="info-p">132, My Street, Bigtown BG23 4YZ, England</p>
+              </div>
+              <p
+              className="contact-supplier-btn"
+              onClick={() => {
+                handleSendEnquiry();
+                localStorage.setItem("ProductToEnquire", props.title);
+              }}
+            >
+              Send Enquiry
+            </p>
+
+            </div>
+          </div> */}
+          
         </div>
       </div>
 
