@@ -151,7 +151,7 @@ export default function ProductDetails(props) {
               </div>
             </div>
           </div>
-          <div className="product-sidebar">
+          {/* <div className="product-sidebar">
             <p className="sidebar-p1">
               The minimum order quantity is {props.moq}
             </p>
@@ -173,8 +173,8 @@ export default function ProductDetails(props) {
             >
               Send Enquiry
             </p>
-          </div>
-          {/* <div className="product-sidebar-sticky">
+          </div> */}
+          <div className="product-sidebar-sticky">
             <div className="new-product-sidebar">
               <p className="seller-details-title">Seller Details</p>
               <p className="business-name">Business Name</p>
@@ -199,10 +199,11 @@ export default function ProductDetails(props) {
               }}
             >
               Send Enquiry
+              <img src={ArrowIcon} alt="" className="arrow-right" />
             </p>
 
             </div>
-          </div> */}
+          </div>
           
         </div>
       </div>
