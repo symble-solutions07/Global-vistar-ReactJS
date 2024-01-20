@@ -23,6 +23,7 @@ const ProductListingFormFinal = () => {
     // console.log(productList)
     renderProductForm();
   }, []);
+  
   const handleUpload = (e) => {
     const res = validateProduct(currentIndex);
     if (res == 0) return;
