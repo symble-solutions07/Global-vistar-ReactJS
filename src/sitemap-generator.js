@@ -25,13 +25,12 @@ const generateSitemap = async () => {
 
   // Generate the sitemap URLs dynamically
   const urls = [
-    { url: "/", changefreq: "daily", priority: 0.7 },
-    { url: "/about", changefreq: "daily", priority: 0.7 },
+    { url: "/register", changefreq: "daily", priority: 1.0 },
+    { url: "/login", changefreq: "daily", priority: 1.0 },
+    { url: "/", changefreq: "daily", priority: 0.9 },
+    { url: "/ProductsPage", changefreq: "daily", priority: 0.8 },
+    { url: "/aboutus", changefreq: "daily", priority: 0.7 },
     { url: "/BlogPage", changefreq: "daily", priority: 0.7 },
-    { url: "/ProductCategories", changefreq: "daily", priority: 0.7 },
-    { url: "/login", changefreq: "daily", priority: 0.7 },
-    // { url: "/about", changefreq: "weekly", priority: 0.5 },
-    // Add more URLs as needed
   ];
 
   // Add each URL to the sitemap stream
