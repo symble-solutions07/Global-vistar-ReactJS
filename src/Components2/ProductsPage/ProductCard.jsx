@@ -98,7 +98,7 @@ const FeaturedProductCard = (props) => {
           </h1>
           <p className="featured-products-card-price">Price: ₹{price}</p>
           <p className="featured-products-card-price">MOQ: {moq}</p>
-          <p className="featured-products-card-margin">Margin: {margin}</p>
+          <p className="featured-products-card-margin">Expected Margin: {margin}</p>
           <button
             className="featured-products-card-btn"
             onClick={() => {

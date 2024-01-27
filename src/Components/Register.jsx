@@ -134,7 +134,6 @@ function OTPForm() {
     }
     return res;
   }
-  const handleSubmitButton = async () => {};
 
   return (
     <>
@@ -291,7 +290,6 @@ function OTPForm() {
                 value="Submit"
                 onClick={() => {
                   handleVerifyOTP();
-                  handleSubmitButton();
                 }}
               ></input>
             </div>

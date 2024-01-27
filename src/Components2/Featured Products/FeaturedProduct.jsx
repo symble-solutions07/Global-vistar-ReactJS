@@ -7,14 +7,12 @@ import ShivratnaJaggery from "./Images/ShivRatna-Jaggery.webp";
 import TribeCook from "./Images/Tribe-cook.webp";
 import Button from "@mui/material/Button";
 import Enquiry from "../../Components/enquiry";
+import FeaturedProductCard from "../ProductsPage/ProductCard"
 
 export default function FeaturedProduct() {
   const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
-  const [isEnquiryPopupVisible, setEnquiryPopupVisible] = useState(false);
-  const openInNewTab = (url) => {
-    window.open(url, "_blank", "noreferrer");
-  };
+
   const popupRedirect = () => {
     setPopupVisible(true);
     console.log("log in bro", isPopupVisible);
@@ -22,6 +20,7 @@ export default function FeaturedProduct() {
       navigate("/login");
     }, 2000);
   };
+  
   const handleSendEnquiry = () => {
     if (localStorage.getItem("token") != null) {
       if (localStorage.getItem("token").length > 10) {

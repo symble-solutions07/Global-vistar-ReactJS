@@ -14,7 +14,7 @@ export default function ProductDetails() {
       try {
         console.log("reached here2");
         const response = await fetch(
-          "https://globalvistarbackend-production.up.railway.app/user//ProductDetails/" +
+          "https://globalvistarbackend-production.up.railway.app/user/ProductDetails/" +
             productID,
           // "http://localhost:3001/user/ProductDetails/" + productID
         );
@@ -69,6 +69,8 @@ export default function ProductDetails() {
           about={product.AboutCompany}
           fssaiImage={product.fssaiImage}
           TPMWhiteLabelling={product.TPMWhiteLabelling}
+          GST={product.GST}
+    UserName ={product.UserName}
         ></ProductDetailsComponent>
       </>
     );
