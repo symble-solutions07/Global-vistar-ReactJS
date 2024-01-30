@@ -3,6 +3,7 @@ import signUpImg from "./sign-up-img2.png";
 import "./otpsignup.css";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
+import SendOTPButton from "./SendOTPButton";
 
 function OTPForm() {
   const [NameOfUser, setNameOfUser] = useState("");
@@ -58,7 +59,7 @@ function OTPForm() {
       );
       let data = await response.json();
       SetOTPInfo(data);
-
+        return 1;
       console.log(data);
     }
   };
@@ -256,9 +257,7 @@ function OTPForm() {
             </div>
 
             <div className="sendOtpbtn">
-              <button className="btnn" onClick={handleSendOTP}>
-                Send OTP
-              </button>
+              <SendOTPButton handleSendOTP={handleSendOTP} />
               <div class="otpinfo">{otpInfo}</div>
             </div>
             <div className="red">{verificationError}</div>

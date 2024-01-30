@@ -11,6 +11,7 @@ import ArrowIcon from './Images/arrow-right.svg'
 // import "./productDetails.css";
 
 export default function ProductDetails(props) {
+  console.log(props)
   window.scrollTo(0, 0);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -81,7 +82,11 @@ export default function ProductDetails(props) {
                   </div> */}
                   <div className="carousel-inner">
                     <div className="carousel-item active">
-                      <img className="productimg" src={props.productimg1} alt="" />
+                      <img
+                        className="productimg"
+                        src={props.productimg1}
+                        alt=""
+                      />
                     </div>
                     <div className="carousel-item">
                       <img className="productimg" src={props.image2} alt="" />
@@ -103,7 +108,7 @@ export default function ProductDetails(props) {
 
               <div className="right">
                 <h2 className="product-title">
-                  {props.title}  <span className="popular">Popular</span>
+                  {props.title} <span className="popular">Popular</span>
                 </h2>
                 <p className="product-p margin">{props.expectedmargin}</p>
 
@@ -176,7 +181,9 @@ export default function ProductDetails(props) {
                 </div>
                 <div className="description-flex">
                   <p className="p1 description-p1">Place of Manufacturing:</p>
-                  <p className="p2 description-p2">{props.manufacturingplace}</p>
+                  <p className="p2 description-p2">
+                    {props.manufacturingplace}
+                  </p>
                 </div>
                 <div className="description-flex">
                   <p className="p1 description-p1">Supply Ability Per Month:</p>
@@ -208,43 +215,42 @@ export default function ProductDetails(props) {
                 <img src={props.fssaiImage} alt="" className="fssaiImage" />
               </p> */}
 
-          <div>
-            <img
-              src={props.fssaiImage}
-              alt="Enlarged"
-              onClick={handleImageClick}
-              style={{ cursor: 'pointer' }}
-              className="fssaiImage"
-            />
-            {isOpen && (
-              <div
-                style={{
-                  position: 'fixed',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  background: 'rgba(0, 0, 0, 0.7)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-                onClick={handleCloseClick}
-              >
+              <div>
                 <img
                   src={props.fssaiImage}
                   alt="Enlarged"
-                  style={{ width: 'auto', height: '100vh' }}
                   onClick={handleImageClick}
+                  style={{ cursor: "pointer" }}
                   className="fssaiImage"
                 />
+                {isOpen && (
+                  <div
+                    style={{
+                      position: "fixed",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      background: "rgba(0, 0, 0, 0.7)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                    onClick={handleCloseClick}
+                  >
+                    <img
+                      src={props.fssaiImage}
+                      alt="Enlarged"
+                      style={{ width: "auto", height: "100vh" }}
+                      onClick={handleImageClick}
+                      className="fssaiImage"
+                    />
+                  </div>
+                )}
               </div>
-            )}
-          </div>
               <br />
             </div>
           </div>
-
 
           {/* <div className="product-sidebar">
             <p className="sidebar-p1">
@@ -272,41 +278,37 @@ export default function ProductDetails(props) {
           <div className="product-sidebar-sticky">
             <div className="new-product-sidebar">
               <p className="seller-details-title">Seller Details</p>
-              <p className="business-name">Business Name</p>
-              <p className="gst-title">GST: 22AAAAA0000A1Z5</p>
+              <p className="business-name">{props.supplier}</p>
+              <p className="gst-title">GST: {props.GST}</p>
               <div className="info-flex">
                 <img src={UserIcon} alt="" className="info-icons" />
-                <p className="info-p">Seller Name</p>
+                <p className="info-p">{props.UserName}</p>
               </div>
               <div className="info-flex">
                 <img src={CalenderIcon} alt="" className="info-icons" />
-                <p className="info-p">Market Experience: 2 Years</p>
+                <p className="info-p">Market Experience: {props.marketexp}</p>
               </div>
               <div className="info-flex">
                 <img src={MapIcon} alt="" className="info-icons" />
-                <p className="info-p">132, My Street, Bigtown BG23 4YZ, England</p>
+                <p className="info-p">{props.manufacturingplace}</p>
               </div>
               <p
-              className="contact-supplier-btn"
-              onClick={() => {
-                handleSendEnquiry();
-                localStorage.setItem("ProductToEnquire", props.title);
-              }}
-            >
-              Send Enquiry
-              <img src={ArrowIcon} alt="" className="arrow-right" />
-            </p>
-
+                className="contact-supplier-btn"
+                onClick={() => {
+                  handleSendEnquiry();
+                  localStorage.setItem("ProductToEnquire", props.title);
+                }}
+              >
+                Send Enquiry
+                <img src={ArrowIcon} alt="" className="arrow-right" />
+              </p>
             </div>
           </div>
-          
         </div>
 
         {/* Product details */}
-        
       </div>
 
-      
       <Footer />
     </div>
   );

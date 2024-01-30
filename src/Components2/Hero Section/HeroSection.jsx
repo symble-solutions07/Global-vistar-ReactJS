@@ -1,6 +1,6 @@
 import "./herosection.css";
-import CardImg1 from "./fmcg-bg.png";
-import CardImg2 from "./fmcg-bg2.png";
+import CardImg1 from "./Images/fmcg-bg.png";
+import CardImg2 from "./Images/fmcg-bg2.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";

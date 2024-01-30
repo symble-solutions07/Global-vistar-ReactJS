@@ -14,6 +14,7 @@ import React, { useState } from "react";
 const Enquiry = ({ open, handleClose }) => {
   var ProductToEnquire = localStorage.getItem("ProductToEnquire");
   var UserNumber = localStorage.getItem("pNumber");
+  var manufacturerNumber = localStorage.getItem("SendMessageTo"); ;
   const [Quantity, setQuantity] = useState(20);
   const [unit, setUnit] = React.useState("kg");
   var [formData, setFormData] = React.useState({
@@ -54,6 +55,8 @@ const Enquiry = ({ open, handleClose }) => {
       .catch((error) => {
         console.error("Error:", error);
       });
+      let Message = `https://wa.me/91${manufacturerNumber}?text=Hello%2C%20I%20found%20you%20on%20Global%20Vistar%2C%0AI%20want%20to%20enquire%20for%20the%20${ProductToEnquire}%20%0ACan%20we%20have%20a%20chat%3F`;
+      window.open(Message, "_blank");
   };
 
   return (

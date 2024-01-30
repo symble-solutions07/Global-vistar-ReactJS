@@ -67,6 +67,9 @@
 
 
 }
+.btnn-disabled{
+  cursor: no-drop;
+}
 .btnn:hover{
   transition: 0.35s;
   background-color: rgb(188, 24, 35);

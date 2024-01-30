@@ -6,9 +6,6 @@ import ExpandBlog1 from "./Components/ExpandBlog1";
 import ExpandBlog2 from "./Components/ExpandBlog2";
 import ExpandBlog3 from "./Components/ExpandBlog3";
 import OTPLogin from "./Components/OTPLogin";
-import ProductListing from "./Components/productListing";
-import ProductListing2 from "./Components/productListing2";
-import ProductListing3 from "./Components/productListing3";
 import Register from "./Components/Register";
 import TermsAndCond from "./Components/TermsAndCond";
 import AboutUs from "./Components2/AboutUs/AboutUs";
@@ -39,9 +36,6 @@ function Routing() {
         <Route path="/newBlog2" element={<ExpandBlog2 />} />
         <Route path="/newBlog3" element={<ExpandBlog3 />} />
         <Route path="/login" element={<OTPLogin />} />
-        <Route path="/productListing" element={<ProductListing />} />
-        <Route path="/productListing/2" element={<ProductListing2 />} />
-        <Route path="/productListing/3" element={<ProductListing3 />} />
         <Route path="/addProducts" element={<ProductListingForm />} />
         <Route path="/addManufacturer" element={<AboutManufacturer />} />
         <Route path="/CompanyDetails" element={<CompanyDetails />} />

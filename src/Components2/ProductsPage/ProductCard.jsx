@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import Enquiry from "../../Components/enquiry";
 
 const FeaturedProductCard = (props) => {
-  const { title, price, moq, imageLink, margin, keyy } = props;
+  const { title, price, moq, imageLink, margin, keyy, owner } = props;
   console.log(keyy)
   const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -104,6 +104,8 @@ const FeaturedProductCard = (props) => {
             onClick={() => {
               handleSendEnquiry();
               localStorage.setItem("ProductToEnquire", title);
+              console.log(owner)
+              localStorage.setItem("SendMessageTo", owner);
             }}
           >
             Send Enquiry

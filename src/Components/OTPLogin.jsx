@@ -1,9 +1,8 @@
 import "./otplogin.css";
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
-import { Card } from "@mui/material";
-import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
+import SendOTPButton from "./SendOTPButton";
 
 function OTPLogin() {
   const navigate = useNavigate();
@@ -15,7 +14,7 @@ function OTPLogin() {
   const [verificationStatus, setVerificationStatus] = useState("");
   const [verificationError, setVerificationError] = useState("");
   const [isPopupVisible, setPopupVisible] = useState(false);
-
+  const [OTPLoader, setOTPLoader] = useState(false);
   const handleSendOTP = async () => {
     // setPopupVisible(true);
     const resp = await fetch(
@@ -32,6 +31,7 @@ function OTPLogin() {
     console.log(dat);
 
     if (dat.message != "Exists") {
+      setOTPLoader(true);
       setPopupVisible(true);
       const timeout = setTimeout(() => {
         // console.log("This text will be displayed after 2 seconds.");
@@ -51,6 +51,7 @@ function OTPLogin() {
       const data = await response.json();
       SetOTPInfo(data);
       console.log(data);
+      return 1;
     }
   };
 
@@ -67,7 +68,6 @@ function OTPLogin() {
     );
     const data = await response.json();
     if (response.status === 200 && data.status === "approved") {
-      
       const response = await fetch(
         "https://globalvistarbackend-production.up.railway.app/user/login",
         {
@@ -95,20 +95,6 @@ function OTPLogin() {
     }
   };
 
-  function checkAllInputs() {
-    var res = 1;
-
-    if (phoneNumber == "" || parseInt(phoneNumber).toString().length != 10) {
-      setnumberError("*Please Enter a 10 digit valid number");
-      res = 0;
-    }
-
-    if (verificationStatus != "Verified") {
-      setVerificationError("*Verify your Phone Number");
-      res = 0;
-    }
-    return res;
-  }
   const logoClick = () => {
     navigate("/");
   };
@@ -133,7 +119,7 @@ function OTPLogin() {
           </div>
         </div>
       )}
-      <div className="otp-login">
+      <div className="otp-login ">
         <div className="otp-login-card">
           <h2 className="gv-logo" onClick={logoClick}>
             <span className="global">Global</span>{" "}
@@ -142,9 +128,9 @@ function OTPLogin() {
           <h4 className="otp-login-title">Sign In</h4>
           <div className="red">{numberError}</div>
           <div className="otp-input-field">
-          <span>+91</span>
+            <span>+91</span>
             {/* <i class="fa-solid fa-phone"></i> */}
-            
+
             <input
               type="text"
               id="phoneNumber"
@@ -163,11 +149,9 @@ function OTPLogin() {
               }}
             />
           </div>
+          <div className="sendOtpbtn flex justify-center items-center">
+            <SendOTPButton handleSendOTP={handleSendOTP} />
 
-          <div className="sendOtpbtn">
-            <button className="btnn" onClick={handleSendOTP}>
-              Send OTP
-            </button>
             <div class="otpinfo">{otpInfo}</div>
           </div>
           <div className="red">{verificationError}</div>
