@@ -97,20 +97,6 @@ function AboutUs() {
             </div>
           </div>
           </a>
-          <a href="" target="_blank">
-          <div className="team-card">
-            <div className="team-card-header">
-              <img className='team-profile-icon' style={{width: '7.75rem'}} src={YashImg} alt="" />
-              <p className="team-card-title">
-                Yash
-                <br />
-                <span className='team-card-desg'>Sales & Operations</span>
-              </p>
-              <LinkedInIcon></LinkedInIcon>
-              {/* <p className="team-card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, quos.</p> */}
-            </div>
-          </div>
-          </a>
           <a href="https://www.linkedin.com/in/rohan-vaidya-359680190/" target="_blank">
           <div className="team-card">
             <div className="team-card-header">

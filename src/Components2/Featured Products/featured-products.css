@@ -42,7 +42,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: all 0.5s ease;
   
 }
 
@@ -90,7 +89,7 @@
 
 @media (max-width: 500px) {
   #featured-products {
-    margin: 0 1.5rem 2rem 1.5rem;
+    margin: 0 1rem 2rem 1rem;
   }
 
   .featured-products-title {
@@ -101,37 +100,71 @@
   }
 
   .featured-products-flex {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
   }
 
   .featured-products-card {
     width: auto;
     height: auto;
     border: 1px solid rgb(160, 160, 160);
-    border-radius: 10px;
+    border-radius: 5px;
     margin-right: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .featured-products-card-img {
     width: 100%;
-    height: 11rem;
-    margin-bottom: 1rem;
+    height: 7rem;
+    margin-bottom: 0.25rem;
     object-fit: cover;
-    border-radius: 10px 10px 0 0;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .featured-products-card-description {
+    margin: 0.5rem;
+  }
+
+  .featured-products-card-verified {
+    background-color: rgb(50, 179, 38);
+    animation: gra 15s ease infinite;
+    color: white;
+    width: fit-content;
+    padding: 0.2rem;
+    border-radius: 5px;
+    font-size: 0.5rem;
   }
 
   .featured-products-card-title{
     white-space: normal;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .featured-products-card-price {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .featured-products-card-margin {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: rgb(188, 24, 35);
   }
 
   .featured-products-card-btn {
     width: 100%;
     display: block;
-    padding: 0.5rem;
+    padding: 0.35rem;
     border-radius: 5px;
     color: white;
+    font-size: 0.9rem;
   }
 }
 
