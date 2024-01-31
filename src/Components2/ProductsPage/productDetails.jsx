@@ -70,7 +70,8 @@ export default function ProductDetails() {
           fssaiImage={product.fssaiImage}
           TPMWhiteLabelling={product.TPMWhiteLabelling}
           GST={product.GST}
-    UserName ={product.UserName}
+          UserName={product.UserName}
+          UserNumber={product.UserNumber}
         ></ProductDetailsComponent>
       </>
     );

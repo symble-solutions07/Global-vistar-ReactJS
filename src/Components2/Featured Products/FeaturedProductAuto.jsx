@@ -15,8 +15,8 @@ export default function FeaturedProduct() {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3001/user/featuredProducts",
-          // "https://globalvistarbackend-production.up.railway.app/user/featuredProducts",
+          // "http://localhost:3001/user/featuredProducts",
+          "https://globalvistarbackend-production.up.railway.app/user/featuredProducts",
           {
             method: "GET",
             headers: {
@@ -62,9 +62,10 @@ export default function FeaturedProduct() {
       {/* <Enquiry /> */}
       {/* {isEnquiryPopupVisible && <Enquiry />} */}
       {/* <button onClick={handleOpen}>Open Form</button> */}
-    
-        <h1 className="featured-products-title ">Featured Products</h1>
-        <div className="productsWrapper">
+
+      <div id="featured-products">
+        <h1 className="featured-products-title">Featured Products</h1>
+        <div className="featured-products-flex">
           {products.map((product, index) => (
             <FeaturedProductCard
               keyy={product._id}
@@ -76,6 +77,7 @@ export default function FeaturedProduct() {
               // handleSendEnquiry={handleSendEnquiry}
             />
           ))}
+        </div>
       </div>
     </>
   );
