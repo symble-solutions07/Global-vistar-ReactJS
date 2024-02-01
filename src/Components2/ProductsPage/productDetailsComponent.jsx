@@ -215,39 +215,25 @@ export default function ProductDetails(props) {
                 <img src={props.fssaiImage} alt="" className="fssaiImage" />
               </p> */}
 
-              <div>
+          <div>
+            <img
+              src={props.fssaiImage}
+              alt="Enlarged"
+              onClick={handleImageClick}
+              style={{ cursor: 'pointer' }}
+              className="fssaiImage"
+            />
+            {isOpen && (
+              <div className="enlargedDiv" onClick={handleCloseClick} >
                 <img
                   src={props.fssaiImage}
                   alt="Enlarged"
                   onClick={handleImageClick}
-                  style={{ cursor: "pointer" }}
-                  className="fssaiImage"
+                  className="enlargedFssaiImage"
                 />
-                {isOpen && (
-                  <div
-                    style={{
-                      position: "fixed",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      background: "rgba(0, 0, 0, 0.7)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                    onClick={handleCloseClick}
-                  >
-                    <img
-                      src={props.fssaiImage}
-                      alt="Enlarged"
-                      style={{ width: "auto", height: "100vh" }}
-                      onClick={handleImageClick}
-                      className="fssaiImage"
-                    />
-                  </div>
-                )}
               </div>
+            )}
+          </div>
               <br />
             </div>
           </div>
