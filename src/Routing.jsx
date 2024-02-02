@@ -23,6 +23,7 @@ import BlogPage from "./Components2/Blog Page/BlogPage";
 // import ProductDetails from './Components2/ProductsPage/productDetails';
 import Blog4 from "./Components2/Blog Page/Blogs/Blog4";
 import Dashboard from "./Components2/Dashboard/Dashboard";
+import Skeleton from "./Components2/ProductsPage/Skeleton";
 
 function Routing() {
   return (

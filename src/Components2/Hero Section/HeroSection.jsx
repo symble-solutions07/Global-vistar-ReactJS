@@ -1,6 +1,6 @@
 import "./herosection.css";
-import CardImg1 from "./Images/fmcg-bg.png";
-import CardImg2 from "./Images/fmcg-bg2.png";
+// import CardImg1 from "./Images/fmcg-bg.png";
+// import CardImg2 from "./Images/fmcg-bg2.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
@@ -107,7 +107,6 @@ function HeroSection() {
             >
               List your Product
             </button>
-            <img src={CardImg1} alt="" className="card-img" />
           </div>
 
           <div className="hero-section-card">
@@ -115,7 +114,6 @@ function HeroSection() {
             <a href="#featured-products">
               <button className="hero-section-card-btn">Explore Now</button>
             </a>
-            <img src={CardImg2} alt="" className="card-img" />
           </div>
         </div>
       </div>

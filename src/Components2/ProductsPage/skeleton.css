@@ -1,0 +1,111 @@
+.skeleton-card{
+    width: 17rem;
+    height: 27rem;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 10px;
+    margin-right: 2.9rem;
+}
+
+.skeleton-card-img{
+    width: auto;
+    height: 9.5rem;
+    background-color: #eee;
+    border-radius: 10px 10px 0 0;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-verified{
+    width: 6rem;
+    height: 1rem;
+    background-color: #eee;
+    margin: 2rem 1rem 1rem 1rem;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-verified{
+    width: 6rem;
+    height: 1rem;
+    background-color: #eee;
+    margin: 1rem;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-title{
+    width: auto;
+    height: 1.75rem;
+    background-color: #eee;
+    margin: 0 1rem 2rem 1rem;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-p{
+    width: auto;
+    height: 1.25rem;
+    background-color: #eee;
+    margin: 0 1rem 0.5rem 1rem;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-btn{
+    width: auto;
+    height: 2.5rem;
+    background-color: #eee;
+    margin: 1.5rem 1rem 1rem 1rem;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@media (max-width: 500px){
+    .skeleton-card{
+        width: 12rem;
+        height: 21rem;
+        border: 1px solid rgb(160, 160, 160);
+        border-radius: 10px;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .skeleton-title{
+        width: auto;
+        height: 1.75rem;
+        background-color: #eee;
+        margin: 0 1rem 1rem 1rem;
+        border-radius: 5px;
+        animation: pulse 1.5s infinite ease-in-out;
+    }
+    
+    .skeleton-p{
+        width: auto;
+        height: 1.25rem;
+        background-color: #eee;
+        margin: 0 1rem 0.5rem 1rem;
+        border-radius: 5px;
+        animation: pulse 1.5s infinite ease-in-out;
+    }
+    
+    .skeleton-btn{
+        display: none;
+        width: auto;
+        height: 2.5rem;
+        background-color: #eee;
+        margin: 1.5rem 1rem 1rem 1rem;
+        border-radius: 5px;
+        animation: pulse 1.5s infinite ease-in-out;
+    }
+}
+
+@keyframes pulse {
+    0% {
+      background-color: #cccccc;
+    }
+    50% {
+      background-color: #eee;
+    }
+    100% {
+      background-color: #cccccc;
+    }
+  }
