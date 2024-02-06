@@ -23,7 +23,7 @@ const ProductListingFormFinal = () => {
     // console.log(productList)
     renderProductForm();
   }, []);
-  
+
   const handleUpload = (e) => {
     const res = validateProduct(currentIndex);
     if (res == 0) return;
@@ -41,8 +41,8 @@ const ProductListingFormFinal = () => {
       formdata.append("phoneNumber", phoneNumber);
       axios
         .post(
-          "http://localhost:3001/form/addProduct",
-          // "https://globalvistarbackend-production.up.railway.app/form/addProduct",
+          // "http://localhost:3001/form/addProduct",
+          "https://globalvistarbackend-production.up.railway.app/form/addProduct",
           formdata,
           {
             headers: {

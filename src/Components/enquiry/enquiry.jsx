@@ -38,8 +38,8 @@ const Enquiry = ({ open, handleClose }) => {
     console.log(formData);
     setSubmitResponse(1);
     fetch(
-      // "https://globalvistarbackend-production.up.railway.app/enquire/product",
-      "http://localhost:3001/enquire/product",
+      "https://globalvistarbackend-production.up.railway.app/enquire/product",
+      // "http://localhost:3001/enquire/product",
       {
         method: "POST",
         headers: {

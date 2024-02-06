@@ -15,8 +15,8 @@ export default function FeaturedProduct() {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3001/user/featuredProducts",
-          // "https://globalvistarbackend-production.up.railway.app/user/featuredProducts",
+          // "http://localhost:3001/user/featuredProducts",
+          "https://globalvistarbackend-production.up.railway.app/user/featuredProducts",
           {
             method: "GET",
             headers: {
