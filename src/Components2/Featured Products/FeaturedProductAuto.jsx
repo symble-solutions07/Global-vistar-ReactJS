@@ -2,7 +2,7 @@ import "./featured-products.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
-import Enquiry from "../../Components/enquiry";
+import Enquiry from "../../Components/enquiry/enquiry";
 import FeaturedProductCard from "../ProductsPage/ProductCard";
 
 export default function FeaturedProduct() {
@@ -15,8 +15,8 @@ export default function FeaturedProduct() {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          // "http://localhost:3001/user/featuredProducts",
-          "https://globalvistarbackend-production.up.railway.app/user/featuredProducts",
+          "http://localhost:3001/user/featuredProducts",
+          // "https://globalvistarbackend-production.up.railway.app/user/featuredProducts",
           {
             method: "GET",
             headers: {
@@ -25,7 +25,7 @@ export default function FeaturedProduct() {
           }
         ); // Replace with your backend endpoint
         const data = await response.json();
-        console.log(data.products[0].image1);
+        console.log(data.products);
         setProducts(data.products);
       } catch (error) {
         console.error("Error fetching products: ", error);
@@ -74,6 +74,7 @@ export default function FeaturedProduct() {
               price={product.price2}
               moq={product.minOrderQuantity}
               margin={product.expectedMargin}
+              owner={product.owner}
               // handleSendEnquiry={handleSendEnquiry}
             />
           ))}

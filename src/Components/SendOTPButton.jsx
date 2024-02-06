@@ -34,11 +34,11 @@ const SendOTPButton = ({ handleSendOTP }) => {
       <button
         onClick={handleClick}
         disabled={disabled}
-        className={`btnn ${
+        className={`btnn w-fit ${
           disabled ? "opacity-50 cursor-not-allowed btnn-disabled" : ""
         }`}
       >
-        {disabled ? `  ${timer}  ` : "Send OTP"}
+        {disabled ? ` Resend in ${timer}s  ` : "Send OTP"}
       </button>
 
       {/* <div> {`${timer} seconds`}</div> */}

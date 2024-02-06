@@ -2,7 +2,7 @@ import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Enquiry from "../../Components/enquiry";
+import Enquiry from "../../Components/enquiry/enquiry";
 import UserIcon from "./Images/user.svg";
 import CalenderIcon from "./Images/calendar.svg";
 import MapIcon from "./Images/map-pin.svg";
@@ -156,6 +156,10 @@ export default function ProductDetails(props) {
                     <p className="p1">Returns & refunds:</p>
                     <p className="p2">{props.returns}</p>
                   </div>
+                  <div className="purchase-details-flex">
+                    <p className="p1">Product Sizes:</p>
+                    <p className="p2">{props.ProductSizes}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -215,25 +219,25 @@ export default function ProductDetails(props) {
                 <img src={props.fssaiImage} alt="" className="fssaiImage" />
               </p> */}
 
-          <div>
-            <img
-              src={props.fssaiImage}
-              alt="Enlarged"
-              onClick={handleImageClick}
-              style={{ cursor: 'pointer' }}
-              className="fssaiImage"
-            />
-            {isOpen && (
-              <div className="enlargedDiv" onClick={handleCloseClick} >
+              <div>
                 <img
                   src={props.fssaiImage}
                   alt="Enlarged"
                   onClick={handleImageClick}
-                  className="enlargedFssaiImage"
+                  style={{ cursor: "pointer" }}
+                  className="fssaiImage"
                 />
+                {isOpen && (
+                  <div className="enlargedDiv" onClick={handleCloseClick}>
+                    <img
+                      src={props.fssaiImage}
+                      alt="Enlarged"
+                      onClick={handleImageClick}
+                      className="enlargedFssaiImage"
+                    />
+                  </div>
+                )}
               </div>
-            )}
-          </div>
               <br />
             </div>
           </div>

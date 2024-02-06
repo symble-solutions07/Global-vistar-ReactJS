@@ -10,7 +10,7 @@ import Register from "./Components/Register";
 import TermsAndCond from "./Components/TermsAndCond";
 import AboutUs from "./Components2/AboutUs/AboutUs";
 import Upload from "./Components2/ListingForm/upload";
-import Enquiry from "./Components/enquiry";
+// import Enquiry from "./Components/enquiry";
 import ProductsPage from "./Components2/ProductsPage/productsPage";
 import ProductDetails from "./Components2/ProductsPage/productDetails";
 import ProductListingForm from "./Components2/ProductListingForm/addProducts";
@@ -23,7 +23,6 @@ import BlogPage from "./Components2/Blog Page/BlogPage";
 // import ProductDetails from './Components2/ProductsPage/productDetails';
 import Blog4 from "./Components2/Blog Page/Blogs/Blog4";
 import Dashboard from "./Components2/Dashboard/Dashboard";
-import Skeleton from "./Components2/ProductsPage/Skeleton";
 
 function Routing() {
   return (
@@ -45,7 +44,7 @@ function Routing() {
         <Route path="/Upload" element={<Upload />} />
         <Route path="/register" element={<Register />} />
         <Route path="/terms&cond" element={<TermsAndCond />} />
-        <Route path="/Enquiry" element={<Enquiry />} />
+        {/* <Route path="/Enquiry" element={<Enquiry />} /> */}
         <Route path="/blogpage" element={<BlogPage />} />
         <Route path="/blog4" element={<Blog4 />} />
         <Route path="/ProductSuccess" element={<ProductSuccess />} />

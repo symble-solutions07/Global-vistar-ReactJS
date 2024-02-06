@@ -1,14 +1,14 @@
 import React from "react";
-
+import openInNewTab from "./OpenInNewTab";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Button from "@mui/material/Button";
-import Enquiry from "../../Components/enquiry";
+import Enquiry from "../../Components/enquiry/enquiry";
 
 const FeaturedProductCard = (props) => {
   const { title, price, moq, imageLink, margin, keyy, owner } = props;
-  console.log(keyy)
+  console.log(keyy);
   const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
   const popupRedirect = () => {
@@ -80,7 +80,7 @@ const FeaturedProductCard = (props) => {
           className="featured-products-card-img"
           src={imageLink}
           onClick={() => {
-            navigate(keyy)
+            openInNewTab(window.location.href + "/" + keyy);
           }}
           alt={"image of " + title}
         />
@@ -90,7 +90,7 @@ const FeaturedProductCard = (props) => {
           </p>
           <h1
             onClick={() => {
-              navigate(keyy)
+              openInNewTab(window.location.href + "/" + keyy);
             }}
             className="featured-products-card-title"
           >
@@ -98,13 +98,15 @@ const FeaturedProductCard = (props) => {
           </h1>
           <p className="featured-products-card-price">Price: ₹{price}</p>
           <p className="featured-products-card-price">MOQ: {moq}</p>
-          <p className="featured-products-card-margin">Expected Margin: {margin}</p>
+          <p className="featured-products-card-margin">
+            Expected Margin: {margin}
+          </p>
           <button
             className="featured-products-card-btn"
             onClick={() => {
               handleSendEnquiry();
               localStorage.setItem("ProductToEnquire", title);
-              console.log(owner)
+              console.log(owner);
               localStorage.setItem("SendMessageTo", owner);
             }}
           >

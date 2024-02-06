@@ -6,7 +6,7 @@
 }
 
 .otp-login-card {
-  border: 1px solid rgb(160,160,160);
+  border: 1px solid rgb(160, 160, 160);
   border-radius: 10px;
   width: 23rem;
   /* height: 23rem; */
@@ -31,7 +31,7 @@
 
 .otp-login-title {
   color: #707070;
-  text-align: left;
+  text-align: center;
 }
 
 .otp-login-p {

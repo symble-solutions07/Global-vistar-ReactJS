@@ -27,7 +27,7 @@ export default function ProductDetails() {
           ...data.combined.ManufacturerDetails,
         };
         setProduct(mergedObject);
-        console.log(mergedObject);
+        console.log("mergedObject", mergedObject);
       } catch (error) {
         console.error("Error fetching products: ", error);
       }
@@ -72,6 +72,7 @@ export default function ProductDetails() {
           GST={product.GST}
           UserName={product.UserName}
           UserNumber={product.UserNumber}
+          ProductSizes={product.ProductSizes}
         ></ProductDetailsComponent>
       </>
     );

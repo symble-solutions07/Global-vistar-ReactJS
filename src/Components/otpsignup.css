@@ -59,18 +59,16 @@
   border: none;
   align-items: center;
   justify-content: center;
-  width: 7rem;
+  width: 7.7rem;
   color: white;
   padding: 0.5rem;
   border-radius: 4px;
   background-color: rgba(33, 13, 65, 1);
-
-
 }
-.btnn-disabled{
+.btnn-disabled {
   cursor: no-drop;
 }
-.btnn:hover{
+.btnn:hover {
   transition: 0.35s;
   background-color: rgb(188, 24, 35);
 }
@@ -134,8 +132,8 @@
 
 .otp-vistar {
   color: #210d41;
-   display: inline;
-   margin-left: 0.7rem;
+  display: inline;
+  margin-left: 0.7rem;
 }
 
 .verification-status {
@@ -223,12 +221,9 @@
     display: block;
   }
   .otp-vistar {
-   margin-left: 0;
+    margin-left: 0;
+  }
 }
-
-}
-
-
 
 .dropdown {
   display: inline-block;
@@ -246,13 +241,13 @@
 }
 
 .dd-button:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   right: 15px;
   transform: translateY(-50%);
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid black;
@@ -261,7 +256,6 @@
 .dd-button:hover {
   background-color: #eeeeee;
 }
-
 
 .dd-input {
   display: none;
@@ -274,18 +268,18 @@
   border-radius: 4px;
   padding: 0;
   margin: 2px 0 0 0;
-  box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   list-style-type: none;
 }
 
 .dd-input + .dd-menu {
   display: none;
-} 
+}
 
 .dd-input:checked + .dd-menu {
   display: block;
-} 
+}
 
 .dd-menu li {
   padding: 10px 20px;
@@ -303,22 +297,22 @@
   padding: 10px 20px;
 }
 
-.dd-menu li.divider{
+.dd-menu li.divider {
   padding: 0;
   border-bottom: 1px solid #cccccc;
 }
 
-.StandardButton{
+.StandardButton {
   background-color: #4a2488;
 }
-.StandardButtonSubmit{
+.StandardButtonSubmit {
   background-color: #351070;
 }
 
-.StandardButton:hover{
+.StandardButton:hover {
   background-color: #ffcccc;
 }
-.TopDiv{
+.TopDiv {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
