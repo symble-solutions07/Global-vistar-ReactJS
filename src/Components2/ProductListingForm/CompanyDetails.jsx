@@ -182,7 +182,7 @@ const CompanyDetails = () => {
             >
               <br />
               <br />
-              <FormControl sx={{"width":"80%"}}>
+              <FormControl sx={{ width: "80%" }}>
                 <div className="error">{AboutCompanyError}</div>
                 <TextField
                   id="AboutCompany"
@@ -365,7 +365,8 @@ const CompanyDetails = () => {
                 <div className="error">{imageError}</div>
 
                 <div className="input1">
-                  Fssai License (Fssai लाइसेंस) *
+                  Business Certification (Fssai/ Udyam Aadhar/ Any Business
+                  License) *
                   <input
                     accept="image/*"
                     type="file"
