@@ -39,8 +39,8 @@ function Routing() {
         <Route path="/addProducts" element={<ProductListingForm />} />
         <Route path="/addManufacturer" element={<AboutManufacturer />} />
         <Route path="/CompanyDetails" element={<CompanyDetails />} />
-        <Route path="/ProductsPage" element={<ProductsPage />} />
-        <Route path="/ProductsPage/:productID" element={<ProductDetails />} />
+        <Route path="/Products" element={<ProductsPage />} />
+        <Route path="/Products/:productID" element={<ProductDetails />} />
         <Route path="/Upload" element={<Upload />} />
         <Route path="/register" element={<Register />} />
         <Route path="/terms&cond" element={<TermsAndCond />} />

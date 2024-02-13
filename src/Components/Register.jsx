@@ -4,6 +4,8 @@ import "./otpsignup.css";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import SendOTPButton from "./SendOTPButton";
+import { BACKEND_URL } from "../config";
+import ButtonWithLoader from "./ButtonWithLoader";
 
 function OTPForm() {
   const [NameOfUser, setNameOfUser] = useState("");
@@ -19,7 +21,7 @@ function OTPForm() {
   const [registerAs, setRegisteras] = useState("");
   const [registerAsError, setRegisterAsError] = useState("");
   const [isPopupVisible, setPopupVisible] = useState(false);
-
+  const [isLoading, setIsLoading]=useState(false); //Verify and Procees button's 
   const navigate = useNavigate();
 
   const handleSendOTP = async () => {
@@ -29,7 +31,7 @@ function OTPForm() {
       return;
     }
     const resp = await fetch(
-      "https://globalvistarbackend-production.up.railway.app/user/check",
+      BACKEND_URL+"/user/check",
       {
         method: "POST",
         headers: {
@@ -48,7 +50,7 @@ function OTPForm() {
       }, 3000);
     } else {
       let response = await fetch(
-        "https://globalvistarbackend-production.up.railway.app/auth/sendOTP",
+        BACKEND_URL+"/auth/sendOTP",
         {
           method: "POST",
           headers: {
@@ -65,8 +67,10 @@ function OTPForm() {
   };
 
   const handleVerifyOTP = async () => {
+    if (phoneNumber.length != 10 && otp.length != 6) return;
+    setIsLoading(true);
     let response = await fetch(
-      "https://globalvistarbackend-production.up.railway.app/auth/verifyOTP",
+      BACKEND_URL+"/auth/verifyOTP",
       {
         method: "POST",
         headers: {
@@ -80,7 +84,7 @@ function OTPForm() {
       setVerificationStatus("Verified");
 
       response = await fetch(
-        "https://globalvistarbackend-production.up.railway.app/user/signup",
+        BACKEND_URL+"/user/signup",
         {
           method: "POST",
           headers: {
@@ -283,14 +287,19 @@ function OTPForm() {
               <div class="otpinfo">{verificationStatus}</div>
             </div>
             <div className="lastSubmit">
-              <input
+              {/* <input
                 class="btnn"
                 type="submit"
                 value="Submit"
                 onClick={() => {
                   handleVerifyOTP();
                 }}
-              ></input>
+              ></input> */}
+              <ButtonWithLoader
+                onClick={handleVerifyOTP}
+                isLoading={isLoading}
+                textOnButton={"Verify and Proceed"}
+              />
             </div>
           </div>
         </div>
