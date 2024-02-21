@@ -3,6 +3,7 @@ import "./addProducts.css";
 import { useNavigate } from "react-router-dom";
 import Loading from "../loadingScreen";
 import axios from "axios";
+import Tooltip from "@mui/material/Tooltip";
 
 const ProductListingFormFinal = () => {
   const [numProducts, setNumProducts] = useState(1);
@@ -133,11 +134,11 @@ const ProductListingFormFinal = () => {
     };
     setProductList(newProductList);
   };
-  const handleTypeChange = (e, index) => {
+  const handleCategoryChange = (e, index) => {
     const newProductList = [...productList];
     newProductList[index] = {
       ...newProductList[index],
-      Type: e.target.value,
+      category: e.target.value,
     };
     setProductList(newProductList);
   };
@@ -227,7 +228,7 @@ const ProductListingFormFinal = () => {
       newErrorList[index].image = "Product Image is required.";
     }
 
-    if (!product.Type || product.Type.trim() === "") {
+    if (!product.category || product.category.trim() === "") {
       isValid = false;
       newErrorList[index].Type = "Required";
     }
@@ -317,6 +318,7 @@ const ProductListingFormFinal = () => {
             value={product.name || ""}
             onChange={(e) => handleProductNameChange(e, currentIndex)}
             className="input-field"
+            placeholder="Ragi Biscuits"
           />
         </div>
         <div className="card-input">
@@ -332,23 +334,28 @@ const ProductListingFormFinal = () => {
             }}
             className="image-input "
           />
-          {previewImg && (
+          {previewImg[currentIndex] ? (
             <img
               src={previewImg[currentIndex]}
               alt="No Image Selected"
-              style={{ maxWidth: "100%", margin: "1rem" }}
+              style={{ maxWidth: "80%", margin: "1rem" }}
             />
+          ) : (
+            <>
+              <div></div>
+            </>
           )}
         </div>
         <div className="card-input">
           <div className="ProductError"> {ErrorList[currentIndex].Type}</div>
-          <label className="input-label">Product Type:</label>
+          <label className="input-label">Product Category:</label>
           <input
             required
             type="text"
-            value={product.Type || ""}
-            onChange={(e) => handleTypeChange(e, currentIndex)}
+            value={product.category || ""}
+            onChange={(e) => handleCategoryChange(e, currentIndex)}
             className="input-field"
+            placeholder="Ready-to-eat / Cosmetics"
           />
         </div>
         <div className="card-input">
@@ -356,7 +363,15 @@ const ProductListingFormFinal = () => {
             {" "}
             {ErrorList[currentIndex].ProductionLead}
           </div>
-          <label className="input-label">Production Lead Time in days:</label>
+          <div className="leadTime">
+            <label className="input-label">Production Lead Time in days:</label>
+            <Tooltip
+              title="Production lead time is the time it takes for a manufacturer to complete an order after a purchase order is placed (eg: 15 days, 45 days,60 days)"
+              placement="top"
+            >
+              <button>?</button>
+            </Tooltip>
+          </div>
           <input
             required
             type="text"
@@ -474,13 +489,22 @@ const ProductListingFormFinal = () => {
             {ErrorList[currentIndex].StorageType}
           </div>
           <label className="input-label"> Storage Type:</label>
-          <input
+
+          <select
             required
-            type="text"
             value={product.StorageType || ""}
             onChange={(e) => handleStorageTypeChange(e, currentIndex)}
             className="input-field"
-          />
+          >
+            <option value="">
+              {" "}
+              <em> Select Storage Type</em>
+            </option>
+            <option value="Ambient Temperature">Ambient Temperature</option>
+            <option value="Refrigerated">Refrigerated</option>
+            <option value="Frozen">Frozen</option>
+            <option value="Dry Storage">Dry Storage</option>
+          </select>
         </div>
         <div className="card-input">
           <div className="ProductError">
@@ -488,13 +512,22 @@ const ProductListingFormFinal = () => {
             {ErrorList[currentIndex].ProductShelfLife}
           </div>
           <label className="input-label"> Product Shelf Life:</label>
-          <input
+
+          <select
             required
-            type="text"
             value={product.ProductShelfLife || ""}
             onChange={(e) => handleProductShelfLifeChange(e, currentIndex)}
             className="input-field"
-          />
+          >
+            <option className="dropdownHeading" value="">
+              Select Product's Shelf Life
+            </option>
+            <option value="less than 1 Month">less than 1 Month</option>
+            <option value="1-3 months">1-3 months</option>
+            <option value="3-6 months">3-6 months</option>
+            <option value="6-12 months">6-12 months</option>
+            <option value="More than 12 months">More than 12 months</option>
+          </select>
         </div>
         <div className="card-input">
           <div className="ProductError">
@@ -502,15 +535,25 @@ const ProductListingFormFinal = () => {
             {ErrorList[currentIndex].SupplyCapacityPerMonth}
           </div>
           <label className="input-label"> Supply Capacity Per Month:</label>
-          <input
+
+          <select
             required
-            type="text"
             value={product.SupplyCapacityPerMonth || ""}
             onChange={(e) =>
               handleSupplyCapacityPerMonthChange(e, currentIndex)
             }
             className="input-field"
-          />
+          >
+            <option value="">
+              {" "}
+              <em> Select Supply Capacity per Month</em>
+            </option>
+            <option value="less than 200 units">less than 200 units</option>
+            <option value="200-500 units">200-500 units</option>
+            <option value="500-1000 units">500-1000 units</option>
+            <option value="1000-5000 units">1000-5000 units</option>
+            <option value="More than 5000 units">More than 5000 units</option>
+          </select>
         </div>
 
         <hr className="card-divider" />
@@ -546,7 +589,7 @@ const ProductListingFormFinal = () => {
             </label>
             <br />
             <div
-              class="valuee-button"
+              className="valuee-button"
               id="decrease"
               onClick={() => {
                 decreaseValue();
