@@ -47,7 +47,8 @@
     width: 15rem;
     position: absolute;
     top: 5rem;
-    left: 71rem;
+    /* left: 71rem; */
+    right: -2rem;
     opacity: 70%;
     transform: rotate(10deg);  
     user-select: none;
