@@ -3,14 +3,17 @@ import "./companyDetails.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
 import Box from "@mui/material/Box";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
+import { BACKEND_URL } from "../../config";
 
 const CompanyDetails = () => {
   const [AboutCompanyError, setAboutCompanyError] = useState("");
+  const [WhatsappError, setWhatsappError] = useState("");
   const [ympError, setympError] = useState("");
   const [shipError, setshipError] = useState("");
   const [RRError, setRRError] = useState("");
@@ -21,36 +24,31 @@ const CompanyDetails = () => {
   const [TMPWError, setTMPWError] = useState("");
   const [manufacError, setmanufacError] = useState("");
   const [imageError, setimageError] = useState("");
-
-   useEffect(() => {
-     if (localStorage.getItem("token") != null) {
-       if (localStorage.getItem("token").length > 10) {
-         fetch(
-           "https://globalvistarbackend-production.up.railway.app/formCheck/company",
-            // "http://localhost:3001/formCheck/company",
-           {
-             method: "GET",
-             headers: {
-               authorization: "Bearer " + localStorage.getItem("token"),
-             },
-           }
-         ).then((res) => {
+  const [previewImg, setpreviewimg] = useState();
+  useEffect(() => {
+    if (localStorage.getItem("token") != null) {
+      if (localStorage.getItem("token").length > 10) {
+        fetch(`${BACKEND_URL}/formCheck/company`, {
+          method: "GET",
+          headers: {
+            authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }).then((res) => {
           // console.log(res)
-           res
-             .json()
-             .then((data) => {
-               console.log(data);
-               if (data.msg == "Filled") navigate("/addProducts");
-             })
-             .catch((err) => {
-               console.log(err);
-               // navigate("/");
-             });
-         });
-         
-       }
-     }
-   }, []);
+          res
+            .json()
+            .then((data) => {
+              console.log(data);
+              if (data.msg == "Filled") navigate("/addProducts");
+            })
+            .catch((err) => {
+              console.log(err);
+              // navigate("/");
+            });
+        });
+      }
+    }
+  }, []);
   function checkAllInputs(data) {
     var res = 1;
 
@@ -60,6 +58,14 @@ const CompanyDetails = () => {
     }
     if (!data.get("AboutCompany")) {
       setAboutCompanyError("*required");
+      res = 0;
+    }
+    if (!data.get("WhatsApp")) {
+      setWhatsappError("*required");
+      res = 0;
+    }
+    if (data.get("WhatsApp").length != 10) {
+      setWhatsappError("Invalid WhatsApp number");
       res = 0;
     }
     if (!data.get("GST")) {
@@ -108,6 +114,7 @@ const CompanyDetails = () => {
     data.append("file", file);
     const toProceed = checkAllInputs(data);
     const AboutCompany = data.get("AboutCompany");
+    const WhatsApp = data.get("WhatsApp");
     const GST = data.get("GST");
     const DistributionLocations = data.get("DistributionLocations");
     const YearPresence = data.get("YearPresence");
@@ -120,6 +127,7 @@ const CompanyDetails = () => {
     const Pname = localStorage.getItem("pName");
     console.log(
       phoneNumber,
+      WhatsApp,
       Pname,
       AboutCompany,
       GST,
@@ -136,17 +144,13 @@ const CompanyDetails = () => {
       console.log("incomplete");
       return;
     }
+    // return
     axios
-      .post(
-        "https://globalvistarbackend-production.up.railway.app/form/uploadCompanyDetails",
-        // "http://localhost:3001/form/uploadCompanyDetails",
-        data,
-        {
-          headers: {
-            authorization: "Bearer " + localStorage.getItem("token"),
-          },
-        }
-      )
+      .post(`${BACKEND_URL}/form/uploadCompanyDetails`, data, {
+        headers: {
+          authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      })
       .then((res) => {
         console.log(res);
         navigate("/addProducts");
@@ -182,13 +186,30 @@ const CompanyDetails = () => {
             >
               <br />
               <br />
-              <FormControl sx={{"width":"80%"}}>
+              <FormControl sx={{ width: "80%" }}>
                 <div className="error">{AboutCompanyError}</div>
                 <TextField
                   id="AboutCompany"
                   name="AboutCompany"
                   label="About Company"
                   variant="outlined"
+                  // placeholder="Company Information in 100 words"
+                  helperText="Company Information in 100 words"
+                  multiline
+                />
+                <br />
+                <br />
+                <div className="error">{WhatsappError}</div>
+                <TextField
+                  id="WhatsApp"
+                  name="WhatsApp"
+                  label="WhatsApp number"
+                  variant="outlined"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">+91</InputAdornment>
+                    ),
+                  }}
                 />
                 <br />
                 <br />
@@ -243,8 +264,11 @@ const CompanyDetails = () => {
                 <TextField
                   id="DistributionLocations"
                   name="DistributionLocations"
-                  label="Locations for Distribution(2-4 location)"
+                  label="Locations for Distribution"
                   variant="outlined"
+                  multiline
+                  placeholder="Add 2-4 locations"
+                  helperText="Add 2-4 locations"
                 />
                 <br />
                 <br />
@@ -313,8 +337,8 @@ const CompanyDetails = () => {
                   margin="normal"
                   fullWidth
                   id="manufac"
-                  label="Place"
                   name="manufac"
+                  placeholder="City, State"
                 />
                 <br />
 
@@ -365,15 +389,26 @@ const CompanyDetails = () => {
                 <div className="error">{imageError}</div>
 
                 <div className="input1">
-                  Fssai License (Fssai लाइसेंस) *
+                  <b> Business Certification</b> <br /> (Fssai/ Udyam Aadhar/
+                  Any Business License) *
+                  <br />
+                  <br />
                   <input
                     accept="image/*"
                     type="file"
                     onChange={(e) => {
                       setFile(e.target.files[0]);
+                      setpreviewimg(URL.createObjectURL(e.target.files[0]));
                     }}
                   />
                   <div className="error">Only Images</div>
+                  {previewImg && (
+                    <img
+                      src={previewImg}
+                      alt="No Image Selected"
+                      style={{ maxWidth: "100%", margin: "1rem" }}
+                    />
+                  )}
                   {/* <button onClick={handleUpload}>Upload</button> */}
                 </div>
                 <hr />
@@ -384,7 +419,7 @@ const CompanyDetails = () => {
                     }}
                     className="submit-button"
                   >
-                    Submit
+                    Next
                   </button>
                 </div>
                 {/* <Button

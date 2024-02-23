@@ -80,7 +80,7 @@ const FeaturedProductCard = (props) => {
           className="featured-products-card-img"
           src={imageLink}
           onClick={() => {
-            openInNewTab(window.location.href + "/" + keyy);
+            openInNewTab(window.location.origin + "/Products/" + keyy);
           }}
           alt={"image of " + title}
         />
@@ -90,7 +90,7 @@ const FeaturedProductCard = (props) => {
           </p>
           <h1
             onClick={() => {
-              openInNewTab(window.location.href + "/" + keyy);
+              openInNewTab(window.location.origin + "/Products/" + keyy);
             }}
             className="featured-products-card-title"
           >
