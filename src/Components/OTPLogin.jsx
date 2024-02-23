@@ -20,16 +20,13 @@ function OTPLogin() {
   const [OTPLoader, setOTPLoader] = useState(false);
   const handleSendOTP = async () => {
     // setPopupVisible(true);
-    const resp = await fetch(
-      BACKEND_URL+"/user/check",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ phoneNumber }),
-      }
-    );
+    const resp = await fetch(BACKEND_URL + "/user/check", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ phoneNumber }),
+    });
     const dat = await resp.json();
     console.log(dat);
 
@@ -41,16 +38,13 @@ function OTPLogin() {
         navigate("/register");
       }, 3000);
     } else {
-      const response = await fetch(
-        BACKEND_URL+"/auth/sendOTP",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ phoneNumber }),
-        }
-      );
+      const response = await fetch(BACKEND_URL + "/auth/sendOTP", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ phoneNumber }),
+      });
       const data = await response.json();
       SetOTPInfo(data);
       console.log(data);
@@ -59,54 +53,46 @@ function OTPLogin() {
   };
 
   const handleVerifyOTP = async () => {
-    if(phoneNumber==="7000000007"){
-      const response = await fetch(
-        BACKEND_URL+"/user/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            phoneNumber,
-          }),
-        }
-      );
+    if (phoneNumber === "7000000007") {
+      setIsLoading(true);
+      const response = await fetch(BACKEND_URL + "/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          phoneNumber,
+        }),
+      });
       const data = await response.json();
       if (response.status === 200) {
         console.log(data);
         localStorage.setItem("token", data.token);
         localStorage.setItem("pNumber", phoneNumber);
         if (data.token) navigate("/");
-        return
+        return;
       }
     }
     if (phoneNumber.length != 10 && otp.length != 6) return;
     setIsLoading(true);
-    const response = await fetch(
-      BACKEND_URL+"/auth/verifyOTP",
-      {
+    const response = await fetch(BACKEND_URL + "/auth/verifyOTP", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ phoneNumber, code: otp }),
+    });
+    const data = await response.json();
+    if (response.status === 200 && data.status === "approved") {
+      const response = await fetch(BACKEND_URL + "/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ phoneNumber, code: otp }),
-      }
-    );
-    const data = await response.json();
-    if (response.status === 200 && data.status === "approved") {
-      const response = await fetch(
-        BACKEND_URL+"/user/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            phoneNumber,
-          }),
-        }
-      );
+        body: JSON.stringify({
+          phoneNumber,
+        }),
+      });
       const data = await response.json();
       if (response.status === 200) {
         console.log(data);
@@ -204,7 +190,6 @@ function OTPLogin() {
             <div class="otpinfo">{verificationStatus}</div>
           </div>
           <div className="lastSubmit">
-           
             <ButtonWithLoader
               onClick={handleVerifyOTP}
               isLoading={isLoading}

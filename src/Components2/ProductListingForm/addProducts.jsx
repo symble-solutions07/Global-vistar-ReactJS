@@ -378,6 +378,7 @@ const ProductListingFormFinal = () => {
             value={product.ProductionLead || ""}
             onChange={(e) => handleProductionLeadChange(e, currentIndex)}
             className="input-field"
+            placeholder="45 days"
           />
         </div>
         <div className="card-input">
@@ -392,6 +393,7 @@ const ProductListingFormFinal = () => {
             value={product.minOrderQuantity || ""}
             onChange={(e) => handleMinOrderQuantityChange(e, currentIndex)}
             className="input-field"
+            placeholder="100 units, 200 kg, etc"
           />
         </div>
         <div className="card-input">
@@ -403,6 +405,7 @@ const ProductListingFormFinal = () => {
             value={product.price || ""}
             onChange={(e) => handlePriceChange(e, currentIndex)}
             className="input-field"
+            placeholder="200 ₹"
           />
         </div>
         <div className="card-input">
@@ -417,6 +420,7 @@ const ProductListingFormFinal = () => {
             value={product.minOrderQuantity2 || ""}
             onChange={(e) => handleMinOrderQuantity2Change(e, currentIndex)}
             className="input-field"
+            placeholder="200 units, 400 kg, etc"
           />
         </div>
         <div className="card-input">
@@ -428,6 +432,7 @@ const ProductListingFormFinal = () => {
             value={product.price2 || ""}
             onChange={(e) => handlePrice2Change(e, currentIndex)}
             className="input-field"
+            placeholder="100 ₹"
           />
         </div>
         <div className="card-input">
@@ -442,6 +447,7 @@ const ProductListingFormFinal = () => {
             value={product.minOrderQuantity3 || ""}
             onChange={(e) => handleMinOrderQuantity3Change(e, currentIndex)}
             className="input-field"
+            placeholder="300 units, 600 kg, etc"
           />
         </div>
         <div className="card-input">
@@ -453,6 +459,7 @@ const ProductListingFormFinal = () => {
             value={product.price3 || ""}
             onChange={(e) => handlePrice3Change(e, currentIndex)}
             className="input-field"
+            placeholder="50 ₹"
           />
         </div>
         <div className="card-input">
@@ -467,6 +474,7 @@ const ProductListingFormFinal = () => {
             value={product.expectedMargin || ""}
             onChange={(e) => handleExpectedMarginChange(e, currentIndex)}
             className="input-field"
+            placeholder="8%, 20%, 40%, etc. "
           />
         </div>
         <div className="card-input">
@@ -481,6 +489,7 @@ const ProductListingFormFinal = () => {
             value={product.ProductSizes || ""}
             onChange={(e) => handleProductSizesChange(e, currentIndex)}
             className="input-field"
+            placeholder="1 kg, 1.5 ltr, etc"
           />
         </div>
         <div className="card-input">
