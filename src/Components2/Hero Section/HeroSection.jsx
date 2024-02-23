@@ -3,16 +3,16 @@ import "./herosection.css";
 // import CardImg2 from "./Images/fmcg-bg2.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+// import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 
 import Button from "@mui/material/Button";
 function HeroSection() {
   const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
 
-  const openInNewTab = (url) => {
-    window.open(url, "_blank", "noreferrer");
-  };
+  // const openInNewTab = (url) => {
+  //   window.open(url, "_blank", "noreferrer");
+  // };
 
   const popupRedirect = () => {
     setPopupVisible(true);
@@ -70,14 +70,14 @@ function HeroSection() {
       <div className="hero-section">
         <div className="hero-section-left">
           <h1 className="hero-title1">
-            Badhaye Apke Business ki Raftaar
+            Badhaye Apke Distribution ki Raftaar
           </h1>
           <p className="hero-p1">
-            Connecting FMCG Sellers and Distribution Partners. <br />
-            Faster & Better.
+            Product Reach Made Simple. <br />
+            Connecting High-Growth Brands With New Markets.
           </p>
 
-          <input
+          {/* <input
             type="text"
             placeholder="Search for a Product, Category or Service"
             className="search-bar"
@@ -93,26 +93,26 @@ function HeroSection() {
             <button className="frequently-searched-btn">Mighty Millets</button>
             <button className="frequently-searched-btn">Desi Ras</button>
             <button className="frequently-searched-btn">Tribe Cook</button>
-          </div>
+          </div> */}
         </div>
 
         <div className="hero-section-right">
           <div className="hero-section-card">
             <h1 className="hero-section-card-title">
-              Looking to Expand your Product Market Reach?
+              Expand Your Product Reach.
             </h1>
             <button
               className="hero-section-card-btn"
               onClick={handleProductListing}
             >
-              List your Product
+              Get Started Now
             </button>
           </div>
 
           <div className="hero-section-card">
-            <h1 className="hero-section-card-title">Looking for Distribution Opportunities?</h1>
+            <h1 className="hero-section-card-title">Become Our Microdistributor.</h1>
             <a href="#featured-products">
-              <button className="hero-section-card-btn">Explore Now</button>
+              <button className="hero-section-card-btn">Register for FREE</button>
             </a>
           </div>
         </div>

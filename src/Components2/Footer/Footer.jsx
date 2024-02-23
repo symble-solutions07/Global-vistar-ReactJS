@@ -31,8 +31,9 @@ export default function Footer() {
             </div>
             <div className="footer-4">
                 <h1 className='footer-2-title'>Useful Links</h1>
-                <Link to="/terms&cond" className='navbar-links-text'><p className="footer-2-links">Terms of Use</p></Link>
-                <Link to="/terms&cond" className='navbar-links-text'><p className="footer-2-links">Privacy Policy</p></Link>
+                <Link to="/privacypolicy" className='navbar-links-text'><p className="footer-2-links">Privacy Policy</p></Link>
+                <Link to="/termsandconditions" className='navbar-links-text'><p className="footer-2-links">Terms & Conditions</p></Link>
+                <Link to="/contactus" className='navbar-links-text'><p className="footer-2-links">Contact Us</p></Link>
             </div>
             
         </div>

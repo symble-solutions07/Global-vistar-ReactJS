@@ -9,7 +9,6 @@ function Blogsection() {
     <div className='blog-section'>
       <div className="blog-title-section">
         <h1 className='blog-title'>Recent Blogs</h1>
-        <Link to="/blogpage"><button className="blog-explore-btn">Explore All</button></Link>
       </div>
       
       <div className="blog-section-flex">
@@ -40,6 +39,9 @@ function Blogsection() {
                 <Link to="/newBlog3"><button className="blog-card-btn">Know More</button></Link>
             </div>
         </div>
+      </div>
+      <div className="explore-all-btn">
+        <Link to="/blogpage"><button className="blog-explore-btn">Explore All Blogs</button></Link>
       </div>
     </div>
   )

@@ -281,6 +281,7 @@ const ProductsPage = () => {
               <Skeleton />
               <Skeleton />
               <Skeleton />
+              <Skeleton />
             </div>
           ) : (
             products.map((product, index) => (
