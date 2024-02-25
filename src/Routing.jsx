@@ -23,6 +23,9 @@ import BlogPage from "./Components2/Blog Page/BlogPage";
 // import ProductDetails from './Components2/ProductsPage/productDetails';
 import Blog4 from "./Components2/Blog Page/Blogs/Blog4";
 import Dashboard from "./Components2/Dashboard/Dashboard";
+import PrivacyPolicy from "./Components2/CompanyPolicy/PrivacyPolicy";
+import TermsAndConditions from "./Components2/CompanyPolicy/TermsAndConditions";
+import ContactUs from "./Components2/CompanyPolicy/ContactUs";
 
 function Routing() {
   return (
@@ -43,12 +46,14 @@ function Routing() {
         <Route path="/Products/:productID" element={<ProductDetails />} />
         <Route path="/Upload" element={<Upload />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/terms&cond" element={<TermsAndCond />} />
         {/* <Route path="/Enquiry" element={<Enquiry />} /> */}
         <Route path="/blogpage" element={<BlogPage />} />
         <Route path="/blog4" element={<Blog4 />} />
         <Route path="/ProductSuccess" element={<ProductSuccess />} />
         <Route path="/userdashboard" element={<Dashboard />} />
+        <Route path="/privacypolicy" element={<PrivacyPolicy /> } />
+        <Route path="/termsandconditions" element={<TermsAndConditions /> } />
+        <Route path="/contactus" element={<ContactUs /> } />
       </Routes>
     </BrowserRouter>
   );

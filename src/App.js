@@ -22,8 +22,8 @@ function App() {
       <ToastContainer />
       <Simplesteps />
       <Services />
-      <Categories />
-      <FeaturedProduct />
+      {/* <Categories /> */}
+      {/* <FeaturedProduct /> */}
       <Register />
       <CTA />
       <Blogsection />

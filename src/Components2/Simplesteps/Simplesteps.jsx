@@ -29,22 +29,22 @@ function Simplesteps() {
       {/* For manufacturers */}
       { manufacturers &&
         <div className="simple-steps-manufacturers">
-        <button onClick={handleManClick} className="for-manufacturers-m">For Manufacturers</button>
-        <button onClick={handleDisClick} className="for-distributors-m">For Distributors</button>
+        <button onClick={handleManClick} className="for-manufacturers-m">For Brands</button>
+        <button onClick={handleDisClick} className="for-distributors-m">For Microdistributors</button>
         <div className="simple-steps-flex">
             <div className="simple-steps-flex-card">
                 <img className='simple-steps-flex-card-img manu-img1' src={Manuimg1} alt="" />
-                <h2 className='simple-steps-flex-card-title'>Create an Account</h2>
+                <h2 className='simple-steps-flex-card-title'>Sign Up</h2>
             </div>
             <div className="dotted-line"></div>
             <div className="simple-steps-flex-card">
                 <img className='simple-steps-flex-card-img' src={Manuimg2} alt="" />
-                <h2 className='simple-steps-flex-card-title'>List Your Product</h2>
+                <h2 className='simple-steps-flex-card-title'>Fill in Your Brand Information</h2>
             </div>
             <div className="dotted-line"></div>
             <div className="simple-steps-flex-card">
                 <img className='simple-steps-flex-card-img manu-img3' src={Manuimg3} alt="" />
-                <h2 className='simple-steps-flex-card-title'>Engage With Distributors</h2>
+                <h2 className='simple-steps-flex-card-title'>Grow Your Product Reach</h2>
             </div>
         </div>
       </div>
@@ -54,22 +54,22 @@ function Simplesteps() {
       {
         distributors && 
         <div className="simple-steps-distributors">
-            <button onClick={handleManClick} className="for-manufacturers-d">For Manufacturers</button>
-            <button onClick={handleDisClick} className="for-distributors-d">For Distributors</button>
+            <button onClick={handleManClick} className="for-manufacturers-d">For Brands</button>
+            <button onClick={handleDisClick} className="for-distributors-d">For Microdistributors</button>
             <div className="simple-steps-flex">
                 <div className="simple-steps-flex-card">
                     <img className='simple-steps-flex-card-img' src={Disimg1} alt="" />
-                    <h2 className='simple-steps-flex-card-title'>Create a Profile</h2>
+                    <h2 className='simple-steps-flex-card-title'>Sign Up</h2>
                 </div>
                 <div className="dotted-line"></div>
                 <div className="simple-steps-flex-card">
                     <img className='simple-steps-flex-card-img disimg2' src={Disimg2} alt="" />
-                    <h2 className='simple-steps-flex-card-title'>Search For Right Product</h2>
+                    <h2 className='simple-steps-flex-card-title'>Create Retail Reach for High-Growth Brands</h2>
                 </div>
                 <div className="dotted-line"></div>
                 <div className="simple-steps-flex-card">
                     <img className='simple-steps-flex-card-img disimg3' src={Disimg3} alt="" />
-                    <h2 className='simple-steps-flex-card-title'>Send Enquiry & Order</h2>
+                    <h2 className='simple-steps-flex-card-title'>Earn Great Commissions!</h2>
                 </div>
             </div>
       </div>
