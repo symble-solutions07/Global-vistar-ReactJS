@@ -12,22 +12,22 @@ import { BACKEND_URL } from "../../config";
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [filters, setfilters] = useState({ gvVerified: false, popular: false, m0_20:false, m20_40:false, m40:false, samples:false, });
+  const [filters, setfilters] = useState({});
   useEffect(() => {
+    console.log(filters);
     const fetchProducts = async () => {
       try {
-        const response = await fetch(
-          BACKEND_URL+"/user/allProducts",
-          {
-            method: "GET",
-            headers: {
-              authorization: "Bearer " + localStorage.getItem("token"),
-            },
-          }
-        ); // Replace with your backend endpoint
+        const response = await fetch(BACKEND_URL + "/filter/products", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: "Bearer " + localStorage.getItem("token"),
+          },
+          body: JSON.stringify(filters),
+        });
         const data = await response.json();
-        console.log(data.products);
-        setProducts(data.products);
+        // console.log(data);
+        setProducts(data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching products: ", error);
@@ -35,10 +35,29 @@ const ProductsPage = () => {
     };
 
     fetchProducts();
-  }, []);
+  }, [filters]);
 
-  const handleFilterChange = () => {};
-  //  console.log(products[0]._id)
+  const handleFilterChange = async (key, value) => {
+    console.log("before", filters);
+    setfilters((prevFilters) => ({ ...prevFilters, [key]: value }));
+
+    // Send the POST request with the updated filters
+    // try {
+    //   const response = await fetch(BACKEND_URL+"/filter/products", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(filters),
+    //   });
+
+    //   const data = await response.json();
+    //   console.log(data);
+    //   // setProducts(data.products);
+    // } catch (error) {
+    //   console.error("Error fetching filtered products: ", error);
+    // }
+  };
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -170,7 +189,7 @@ const ProductsPage = () => {
         <div className="products-page-sidebar">
           <p className="filter-title">Filters</p>
 
-          <div className="filter-features">
+          {/* <div className="filter-features">
             <p className="features-title">Seller Features</p>
             <div className="filter-flex">
               <input type="checkbox" className="filter-input" />
@@ -180,9 +199,9 @@ const ProductsPage = () => {
               <input type="checkbox" className="filter-input" />
               <p className="features-p">Popular</p>
             </div>
-          </div>
+          </div> 
 
-          <div className="filter-features">
+           <div className="filter-features">
             <p className="features-title">Margin</p>
             <div className="filter-flex">
               <input type="checkbox" className="filter-input" />
@@ -196,12 +215,18 @@ const ProductsPage = () => {
               <input type="checkbox" className="filter-input" />
               <p className="features-p">40% & above</p>
             </div>
-          </div>
+          </div> */}
 
           <div className="filter-features">
             <p className="features-title">Samples</p>
             <div className="filter-flex">
-              <input type="checkbox" className="filter-input" />
+              <input
+                type="checkbox"
+                className="filter-input"
+                onClick={(e) => {
+                  handleFilterChange("samples", e.target.checked);
+                }}
+              />
               <p className="features-p">Available</p>
             </div>
           </div>
@@ -209,12 +234,21 @@ const ProductsPage = () => {
           <div className="filter-features">
             <p className="features-title">Third Party Manufacturing</p>
             <div className="filter-flex">
-              <input type="checkbox" className="filter-input" />
+              <input
+                type="checkbox"
+                className="filter-input"
+                onClick={(e) =>
+                  handleFilterChange(
+                    "thirdPartyManufacturing",
+                    e.target.checked
+                  )
+                }
+              />
               <p className="features-p">Available</p>
             </div>
           </div>
 
-          <div className="filter-features">
+          {/* <div className="filter-features">
             <p className="features-title">Price</p>
             <Slider
               aria-label="Temperature"
@@ -240,17 +274,23 @@ const ProductsPage = () => {
               min={10}
               max={110}
             />
-          </div>
+          </div> */}
 
           <div className="filter-features">
             <p className="features-title">Shipping</p>
             <div className="filter-flex">
-              <input type="checkbox" className="filter-input" />
+              <input
+                type="checkbox"
+                onClick={(e) =>
+                  handleFilterChange("shipping", e.target.checked)
+                }
+                className="filter-input"
+              />
               <p className="features-p">Available</p>
             </div>
           </div>
 
-          <div className="filter-features">
+          {/* <div className="filter-features">
             <p className="features-title">Shelf Life</p>
             <div className="filter-flex">
               <input type="checkbox" className="filter-input" />
@@ -260,7 +300,7 @@ const ProductsPage = () => {
               <input type="checkbox" className="filter-input" />
               <p className="features-p">Greater than 3 months</p>
             </div>
-          </div>
+          </div> 
 
           <div className="filter-features">
             <p className="features-title">Certifications</p>
@@ -268,7 +308,7 @@ const ProductsPage = () => {
               <input type="checkbox" className="filter-input" />
               <p className="features-p">Available</p>
             </div>
-          </div>
+          </div>*/}
         </div>
 
         <div className="productsWrapper">

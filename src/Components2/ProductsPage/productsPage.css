@@ -1,7 +1,7 @@
 .products-page-flex {
   margin: 3rem 0.6rem 5rem 3.5rem;
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
 }
 
 .products-page-title {
@@ -127,7 +127,7 @@
 
   .skeleton-flex {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .products-page-flex {

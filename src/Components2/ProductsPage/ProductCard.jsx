@@ -8,7 +8,7 @@ import Enquiry from "../../Components/enquiry/enquiry";
 
 const FeaturedProductCard = (props) => {
   const { title, price, moq, imageLink, margin, keyy, owner } = props;
-  console.log(keyy);
+  // console.log(keyy);
   const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
   const popupRedirect = () => {
