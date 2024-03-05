@@ -76,3 +76,12 @@ background-color: #f3f4f6;
 input[type="file"]::file-selector-button:active {
 background-color: #e5e7eb;
 }
+
+@media (max-width: 500px){
+    .gvplisting-form{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
