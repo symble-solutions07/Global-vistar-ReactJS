@@ -24,7 +24,7 @@ function Simplesteps() {
 
   return (
     <div className='simple-steps'>
-      <h1 className='simple-steps-title'>Start Trading in 3 Simple Steps</h1>
+      <h1 className='simple-steps-title'>Grow with Global Vistar in 3 Simple Steps.</h1>
 
       {/* For manufacturers */}
       { manufacturers &&

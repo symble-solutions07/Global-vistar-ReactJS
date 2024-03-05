@@ -26,6 +26,8 @@ import Dashboard from "./Components2/Dashboard/Dashboard";
 import PrivacyPolicy from "./Components2/CompanyPolicy/PrivacyPolicy";
 import TermsAndConditions from "./Components2/CompanyPolicy/TermsAndConditions";
 import ContactUs from "./Components2/CompanyPolicy/ContactUs";
+import Gvplisting from "./Components2/GVP Listing Form/Gvplisting";
+import RetailerListing from "./Components2/Retailer Listing Form/RetailerListing";
 
 function Routing() {
   return (
@@ -54,6 +56,8 @@ function Routing() {
         <Route path="/privacypolicy" element={<PrivacyPolicy /> } />
         <Route path="/termsandconditions" element={<TermsAndConditions /> } />
         <Route path="/contactus" element={<ContactUs /> } />
+        <Route path="/gvplisting" element={<Gvplisting /> } />
+        <Route path="/retailerlisting" element={<RetailerListing /> } />
       </Routes>
     </BrowserRouter>
   );

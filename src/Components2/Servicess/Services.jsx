@@ -6,7 +6,7 @@ export default function Services() {
   return (
     <div className='services'>
       <h1 className="services-title">Conquer New Markets with Low-Cost Distribution</h1>
-      <h1 className="services-title2">For All Your Distribution Operations & Growth</h1>
+      {/* <h1 className="services-title2">For All Your Distribution Operations & Growth</h1> */}
       <div className="services-flex">
         <div className="services-manufacturer">
           <img className='services-manufacturer-img' src={ManuImgS1} alt="" />
