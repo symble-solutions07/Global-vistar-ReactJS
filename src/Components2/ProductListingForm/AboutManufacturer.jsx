@@ -25,7 +25,7 @@ const AboutManufacturer = () => {
     if (localStorage.getItem("token") != null) {
       if (localStorage.getItem("token").length > 10) {
         fetch(
-          "https://globalvistarbackend-production.up.railway.app/formCheck/manufacturer",
+          "https://globalvistarbackend.onrender.com/formCheck/manufacturer",
           // "http://localhost:3001/formCheck/manufacturer",
           {
             method: "GET",
@@ -38,14 +38,14 @@ const AboutManufacturer = () => {
             .json()
             .then((data) => {
               console.log(data.msg);
-              if (data.msg=="Filled") navigate("/CompanyDetails");
+              if (data.msg == "Filled") navigate("/CompanyDetails");
             })
             .catch((err) => {
               console.log(err);
               // navigate("/");
             });
         });
-        fetch("https://globalvistarbackend-production.up.railway.app/user/me", {
+        fetch("https://globalvistarbackend.onrender.com/user/me", {
           method: "GET",
           headers: {
             authorization: "Bearer " + localStorage.getItem("token"),
@@ -100,7 +100,7 @@ const AboutManufacturer = () => {
     if (res == 0) return;
     axios
       .post(
-        "https://globalvistarbackend-production.up.railway.app/form/addManufacturer",
+        "https://globalvistarbackend.onrender.com/form/addManufacturer",
         formdata,
         {
           // .post("http://localhost:3001/form/addManufacturer", formdata, {

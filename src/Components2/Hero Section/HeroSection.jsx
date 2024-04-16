@@ -24,7 +24,7 @@ function HeroSection() {
   const handleProductListing = () => {
     if (localStorage.getItem("token") != null) {
       if (localStorage.getItem("token").length > 10) {
-        fetch("https://globalvistarbackend-production.up.railway.app/user/me", {
+        fetch("https://globalvistarbackend.onrender.com/user/me", {
           method: "GET",
           headers: {
             authorization: "Bearer " + localStorage.getItem("token"),
@@ -32,7 +32,7 @@ function HeroSection() {
         }).then((res) => {
           res.json().then((data) => {
             if (data.user) {
-              navigate("/addManufacturer")
+              navigate("/addManufacturer");
               // openInNewTab(
               //   "https://docs.google.com/forms/d/e/1FAIpQLSciD5NwlybLK058JZyyC4TYjYhHt0-6-4AQarBsb0tt1CduDg/viewform?usp=sf_link"
               // );
@@ -69,9 +69,7 @@ function HeroSection() {
       )}
       <div className="hero-section">
         <div className="hero-section-left">
-          <h1 className="hero-title1">
-            Badhaye Apke Distribution ki Raftaar
-          </h1>
+          <h1 className="hero-title1">Badhaye Apke Distribution ki Raftaar</h1>
           <p className="hero-p1">
             Product Reach Made Simple. <br />
             Connecting High-Growth Brands With New Markets.
@@ -110,9 +108,13 @@ function HeroSection() {
           </div>
 
           <div className="hero-section-card">
-            <h1 className="hero-section-card-title">Become Our Microdistributor.</h1>
+            <h1 className="hero-section-card-title">
+              Become Our Microdistributor.
+            </h1>
             <a href="#featured-products">
-              <button className="hero-section-card-btn">Register for FREE</button>
+              <button className="hero-section-card-btn">
+                Register for FREE
+              </button>
             </a>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 function LoginReg() {
   const navigate = useNavigate();
@@ -8,23 +8,24 @@ function LoginReg() {
   useEffect(() => {
     if (localStorage.getItem("token") != null) {
       if (localStorage.getItem("token").length > 10) {
-        fetch("https://globalvistarbackend-production.up.railway.app/user/me", {
+        fetch("https://globalvistarbackend.onrender.com/user/me", {
           method: "GET",
           headers: {
             authorization: "Bearer " + localStorage.getItem("token"),
           },
         }).then((res) => {
-          res.json()
-          .then((data) => {
-            if (data.user) {
-              setUser(data.user.name);
-              console.log(data.user.name + " signed in");
-            }
-          })
-          .catch((err)=>{
-            console.log(err);
-            localStorage.removeItem("token");
-          })
+          res
+            .json()
+            .then((data) => {
+              if (data.user) {
+                setUser(data.user.name);
+                console.log(data.user.name + " signed in");
+              }
+            })
+            .catch((err) => {
+              console.log(err);
+              localStorage.removeItem("token");
+            });
         });
       }
     }
@@ -39,25 +40,25 @@ function LoginReg() {
             alignItems: "center",
           }}
         >
-            <div
-              className="btn2 name-btn"
-              style={{
-                marginRight: 5,
-              }}
-            >
-              Hello, {user}
-            </div>
+          <div
+            className="btn2 name-btn"
+            style={{
+              marginRight: 5,
+            }}
+          >
+            Hello, {user}
+          </div>
 
-            <button
-              className="btn2 login-btn"
-              onClick={() => {
-                localStorage.setItem("token", null);
-                setUser(null);
-                navigate("/");
-              }}
-            >
-              Log out
-            </button>
+          <button
+            className="btn2 login-btn"
+            onClick={() => {
+              localStorage.setItem("token", null);
+              setUser(null);
+              navigate("/");
+            }}
+          >
+            Log out
+          </button>
         </div>
       </div>
     );

@@ -21,7 +21,7 @@ const FeaturedProductCard = (props) => {
   const handleSendEnquiry = () => {
     if (localStorage.getItem("token") != null) {
       if (localStorage.getItem("token").length > 10) {
-        fetch("https://globalvistarbackend-production.up.railway.app/user/me", {
+        fetch("https://globalvistarbackend.onrender.com/user/me", {
           method: "GET",
           headers: {
             authorization: "Bearer " + localStorage.getItem("token"),

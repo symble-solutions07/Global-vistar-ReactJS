@@ -38,7 +38,7 @@ const Enquiry = ({ open, handleClose }) => {
     console.log(formData);
     setSubmitResponse(1);
     fetch(
-      "https://globalvistarbackend-production.up.railway.app/enquire/product",
+      "https://globalvistarbackend.onrender.com/enquire/product",
       // "http://localhost:3001/enquire/product",
       {
         method: "POST",
@@ -52,8 +52,7 @@ const Enquiry = ({ open, handleClose }) => {
       .then((data) => {
         setSubmitResponse(2);
         console.log("Successhellooo:", data);
-        toast.success(" Product Submitted Successfully!"
-        );
+        toast.success(" Product Submitted Successfully!");
         setTimeout(handleClose, 2000); // close the modal after successful submission
         // let Message = `https://wa.me/91${manufacturerNumber}?text=Hello%2C%20I%20found%20you%20on%20Global%20Vistar%2C%0AI%20want%20to%20enquire%20for%20the%20${ProductToEnquire}%20%0ACan%20we%20have%20a%20chat%3F`;
         // console.log(Message);

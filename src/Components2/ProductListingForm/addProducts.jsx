@@ -43,7 +43,7 @@ const ProductListingFormFinal = () => {
       axios
         .post(
           // "http://localhost:3001/form/addProduct",
-          "https://globalvistarbackend-production.up.railway.app/form/addProduct",
+          "https://globalvistarbackend.onrender.com/form/addProduct",
           formdata,
           {
             headers: {
